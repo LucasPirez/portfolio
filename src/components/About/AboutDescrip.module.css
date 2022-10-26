@@ -1,0 +1,79 @@
+.containerDes {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.des {
+  height: auto;
+  min-height: 160px;
+  width: 220px;
+  background: transparent;
+  border-radius: 35px;
+  font-family: monospace;
+  font-size: 1rem;
+  margin: 3px;
+  color: #024954;
+  padding: 10px;
+  transition-duration: 0.3s;
+  border-top: 1px solid #d42406;
+}
+.des:hover {
+  box-shadow: 10px 5px 30px#eee;
+  transform: scale(1.03);
+  transition: ease-in-out;
+  transition-duration: 0.3s;
+}
+
+@media (max-width: 1380px) {
+  .des {
+    margin-right: 50px;
+  }
+}
+
+.limit {
+  margin-bottom: 5px;
+}
+.titleDescription {
+  color: black;
+  font-size: 1.3rem;
+  font-weight: bold;
+  text-align: center;
+}
+.description1 {
+  animation: traslado 0.7s linear 0s 1;
+}
+
+.description2 {
+  animation: traslado 1s linear 0s 1;
+}
+
+.description3 {
+  animation: traslado 1.5s linear 0s 1;
+}
+
+.description4 {
+  animation: traslado 2s linear 0s 1;
+}
+
+@keyframes traslado {
+  0% {
+    transform: translate(-100%);
+  }
+  88% {
+    transform: translate(5%);
+  }
+
+  100% {
+    transform: translate(0);
+  }
+}
+
+@media (max-width: 500px) {
+  .des {
+    margin-right: 0;
+  }
+}
