@@ -102,16 +102,16 @@ function Animation({ visible }) {
 
   return (
     <>
-      <div
+      {/* <div
         style={{
           width: "100%",
           height: "30vh",
           background: "trasparent",
           position: "absolute",
         }}
-      ></div>
+      ></div> */}
 
-      <canvas id="bg" className="absolute h-[100%] w-[100%] z-0"></canvas>
+      <canvas id="bg" className="absolute h-[100%] w-[100%] -z-10"></canvas>
     </>
   );
 }

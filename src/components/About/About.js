@@ -4,8 +4,10 @@ import { useInsertionEffect } from "../../hooks/useIntersection";
 import TranslationContext from "../../TraslationContext";
 import linked from "../../images/perfil.jpeg";
 import Tecnologies from "./Tecnologis";
+import useWidth from "../../hooks/useWidth";
 
 function About({ setNavName }) {
+  const { width } = useWidth();
   const { text } = useContext(TranslationContext);
   const [containerRef, visible, animationStart, nameCurrent] =
     useInsertionEffect({
@@ -26,7 +28,7 @@ function About({ setNavName }) {
         title="about"
         className="relative max-w-[1500px] m-auto h-auto min-h-screen flex flex-col xl:flex-row items-center lg:justify-around mt-10 "
       >
-        {animationStart && (
+        {(animationStart || width < 600) && (
           <>
             <h3 className="absolute top-0 lg:text-6xl sm:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-bl from-cyan-500 to-[#f09a9a] mb-10  animate-[startRight_1.2s_ease-out]">
               {text.header.about}

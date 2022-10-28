@@ -20,14 +20,14 @@ export default function Header({ navName, nav, setNav }) {
         <header
           className={`${
             nav !== false
-              ? "h-[20vh] bg-slate-800 w-full"
+              ? " h-[130px] bg-slate-800 w-full"
               : "h-[10vh] bg-transparent sm:bg-slate-800 w-full"
-          } flex  transition-all  justify-end sm:[10vh] w-full  items-center left-0 z-10 `}
+          } flex  transition-all  justify-end sm:[10vh] w-full  items-center z-10 `}
         >
           <ul
             className={` ${
               nav === false ? "hidden" : "flex"
-            } transition-all flex-col fixed right-4 space-y-2 top-0 sm:relative sm:flex sm:flex-row sm:space-y-0 text-white m-3 sm:m-6 sm:space-x-5 text-sm sm:text-xl`}
+            } transition-all flex-col right-4 space-y-2 sm:relative sm:flex sm:flex-row sm:space-y-0 text-white m-3 sm:m-6 sm:space-x-5 text-sm sm:text-xl`}
           >
             <li>
               <a
@@ -83,9 +83,9 @@ export default function Header({ navName, nav, setNav }) {
           `}
             onClick={() => setNav(true)}
           >
-            <span className="h-[2px] w-6 ms:bg-slate-100  bg-slate-900"></span>
-            <span className="h-px w-6 ms:bg-slate-100 bg-slate-900"> </span>
-            <span className="h-[2px] w-6 ms:bg-slate-100 bg-slate-900"></span>
+            <span className="h-[2px] w-6 ms:bg-slate-100  bg-slate-800"></span>
+            <span className="h-px w-6 ms:bg-slate-100 bg-slate-800"> </span>
+            <span className="h-[2px] w-6 ms:bg-slate-100 bg-slate-800"></span>
           </div>
         </header>
       )}

@@ -72,7 +72,7 @@ const Form = () => {
       </h3>
       <form
         onSubmit={(e) => send(e)}
-        className=" flex flex-col  items-center justify-center space-y-3 sm:text-lg text-base
+        className=" flex flex-col m-auto items-center justify-center space-y-3 sm:text-lg text-base
          sm:w-96 w-[90%]  text-slate-200 last:items-end mt-7 animate-[startRight_1.2s_ease-out]"
       >
         <div className="relative w-full ">

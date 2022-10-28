@@ -1,3 +1,4 @@
+import { useContext } from "react";
 import style from "./tecnologies.module.css";
 import {
   Css3,
@@ -7,15 +8,18 @@ import {
   Python,
   Javascript,
 } from "../../icons/IconsTecnologies";
+import TranslationContext from "../../TraslationContext";
 
 const Tecnologies = () => {
+  const { text } = useContext(TranslationContext);
+
   return (
     <div className="h-full animate-[startRight_1.2s_ease-out] ">
       <div className={style.cuadrado1}>
         <div className={style.cuadrado}></div>
       </div>
       <h3 className="text-center lg:text-6xl sm:text-4xl text-3xl  font-bold bg-clip-text text-transparent bg-gradient-to-bl from-slate-500 to-slate-800  m-4">
-        TECNOLOGIES
+        {text.tecnologies}
       </h3>
       <div className="p-1 ">
         <ul

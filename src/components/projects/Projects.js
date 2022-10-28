@@ -4,17 +4,16 @@ import imgGym from "../../images/img-django.webp";
 import tw from "../../images/tweeter1.webp";
 import cryptoMain from "../../images/cripto/img-crypto-main.webp";
 import mobileCrypto from "../../images/cripto/mobile-table.webp";
-
 import ModalChildren from "./ModalChildren";
 import { ModalPortal } from "./ModalPortal";
 import { useInsertionEffect } from "../../hooks/useIntersection";
-import TranslationContext from "../../TraslationContext";
 import ProjectsTecnologies from "./ProjectsTecnologies";
 import ButtonRead from "./ButtonRead";
 import ContainerProjects from "./ContainerProjects";
+import useWidth from "../../hooks/useWidth";
 
 export default function Projects({ setNavName }) {
-  const { text, handleLanguaje, textRecursos } = useContext(TranslationContext);
+  const { width } = useWidth();
   const [select, setSelect] = useState(1);
   const [close, setClose] = useState(false);
   const [modalSelect, setmodalSelect] = useState(null);
@@ -44,10 +43,10 @@ export default function Projects({ setNavName }) {
     <div
       id="portfolio"
       title="projects"
-      className="relative flex flex-col w-full   h-auto min-h-[100vh] e items-center   pt-[10vh] "
+      className="relative flex flex-col w-full h-[100vh]  items-center   pt-[10vh] "
       ref={containerRef}
     >
-      {animationStart && (
+      {(animationStart || width < 600) && (
         <>
           <h3 className="  lg:text-6xl sm:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-bl from-cyan-500 to-cyan-800 mb-10 animate-[startLeft_1.2s_ease-out]">
             Projects

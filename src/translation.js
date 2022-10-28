@@ -13,6 +13,7 @@ export const recursos = {
 export const translation = {
   en: {
     buttonProjects: "Read More",
+    tecnologies: "TECNOLOGIES",
     header: {
       home: "Home",
       about: "About",
@@ -39,7 +40,7 @@ export const translation = {
     repositorie: "View Repositorie",
     about: {
       about:
-        "Hi I'm lucas, I'm a full-stack programming student having more knowledge in front-end and specializing with Reactjs, I'm constantly trying to improve technical and soft skills as well as understanding the importance of them, giving high priority to getting a job opportunity.",
+        "Hi I'm lucas, I'm a full-stack programming student having more knowledge in front-end and specializing with Reactjs, I'm constantly trying to improve technical and soft skills, giving high priority to getting a job opportunity.",
       description1: {
         title: "Responsive Design",
         description:
@@ -63,6 +64,8 @@ export const translation = {
 
   es: {
     buttonProjects: "Ver Mas",
+    tecnologies: "TECNOLOGIAS",
+
     header: {
       home: "Inicio",
       about: "Acerca",
@@ -89,7 +92,7 @@ export const translation = {
     repositorie: "Ver Repositorio",
     about: {
       about:
-        "Hola soy lucas, soy estudiante de programación full-stack  teniendo mayores conocimientos en el front-end y especializándome con Reactjs, me encuentro constantemente tratando de mejorar las habilidades técnicas y blandas así también entender la importancia de las mismas, dándole gran prioridad a la obtención de una oportunidad de empleo.",
+        "Hola soy lucas, soy estudiante de programación full-stack  teniendo mayores conocimientos en el front-end y especializándome con Reactjs, me encuentro constantemente tratando de mejorar las habilidades técnicas y blandas, dándole gran prioridad a la obtención de una oportunidad de empleo.",
       description1: {
         title: "Diseño Responsivo",
         description: "Gran prioridad a la adaptacion del diseño segun pantalla",
