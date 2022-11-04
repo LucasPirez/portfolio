@@ -1,12 +1,13 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, lazy, Suspense } from "react";
 import TranslationContext from "../../TraslationContext";
-import Animation from "./Animation";
 import ArrowDown from "../../icons/ArrowDown";
 import { useInsertionEffect } from "../../hooks/useIntersection";
+import useWidth from "../../hooks/useWidth";
 
-// const Animation = lazy(() => import("./Animation"));
+const Animation = lazy(() => import("./Animation"));
 
 function Home({ setNavName, navName }) {
+  const { width } = useWidth();
   const { text, handleLanguaje } = useContext(TranslationContext);
   const [containerRef, visible, nameCurrent] = useInsertionEffect({
     root: null,
@@ -20,13 +21,16 @@ function Home({ setNavName, navName }) {
 
   return (
     <>
+      <div className="absolute w-full h-[100vh] bg-slate-800 -z-20"></div>
       <div
         ref={containerRef}
         id="home"
         title="home"
-        className=" flex h-[100vh] w-full items-center justify-center overflow-x-hidden bg-transparent "
+        className=" flex h-[100vh]   w-full items-center justify-center overflow-x-hidden bg-transparent "
       >
-        <Animation visible={visible} />
+        <Suspense fallback="">
+          {width > 700 && <Animation visible={visible} />}
+        </Suspense>
         <div>
           <select
             className=" fixed top-[0.50rem] left-4 m-4 text-xs md:text-base cursor-pointer rounded- p-1 rounded hover:border-2 bg-slate-700 border-cyan-700 text-slate-200 z-20"
@@ -46,7 +50,7 @@ function Home({ setNavName, navName }) {
           <a
             href="#about"
             className={`group relative inline-flex
-          border-[2px] border-cyan-700 p-1 mt-4 text-sm md:text-lg md:p-2 lg:text-xl lg:p-3 lg:mt-8 rounded-md hover:bg-cyan-600 bg-slate-800 hover:border-cyan-800 transition  ease-out duration-300 `}
+          border-[2px] border-cyan-700 p-2 mt-4 text-sm md:text-lg  lg:text-xl lg:p-3 lg:mt-8 rounded-md hover:bg-cyan-600 bg-slate-800 hover:border-cyan-800 transition  ease-out duration-300 `}
           >
             {text.presentation.button}
             <span className="group-hover:animate-bounce">

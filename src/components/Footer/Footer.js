@@ -4,7 +4,7 @@ import git from "../../images/433-github.svg";
 import Form from "./Form";
 import linked from "../../images/353417.svg";
 import curriculum from "../../icons/icons8-curriculum-64.png";
-import curriculumPDF from "../../images/cv-actual.pdf";
+import curriculumPDF from "../../images/cv.pdf";
 
 import { useInsertionEffect } from "../../hooks/useIntersection";
 import TranslationContext from "../../TraslationContext";
