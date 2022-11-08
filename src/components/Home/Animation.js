@@ -22,7 +22,16 @@ function Animation({ visible }) {
   const { width } = useWidth();
 
   useEffect(() => {
-    const color2 = new Color(0x1e293b);
+    let color2;
+    if (
+      localStorage.theme === "dark" ||
+      (!("theme" in localStorage) &&
+        window.matchMedia("(prefers-color-scheme: dark)").matches)
+    ) {
+      color2 = new Color(0x18181b);
+    } else {
+      color2 = new Color(0x1e293b);
+    }
     const color3 = new Color("rgb(75, 84, 98)");
     const scene = new Scene();
     scene.background = color2;
@@ -111,7 +120,7 @@ function Animation({ visible }) {
         }}
       ></div> */}
 
-      <canvas id="bg" className="absolute h-[100%] w-[100%] -z-10"></canvas>
+      <canvas id="bg" className="absolute h-[100%] w-[100%] -z-10 "></canvas>
     </>
   );
 }

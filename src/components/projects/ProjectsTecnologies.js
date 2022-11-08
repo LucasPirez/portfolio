@@ -1,6 +1,6 @@
-function ProjectsTecnologies({ setSelect, select }) {
+function ProjectsTecnologies({ setSelect, select, text }) {
   return (
-    <div className="flex flex-col relative  h-[10vh] w-[90%] lg:w-[65vw] md:w-[720px] animate-[startRight_1.2s_ease-out]  text-base  sm:text-xl md:text-2xl">
+    <div className="flex flex-col relative  h-[10vh] w-[90%] lg:w-[65vw] md:w-[720px] animate-[startRight_1.2s_ease-out]  text-base  sm:text-xl md:text-2xl dark:text-slate-200 bg-slate-100 dark:bg-zinc-900 ">
       <div
         className={`${
           select === 1
@@ -20,7 +20,7 @@ function ProjectsTecnologies({ setSelect, select }) {
           onClick={() => setSelect(1)}
           className="w-[25%] h-fit  text-center hover:scale-110 transform cursor-pointer transition-all  "
         >
-          <p>All</p>
+          <p>{text.all}</p>
         </div>
         <div
           onClick={() => setSelect(2)}

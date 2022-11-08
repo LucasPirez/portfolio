@@ -14,6 +14,12 @@ export const translation = {
   en: {
     buttonProjects: "Read More",
     tecnologies: "TECNOLOGIES",
+    projects: "Projects",
+    theme: "Theme",
+    light: "Light",
+    dark: "Dark",
+    default: "default",
+    all: "All",
     header: {
       home: "Home",
       about: "About",
@@ -22,7 +28,7 @@ export const translation = {
     },
     presentation: {
       title: "Hello, I'm ",
-      subTitle: "I'm a full-stack web developer.",
+      subTitle: "I'm  full-stack web developer.",
       button: "View my work.",
     },
     contact: {
@@ -65,7 +71,12 @@ export const translation = {
   es: {
     buttonProjects: "Ver Mas",
     tecnologies: "TECNOLOGIAS",
-
+    projects: "Proyectos",
+    theme: "Tema",
+    light: "Claro",
+    dark: "Oscuro",
+    default: "Predeterminado",
+    all: "Todos",
     header: {
       home: "Inicio",
       about: "Acerca",
@@ -74,7 +85,7 @@ export const translation = {
     },
     presentation: {
       title: "Hola, soy ",
-      subTitle: "Soy full-stack web developer.",
+      subTitle: " full-stack web developer.",
       button: "ver mis proyectos.",
     },
     contact: {

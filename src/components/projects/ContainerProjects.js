@@ -8,7 +8,7 @@ function ContainerProjects({ children, select, number, imgSrc, title }) {
           ? "transform translate-x-0 relative "
           : "transform -translate-x-[1400px] absolute left-0"
       } group w-80 h-72  flex justify-center items-center m-2  text-center bg-slate-200   transition-all duration-700 border-2 border-slate-500
-      rounded-md  shadow-md shadow-cyan-800`}
+      rounded-md  shadow-md shadow-cyan-800 dark:opacity-80 dark:border-2 dark:border-cyan-500 dark:shadow-md dark:shadow-cyan-500`}
     >
       <img
         src={imgSrc}

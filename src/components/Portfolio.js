@@ -11,28 +11,27 @@ import { getImages } from "../firebase/client";
 const About = lazy(() => import("./About/About"));
 
 const Port = () => {
-  const [containerRef, visible, animationStart, nameCurrent] =
-    useInsertionEffect({
-      root: null,
-      rootMargin: "0px",
-      threshold: 0.5,
-    });
+  // const [containerRef, visible, animationStart, nameCurrent] =
+  //   useInsertionEffect({
+  //     root: null,
+  //     rootMargin: "0px",
+  //     threshold: 0.5,
+  //   });
   const [navName, setNavName] = useState("home");
-  // const [link, setLink] = useState(null);
-  // const [width, setwidth] = useState(window.innerWidth);
+
   const [nav, setNav] = useState(false);
 
   const changeNav = () => {
     setNav(false);
   };
 
-  useEffect(() => {
-    window.addEventListener("scroll", changeNav);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", changeNav);
 
-    return () => {
-      window.removeEventListener("scroll", changeNav);
-    };
-  }, []);
+  //   return () => {
+  //     window.removeEventListener("scroll", changeNav);
+  //   };
+  // }, []);
 
   return (
     <div
@@ -40,7 +39,7 @@ const Port = () => {
       onClick={() => (nav === true ? setNav(false) : "")}
     >
       <div className="w-full h-3 bg-transparent absolute"></div>
-      <Home setNavName={setNavName} navName={navName} />
+      <Home setNavName={setNavName} navName={navName} nav={nav} />
       <Header navName={navName} nav={nav} setNav={setNav} />
       <Suspense fallback={<p>hola</p>}>
         <About setNavName={setNavName} />

@@ -11,8 +11,10 @@ import ProjectsTecnologies from "./ProjectsTecnologies";
 import ButtonRead from "./ButtonRead";
 import ContainerProjects from "./ContainerProjects";
 import useWidth from "../../hooks/useWidth";
+import TranslationContext from "../../TraslationContext";
 
 export default function Projects({ setNavName }) {
+  const { text } = useContext(TranslationContext);
   const { width } = useWidth();
   const [select, setSelect] = useState(1);
   const [close, setClose] = useState(false);
@@ -43,15 +45,19 @@ export default function Projects({ setNavName }) {
     <div
       id="portfolio"
       title="projects"
-      className="relative flex flex-col w-full h-[100vh]  items-center   pt-[10vh] "
+      className="relative flex flex-col  max-w-[1500px] m-auto h-[100vh] items-center dark:border-t-2 dark:border-t-cyan-700  pt-[10vh]  dark:bg-zinc-900 dark:shadow-lg dark:shadow-zinc-400 pb-36 box-content -mb-36"
       ref={containerRef}
     >
       {(animationStart || width < 600) && (
         <>
-          <h3 className="  lg:text-6xl sm:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-bl from-cyan-500 to-cyan-800 mb-10 animate-[startLeft_1.2s_ease-out]">
-            Projects
+          <h3 className="lg:text-6xl sm:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-bl from-cyan-500 to-cyan-800 mb-10 animate-[startLeft_1.2s_ease-out] dark:from-cyan-300 dark:to-[#a09a9a]">
+            {text.projects}
           </h3>
-          <ProjectsTecnologies setSelect={setSelect} select={select} />
+          <ProjectsTecnologies
+            setSelect={setSelect}
+            select={select}
+            text={text}
+          />
           <div
             onClick={outside}
             className="flex flex-col items-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto lg:w-[85vw] md:w-[80vw] w-[95vw] animate-[opacity_2s_linear]"

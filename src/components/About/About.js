@@ -26,11 +26,11 @@ function About({ setNavName }) {
         id="about"
         ref={containerRef}
         title="about"
-        className="relative max-w-[1500px] m-auto h-auto min-h-screen flex flex-col xl:flex-row items-center lg:justify-around mt-10 "
+        className="relative max-w-[1500px] m-auto h-auto min-h-[100vh] flex flex-col xl:flex-row items-center lg:justify-around dark:bg-zinc-900 dark:shadow-lg dark:shadow-zinc-400 pt-[13vh] "
       >
         {(animationStart || width < 600) && (
           <>
-            <h3 className="absolute top-0 lg:text-6xl sm:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-bl from-cyan-500 to-[#f09a9a] mb-10  animate-[startRight_1.2s_ease-out]">
+            <h3 className="absolute top-[10vh] lg:text-6xl sm:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-bl from-cyan-500 to-[#f09a9a] dark:from-cyan-300 dark:to-[#a09a9a] mb-10  animate-[startRight_1.2s_ease-out]">
               {text.header.about}
             </h3>
 
@@ -42,7 +42,7 @@ function About({ setNavName }) {
                   className="w-[300px] h-[300px] rounded-full m-10"
                 />
 
-                <p className="mt-3 min-w-[350px] h-auto lg:w-[50%] lg:ml-4 w-[60%] text-center mb-8">
+                <p className="mt-3 min-w-[350px] h-auto lg:w-[50%] lg:ml-4 w-[60%] text-center mb-8 dark:text-slate-200 md:text-lg">
                   {text.about.about}
                 </p>
               </div>

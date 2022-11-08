@@ -75,7 +75,8 @@ const Form = () => {
         className=" flex flex-col m-auto items-center justify-center space-y-3 sm:text-lg text-base
          sm:w-96 w-[90%]  text-slate-200 last:items-end mt-7 animate-[startRight_1.2s_ease-out]"
       >
-        <div className="relative w-full ">
+        {/* name */}
+        <div className="relative w-full group ">
           <span className="text-xs text-right float-right text-rose-600 h-4 w-full">
             {errors.name}
           </span>
@@ -87,16 +88,20 @@ const Form = () => {
             required
             onBlur={(e) => handleBlur(e, 0)}
             onChange={(text) => setForm({ ...form, name: text.target.value })}
-            placeholder={text.contact.name}
-            className=" group p-1 pl-3 border-2 border-transparent  focus:outline-none focus:border-2  focus:border-cyan-500 rounded bg-slate-900 placeholder-slate-500 w-full shadow-sm
-            shadow-slate-400"
+            // placeholder={text.contact.name}
+            className="  p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-b-2  focus:border-b-cyan-700 rounded bg-slate-900 placeholder-slate-500 w-full 
+            "
           />
+          <span className="absolute top-6 left-2 opacity-80 transition duration-300">
+            {text.contact.name}
+          </span>
           {arrValidity.current[0] && (
             <span className="absolute top-6 right-2">
               <img src={verificacion} alt="" />
             </span>
           )}
         </div>
+        {/* email */}
         <div className="relative w-full">
           <span className="text-xs text-right float-right text-rose-600 h-4 w-full">
             {errors.email}
@@ -108,34 +113,36 @@ const Form = () => {
             onBlur={(e) => handleBlur(e, 1)}
             value={form.email}
             onChange={(text) => setForm({ ...form, email: text.target.value })}
-            placeholder={text.contact.email}
-            className="p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-2  focus:border-cyan-500 rounded bg-slate-900 placeholder-slate-500 w-full shadow-sm
-          shadow-slate-400"
+            className="p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-b-2  focus:border-b-cyan-700  rounded bg-slate-900 placeholder-slate-500 w-full"
           />
+          <span className="absolute top-6 left-2 opacity-80 transition-all duration-300">
+            {text.contact.email}
+          </span>
           {arrValidity.current[1] && (
-            <span className="absolute top-6 right-2">
+            <span className="absolute top-6 right-2 group-input:hover:text-red-200">
               <img src={verificacion} alt="" />
             </span>
           )}
         </div>
+        {/* message */}
         <div className="relative w-full">
           <span className="text-xs text-right float-right text-rose-600 h-4 w-full">
             {errors.messages}
           </span>
           <textarea
-            placeholder={text.contact.message}
             name="description"
             value={form.message}
-            minLength={20}
             onBlur={(e) => handleBlur(e, 2)}
             onChange={(text) =>
               setForm({ ...form, message: text.target.value })
             }
             required
-            className="p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-2  focus:border-cyan-500 rounded bg-slate-900 placeholder-slate-500 w-full shadow-sm
-          shadow-slate-400 "
+            className="p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-b-2  focus:border-b-cyan-700  rounded bg-slate-900 placeholder-slate-500 w-full  "
             maxLength={300}
           />
+          <span className="absolute top-6 left-2 opacity-80 transition-all duration-300">
+            {text.contact.message}
+          </span>
           {arrValidity.current[2] && (
             <span className="absolute top-6 right-2">
               <img src={verificacion} alt="" />
