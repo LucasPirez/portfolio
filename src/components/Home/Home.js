@@ -32,9 +32,9 @@ function Home({ setNavName, navName, nav }) {
         <Suspense fallback="">
           {width > 700 && <Animation visible={visible} />}
         </Suspense>
-        <div className="fixed top-[0.50rem]  left-4 m-4 z-20 flex ">
+        <div className="fixed top-[0.50rem]  left-4 m-4 z-20 md:flex ">
           <select
-            className="text-xs md:text-base bg-zinc-900 rounded-2xl px-2 border-2 border-cyan-700 cursor-pointer p-1  hover:border-2  hover:scale-105 transition-all duration-300 hover:border-cyan-700 text-slate-200  mr-2 dark:hover:border-cyan-700 dark:text-slate-200 h-8"
+            className="text-xs md:text-base bg-zinc-900 rounded-2xl px-2 border-2 border-cyan-700 cursor-pointer p-1  hover:border-2  hover:scale-105 transition-all duration-300 hover:border-cyan-700 text-slate-200  mr-2 mb-2 dark:hover:border-cyan-700 dark:text-slate-200 h-8"
             onChange={(e) => handleLanguaje(e.target.value)}
           >
             <option value="en">English</option>

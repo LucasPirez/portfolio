@@ -21,7 +21,7 @@ export default function Header({ navName, nav, setNav }) {
           className={`${
             nav !== false
               ? " h-[130px] bg-slate-800 w-full"
-              : "h-[10vh] bg-transparent md:bg-slate-800 w-full dark:md:bg-zinc-800 dark:border-b-2 dark:border-cyan-700"
+              : "h-[10vh] bg-transparent md:bg-slate-800 w-full dark:md:bg-zinc-800 dark:md:border-b-2 dark:md:border-cyan-700"
           } flex  transition-all  justify-end md:[10vh] w-full  items-center z-10 `}
         >
           <ul

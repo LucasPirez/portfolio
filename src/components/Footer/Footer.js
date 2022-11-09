@@ -29,7 +29,7 @@ function Footer({ setNavName }) {
       title="footer"
       className="w-full  h-auto "
     >
-      <div className="w-[100%]  h-[5vw] z-50 relative ">
+      <div className="w-[100%]  h-[5vw]  relative ">
         <div className=" absolute  left-0 top-0 pb-1  border-l-[51vw] border-r-[51vw] border-t-[5vw] border-t-transparent border-r-transparent border-l-slate-800 dark:border-l-slate-800"></div>
         <div className=" absolute right-0 top-0 pb-1   border-l-[49vw] border-r-[49vw] border-t-[5vw] border-t-transparent border-l-transparent border-r-slate-800 dark:border-r-slate-800"></div>
       </div>
