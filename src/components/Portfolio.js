@@ -25,13 +25,13 @@ const Port = () => {
     setNav(false);
   };
 
-  // useEffect(() => {
-  //   window.addEventListener("scroll", changeNav);
+  useEffect(() => {
+    window.addEventListener("scroll", changeNav);
 
-  //   return () => {
-  //     window.removeEventListener("scroll", changeNav);
-  //   };
-  // }, []);
+    return () => {
+      window.removeEventListener("scroll", changeNav);
+    };
+  }, []);
 
   return (
     <div
