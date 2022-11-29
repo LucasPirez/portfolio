@@ -7,6 +7,12 @@
 .firebase
 .firebaserc
 firebase.json
+AgregarValorDeInput.js
+ContextPrueba.js
+Portal.js
+Prueba.js
+Prueba2.js
+Prueba3.js
 
 # testing
 /coverage

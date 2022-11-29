@@ -79,7 +79,7 @@ export default function Header({ navName, nav, setNav }) {
           <div
             className={`${
               nav === false ? "flex" : "hidden "
-            } text-slate-200 md:hidden mr-4 flex-col justify-center space-y-[6px] cursor-pointer h-auto
+            } text-slate-200 md:hidden mr-4 flex-col justify-center space-y-[6px] cursor-pointer h-auto border-2 border-cyan-800 p-1 rounded-sm  
           `}
             onClick={() => setNav(true)}
           >

@@ -27,7 +27,7 @@ function Footer({ setNavName }) {
       id="footer"
       ref={containerRef}
       title="footer"
-      className="w-full  h-auto "
+      className="w-full  h-auto min-h-[400px]"
     >
       <div className="w-[100%]  h-[5vw]  relative ">
         <div className=" absolute  left-0 top-0 pb-1  border-l-[51vw] border-r-[51vw] border-t-[5vw] border-t-transparent border-r-transparent border-l-slate-800 dark:border-l-slate-800"></div>
