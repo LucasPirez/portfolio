@@ -1,6 +1,4 @@
-import "./App.css";
 import Port from "./components/Portfolio";
-import Prueba from "./Prueba";
 import { TraslationProvider } from "./TraslationContext";
 
 function App() {
@@ -8,8 +6,6 @@ function App() {
     <div className=" sm:w-full ">
       <TraslationProvider>
         <Port />
-
-        {/* <Prueba /> */}
       </TraslationProvider>
     </div>
   );

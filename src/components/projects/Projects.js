@@ -45,7 +45,7 @@ export default function Projects({ setNavName }) {
     <div
       id="portfolio"
       title="projects"
-      className="relative flex flex-col  max-w-[1500px] m-auto h-[100vh] items-center dark:border-t-2 dark:border-t-cyan-700  pt-[10vh]  dark:bg-zinc-900 dark:shadow-lg dark:shadow-zinc-400 pb-36 box-content -mb-36"
+      className="relative flex flex-col  max-w-[1500px] m-auto h-[100vh] items-center border-t-2 border-t-cyan-700  pt-[10vh]  dark:bg-zinc-900 bg-zinc-200 shadow-lg shadow-zinc-400 pb-36 box-content -mb-36"
       ref={containerRef}
     >
       {(animationStart || width < 600) && (

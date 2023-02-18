@@ -21,10 +21,39 @@
     overflow-x: hidden;
   }
 
-  body {
+  /* body {
     @apply bg-slate-100 dark:bg-zinc-900;
-  }
+  } */
+  /* sobre escribo clase de arriba  bg-zinc-900*/
+  @layer components {
+    .bg-zinc-300 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(241 245 249 / var(--tw-bg-opacity));
+      background-image: conic-gradient(
+        transparent 42deg,
+        #efefef30 45deg,
+        #efefef60 90deg,
+        transparent 93deg
+      );
 
+      background-position: 0 0, 1px 1px;
+      background-size: 20px 20px;
+    }
+
+    .dark .dark\:bg-zinc-900 {
+      --tw-bg-opacity: 1;
+      background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+      background-image: conic-gradient(
+        transparent 42deg,
+        #3d3d3d 45deg,
+        #0d0d0d 90deg,
+        transparent 93deg
+      );
+
+      background-position: 0 0, 1px 1px;
+      background-size: 20px 20px;
+    }
+  }
   input:focus + span,
   textarea:focus + span,
   input:valid + span,
@@ -32,6 +61,7 @@
     @apply text-cyan-500 -translate-y-8 opacity-100;
   }
 }
+
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

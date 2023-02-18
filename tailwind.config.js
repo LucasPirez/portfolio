@@ -34,14 +34,13 @@ module.exports = {
         },
 
         startLeft: {
-          "0%": { transform: "translate(-800px)" },
-          "30%": { transform: "translate(-100px)" },
-          "100%": { transform: "translate(0)" },
+          "0%": { transform: "translate(-400px)", opacity: 0 },
+
+          "100%": { transform: "translate(0)", opacity: 1 },
         },
         startRight: {
-          "0%": { transform: "translate(800px)" },
-          "30%": { transform: "translate(100px)" },
-          "100%": { transform: "translate(0)" },
+          "0%": { transform: "translate(400px)", opacity: 0 },
+          "100%": { transform: "translate(0)", opacity: 1 },
         },
         opacity: {
           "0%": { opacity: "0" },
@@ -56,3 +55,13 @@ module.exports = {
   },
 };
 //
+// startLeft: {
+//         "0%": { transform: "translate(-800px)" },
+//         "30%": { transform: "translate(-100px)" },
+//         "100%": { transform: "translate(0)" },
+//       },
+// startRight: {
+//         "0%": { transform: "translate(800px)" },
+//         "30%": { transform: "translate(100px)" },
+//         "100%": { transform: "translate(0)" },
+//       },

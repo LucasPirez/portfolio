@@ -1,8 +1,6 @@
 import { useState, useEffect, lazy, Suspense } from "react";
 // import About from "./About/About";
-import TranslationContext from "../TraslationContext";
 import Projects from "./projects/Projects";
-import { useInsertionEffect } from "../hooks/useIntersection";
 import Footer from "./Footer/Footer";
 import Home from "./Home/Home";
 import Header from "./About/Header";
@@ -11,12 +9,6 @@ import { getImages } from "../firebase/client";
 const About = lazy(() => import("./About/About"));
 
 const Port = () => {
-  // const [containerRef, visible, animationStart, nameCurrent] =
-  //   useInsertionEffect({
-  //     root: null,
-  //     rootMargin: "0px",
-  //     threshold: 0.5,
-  //   });
   const [navName, setNavName] = useState("home");
 
   const [nav, setNav] = useState(false);
@@ -38,13 +30,15 @@ const Port = () => {
       className="scroll-smooth"
       onClick={() => (nav === true ? setNav(false) : "")}
     >
-      <div className="w-full h-3 bg-transparent absolute"></div>
+      <div className="w-full h-3 bg-transparent absolute "></div>
       <Home setNavName={setNavName} navName={navName} nav={nav} />
       <Header navName={navName} nav={nav} setNav={setNav} />
-      <Suspense fallback={<p>hola</p>}>
-        <About setNavName={setNavName} />
-      </Suspense>
-      <Projects setNavName={setNavName} />
+      <div className="bg-zinc-300 dark:bg-zinc-800 ">
+        <Suspense fallback={<p>hola</p>}>
+          <About setNavName={setNavName} />
+        </Suspense>
+        <Projects setNavName={setNavName} />
+      </div>
       <Footer setNavName={setNavName} />
     </div>
   );

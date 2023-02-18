@@ -88,7 +88,6 @@ const Form = () => {
             required
             onBlur={(e) => handleBlur(e, 0)}
             onChange={(text) => setForm({ ...form, name: text.target.value })}
-            // placeholder={text.contact.name}
             className="  p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-b-2  focus:border-b-cyan-700 rounded bg-slate-900 placeholder-slate-500 w-full 
             "
           />
