@@ -31,13 +31,13 @@
       background-color: rgb(241 245 249 / var(--tw-bg-opacity));
       background-image: conic-gradient(
         transparent 42deg,
-        #efefef30 45deg,
-        #efefef60 90deg,
+        #1e293b50 45deg,
+        #06b6d460 90deg,
         transparent 93deg
       );
 
       background-position: 0 0, 1px 1px;
-      background-size: 20px 20px;
+      background-size: 3px 3px;
     }
 
     .dark .dark\:bg-zinc-900 {

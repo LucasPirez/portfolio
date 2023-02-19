@@ -4,7 +4,6 @@ import Projects from "./projects/Projects";
 import Footer from "./Footer/Footer";
 import Home from "./Home/Home";
 import Header from "./About/Header";
-import { getImages } from "../firebase/client";
 
 const About = lazy(() => import("./About/About"));
 

@@ -37,8 +37,8 @@ function About({ setNavName }) {
             <div className="mt-12 lg:mt-0 center h-auto md:w-[92%] xl:w-[65%] flex flex-col justify-center items-center  animate-[startLeft_1.2s_ease-out] xl:self-start xl:mt-20">
               <div className="flex flex-col md:flex-row items-center  ">
                 <div
-                  className="w-[350px]  m-10 rounded-t-full rounded-b-md shadow-lg  shadow-zinc-500 bg-gradient-to-t from-cyan-500
-                  to-[#f09a9a] bg-opacity-90 dark:from-cyan-300 dark:to-[#a09a9a] "
+                  className="w-[350px]  m-10 rounded-t-full rounded-b-md shadow-lg  shadow-zinc-500 bg-gradient-to-t from-[#06b6d460]
+                  to-zinc-200 bg-opacity-90 dark:from-cyan-300 dark:to-[#a09a9a] "
                 >
                   <img src={linked} alt="perfil" className="pl-2" />
                 </div>

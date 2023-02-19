@@ -4,6 +4,7 @@ import ArrowDown from "../../icons/ArrowDown";
 import { useInsertionEffect } from "../../hooks/useIntersection";
 import useWidth from "../../hooks/useWidth";
 import Theme from "../About/Theme";
+import GmailIcon from "../../icons/GmailIcon";
 
 const Animation = lazy(() => import("./Animation"));
 
@@ -50,17 +51,19 @@ function Home({ setNavName, navName, nav }) {
             </strong>
           </h3>
           <h4>{text.presentation.subTitle}</h4>
-
-          <a
-            href="#about"
-            className={`group relative inline-flex
-          border-[2px] border-cyan-700 p-2 mt-4 text-sm md:text-lg  lg:text-xl lg:p-3 lg:mt-8 rounded-md hover:bg-cyan-600 bg-slate-800  hover:border-cyan-800 transition  ease-out duration-300 dark:bg-zinc-800 dark:border-cyan-600 dark:hover:bg-cyan-800`}
-          >
-            {text.presentation.button}
-            <span className="group-hover:animate-bounce">
-              <ArrowDown />
-            </span>
-          </a>
+          <div className="flex justify-center items-center">
+            <a
+              href="#about"
+              className={`group relative inline-flex
+              border-[2px] border-cyan-700 p-2 mt-4 text-sm md:text-lg  lg:text-xl lg:p-3 lg:mt-8 rounded-md hover:bg-cyan-600 bg-slate-800  hover:border-cyan-800 transition  ease-out duration-300 dark:bg-zinc-800 dark:border-cyan-600 dark:hover:bg-cyan-800`}
+            >
+              {text.presentation.button}
+              <span className="group-hover:animate-bounce">
+                <ArrowDown />
+              </span>
+            </a>
+            <GmailIcon className="relative ml-4" />
+          </div>
         </div>
       </div>
     </>
