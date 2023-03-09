@@ -9,25 +9,22 @@
   color: #fff;
   background: linear-gradient(to bottom, #024954, #06b6d4);
   font-weight: bold;
-  padding: 0.7rem;
-  padding-left: 0;
-  padding-right: 0;
+  height: 55px;
   margin: 0.8rem;
   transition: all 0.3s;
-  border-radius: 6%;
+  border-radius: 20px;
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
     rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
     rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
-  /* --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
-  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
-  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000),
-    var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow); */
 }
 .tecnologi > li:hover {
   color: #f09a9a;
   transition: 0.5s;
 }
 
+.tecnologi > li > :global(svg) {
+  transform: scale(0.85);
+}
 .a {
   animation: rot 3s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
   animation-delay: 600ms;
@@ -37,24 +34,24 @@
   animation-delay: 900ms;
 }
 .b::after {
-  content: "";
+  content: '';
 
   animation: name 25s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
   animation-delay: 1200ms;
-  content: "Bootstrap";
+  content: 'Bootstrap';
 }
 
 @keyframes name {
   0% {
   }
   25% {
-    content: "Tailwind";
+    content: 'Tailwind';
   }
   50% {
-    content: "SCSS";
+    content: 'SCSS';
   }
   100% {
-    content: "Bootstrap";
+    content: 'Bootstrap';
   }
 }
 
@@ -90,9 +87,9 @@
     transform: rotateY(0);
   }
 }
-@media (max-width: 1024px) {
+@media (max-width: 1280px) {
   .tecnologi > li {
-    padding: 0.6rem;
+    height: 48px;
     font-size: 0.85rem;
     margin: 2px;
     width: 160px;
@@ -106,9 +103,10 @@
 
 @media (max-width: 640px) {
   .tecnologi > li {
-    padding: 0.6rem;
+    height: 35px;
     margin: 2px;
     width: 150px;
+    border-radius: 5px;
     font-size: 0.7rem;
   }
   .tecnologi > li > :global(svg) {

@@ -1,51 +1,51 @@
-import { useState, useEffect, useContext } from "react";
-import cap from "../../images/captura-calculator.jpeg";
-import imgGym from "../../images/img-django.webp";
-import tw from "../../images/tweeter1.webp";
-import cryptoMain from "../../images/cripto/img-crypto-main.webp";
-import mobileCrypto from "../../images/cripto/mobile-table.webp";
-import ModalChildren from "./ModalChildren";
-import { ModalPortal } from "./ModalPortal";
-import { useInsertionEffect } from "../../hooks/useIntersection";
-import ProjectsTecnologies from "./ProjectsTecnologies";
-import ButtonRead from "./ButtonRead";
-import ContainerProjects from "./ContainerProjects";
-import useWidth from "../../hooks/useWidth";
-import TranslationContext from "../../TraslationContext";
+import { useState, useEffect, useContext } from 'react'
+import cap from '../../images/captura-calculator.jpeg'
+import imgGym from '../../images/img-django.webp'
+import tw from '../../images/tweeter1.webp'
+import cryptoMain from '../../images/cripto/img-crypto-main.webp'
+import mobileCrypto from '../../images/cripto/mobile-table.webp'
+import ModalChildren from './ModalChildren'
+import { ModalPortal } from './ModalPortal'
+import { useInsertionEffect } from '../../hooks/useIntersection'
+import ProjectsTecnologies from './ProjectsTecnologies'
+import ButtonRead from './ButtonRead'
+import ContainerProjects from './ContainerProjects'
+import useWidth from '../../hooks/useWidth'
+import TranslationContext from '../../TraslationContext'
 
 export default function Projects({ setNavName }) {
-  const { text } = useContext(TranslationContext);
-  const { width } = useWidth();
-  const [select, setSelect] = useState(1);
-  const [close, setClose] = useState(false);
-  const [modalSelect, setmodalSelect] = useState(null);
+  const { text } = useContext(TranslationContext)
+  const { width } = useWidth()
+  const [select, setSelect] = useState(1)
+  const [close, setClose] = useState(false)
+  const [modalSelect, setmodalSelect] = useState(null)
   const [containerRef, visible, animationStart, nameCurrent] =
     useInsertionEffect({
       root: null,
-      rootMargin: "0px",
-      threshold: 0.3,
-    });
+      rootMargin: '0px',
+      threshold: 0.3
+    })
 
   useEffect(() => {
-    visible && setNavName(nameCurrent);
-  }, [visible]);
+    visible && setNavName(nameCurrent)
+  }, [visible])
 
   const inside = (e) => {
-    setClose(true);
+    setClose(true)
 
-    e.stopPropagation();
-  };
+    e.stopPropagation()
+  }
 
   const outside = (e) => {
-    setClose(false);
-    e.stopPropagation();
-  };
+    setClose(false)
+    e.stopPropagation()
+  }
 
   return (
     <div
       id="portfolio"
       title="projects"
-      className="relative flex flex-col  max-w-[1500px] m-auto h-[100vh] items-center border-t-2 border-t-cyan-700  pt-[10vh]  dark:bg-zinc-900 bg-zinc-200 shadow-lg shadow-zinc-400 pb-36 box-content -mb-36"
+      className="relative flex flex-col  max-w-[1500px] m-auto h-[100vh] items-center border-t-2 border-t-cyan-700  pt-[10vh]  background_black bg-zinc-200 shadow-lg shadow-zinc-400 pb-36 box-content -mb-36"
       ref={containerRef}
     >
       {(animationStart || width < 600) && (
@@ -123,18 +123,6 @@ export default function Projects({ setNavName }) {
                   strModal="gymApp"
                 />
               </ContainerProjects>
-              {/* <ContainerProjects
-                select={select}
-                number={[1, 4]}
-                imgSrc={cap}
-                title="calculator"
-              >
-                <ButtonRead
-                  setmodalSelect={setmodalSelect}
-                  inside={inside}
-                  strModal="calculator"
-                /> */}
-              {/* </ContainerProjects> */}
             </div>
 
             {close && (
@@ -150,5 +138,5 @@ export default function Projects({ setNavName }) {
         </>
       )}
     </div>
-  );
+  )
 }

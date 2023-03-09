@@ -40,12 +40,12 @@
       background-size: 3px 3px;
     }
 
-    .dark .dark\:bg-zinc-900 {
+    .dark .background_black {
       --tw-bg-opacity: 1;
       background-color: rgb(24 24 27 / var(--tw-bg-opacity));
       background-image: conic-gradient(
         transparent 42deg,
-        #3d3d3d 45deg,
+        #3d3d3d60 45deg,
         #0d0d0d 90deg,
         transparent 93deg
       );

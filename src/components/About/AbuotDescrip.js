@@ -3,12 +3,12 @@ import style from "./AboutDescrip.module.css";
 import TranslationContext from "../../TraslationContext";
 
 function AbuotDescrip() {
-  const { text, handleLanguaje } = useContext(TranslationContext);
+  const { text } = useContext(TranslationContext);
 
   return (
     <div className={style.containerDes}>
       <div
-        className={`${style.description1} ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md  hover:shadow-zinc-300 `}
+        className={`${style.description1} ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md hover:shadow-zinc-300 dark:bg-zinc-900`}
       >
         <h2 className={`${style.titleDescription} dark:text-cyan-500`}>
           {text.about.description1.title}
@@ -17,7 +17,7 @@ function AbuotDescrip() {
         <p>{text.about.description1.description}</p>
       </div>
       <div
-        className={`${style.description2} ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md  hover:shadow-zinc-300 `}
+        className={`${style.description2} ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md  hover:shadow-zinc-300 dark:bg-zinc-900`}
       >
         <h2 className={`${style.titleDescription} dark:text-cyan-500`}>
           {text.about.description2.title}
@@ -27,7 +27,7 @@ function AbuotDescrip() {
         <p>{text.about.description2.description}</p>
       </div>
       <div
-        className={`${style.description3} ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md  hover:shadow-zinc-300 `}
+        className={`${style.description3} ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md  hover:shadow-zinc-300 dark:bg-zinc-900`}
       >
         <h2 className={`${style.titleDescription} dark:text-cyan-500`}>
           {text.about.description3.title}
@@ -37,7 +37,7 @@ function AbuotDescrip() {
         <p>{text.about.description3.description}</p>
       </div>
       <div
-        className={`${style.description4} ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md  hover:shadow-zinc-300 `}
+        className={`${style.description4} ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md  hover:shadow-zinc-300 dark:bg-zinc-900`}
       >
         <h2 className={`${style.titleDescription} dark:text-cyan-500`}>
           {text.about.description4.title}

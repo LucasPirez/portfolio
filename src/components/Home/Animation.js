@@ -1,5 +1,5 @@
-import React, { useEffect } from "react";
-import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+import React, { useEffect } from 'react'
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls'
 import {
   Color,
   Scene,
@@ -14,100 +14,98 @@ import {
   Mesh,
   MathUtils,
   LineBasicMaterial,
-  Line,
-} from "three";
-import useWidth from "../../hooks/useWidth";
+  Line
+} from 'three'
+import useWidth from '../../hooks/useWidth'
 
 function Animation({ visible }) {
-  const { width } = useWidth();
+  const { width } = useWidth()
 
   useEffect(() => {
-    let color2;
+    let color2
     if (
-      localStorage.theme === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
+      localStorage.theme === 'dark' ||
+      (!('theme' in localStorage) &&
+        window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      color2 = new Color(0x18181b);
+      color2 = new Color(0x18181b)
     } else {
-      color2 = new Color(0x1e293b);
+      color2 = new Color(0x1e293b)
     }
-    const color3 = new Color("rgb(75, 84, 98)");
-    const scene = new Scene();
-    scene.background = color2;
+    const color3 = new Color('rgb(75, 84, 98)')
+    const scene = new Scene()
+    scene.background = color2
     const camera = new PerspectiveCamera(
       75,
       window.innerWidth / window.innerHeight,
       0.1,
       1000
-    );
+    )
     const renderer = new WebGLRenderer({
-      canvas: document.querySelector("#bg"),
-    });
+      canvas: document.querySelector('#bg')
+    })
 
-    renderer.setPixelRatio(window.devicePixelRatio);
-    renderer.setSize(window.innerWidth, window.innerHeight);
-    camera.position.setZ(30);
+    renderer.setPixelRatio(window.devicePixelRatio)
+    renderer.setSize(window.innerWidth, window.innerHeight)
+    camera.position.setZ(30)
 
-    renderer.render(scene, camera);
-    const pointLight = new PointLight();
-    pointLight.position.set(0, 0, 0);
+    renderer.render(scene, camera)
+    const pointLight = new PointLight()
+    pointLight.position.set(0, 0, 0)
 
-    const ambientLight = new AmbientLight({ color: 0x06b624 });
-    scene.add(pointLight, ambientLight);
+    const ambientLight = new AmbientLight({ color: 0x06b624 })
+    scene.add(pointLight, ambientLight)
 
-    const controls = new OrbitControls(camera, renderer.domElement);
-    controls.enabled = false;
+    const controls = new OrbitControls(camera, renderer.domElement)
+    controls.enabled = false
 
-    let point = [];
-    point.push(new Vector3(0, 0, 0));
-    point.push(new Vector3(0, 100, 100));
+    let point = []
+    point.push(new Vector3(0, 0, 0))
+    point.push(new Vector3(0, 100, 100))
 
-    // const ang = new BufferGeometry().setFromPoints(point);
-    // scene.add(ang);
-    if (visible) {
+    if (visible === 'home') {
       function addStar() {
-        const geometry = new SphereGeometry(0.1, 15, 2);
-        const material = new MeshStandardMaterial({ color: 0x06b6d4 });
-        const points = [];
-        console.log("addStar");
+        const geometry = new SphereGeometry(0.1, 15, 2)
+        const material = new MeshStandardMaterial({ color: 0x06b6d4 })
+        const points = []
+        console.log('addStar')
 
-        const star = new Mesh(geometry, material);
+        const star = new Mesh(geometry, material)
         const [x, y, z] = Array(3)
           .fill()
-          .map(() => MathUtils.randFloatSpread(60));
+          .map(() => MathUtils.randFloatSpread(60))
 
-        points.push(new Vector3(x, y, z));
-        points.push(new Vector3(0, 100, 0));
+        points.push(new Vector3(x, y, z))
+        points.push(new Vector3(0, 100, 0))
 
-        const lineMaterial = new LineBasicMaterial({ color: color3 });
-        const lineGeometry = new BufferGeometry().setFromPoints(points);
-        const line = new Line(lineGeometry, lineMaterial);
+        const lineMaterial = new LineBasicMaterial({ color: color3 })
+        const lineGeometry = new BufferGeometry().setFromPoints(points)
+        const line = new Line(lineGeometry, lineMaterial)
 
-        star.position.set(x, y, z);
+        star.position.set(x, y, z)
 
-        scene.add(line);
-        scene.add(star);
+        scene.add(line)
+        scene.add(star)
       }
 
-      Array(100).fill().forEach(addStar);
+      Array(100).fill().forEach(addStar)
 
-      let ani;
+      let ani
       function animate() {
-        if (!visible) return;
-        ani = window.requestAnimationFrame(animate);
+        if (visible !== 'home') return
+        ani = window.requestAnimationFrame(animate)
 
-        scene.rotation.y += 0.0005;
-        scene.scroll = false;
+        scene.rotation.y += 0.0005
+        scene.scroll = false
 
-        renderer.render(scene, camera);
+        renderer.render(scene, camera)
       }
 
-      animate();
+      animate()
 
-      return () => window.cancelAnimationFrame(ani);
+      return () => window.cancelAnimationFrame(ani)
     }
-  }, [visible, width]);
+  }, [visible, width])
 
   return (
     <>
@@ -122,7 +120,7 @@ function Animation({ visible }) {
 
       <canvas id="bg" className="absolute h-[100%] w-[100%] -z-10 "></canvas>
     </>
-  );
+  )
 }
 
-export default Animation;
+export default Animation

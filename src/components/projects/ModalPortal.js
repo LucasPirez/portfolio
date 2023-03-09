@@ -1,16 +1,16 @@
-import { useEffect } from "react";
-import ReactDOM from "react-dom";
+import { useEffect } from 'react'
+import ReactDOM from 'react-dom'
 
 export function ModalPortal({ children }) {
-  const portalNode = document.createElement("div");
+  const portalNode = document.createElement('div')
 
   useEffect(() => {
-    document.body.appendChild(portalNode);
+    document.body.appendChild(portalNode)
 
     return () => {
-      portalNode.remove();
-    };
-  }, [portalNode]);
+      portalNode.remove()
+    }
+  }, [portalNode])
 
-  return ReactDOM.createPortal(children, portalNode);
+  return ReactDOM.createPortal(children, portalNode)
 }
