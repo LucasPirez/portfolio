@@ -1,5 +1,4 @@
-import { useInsertionEffect } from '../../hooks/useIntersection'
-import { useContext, useState, useEffect } from 'react'
+import { useContext, useEffect } from 'react'
 import TranslationContext from '../../TraslationContext'
 
 export default function Header({ nav, setNav }) {
@@ -72,9 +71,7 @@ export default function Header({ nav, setNav }) {
                 href="#footer"
                 // onClick={() => setLink("footer")}
                 className={`${
-                  currentPage === 'FotterPrueba'
-                    ? 'text-cyan-500'
-                    : 'text-gray-200'
+                  currentPage === 'footer' ? 'text-cyan-500' : 'text-gray-200'
                 } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.3s_ease-in-out]`}
               >
                 {text.header.contact}

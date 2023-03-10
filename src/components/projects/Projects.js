@@ -1,4 +1,4 @@
-import { useState, useEffect, useContext } from 'react'
+import { useState, useContext } from 'react'
 import cap from '../../images/captura-calculator.jpeg'
 import imgGym from '../../images/img-django.webp'
 import tw from '../../images/tweeter1.webp'
@@ -6,7 +6,6 @@ import cryptoMain from '../../images/cripto/img-crypto-main.webp'
 import mobileCrypto from '../../images/cripto/mobile-table.webp'
 import ModalChildren from './ModalChildren'
 import { ModalPortal } from './ModalPortal'
-import { useInsertionEffect } from '../../hooks/useIntersection'
 import ProjectsTecnologies from './ProjectsTecnologies'
 import ButtonRead from './ButtonRead'
 import ContainerProjects from './ContainerProjects'
@@ -14,21 +13,11 @@ import useWidth from '../../hooks/useWidth'
 import TranslationContext from '../../TraslationContext'
 
 export default function Projects({ setNavName }) {
-  const { text } = useContext(TranslationContext)
+  const { text, animationStart } = useContext(TranslationContext)
   const { width } = useWidth()
   const [select, setSelect] = useState(1)
   const [close, setClose] = useState(false)
   const [modalSelect, setmodalSelect] = useState(null)
-  const [containerRef, visible, animationStart, nameCurrent] =
-    useInsertionEffect({
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.3
-    })
-
-  useEffect(() => {
-    visible && setNavName(nameCurrent)
-  }, [visible])
 
   const inside = (e) => {
     setClose(true)
@@ -46,9 +35,8 @@ export default function Projects({ setNavName }) {
       id="portfolio"
       title="projects"
       className="relative flex flex-col  max-w-[1500px] m-auto h-[100vh] items-center border-t-2 border-t-cyan-700  pt-[10vh]  background_black bg-zinc-200 shadow-lg shadow-zinc-400 pb-36 box-content -mb-36"
-      ref={containerRef}
     >
-      {(animationStart || width < 600) && (
+      {(animationStart.projects === true || width < 600) && (
         <>
           <h3 className="lg:text-6xl sm:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-bl from-cyan-500 to-cyan-800 mb-10 animate-[startLeft_1.2s_ease-out] dark:from-cyan-300 dark:to-[#a09a9a]">
             {text.projects}

@@ -1,12 +1,12 @@
-import { useState, useEffect, lazy, Suspense, useRef, useContext } from 'react'
-// import About from "./About/About";
-import Projects from './projects/Projects'
-import Footer from './Footer/Footer'
+import { useState, lazy, Suspense, useRef, useContext } from 'react'
 import Home from './Home/Home'
 import Header from './About/Header'
 import TranslationContext from '../TraslationContext'
+import Footer from './Footer/Footer'
+import { useInsertionEffect } from '../hooks/useIntersection'
 
 const About = lazy(() => import('./About/About'))
+const Projects = lazy(() => import('./projects/Projects'))
 
 const Port = () => {
   const [nav, setNav] = useState(false)
@@ -25,39 +25,11 @@ const Port = () => {
     containerProjects
   ]
 
-  const [visible, setVisible] = useState(false)
+  useInsertionEffect(arrayContainers, selectCurrentPage)
 
-  const callBack = (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        selectCurrentPage(entry.target.title)
-      }
-    })
-  }
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(callBack, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.3
-    })
-    arrayContainers.forEach((container) => {
-      if (container.current) {
-        observer.observe(container.current)
-      }
-    })
-
-    return () => {
-      arrayContainers.forEach((container) => {
-        if (container.current) {
-          observer.unobserve(container.current)
-        }
-      })
-    }
-  }, [visible])
   return (
     <div
-      className="scroll-smooth"
+      // className="scroll-smooth"
       onClick={() => (nav === true ? setNav(false) : '')}
     >
       {/* <div className="w-full h-3 bg-transparent absolute "></div> */}
@@ -73,7 +45,9 @@ const Port = () => {
           </Suspense>
         </div>
         <div ref={containerProjects} title="projects">
-          <Projects setNavName={setNavName} />
+          <Suspense fallback={<p> </p>}>
+            <Projects setNavName={setNavName} />
+          </Suspense>
         </div>
       </div>
       <div ref={containerFooter} title="footer">

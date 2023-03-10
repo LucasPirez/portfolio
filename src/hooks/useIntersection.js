@@ -1,30 +1,32 @@
-import { useRef, useState, useEffect } from "react";
+import { useEffect } from 'react'
 
-export const useInsertionEffect = (options) => {
-  const containerRef = useRef();
-
-  const [visible, setVisible] = useState(false);
-  const [animationStart, setAnimationStart] = useState(false);
-  const [nameCurrent, setNameCurrent] = useState(null);
-
+export const useInsertionEffect = (containers, intersecting) => {
   const callBack = (entries) => {
-    const [entry] = entries;
-
-    setVisible(entry.isIntersecting);
-
-    setNameCurrent(entry.target.title);
-  };
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        intersecting(entry.target.title)
+      }
+    })
+  }
 
   useEffect(() => {
-    visible && setAnimationStart(true);
-
-    const observer = new IntersectionObserver(callBack, options);
-    if (containerRef.current) observer.observe(containerRef.current);
+    const observer = new IntersectionObserver(callBack, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3
+    })
+    containers.forEach((container) => {
+      if (container.current) {
+        observer.observe(container.current)
+      }
+    })
 
     return () => {
-      if (containerRef.current) observer.unobserve(containerRef.current);
-    };
-  }, [containerRef, visible]);
-
-  return [containerRef, visible, animationStart, nameCurrent];
-};
+      containers.forEach((container) => {
+        if (container.current) {
+          observer.unobserve(container.current)
+        }
+      })
+    }
+  }, []) /* eslint-disable-line react-hooks/exhaustive-deps */
+}

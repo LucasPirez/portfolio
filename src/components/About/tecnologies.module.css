@@ -87,6 +87,12 @@
     transform: rotateY(0);
   }
 }
+.pausarAnimacion {
+  animation-play-state: paused;
+  -o-animation-play-state: paused;
+  -moz-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+}
 @media (max-width: 1280px) {
   .tecnologi > li {
     height: 48px;
