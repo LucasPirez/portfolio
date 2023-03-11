@@ -13,7 +13,7 @@ export const useInsertionEffect = (containers, intersecting) => {
     const observer = new IntersectionObserver(callBack, {
       root: null,
       rootMargin: '0px',
-      threshold: 0.3
+      threshold: 0.35
     })
     containers.forEach((container) => {
       if (container.current) {

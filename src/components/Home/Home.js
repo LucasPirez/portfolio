@@ -1,7 +1,6 @@
-import React, { useContext, useEffect, lazy, Suspense } from 'react'
+import React, { useContext, lazy, Suspense } from 'react'
 import TranslationContext from '../../TraslationContext'
 import ArrowDown from '../../icons/ArrowDown'
-import { useInsertionEffect } from '../../hooks/useIntersection'
 import useWidth from '../../hooks/useWidth'
 import Theme from '../About/Theme'
 import GmailIcon from '../../icons/GmailIcon'
@@ -11,15 +10,6 @@ const Animation = lazy(() => import('./Animation'))
 function Home() {
   const { width } = useWidth()
   const { text, handleLanguaje, currentPage } = useContext(TranslationContext)
-  // const [containerRef, visible, nameCurrent] = useInsertionEffect({
-  //   root: null,
-  //   rootMargin: '0px',
-  //   threshold: 0.4
-  // })
-
-  // useEffect(() => {
-  //   visible && setNavName(nameCurrent)
-  // }, [visible, setNavName, nameCurrent])
 
   return (
     <>

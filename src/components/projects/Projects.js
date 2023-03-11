@@ -12,7 +12,7 @@ import ContainerProjects from './ContainerProjects'
 import useWidth from '../../hooks/useWidth'
 import TranslationContext from '../../TraslationContext'
 
-export default function Projects({ setNavName }) {
+export default function Projects() {
   const { text, animationStart } = useContext(TranslationContext)
   const { width } = useWidth()
   const [select, setSelect] = useState(1)

@@ -21,10 +21,10 @@ const Tecnologies = () => {
       <h3 className="text-center lg:text-6xl sm:text-4xl text-3xl  font-bold bg-clip-text text-transparent bg-gradient-to-bl from-slate-500 to-slate-800  m-4 dark:from-cyan-400 dark:to-cyan-600">
         {text.tecnologies}
       </h3>
-      <div className="p-1  ">
+      <div className="p-1">
         <ul
           className={` ${style.tecnologi} grid xl:block grid-cols-2 sm:grid-cols-4  transition-all
-        text-center lg:w-[700px] xl:w-[300px] h-auto   sm:text-lg text-xs sm:p-2  p-1   rounded  `}
+        text-center lg:w-[700px] xl:w-[300px] h-auto   sm:text-lg text-xs sm:p-2  p-1   rounded `}
         >
           <li
             className={`${style.a} ${
@@ -69,7 +69,6 @@ const Tecnologies = () => {
               currentPage !== 'about' ? style.pausarAnimacion : ''
             } dark:shadow-xl dark:shadow-slate-700`}
           >
-            {' '}
             <Reactjs /> React
           </li>
           <li
@@ -77,7 +76,6 @@ const Tecnologies = () => {
               currentPage !== 'about' ? style.pausarAnimacion : ''
             } dark:shadow-xl dark:shadow-slate-700`}
           >
-            {' '}
             <Reactjs /> React Native
           </li>
           <li

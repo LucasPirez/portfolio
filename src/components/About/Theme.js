@@ -21,9 +21,7 @@ export default function Theme() {
   useEffect(() => {
     if (select === 'os') {
       localStorage.removeItem('theme')
-    }
-
-    if (select === 'light' || select === 'dark') {
+    } else {
       localStorage.setItem('theme', select)
     }
 
@@ -43,7 +41,7 @@ export default function Theme() {
     <>
       <div className="relative text-slate-200 ">
         <button
-          className="bg-zinc-900 rounded-2xl px-2 hover:scale-105 transition-all duration-300 h-8 border-2 border-cyan-700 z-30"
+          className="bg-zinc-900 rounded-2xl px-2 hover:scale-105 transition-all duration-300 h-8 border-2 border-cyan-700 z-30 "
           onClick={handleClick}
         >
           {select === 'os' ? (
@@ -90,7 +88,7 @@ export default function Theme() {
 
       {bool && (
         <div
-          className="h-[100vh] w-[100vw] -ml-40 top-0 -z-10 absolute"
+          className="h-[100vh] w-[100vw] -ml-10 top-0 -z-10 absolute"
           onClick={handleClick}
         ></div>
       )}
