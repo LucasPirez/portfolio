@@ -21,7 +21,6 @@ export default function Projects() {
 
   const inside = (e) => {
     setClose(true)
-
     e.stopPropagation()
   }
 
@@ -30,11 +29,14 @@ export default function Projects() {
     e.stopPropagation()
   }
 
+  const onSelect = (i) => {
+    setSelect(i)
+  }
+
   return (
     <div
       id="portfolio"
-      title="projects"
-      className="relative flex flex-col  max-w-[1500px] m-auto h-[100vh] items-center border-t-2 border-t-cyan-700  pt-[10vh]  background_black bg-zinc-200 shadow-lg shadow-zinc-400 pb-36 box-content -mb-36"
+      className="relative flex flex-col  max-w-[1500px] m-auto h-[100vh] items-center border-t-2 border-t-cyan-700  pt-[10vh]  background_black bg-zinc-200 shadow-lg shadow-zinc-400 pb-36 box-content -mb-36 "
     >
       {(animationStart.projects === true || width < 600) && (
         <>
@@ -42,13 +44,13 @@ export default function Projects() {
             {text.projects}
           </h3>
           <ProjectsTecnologies
-            setSelect={setSelect}
+            onSelect={onSelect}
             select={select}
             text={text}
           />
           <div
             onClick={outside}
-            className="flex flex-col items-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto lg:w-[85vw] md:w-[80vw] w-[95vw] animate-[opacity_2s_linear]"
+            className="flex flex-col items-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto lg:w-[85vw] md:w-[80vw] w-[95vw] animate-[opacity_2s_linear] scroll-modifier "
           >
             <div className="flex w-full relative  justify-center flex-wrap container max-w-[1180px] gap-[1.5vw]">
               <ContainerProjects

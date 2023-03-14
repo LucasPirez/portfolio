@@ -37,6 +37,7 @@ export default function Theme() {
       }
     }
   }, [select])
+
   return (
     <>
       <div className="relative text-slate-200 ">

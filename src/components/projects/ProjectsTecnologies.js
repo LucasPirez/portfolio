@@ -1,4 +1,4 @@
-function ProjectsTecnologies({ setSelect, select, text }) {
+function ProjectsTecnologies({ onSelect, select, text }) {
   return (
     <div className="flex flex-col relative  h-[10vh] w-[90%] lg:w-[65vw] md:w-[720px] animate-[startRight_1.2s_ease-out]  text-base  sm:text-xl md:text-2xl dark:text-slate-200 bg-transparent dark:bg-zinc-900 ">
       <div
@@ -17,25 +17,37 @@ function ProjectsTecnologies({ setSelect, select, text }) {
       ></div>
       <div className="w-full h-full flex">
         <div
-          onClick={() => setSelect(1)}
+          onClick={(e) => {
+            e.preventDefault()
+            onSelect(1)
+          }}
           className="w-[25%] h-fit  text-center hover:scale-110 transform cursor-pointer transition-all  "
         >
           <p>{text.all}</p>
         </div>
         <div
-          onClick={() => setSelect(2)}
+          onClick={(e) => {
+            e.preventDefault()
+            onSelect(2)
+          }}
           className="w-[25%] h-fit text-center hover:scale-110 transform cursor-pointer transition-all   "
         >
           <p>Reactjs</p>
         </div>
         <div
-          onClick={() => setSelect(3)}
+          onClick={(e) => {
+            e.preventDefault()
+            onSelect(3)
+          }}
           className="w-[25%] h-fit text-center hover:scale-110 transform cursor-pointer"
         >
           <p>React Native</p>
         </div>
         <div
-          onClick={() => setSelect(4)}
+          onClick={(e) => {
+            e.preventDefault()
+            onSelect(4)
+          }}
           className="w-[25%] h-fit text-center hover:scale-110 transform cursor-pointer "
         >
           <p>Django</p>
