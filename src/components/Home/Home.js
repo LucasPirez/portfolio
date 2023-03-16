@@ -13,7 +13,7 @@ function Home() {
 
   return (
     <>
-      <div className="absolute w-full h-[100vh] bg-slate-800 dark:bg-zinc-900 -z-20"></div>
+      {/* <div className="absolute w-full h-[100vh] bg-slate-800 dark:bg-zinc-900 -z-20"></div> */}
       <div
         id="home"
         title="home"
@@ -35,9 +35,7 @@ function Home() {
         <div className=" text-slate-100 dark:text-slate-300  text-lg sm:text-3xl md:text-5xl text-center  font-mono z-10">
           <h3 className=" text-slate-300 dark:text-slate-300">
             {text.presentation.title}
-            <strong className="text-rose-600 dark:text-rose-600">
-              Lucas Pirez.
-            </strong>
+            <strong className="text-rose-600">Lucas Pirez.</strong>
           </h3>
           <h4>{text.presentation.subTitle}</h4>
           <div className="flex justify-center mt-4 lg:mt-8">
