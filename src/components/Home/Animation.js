@@ -39,13 +39,17 @@ function Animation({ visible }) {
       -(event.clientY / window.innerHeight) * 2 + 1
     )
     const raycaster = new Raycaster()
+
     raycaster.setFromCamera(mouse, camera)
+
     const intersects = raycaster.intersectObjects(
       scene.children.filter((child) => child instanceof Line)
     )
 
     for (const intersect of intersects) {
       intersect.object.material.color.set(colorAnimation.current)
+      intersect.object.layers.mask = 9
+      console.log(intersect)
     }
 
     for (const child of scene.children.filter(
@@ -66,11 +70,11 @@ function Animation({ visible }) {
     ) {
       color2 = new Color(0x18181b)
       color3.current = new Color('#30343a')
-      colorAnimation.current = new Color(0x82222e)
+      colorAnimation.current = new Color(0x5b5e63)
     } else {
       color2 = new Color(0x1e293b)
       color3.current = new Color('rgb(75, 84, 98)')
-      colorAnimation.current = new Color('#ba223d')
+      colorAnimation.current = new Color('#646c78')
     }
 
     const renderer = new WebGLRenderer({
@@ -82,7 +86,6 @@ function Animation({ visible }) {
     renderer.setSize(window.innerWidth, window.innerHeight)
     camera.position.setZ(30)
 
-    renderer.render(scene, camera)
     const pointLight = new PointLight()
     pointLight.position.set(0, 0, 0)
 
@@ -140,7 +143,7 @@ function Animation({ visible }) {
 
       return () => window.cancelAnimationFrame(ani)
     }
-  }, [visible, width])
+  }, [visible, width]) /* eslint-disable-line react-hooks/exhaustive-deps */
 
   return (
     <>

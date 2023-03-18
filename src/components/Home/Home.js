@@ -13,7 +13,7 @@ function Home() {
 
   return (
     <>
-      {/* <div className="absolute w-full h-[100vh] bg-slate-800 dark:bg-zinc-900 -z-20"></div> */}
+      <div className="absolute w-full h-[100vh] bg-slate-800 dark:bg-zinc-900 -z-20"></div>
       <div
         id="home"
         title="home"
