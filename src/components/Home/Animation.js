@@ -49,7 +49,6 @@ function Animation({ visible }) {
     for (const intersect of intersects) {
       intersect.object.material.color.set(colorAnimation.current)
       intersect.object.layers.mask = 9
-      console.log(intersect)
     }
 
     for (const child of scene.children.filter(
@@ -148,7 +147,6 @@ function Animation({ visible }) {
   return (
     <>
       <canvas
-        // style={{ zIndex: 99 }}
         onMouseMove={onMouseMove}
         id="bg"
         className="absolute h-[100%] w-[100%]  "

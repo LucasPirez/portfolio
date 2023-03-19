@@ -1,12 +1,12 @@
-import { useState, useEffect } from "react";
-import { useContext } from "react";
-import ReactPlayer from "react-player";
-import TranslationContext from "../../TraslationContext";
-import ButtonModal from "./ButtonModal";
+import { useState, useEffect } from 'react'
+import { useContext } from 'react'
+import ReactPlayer from 'react-player'
+import TranslationContext from '../../TraslationContext'
+import ButtonModal from './ButtonModal'
 
 export default function ModalChildren({ modalSelect, inside, outside }) {
-  const [carousel, setCarousel] = useState(0);
-  const { text, handleLanguaje } = useContext(TranslationContext);
+  const [carousel, setCarousel] = useState(0)
+  const { text, handleLanguaje } = useContext(TranslationContext)
   // const [selectText, setSelectText] = useState(text.modal[modalSelect]);
   const {
     images: img,
@@ -14,31 +14,31 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
     title,
     description,
     repositorie,
-    deploy,
-  } = text.modal[modalSelect];
-  const [images, setImages] = useState([]);
-  const [video, setVideo] = useState(undefined);
-  const [long, setLong] = useState(null);
+    deploy
+  } = text.modal[modalSelect]
+  const [images, setImages] = useState([])
+  const [video, setVideo] = useState(undefined)
+  const [long, setLong] = useState(null)
 
-  console.log(text.modal);
+  console.log(text.modal)
 
   useEffect(() => {
-    console.log("hea");
-    setImages(img);
-    setVideo(vid);
+    console.log('hea')
+    setImages(img)
+    setVideo(vid)
 
-    video !== undefined ? setLong(images.length + 1) : setLong(images.length);
-  }, [text.modal[modalSelect], images]);
+    video !== undefined ? setLong(images.length + 1) : setLong(images.length)
+  }, [text.modal[modalSelect], images])
 
-  console.log(carousel);
+  console.log(carousel)
   return (
     <div
       id="divModal"
-      className="fixed flex justify-center  top-2  w-[100%] h-auto bg-transparent animate-[back_0.4s_linear] z-10 "
+      className="fixed flex justify-center  top-0  w-[100%] h-auto bg-transparent animate-[back_0.4s_linear] z-10 "
     >
       <div
         onClick={inside}
-        className="max-w-[800px] md:h-[700px] h-auto border-2 rounded opacity-78 relative text-red-50 bg-white dark:bg-zinc-900 "
+        className="max-w-[800px] md:h-[700px] max-h-[100vh] border-2 rounded opacity-78 relative text-red-50 bg-white dark:bg-zinc-900 "
       >
         <div className="flex  w-[100%] md:h-[70%] h-[45vh] bg-slate-400 relative dark:opacity-80">
           {images &&
@@ -55,7 +55,7 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
                   />
                 </div>
               ) : (
-                ""
+                ''
               )
             )}
           {video && carousel === long - 1 ? (
@@ -64,7 +64,7 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
               <ReactPlayer url={video} width="100%" height="100%" />
             </>
           ) : (
-            ""
+            ''
           )}
         </div>
         <ButtonModal
@@ -79,8 +79,8 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
                 key={i}
                 className={`${
                   carousel === i
-                    ? "bg-rose-600 w-[8px] h-[8px]"
-                    : "bg-slate-500 w-[6px] h-[6px]"
+                    ? 'bg-rose-600 w-[8px] h-[8px]'
+                    : 'bg-slate-500 w-[6px] h-[6px]'
                 }  rounded-full `}
               ></div>
             ))}
@@ -126,5 +126,5 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
         </div>
       </div>
     </div>
-  );
+  )
 }

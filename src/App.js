@@ -1,5 +1,5 @@
-import Port from "./components/Portfolio";
-import { TraslationProvider } from "./TraslationContext";
+import Port from './components/Portfolio'
+import { TraslationProvider } from './TraslationContext'
 
 function App() {
   return (
@@ -8,7 +8,7 @@ function App() {
         <Port />
       </TraslationProvider>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
