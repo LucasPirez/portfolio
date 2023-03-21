@@ -11,7 +11,7 @@ function Footer() {
   const { animationStart } = useContext(TranslationContext)
 
   return (
-    <div id="footer" className="w-full  h-auto min-h-[400px]">
+    <section id="footer" className="w-full  h-auto min-h-[400px]">
       <div className="w-[100%]  h-[5vw]  relative">
         <div className=" absolute  left-0 top-0 pb-1  border-l-[51vw] border-r-[51vw] border-t-[5vw] border-t-transparent border-r-transparent border-l-slate-800 dark:border-l-slate-800"></div>
         <div className=" absolute right-0 top-0 pb-1   border-l-[49vw] border-r-[49vw] border-t-[5vw] border-t-transparent border-l-transparent border-r-slate-800 dark:border-r-slate-800"></div>
@@ -85,7 +85,7 @@ function Footer() {
         <p>Author LUCAS D. PIREZ GALLO</p>
         <p>2022</p>
       </div>
-    </div>
+    </section>
   )
 }
 

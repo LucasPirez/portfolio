@@ -1,11 +1,8 @@
 import React, { useContext } from 'react'
 import TranslationContext from '../../TraslationContext'
-function ButtonRead({ setmodalSelect, inside, strModal }) {
+function ButtonRead({ handleClick }) {
   const { text } = useContext(TranslationContext)
-  const handleClick = (e) => {
-    inside(e)
-    setmodalSelect(strModal)
-  }
+
   return (
     <button
       className="md:w-40 font-semibold  md:py-2 md:px-4 

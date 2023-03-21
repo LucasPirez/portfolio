@@ -1,13 +1,15 @@
 import { useState, useEffect } from 'react'
 import { useContext } from 'react'
 import ReactPlayer from 'react-player'
+import useClick from '../../hooks/useClick'
 import TranslationContext from '../../TraslationContext'
 import ButtonModal from './ButtonModal'
 
-export default function ModalChildren({ modalSelect, inside, outside }) {
+export default function ModalChildren({ modalSelect, outside }) {
   const [carousel, setCarousel] = useState(0)
-  const { text, handleLanguaje } = useContext(TranslationContext)
-  // const [selectText, setSelectText] = useState(text.modal[modalSelect]);
+  const { text } = useContext(TranslationContext)
+  const ref = useClick(outside)
+
   const {
     images: img,
     videos: vid,
@@ -16,33 +18,24 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
     repositorie,
     deploy
   } = text.modal[modalSelect]
-  const [images, setImages] = useState([])
-  const [video, setVideo] = useState(undefined)
   const [long, setLong] = useState(null)
 
-  console.log(text.modal)
-
   useEffect(() => {
-    console.log('hea')
-    setImages(img)
-    setVideo(vid)
+    vid !== undefined ? setLong(img.length + 1) : setLong(img.length)
+  }, [vid, img])
 
-    video !== undefined ? setLong(images.length + 1) : setLong(images.length)
-  }, [text.modal[modalSelect], images])
-
-  console.log(carousel)
   return (
     <div
       id="divModal"
       className="fixed flex justify-center  top-0  w-[100%] h-auto bg-transparent animate-[back_0.4s_linear] z-10 "
     >
       <div
-        onClick={inside}
+        ref={ref}
         className="max-w-[800px] md:h-[700px] max-h-[100vh] border-2 rounded opacity-78 relative text-red-50 bg-white dark:bg-zinc-900 "
       >
         <div className="flex  w-[100%] md:h-[70%] h-[45vh] bg-slate-400 relative dark:opacity-80">
-          {images &&
-            images.map((u, i) =>
+          {img &&
+            img.map((u, i) =>
               carousel === i ? (
                 <div
                   key={i}
@@ -58,10 +51,10 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
                 ''
               )
             )}
-          {video && carousel === long - 1 ? (
+          {vid && carousel === long - 1 ? (
             <>
               <p className="mt-[30%] ml-[40%]  absolute ">Cargando...</p>
-              <ReactPlayer url={video} width="100%" height="100%" />
+              <ReactPlayer url={vid} width="100%" height="100%" />
             </>
           ) : (
             ''
@@ -73,8 +66,8 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
           long={long}
         />
         <div className="absolute w-[100%] md:top-[67%] top-[44vh] z-30  m-auto flex justify-center items-center space-x-2">
-          {images &&
-            images.map((u, i) => (
+          {img &&
+            img.map((u, i) => (
               <div
                 key={i}
                 className={`${
@@ -89,8 +82,11 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
           <h4 className="text-center text-3xl   mt-1  text-black dark:text-slate-200">
             {title}
           </h4>
-          <div className="md:h-auto sm:h-[23vh] overflow-y-auto sm:pb-0 pb-[10vh]    h-[32vh]">
-            <p className="p-4 pl-7 text-black dark:text-slate-200">
+          <div className="md:h-auto sm:h-[23vh] overflow-y-auto sm:pb-0 pb-[10vh]  h-[32vh]">
+            <p
+              className="p-4 pl-7 text-black dark:text-slate-200
+            h-[120px]"
+            >
               {description}
             </p>
           </div>
@@ -100,6 +96,9 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
               <a
                 target="_black"
                 href={repositorie}
+                onClick={(e) => {
+                  e.stopPropagation()
+                }}
                 className=" p-1 sm:px-3 px-1 rounded cursor-pointer hover:bg-cyan-500  border-2 border-cyan-700 bg-cyan-700 dark:bg-cyan-700 dark:hover:text-slate-900 active:scale-95 sm:ml-4 dark:text-slate-200 
                 ml-2 transition-all duration-200 sm:text-base text-sm"
               >
@@ -109,6 +108,9 @@ export default function ModalChildren({ modalSelect, inside, outside }) {
                 <a
                   target="_black"
                   href={deploy}
+                  onClick={(e) => {
+                    e.stopPropagation()
+                  }}
                   className=" p-1 sm:px-3 px-1 rounded cursor-pointer hover:bg-cyan-500  border-2 border-cyan-700 bg-cyan-700 active:scale-95 sm:ml-4 dark:hover:text-slate-900 dark:text-slate-200
                 ml-2 transition-all duration-200 sm:text-base text-sm"
                 >

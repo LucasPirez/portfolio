@@ -20,6 +20,7 @@ function ProjectsTecnologies({ onSelect, select, text }) {
       <div className="w-full h-full flex">
         {TECNOLOGIES.map((u, i) => (
           <div
+            key={u + i}
             onClick={(e) => {
               e.preventDefault()
               onSelect(i + 1)

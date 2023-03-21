@@ -12,7 +12,7 @@ function About() {
 
   return (
     <>
-      <div
+      <section
         id="about"
         className="relative max-w-[1500px] m-auto h-auto min-h-[100vh] flex flex-col xl:flex-row items-center lg:justify-around dark:bg-zinc-900 background_black shadow-lg dark:shadow-zinc-400 pt-[16vh] mt-[-10vh] md:mt-0 bg-zinc-200 md:pt-[13vh]"
       >
@@ -41,7 +41,7 @@ function About() {
             <Tecnologies />
           </>
         )}
-      </div>
+      </section>
     </>
   )
 }

@@ -9,7 +9,6 @@ const About = lazy(() => import('./About/About'))
 const Projects = lazy(() => import('./projects/Projects'))
 
 const Port = () => {
-  const [nav, setNav] = useState(false)
   const { selectCurrentPage } = useContext(TranslationContext)
 
   const containerAbout = useRef()
@@ -27,27 +26,27 @@ const Port = () => {
   useInsertionEffect(arrayContainers, selectCurrentPage)
 
   return (
-    <div onClick={() => (nav === true ? setNav(false) : '')}>
-      <div ref={containerHome} title="home">
+    <div>
+      <section ref={containerHome} title="home">
         <Home />
-      </div>
+      </section>
 
-      <Header nav={nav} setNav={setNav} />
-      <div className="bg-zinc-300 dark:bg-zinc-800">
-        <div ref={containerAbout} title="about">
+      <Header />
+      <main className="bg-zinc-300 dark:bg-zinc-800">
+        <section ref={containerAbout} data-title="about" title="about">
           <Suspense fallback={<p>hola</p>}>
             <About />
           </Suspense>
-        </div>
-        <div ref={containerProjects} title="projects">
+        </section>
+        <section ref={containerProjects} title="projects">
           <Suspense fallback={<p> </p>}>
             <Projects />
           </Suspense>
-        </div>
-      </div>
-      <div ref={containerFooter} title="footer">
+        </section>
+      </main>
+      <footer ref={containerFooter} title="footer">
         <Footer />
-      </div>
+      </footer>
     </div>
   )
 }

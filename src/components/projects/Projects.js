@@ -19,18 +19,17 @@ export default function Projects() {
   const [close, setClose] = useState(false)
   const [modalSelect, setmodalSelect] = useState(null)
 
-  const inside = (e) => {
-    setClose(true)
-    e.stopPropagation()
-  }
-
   const outside = (e) => {
     setClose(false)
-    e.stopPropagation()
+    e && e.stopPropagation()
   }
 
   const onSelect = (i) => {
     setSelect(i)
+  }
+  const handleClick = (strModal) => {
+    setmodalSelect(strModal)
+    setClose(true)
   }
 
   return (
@@ -48,10 +47,7 @@ export default function Projects() {
             select={select}
             text={text}
           />
-          <div
-            onClick={outside}
-            className="flex flex-col items-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto lg:w-[85vw] md:w-[80vw] w-[95vw] animate-[opacity_2s_linear] scroll-modifier "
-          >
+          <div className="flex flex-col items-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto lg:w-[85vw] md:w-[80vw] w-[95vw] animate-[opacity_2s_linear] scroll-modifier ">
             <div className="flex w-full relative  justify-center flex-wrap container max-w-[1180px] gap-[1.5vw]">
               <ContainerProjects
                 select={select}
@@ -60,9 +56,11 @@ export default function Projects() {
                 title="Reactjs"
               >
                 <ButtonRead
-                  setmodalSelect={setmodalSelect}
-                  inside={inside}
-                  strModal="tweeter"
+                  handleClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    handleClick('tweeter')
+                  }}
                 />
               </ContainerProjects>
               <ContainerProjects
@@ -72,9 +70,11 @@ export default function Projects() {
                 title="Reactjs"
               >
                 <ButtonRead
-                  setmodalSelect={setmodalSelect}
-                  inside={inside}
-                  strModal="cryptoTracker"
+                  handleClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    handleClick('cryptoTracker')
+                  }}
                 />
               </ContainerProjects>
               <ContainerProjects
@@ -84,9 +84,11 @@ export default function Projects() {
                 title="React Native"
               >
                 <ButtonRead
-                  setmodalSelect={setmodalSelect}
-                  inside={inside}
-                  strModal="mobileCryptoTracker"
+                  handleClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    handleClick('mobileCryptoTracker')
+                  }}
                 />
               </ContainerProjects>
               <ContainerProjects
@@ -96,32 +98,32 @@ export default function Projects() {
                 title="React Native"
               >
                 <ButtonRead
-                  setmodalSelect={setmodalSelect}
-                  inside={inside}
-                  strModal="calculator"
+                  handleClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    handleClick('calculator')
+                  }}
                 />
               </ContainerProjects>
               <ContainerProjects
                 select={select}
                 number={[1, 4]}
                 imgSrc={imgGym}
-                title="Django"
+                title="Hotel App"
               >
                 <ButtonRead
-                  setmodalSelect={setmodalSelect}
-                  inside={inside}
-                  strModal="gymApp"
+                  handleClick={(e) => {
+                    e.preventDefault()
+                    e.stopPropagation()
+                    handleClick('hotel')
+                  }}
                 />
               </ContainerProjects>
             </div>
 
             {close && (
               <ModalPortal>
-                <ModalChildren
-                  modalSelect={modalSelect}
-                  inside={inside}
-                  outside={outside}
-                />
+                <ModalChildren modalSelect={modalSelect} outside={outside} />
               </ModalPortal>
             )}
           </div>

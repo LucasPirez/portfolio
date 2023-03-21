@@ -1,12 +1,16 @@
-import { useContext, useEffect } from 'react'
+import { useContext, useEffect, useState } from 'react'
+import useClick from '../../hooks/useClick'
 import TranslationContext from '../../TraslationContext'
 
-export default function Header({ nav, setNav }) {
+export default function Header() {
+  const [nav, setNav] = useState(false)
   const { text, currentPage, animationStart } = useContext(TranslationContext)
 
   const changeNav = () => {
     setNav(false)
   }
+
+  const ref = useClick(changeNav)
 
   useEffect(() => {
     window.addEventListener('scroll', changeNav)
@@ -17,7 +21,7 @@ export default function Header({ nav, setNav }) {
   }, [])
 
   return (
-    <div className="w-full h-[10vh] sticky top-0 z-10 bg-transparent">
+    <div ref={ref} className="w-full h-[10vh] sticky top-0 z-10 bg-transparent">
       <header
         className={`${
           nav !== false

@@ -18,7 +18,6 @@ const TraslationProvider = ({ children }) => {
 
   const selectCurrentPage = (value) => {
     setCurrentPage(value)
-    console.log(value)
     setAnimationStart((animationStart) => {
       return {
         ...animationStart,

@@ -9,18 +9,20 @@ const Animation = lazy(() => import('./Animation'))
 
 function Home() {
   const { width } = useWidth()
-  const { text, handleLanguaje, currentPage } = useContext(TranslationContext)
+  const { text, handleLanguaje, currentPage, animationStart } =
+    useContext(TranslationContext)
 
   return (
     <>
       <div className="absolute w-full h-[100vh] bg-slate-800 dark:bg-zinc-900 -z-20"></div>
-      <div
+      <section
         id="home"
-        title="home"
         className=" flex h-[100vh]   w-full items-center justify-center overflow-x-hidden bg-transparent"
       >
         <Suspense fallback="">
-          {width > 700 && <Animation visible={currentPage} />}
+          {width > 700 && (
+            <Animation visible={currentPage} firstRender={animationStart} />
+          )}
         </Suspense>
         <div className="fixed top-[0.50rem]  left-4 m-4 z-20 md:flex ">
           <select
@@ -62,7 +64,7 @@ function Home() {
             </a>
           </div>
         </div>
-      </div>
+      </section>
     </>
   )
 }

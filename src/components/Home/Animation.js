@@ -20,7 +20,7 @@ import {
 } from 'three'
 import useWidth from '../../hooks/useWidth'
 
-function Animation({ visible }) {
+function Animation({ visible, firstRender }) {
   const { width } = useWidth()
   const color3 = useRef()
   const colorAnimation = useRef()
@@ -75,36 +75,27 @@ function Animation({ visible }) {
       color3.current = new Color('rgb(75, 84, 98)')
       colorAnimation.current = new Color('#646c78')
     }
-
     const renderer = new WebGLRenderer({
       canvas: document.querySelector('#bg')
     })
-    scene.background = color2
 
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setSize(window.innerWidth, window.innerHeight)
+    scene.background = color2
     camera.position.setZ(30)
 
     const pointLight = new PointLight()
     pointLight.position.set(0, 0, 0)
-
     const ambientLight = new AmbientLight({ color: 0x06b624 })
     scene.add(pointLight, ambientLight)
-
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enabled = false
-
-    let point = []
-    point.push(new Vector3(0, 0, 0))
-    point.push(new Vector3(0, 100, 100))
 
     if (visible === 'home') {
       function addStar() {
         const geometry = new SphereGeometry(0.1, 15, 2)
         const material = new MeshStandardMaterial({ color: 0x06b6d4 })
         const points = []
-        console.log('addStar')
-
         const star = new Mesh(geometry, material)
         const [x, y, z] = Array(3)
           .fill()
@@ -120,29 +111,24 @@ function Animation({ visible }) {
         const line = new Line(lineGeometry, lineMaterial)
 
         star.position.set(x, y, z)
-
         scene.add(line)
         scene.add(star)
       }
 
       Array(100).fill().forEach(addStar)
-
       let ani
       function animate() {
         if (visible !== 'home') return
         ani = window.requestAnimationFrame(animate)
-
         scene.rotation.y += 0.0005
         scene.scroll = false
-
         renderer.render(scene, camera)
       }
-
       animate()
 
       return () => window.cancelAnimationFrame(ani)
     }
-  }, [visible, width]) /* eslint-disable-line react-hooks/exhaustive-deps */
+  }, [width, visible]) /* eslint-disable-line react-hooks/exhaustive-deps */
 
   return (
     <>
