@@ -1,5 +1,4 @@
 import { useContext, useEffect, useState } from 'react'
-import useClick from '../../hooks/useClick'
 import TranslationContext from '../../TraslationContext'
 
 export default function Header() {
@@ -10,8 +9,6 @@ export default function Header() {
     setNav(false)
   }
 
-  const ref = useClick(changeNav)
-
   useEffect(() => {
     window.addEventListener('scroll', changeNav)
 
@@ -21,11 +18,11 @@ export default function Header() {
   }, [])
 
   return (
-    <div ref={ref} className="w-full h-[10vh] sticky top-0 z-10 bg-transparent">
+    <div className="w-full h-[10vh] fixed  sm:sticky top-0 z-10 bg-transparent">
       <header
         className={`${
           nav !== false
-            ? ' h-[130px] bg-slate-800 w-full'
+            ? ' h-[160px] bg-slate-800 w-full'
             : 'h-[10vh] bg-transparent md:bg-slate-800 w-full dark:md:bg-zinc-800 dark:md:border-b-2 dark:md:border-cyan-700'
         } flex  transition-all  justify-end md:[10vh] w-full  items-center z-10 `}
       >
@@ -38,8 +35,7 @@ export default function Header() {
             <li>
               <a
                 href="#home"
-                // onClick={() => setLink("Home")}
-                className={` ${
+                className={`${
                   currentPage === 'home' ? 'text-cyan-500' : 'text-gray-200'
                 } 
                 flex  transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_2.5s_ease-in-out] animate-[wiggleMedia_1.2s_ease-in-out] `}
@@ -50,7 +46,6 @@ export default function Header() {
             <li>
               <a
                 href="#about"
-                // onClick={() => setLink("about")}
                 className={` ${
                   currentPage === 'about' ? 'text-cyan-500' : 'text-gray-200'
                 } flex  transition-all transform -translate-y-1 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.9s_ease-in-out]`}
@@ -61,7 +56,6 @@ export default function Header() {
             <li>
               <a
                 href="#portfolio"
-                // onClick={() => setLink("portfolio")}
                 className={`${
                   currentPage === 'projects' ? 'text-cyan-500' : 'text-gray-200'
                 } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.6s_ease-in-out]`}
@@ -73,7 +67,6 @@ export default function Header() {
             <li>
               <a
                 href="#footer"
-                // onClick={() => setLink("footer")}
                 className={`${
                   currentPage === 'footer' ? 'text-cyan-500' : 'text-gray-200'
                 } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.3s_ease-in-out]`}
@@ -81,8 +74,19 @@ export default function Header() {
                 {text.header.contact}
               </a>
             </li>
+            <li>
+              {nav && (
+                <button
+                  onClick={() => setNav(false)}
+                  className=" px-3 border-[1px] text-xs rounded border-cyan-400  hover:bg-cyan-700 transition-all opacity-80 duration-200 hover:text-cyan-300 hover:border-white dark:text-slate-200"
+                >
+                  x
+                </button>
+              )}
+            </li>
           </ul>
         )}
+
         <div
           className={`${
             nav === false ? 'flex' : 'hidden '

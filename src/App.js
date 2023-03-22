@@ -3,7 +3,7 @@ import { TraslationProvider } from './TraslationContext'
 
 function App() {
   return (
-    <div className=" sm:w-full ">
+    <div className="w-full overflow-x-hidden  sm:overflow-x-visible">
       <TraslationProvider>
         <Port />
       </TraslationProvider>

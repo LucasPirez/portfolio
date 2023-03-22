@@ -1,4 +1,4 @@
-import { useContext } from 'react'
+import { useContext, useEffect, useRef, useState } from 'react'
 import style from './tecnologies.module.css'
 import {
   Css3,
@@ -9,12 +9,25 @@ import {
   Java
 } from '../../icons/IconsTecnologies'
 import TranslationContext from '../../TraslationContext'
+import { useInsertionEffect } from '../../hooks/useIntersection'
 
 const Tecnologies = () => {
-  const { text, currentPage } = useContext(TranslationContext)
+  const [activeStop, seTActiveStop] = useState(true)
+  const { text } = useContext(TranslationContext)
+  const ref = useRef()
+
+  const hidden = (value) => {
+    value === 'tecnologies' ? seTActiveStop(true) : seTActiveStop(false)
+  }
+
+  useInsertionEffect([ref], hidden)
 
   return (
-    <div className="h-full animate-[startRight_1.2s_ease-out]">
+    <div
+      className="h-full animate-[startRight_1.2s_ease-out]"
+      title="tecnologies"
+      ref={ref}
+    >
       <div className={style.cuadrado1}>
         <div className={style.cuadrado}></div>
       </div>
@@ -28,14 +41,14 @@ const Tecnologies = () => {
         >
           <li
             className={`${style.a} ${
-              currentPage !== 'about' ? style.pausarAnimacion : ''
+              !activeStop && style.pausarAnimacion
             }  dark:shadow-xl dark:shadow-slate-700 `}
           >
             <Html /> HTML
           </li>
           <li
             className={`${style.b} ${
-              currentPage !== 'about' ? style.pausarAnimacion : ''
+              !activeStop && style.pausarAnimacion
             } dark:shadow-xl dark:shadow-slate-700`}
           >
             <Css3 />
@@ -43,7 +56,7 @@ const Tecnologies = () => {
           </li>
           <li
             className={`${style.c} ${
-              currentPage !== 'about' ? style.pausarAnimacion : ''
+              !activeStop ? style.pausarAnimacion : ''
             } dark:shadow-xl dark:shadow-slate-700`}
           >
             <Javascript />
@@ -51,14 +64,14 @@ const Tecnologies = () => {
           </li>
           <li
             className={`${style.d} ${
-              currentPage !== 'about' ? style.pausarAnimacion : ''
+              !activeStop ? style.pausarAnimacion : ''
             } dark:shadow-xl dark:shadow-slate-700`}
           >
             <TypeScript /> TypeScript
           </li>
           <li
             className={`${style.d} ${
-              currentPage !== 'about' ? style.pausarAnimacion : ''
+              !activeStop ? style.pausarAnimacion : ''
             } dark:shadow-xl dark:shadow-slate-700`}
           >
             <Java /> Java
@@ -66,21 +79,21 @@ const Tecnologies = () => {
 
           <li
             className={`${style.e} ${
-              currentPage !== 'about' ? style.pausarAnimacion : ''
+              !activeStop ? style.pausarAnimacion : ''
             } dark:shadow-xl dark:shadow-slate-700`}
           >
             <Reactjs /> React
           </li>
           <li
             className={`${style.f} ${
-              currentPage !== 'about' ? style.pausarAnimacion : ''
+              !activeStop ? style.pausarAnimacion : ''
             } dark:shadow-xl dark:shadow-slate-700`}
           >
             <Reactjs /> React Native
           </li>
           <li
             className={`${style.g} ${
-              currentPage !== 'about' ? style.pausarAnimacion : ''
+              !activeStop ? style.pausarAnimacion : ''
             } dark:shadow-xl dark:shadow-slate-700`}
           >
             Express

@@ -9,12 +9,10 @@ import { ModalPortal } from './ModalPortal'
 import ProjectsTecnologies from './ProjectsTecnologies'
 import ButtonRead from './ButtonRead'
 import ContainerProjects from './ContainerProjects'
-import useWidth from '../../hooks/useWidth'
 import TranslationContext from '../../TraslationContext'
 
 export default function Projects() {
-  const { text, animationStart } = useContext(TranslationContext)
-  const { width } = useWidth()
+  const { text, animationStart, width } = useContext(TranslationContext)
   const [select, setSelect] = useState(1)
   const [close, setClose] = useState(false)
   const [modalSelect, setmodalSelect] = useState(null)

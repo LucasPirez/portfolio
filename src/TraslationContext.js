@@ -1,4 +1,5 @@
 import { createContext, useState } from 'react'
+import useWidth from './hooks/useWidth'
 import { translation } from './translation'
 
 const TranslationContext = createContext()
@@ -15,15 +16,18 @@ const TraslationProvider = ({ children }) => {
   const [text, setText] = useState(translation[languaje])
   const [currentPage, setCurrentPage] = useState('home')
   const [animationStart, setAnimationStart] = useState(animationControler)
+  const { width } = useWidth()
 
   const selectCurrentPage = (value) => {
-    setCurrentPage(value)
-    setAnimationStart((animationStart) => {
-      return {
-        ...animationStart,
-        [value]: true
-      }
-    })
+    if (value !== 'noIntersecting') {
+      setCurrentPage(value)
+      setAnimationStart((animationStart) => {
+        return {
+          ...animationStart,
+          [value]: true
+        }
+      })
+    }
   }
 
   const handleLanguaje = (e) => {
@@ -36,7 +40,8 @@ const TraslationProvider = ({ children }) => {
     languaje,
     currentPage,
     selectCurrentPage,
-    animationStart
+    animationStart,
+    width
   }
 
   return (

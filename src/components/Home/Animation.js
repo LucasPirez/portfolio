@@ -20,7 +20,7 @@ import {
 } from 'three'
 import useWidth from '../../hooks/useWidth'
 
-function Animation({ visible, firstRender }) {
+function Animation({ visible }) {
   const { width } = useWidth()
   const color3 = useRef()
   const colorAnimation = useRef()
@@ -48,7 +48,6 @@ function Animation({ visible, firstRender }) {
 
     for (const intersect of intersects) {
       intersect.object.material.color.set(colorAnimation.current)
-      intersect.object.layers.mask = 9
     }
 
     for (const child of scene.children.filter(
@@ -105,7 +104,7 @@ function Animation({ visible, firstRender }) {
         points.push(new Vector3(0, 100, 0))
 
         const lineMaterial = new LineBasicMaterial({
-          color: new Color('rgb(75, 84, 98)')
+          color: new Color(color3.current)
         })
         const lineGeometry = new BufferGeometry().setFromPoints(points)
         const line = new Line(lineGeometry, lineMaterial)
@@ -135,7 +134,7 @@ function Animation({ visible, firstRender }) {
       <canvas
         onMouseMove={onMouseMove}
         id="bg"
-        className="absolute h-[100%] w-[100%]  "
+        className="absolute h-[100%] w-full overflow-hidden "
       ></canvas>
     </>
   )

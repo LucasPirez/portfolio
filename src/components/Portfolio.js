@@ -26,14 +26,14 @@ const Port = () => {
   useInsertionEffect(arrayContainers, selectCurrentPage)
 
   return (
-    <div>
+    <>
       <section ref={containerHome} title="home">
         <Home />
       </section>
 
       <Header />
       <main className="bg-zinc-300 dark:bg-zinc-800">
-        <section ref={containerAbout} data-title="about" title="about">
+        <section ref={containerAbout} title="about">
           <Suspense fallback={<p>hola</p>}>
             <About />
           </Suspense>
@@ -47,7 +47,7 @@ const Port = () => {
       <footer ref={containerFooter} title="footer">
         <Footer />
       </footer>
-    </div>
+    </>
   )
 }
 

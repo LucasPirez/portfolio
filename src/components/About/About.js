@@ -1,14 +1,11 @@
 import React, { useContext } from 'react'
 import AbuotDescrip from './AbuotDescrip'
-import { useInsertionEffect } from '../../hooks/useIntersection'
 import TranslationContext from '../../TraslationContext'
 import linked from '../../images/perfil.png'
 import Tecnologies from './Tecnologis'
-import useWidth from '../../hooks/useWidth'
 
 function About() {
-  const { width } = useWidth()
-  const { text, animationStart } = useContext(TranslationContext)
+  const { text, animationStart, width } = useContext(TranslationContext)
 
   return (
     <>

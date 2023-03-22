@@ -27,11 +27,12 @@ export default function ModalChildren({ modalSelect, outside }) {
   return (
     <div
       id="divModal"
-      className="fixed flex justify-center  top-0  w-[100%] h-auto bg-transparent animate-[back_0.4s_linear] z-10 "
+      className="fixed flex justify-center  top-0  w-full h-auto bg-transparent animate-[back_0.4s_linear] z-10 "
     >
+      {/* md:h-[700px] max-h-[100vh] */}
       <div
         ref={ref}
-        className="max-w-[800px] md:h-[700px] max-h-[100vh] border-2 rounded opacity-78 relative text-red-50 bg-white dark:bg-zinc-900 "
+        className="max-w-[800px] md:h-[700px] h-auto max-h-[100vh] border-2 rounded opacity-78 relative text-red-50 bg-white dark:bg-zinc-900 "
       >
         <div className="flex  w-[100%] md:h-[70%] h-[45vh] bg-slate-400 relative dark:opacity-80">
           {img &&

@@ -8,7 +8,7 @@ import curriculumPDF from '../../images/cv.pdf'
 import TranslationContext from '../../TraslationContext'
 
 function Footer() {
-  const { animationStart } = useContext(TranslationContext)
+  const { animationStart, width } = useContext(TranslationContext)
 
   return (
     <section id="footer" className="w-full  h-auto min-h-[400px]">
@@ -17,7 +17,7 @@ function Footer() {
         <div className=" absolute right-0 top-0 pb-1   border-l-[49vw] border-r-[49vw] border-t-[5vw] border-t-transparent border-l-transparent border-r-slate-800 dark:border-r-slate-800"></div>
       </div>
       <div className="flex px-4 lg:flex-row flex-col relative w-full  h-auto bg-slate-800 dark:bg-slate-800 items-center  lg:justify-around pb-4">
-        {animationStart.footer === true && (
+        {(animationStart.footer === true || width < 600) && (
           <>
             <div className="sm:flex-1 flex-0 m-auto flexitems-center flex-col xl:ml-16 w-full">
               <Form />

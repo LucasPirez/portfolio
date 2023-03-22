@@ -5,6 +5,8 @@ export const useInsertionEffect = (containers, intersecting) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         intersecting(entry.target.title)
+      } else {
+        intersecting('noIntersecting')
       }
     })
   }
