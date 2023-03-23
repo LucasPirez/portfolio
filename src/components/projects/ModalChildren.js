@@ -27,11 +27,11 @@ export default function ModalChildren({ modalSelect, outside }) {
   return (
     <div
       id="divModal"
-      className="fixed flex justify-center  top-0  w-full h-auto bg-transparent animate-[back_0.4s_linear] z-10 "
+      className="fixed flex justify-center  top-0  w-full h-auto bg-transparent animate-[back_0.4s_linear] z-20 "
     >
       <div
         ref={ref}
-        className="max-w-[800px] max-h-[700px] h-[90vh] border-2 rounded-md opacity-78 relative text-red-50 bg-white dark:bg-zinc-900 "
+        className="max-w-[800px] max-h-[700px] h-[85vh] border-2 rounded-md opacity-78 relative text-red-50 bg-white dark:bg-zinc-900 "
       >
         <div className="flex justify-center  w-[100%] sm:h-[68%] h-[52%] bg-slate-400 relative dark:opacity-80 overflow-hidden">
           {img &&
@@ -72,15 +72,16 @@ export default function ModalChildren({ modalSelect, outside }) {
             ))}
         </div>
         <div className="h-[48%] sm:h-[32%] relative ">
-          <h4 className="text-center text-3xl  mt-1 h-[12%]   text-black dark:text-slate-200">
+          <h4 className="text-center sm:text-3xl text-xl block   mt-1  text-black dark:text-slate-200 font-bold ">
             {title}
           </h4>
-          <div className="overflow-y-scroll h-[86%]">
-            <p className="p-4 pl-7 text-black dark:text-slate-200">
+
+          <div className="overflow-y-auto h-[88%]  sm:h-[80%]  scroll_style ">
+            <p className=" pl-7 relative  mt-2 text-black dark:text-slate-200 ">
               {description}
             </p>
 
-            <div className="flex flex-row justify-between items-end  w-[100%] bottom-2 pb-4">
+            <div className="flex flex-row justify-between items-end  w-[100%] bottom-2 pb-2">
               <div className="flex">
                 <a
                   target="_black"

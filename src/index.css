@@ -23,26 +23,32 @@
     overflow-x: hidden;
   }
 
-  body::-webkit-scrollbar {
+  body::-webkit-scrollbar,
+  .scroll_style::-webkit-scrollbar {
     width: 10px;
     height: 10px;
   }
 
-  body::-webkit-scrollbar-track {
+  body::-webkit-scrollbar-track,
+  .scroll_style::-webkit-scrollbar-track {
     background-clip: content-box;
     /* border: 2px solid transparent; */
   }
 
-  body::-webkit-scrollbar-thumb {
+  body::-webkit-scrollbar-thumb,
+  .scroll_style::-webkit-scrollbar-thumb {
     background-color: #09a;
   }
 
-  body::-webkit-scrollbar-thumb:hover {
+  body::-webkit-scrollbar-thumb:hover,
+  .scroll_style::-webkit-scrollbar-thumb:hover {
     background-color: #09a;
   }
 
   body::-webkit-scrollbar-corner,
-  body::-webkit-scrollbar-track {
+  body::-webkit-scrollbar-track,
+  .scroll_style::-webkit-scrollbar-corner,
+  .scroll_style::-webkit-scrollbar-track {
     background-color: rgb(167, 196, 199);
   }
 
@@ -77,28 +83,6 @@
 
       background-position: 0 0, 1px 1px;
       background-size: 20px 20px;
-    }
-    .scroll-modifier::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
-    }
-
-    .scroll-modifier::-webkit-scrollbar-track {
-      background-clip: content-box;
-      /* border: 2px solid transparent; */
-    }
-
-    .scroll-modifier::-webkit-scrollbar-thumb {
-      background-color: #09a;
-    }
-
-    .scroll-modifier::-webkit-scrollbar-thumb:hover {
-      background-color: #09a;
-    }
-
-    .scroll-modifier::-webkit-scrollbar-corner,
-    .scroll-modifier::-webkit-scrollbar-track {
-      background-color: rgb(167, 196, 199);
     }
   }
   input:focus + span,

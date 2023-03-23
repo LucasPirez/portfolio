@@ -15,7 +15,7 @@ function Home() {
       <div className="absolute w-full h-[100vh] bg-slate-800 dark:bg-zinc-900 -z-20"></div>
       <section
         id="home"
-        className=" flex h-[100vh]   w-full items-center justify-center overflow-x-hidden bg-transparent"
+        className=" flex sm:h-[100vh] h-[110vh]  w-full items-center justify-center overflow-x-hidden bg-transparent"
       >
         <Suspense fallback="">
           {width > 700 && <Animation visible={currentPage} />}

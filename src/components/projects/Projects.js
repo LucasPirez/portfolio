@@ -1,7 +1,7 @@
 import { useState, useContext } from 'react'
 import cap from '../../images/captura-calculator.jpeg'
-import imgGym from '../../images/img-django.webp'
 import tw from '../../images/tweeter1.webp'
+import java2 from '../../images/java.webp'
 import cryptoMain from '../../images/cripto/img-crypto-main.webp'
 import mobileCrypto from '../../images/cripto/mobile-table.webp'
 import ModalChildren from './ModalChildren'
@@ -45,7 +45,7 @@ export default function Projects() {
             select={select}
             text={text}
           />
-          <div className="flex flex-col items-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto lg:w-[85vw] md:w-[80vw] w-[95vw] animate-[opacity_2s_linear] scroll-modifier ">
+          <div className="flex flex-col items-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto lg:w-[85vw] md:w-[80vw] w-[95vw] animate-[opacity_2s_linear] scroll_style">
             <div className="flex w-full relative  justify-center flex-wrap container max-w-[1180px] gap-[1.5vw]">
               <ContainerProjects
                 select={select}
@@ -106,7 +106,7 @@ export default function Projects() {
               <ContainerProjects
                 select={select}
                 number={[1, 4]}
-                imgSrc={imgGym}
+                imgSrc={java2}
                 title="Hotel App"
               >
                 <ButtonRead

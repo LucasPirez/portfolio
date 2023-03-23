@@ -6,7 +6,7 @@ function ContainerProjects({ children, select, number, imgSrc, title }) {
           ? 'transform translate-x-0 relative '
           : 'transform -translate-x-[1400px] absolute left-0'
       } group w-80 h-72  flex flex-col  justify-between items-center m-2 text-transparent  text-center rounded-md bg-slate-200    border-slate-600
-       shadow-md shadow-cyan-800 dark:opacity-90 border-2 dark:border-zinc-200 dark:shadow-cyan-500  first-letter:hover:text-slate-800 bg-transparent    transition-all duration-150 overflow-hidden `}
+       shadow-md shadow-cyan-800 dark:opacity-90 border-2 dark:border-zinc-200 dark:shadow-cyan-500  first-letter:hover:text-slate-800 bg-transparent transition-all duration-150 overflow-hidden `}
     >
       <img
         src={imgSrc}
