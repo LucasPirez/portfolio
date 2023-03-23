@@ -49,7 +49,7 @@ function Home() {
             </a>
             <a
               href="mailto:lucaspirez42@gmail.com"
-              className="group flex items-center rounded-md px-1  scale-[0.85] md:scale-[.95] lg:scale-110 hover:scale-105 md:hover:scale-110 lg:hover:scale-125"
+              className="group flex items-center rounded-md px-1  scale-[0.85] md:scale-[.95] lg:scale-110 hover:scale-105 md:hover:scale-110 lg:hover:scale-125 transition duration-500"
               title="Send Email"
             >
               <span>
@@ -64,14 +64,3 @@ function Home() {
 }
 
 export default Home
-//  <a
-//             href="mailto:lucaspirez42@gmail.com"
-//             className="group flex absolute -right-12 -top-1 md:-right-24 md:top-0 border-2 lg:-right-32 lg:top-1 hover:sm:bg-slate-800  hover:sm:border-cyan-600 border-transparent text-sm md:text-lg  lg:text-xl items-center rounded-md px-1  scale-[0.85] md:scale-[.95] lg:scale-110"
-//           >
-//             <span>
-//               <GmailIcon className="scale-75" />
-//             </span>
-//             <span className="sm:group-hover:scale-100 scale-0 transition-all origin-left ">
-//               Send Email
-//             </span>
-//           </a>

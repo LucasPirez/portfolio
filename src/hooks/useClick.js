@@ -7,7 +7,6 @@ export default function useClick(callback) {
     const event = (e) => {
       e.stopPropagation()
       e.preventDefault()
-      console.log('hola click')
       if (ref.current && !ref.current.contains(e.target)) {
         callback()
       }

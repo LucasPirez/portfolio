@@ -3,7 +3,8 @@ import TranslationContext from '../../TraslationContext'
 
 export default function Header() {
   const [nav, setNav] = useState(false)
-  const { text, currentPage, animationStart } = useContext(TranslationContext)
+  const { text, currentPage, animationStart, width } =
+    useContext(TranslationContext)
 
   const changeNav = () => {
     setNav(false)
@@ -26,7 +27,7 @@ export default function Header() {
             : 'h-[10vh] bg-transparent md:bg-slate-800 w-full dark:md:bg-zinc-800 dark:md:border-b-2 dark:md:border-cyan-700'
         } flex  transition-all  justify-end md:[10vh] w-full  items-center z-10 `}
       >
-        {animationStart.about === true && (
+        {(animationStart.about === true || width < 600) && (
           <ul
             className={` ${
               nav === false ? 'hidden' : 'flex'

@@ -2,7 +2,7 @@ const TECNOLOGIES = ['all', 'Reactjs', 'React Native', 'Java']
 
 function ProjectsTecnologies({ onSelect, select, text }) {
   return (
-    <div className="flex flex-col relative  h-[10vh] w-[90%] lg:w-[65vw] md:w-[720px] animate-[startRight_1.2s_ease-out]  text-base  sm:text-xl md:text-2xl dark:text-slate-200 bg-transparent ">
+    <div className="flex flex-col relative min-h-[80px] h-auto w-[90%] lg:w-[65vw] md:w-[720px] animate-[startRight_1.2s_ease-out]  text-base  sm:text-xl md:text-2xl dark:text-slate-200 bg-transparent ">
       <div
         className={`${
           select === 1
@@ -17,7 +17,7 @@ function ProjectsTecnologies({ onSelect, select, text }) {
         } w-0 h-0 transition-all duration-300 ease-linear border-l-[8px] border-t-[16px] border-r-[8px] border-t-rose-600 m border-r-transparent border-l-transparent mb-1
          `}
       ></div>
-      <div className="w-full h-full flex">
+      <div className="w-full h-full flex ">
         {TECNOLOGIES.map((u, i) => (
           <div
             key={u + i}

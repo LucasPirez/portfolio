@@ -4,7 +4,7 @@ import ArrowRight from '../../icons/ArrowRight'
 
 function ButtonModal({ carousel, setCarousel, long }) {
   return (
-    <div className="absolute  w-[100%] h-[10%]  md:top-[60%] top-[36vh] ">
+    <div className="absolute  w-[100%] h-[10%]  sm:top-[56%]  top-[41.5%] ">
       <button
         onClick={() => setCarousel(carousel - 1)}
         className={`hover:opacity-70 transition-all bottom-0  absolute left-0  bg-transparent p-2 ${
