@@ -40,7 +40,7 @@ function Home() {
             <a
               href="#about"
               className={`group relative inline-flex
-              border-[2px] border-cyan-700 p-2 items-center  text-sm md:text-lg  lg:text-xl lg:p-3  rounded-md hover:bg-cyan-600 bg-slate-800  hover:border-cyan-800 transition  ease-out duration-300 dark:bg-zinc-800 dark:border-cyan-600 dark:hover:bg-cyan-800`}
+              outline-cyan-700 p-2 items-center  text-sm md:text-lg  lg:text-xl lg:p-3 outline hover:outline-offset-2 hover:outline-cyan-600  rounded-md hover:bg-cyan-800 bg-slate-800 hover:text-emerald-50  transition-all duration-200 dark:bg-zinc-800 dark:hover:bg-cyan-800`}
             >
               {text.presentation.button}
               <span className="group-hover:animate-bounce scale-90 sm:scale-110">
