@@ -23,7 +23,7 @@ function About() {
               <div className="flex flex-col md:flex-row items-center  ">
                 <div
                   className="w-[350px]  m-10 rounded-t-full rounded-b-md shadow-lg  shadow-zinc-500 bg-gradient-to-t from-[#06b6d460]
-                  to-zinc-200 bg-opacity-90 dark:from-cyan-300 dark:to-zinc-900 dark:opacity-80"
+                  to-zinc-200 bg-opacity-90 dark:from-cyan-300 dark:to-zinc-900 dark:opacity-90"
                 >
                   <img src={linked} alt="perfil" className="pl-2 opacity-100" />
                 </div>
