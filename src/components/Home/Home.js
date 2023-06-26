@@ -30,13 +30,22 @@ function Home() {
           </select>
           <Theme />
         </div>
-        <div className=" text-slate-100 dark:text-slate-300  text-lg sm:text-3xl md:text-5xl text-center  font-mono z-10 ">
-          <h3 className=" text-slate-300 dark:text-slate-300">
+        <div className="text-slate-100 dark:text-slate-300  text-lg sm:text-3xl md:text-5xl  font-mono z-10 h-72 ">
+          <span className="text-md sm:text-xl md:text-2xl opacity-80">
             {text.presentation.title}
-            <strong className="text-rose-600">Lucas Pirez.</strong>
+          </span>
+          <h3 className=" text-slate-300 dark:text-slate-300 mt-3 mb-3">
+            <strong
+              className="text-rose-600 
+            "
+            >
+              Lucas Pirez Gallo.
+            </strong>
           </h3>
-          <h4>{text.presentation.subTitle}</h4>
-          <div className="flex justify-center m-auto mt-4 lg:mt-8 relative w-[300px]  ">
+          <h4 className="text-md sm:text-2xl md:text-4xl">
+            {text.presentation.subTitle}
+          </h4>
+          <div className="flex justify-center m-auto mt-4 lg:mt-8 relative w-[300px]">
             <a
               href="#about"
               className={`group relative inline-flex
