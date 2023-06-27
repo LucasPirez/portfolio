@@ -1,15 +1,11 @@
-import React, { useContext } from 'react'
-import arrow from '../../images/arrow-90.svg'
-import git from '../../images/433-github.svg'
+import arrow from '../../icons/arrow-90.svg'
+import git from '../../icons/433-github.svg'
 import Form from './Form'
-import linked from '../../images/353417.svg'
+import linked from '../../icons/353417.svg'
 import curriculum from '../../icons/icons8-curriculum-64.png'
 import curriculumPDF from '../../images/cv.pdf'
-import TranslationContext from '../../TraslationContext'
 
 function Footer() {
-  const { width } = useContext(TranslationContext)
-
   return (
     <section id="footer" className="w-full  h-auto min-h-[400px]">
       <div className="w-[100%]  h-[5vw]  relative">

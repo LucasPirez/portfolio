@@ -27,7 +27,7 @@ function About() {
                 <img src={linked} alt="perfil" className="pl-2 opacity-100" />
               </div>
 
-              <p className="mt-3 min-w-[350px] h-auto lg:w-[50%] lg:ml-4 w-[60%] text-center mb-8 dark:text-slate-200 md:text-lg">
+              <p className="mt-3 min-w-[350px] h-auto lg:w-[50%] lg:ml-4 w-[60%] text-center mb-8 dark:text-slate-200 md:text-lg ">
                 {text.about.about}
               </p>
             </div>
