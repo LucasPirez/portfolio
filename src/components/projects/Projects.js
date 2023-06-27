@@ -1,4 +1,4 @@
-import { useState, useContext } from 'react'
+import { useState, useContext, useRef } from 'react'
 import cap from '../../images/captura-calculator.jpeg'
 import tw from '../../images/tweeter1.webp'
 import java2 from '../../images/java.webp'
@@ -12,7 +12,7 @@ import ContainerProjects from './ContainerProjects'
 import TranslationContext from '../../TraslationContext'
 
 export default function Projects() {
-  const { text, width } = useContext(TranslationContext)
+  const { text } = useContext(TranslationContext)
   const [select, setSelect] = useState(1)
   const [close, setClose] = useState(false)
   const [modalSelect, setmodalSelect] = useState(null)
@@ -47,6 +47,7 @@ export default function Projects() {
               number={[1, 2]}
               imgSrc={tw}
               title="Reactjs"
+              links={text.modal['tweeter']}
             >
               <ButtonRead
                 handleClick={(e) => {
@@ -61,6 +62,7 @@ export default function Projects() {
               number={[1, 2]}
               imgSrc={cryptoMain}
               title="Reactjs"
+              links={text.modal['cryptoTracker']}
             >
               <ButtonRead
                 handleClick={(e) => {
@@ -75,6 +77,7 @@ export default function Projects() {
               number={[1, 3]}
               imgSrc={mobileCrypto}
               title="React Native"
+              links={text.modal['mobileCryptoTracker']}
             >
               <ButtonRead
                 handleClick={(e) => {
@@ -89,6 +92,7 @@ export default function Projects() {
               number={[1, 3]}
               imgSrc={cap}
               title="React Native"
+              links={text.modal['calculator']}
             >
               <ButtonRead
                 handleClick={(e) => {
@@ -103,6 +107,7 @@ export default function Projects() {
               number={[1, 4]}
               imgSrc={java2}
               title="Hotel App"
+              links={text.modal['hotel']}
             >
               <ButtonRead
                 handleClick={(e) => {
