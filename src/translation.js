@@ -46,7 +46,7 @@ export const translation = {
     repositorie: 'View Repositorie',
     about: {
       about:
-        "Hi I'm lucas, I'm a full-stack programming student having more knowledge in front-end and specializing with Reactjs, I'm constantly trying to improve technical and soft skills, giving high priority to getting a job opportunity.",
+        'Full Stack Developer focused on Front End with practical experience in several projects, specialized in Reactjs, currently looking for a job where I can demonstrate my determination and skills.',
       description1: {
         title: 'Responsive Design',
         description:
@@ -103,7 +103,7 @@ export const translation = {
     repositorie: 'Ver Repositorio',
     about: {
       about:
-        'Desarrollador full-stack con experiencia practica en diversos proyectos, especializado en Reactjs, actualmente en busqueda de un trabajo donde pueda demostrar mi determinacion y habilidades.',
+        'Desarrollador Full Stack enfocado en el Front End con experiencia practica en diversos proyectos, especializado en Reactjs, actualmente en busqueda de un trabajo donde pueda demostrar mi determinacion y habilidades.',
       description1: {
         title: 'Diseño Responsivo',
         description: 'Gran prioridad a la adaptacion del diseño segun pantalla'
