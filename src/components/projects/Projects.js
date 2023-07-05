@@ -1,4 +1,4 @@
-import { useState, useContext, useRef } from 'react'
+import { useState, useContext } from 'react'
 import cap from '../../images/captura-calculator.jpeg'
 import tw from '../../images/tweeter1.webp'
 import java2 from '../../images/java.webp'
