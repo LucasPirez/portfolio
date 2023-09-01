@@ -23,15 +23,15 @@ export default function Header() {
       <header
         className={`${
           nav !== false
-            ? ' h-[160px] bg-slate-800 w-full'
-            : 'h-[10vh] bg-transparent md:bg-slate-800 w-full dark:md:bg-zinc-800 dark:md:border-b-2 dark:md:border-cyan-700'
+            ? ' h-[160px] bg-myBgBlue w-full'
+            : 'h-[10vh] bg-transparent md:bg-myBgBlue w-full dark:md:bg-myBgDark dark:md:border-b-[3px] dark:md:border-cyan-900'
         } flex  transition-all  justify-end md:[10vh] w-full  items-center z-10 `}
       >
         {(animationStart.about === true || width < 600) && (
           <ul
             className={` ${
               nav === false ? 'hidden' : 'flex'
-            } transition-all flex-col right-4 space-y-2 md:relative md:flex md:flex-row md:space-y-0 text-white m-3 md:m-6 md:space-x-5 text-md md:text-xl`}
+            } transition-all flex-col right-4 space-y-2 md:relative md:flex md:flex-row md:space-y-0  m-3 md:m-6 md:space-x-5 text-md md:text-2xl`}
           >
             <li>
               <a

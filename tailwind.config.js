@@ -3,6 +3,13 @@ module.exports = {
   content: ['./src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
+      colors: {
+        myBgDark: '#212124',
+        myBgBlue: '#25283d',
+        myRose: '#d73542',
+        purple: '#3f3cbb',
+        midnight: '#121063'
+      },
       keyframes: {
         back: {
           '0%': { opacity: '0' },

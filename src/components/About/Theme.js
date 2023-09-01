@@ -44,7 +44,7 @@ export default function Theme({ setChangeTheme }) {
     <>
       <div className="relative text-slate-200">
         <button
-          className="bg-zinc-900 rounded-2xl px-2 hover:scale-105 transition-all duration-300 h-8 border-2 border-cyan-700 z-30 "
+          className="bg-zinc-900 rounded-2xl px-2 hover:scale-105 transition-all duration-300 h-8 border-2 border-cyan-800 z-30 "
           onClick={handleClick}
         >
           {select === 'os' ? (
