@@ -1,9 +1,9 @@
-import React, { useContext } from "react";
-import style from "./AboutDescrip.module.css";
-import TranslationContext from "../../TraslationContext";
+import React, { useContext } from 'react'
+import style from './AboutDescrip.module.css'
+import TranslationContext from '../../TraslationContext'
 
 function AbuotDescrip() {
-  const { text } = useContext(TranslationContext);
+  const { text } = useContext(TranslationContext)
 
   return (
     <div className={style.containerDes}>
@@ -47,10 +47,10 @@ function AbuotDescrip() {
         <p>{text.about.description4.description}</p>
       </div>
     </div>
-  );
+  )
 }
 
-export default AbuotDescrip;
+export default AbuotDescrip
 
 // ?    <div className="w-32 h-32 bg-red m-1">
 // <div className="w-32 h-32 bg-white m-1">

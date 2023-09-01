@@ -3,9 +3,10 @@ import Sun from '../../icons/Sun'
 import Moon from '../../icons/Moon'
 import TranslationContext from '../../TraslationContext'
 
-export default function Theme() {
+export default function Theme({ setChangeTheme }) {
   const { text } = useContext(TranslationContext)
   const [bool, setBool] = useState(false)
+
   const init = localStorage.theme
     ? localStorage.theme
     : window.matchMedia('(prefers-color-scheme: dark)').matches
@@ -36,6 +37,7 @@ export default function Theme() {
         document.documentElement.classList.remove('dark')
       }
     }
+    setChangeTheme(Math.random())
   }, [select])
 
   return (

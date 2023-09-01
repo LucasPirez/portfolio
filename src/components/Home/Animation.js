@@ -5,7 +5,6 @@ import {
   Scene,
   PerspectiveCamera,
   WebGLRenderer,
-  PointLight,
   AmbientLight,
   Vector3,
   BufferGeometry,
@@ -15,17 +14,22 @@ import {
   MathUtils,
   LineBasicMaterial,
   Line,
-  Vector2,
-  Raycaster
+  Group
 } from 'three'
 import useWidth from '../../hooks/useWidth'
 
-function Animation({ visible }) {
+function Animation({ visible, changeTheme }) {
   const { width } = useWidth()
-  const color3 = useRef()
-  const colorAnimation = useRef()
+  const color = useRef({
+    bg: '',
+    line: '',
+    animation: '',
+    star: ''
+  })
 
   const scene = new Scene()
+  scene.rotateX(1.2)
+  scene.rotateY(1.3)
   const camera = new PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
@@ -33,67 +37,44 @@ function Animation({ visible }) {
     1000
   )
 
-  function onMouseMove(event) {
-    const mouse = new Vector2(
-      (event.clientX / window.innerWidth) * 2 - 1,
-      -(event.clientY / window.innerHeight) * 2 + 1
-    )
-    const raycaster = new Raycaster()
-
-    raycaster.setFromCamera(mouse, camera)
-
-    const intersects = raycaster.intersectObjects(
-      scene.children.filter((child) => child instanceof Line)
-    )
-
-    for (const intersect of intersects) {
-      intersect.object.material.color.set(colorAnimation.current)
-    }
-
-    for (const child of scene.children.filter(
-      (child) => child instanceof Line
-    )) {
-      if (!intersects.find((intersect) => intersect.object === child)) {
-        child.material.color.set(color3.current)
-      }
-    }
-  }
-
   useEffect(() => {
-    let color2
     if (
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      color2 = new Color(0x18181b)
-      color3.current = new Color('#30343a')
-      colorAnimation.current = new Color(0x5b5e63)
+      color.current.bg = new Color(0x212124)
+      color.current.line = new Color(0x30343a)
+      color.current.colorAnimation = new Color(0x5b5e63)
+      color.current.star = 0x36aac8
     } else {
-      color2 = new Color(0x1e293b)
-      color3.current = new Color('rgb(75, 84, 98)')
-      colorAnimation.current = new Color('#646c78')
+      color.current.bg = new Color(0x25283d)
+      color.current.line = new Color('rgb(75, 84, 98)')
+      color.current.colorAnimation = new Color(0x646c78)
+      color.current.star = 0x36aac8
     }
     const renderer = new WebGLRenderer({
       canvas: document.querySelector('#bg')
     })
 
+    const group = new Group()
+
     renderer.setPixelRatio(window.devicePixelRatio)
     renderer.setSize(window.innerWidth, window.innerHeight)
-    scene.background = color2
+
+    scene.background = color.current.bg
     camera.position.setZ(30)
 
-    const pointLight = new PointLight()
-    pointLight.position.set(0, 0, 0)
-    const ambientLight = new AmbientLight({ color: 0x06b624 })
-    scene.add(pointLight, ambientLight)
+    const ambientLight = new AmbientLight({ color: 0xa6b624 })
     const controls = new OrbitControls(camera, renderer.domElement)
     controls.enabled = false
 
     if (visible === 'home') {
       function addStar() {
         const geometry = new SphereGeometry(0.1, 15, 2)
-        const material = new MeshStandardMaterial({ color: 0x06b6d4 })
+        const material = new MeshStandardMaterial({
+          color: color.current.star
+        })
         const points = []
         const star = new Mesh(geometry, material)
         const [x, y, z] = Array(3)
@@ -104,14 +85,15 @@ function Animation({ visible }) {
         points.push(new Vector3(0, 100, 0))
 
         const lineMaterial = new LineBasicMaterial({
-          color: new Color(color3.current)
+          color: new Color(color.current.line)
         })
         const lineGeometry = new BufferGeometry().setFromPoints(points)
         const line = new Line(lineGeometry, lineMaterial)
 
         star.position.set(x, y, z)
-        scene.add(line)
-        scene.add(star)
+        group.add(ambientLight, line, star)
+        group.position.set(0, 0, 0)
+        scene.add(group)
       }
 
       Array(100).fill().forEach(addStar)
@@ -119,7 +101,7 @@ function Animation({ visible }) {
       function animate() {
         if (visible !== 'home') return
         ani = window.requestAnimationFrame(animate)
-        scene.rotation.y += 0.0005
+        group.rotation.y += 0.0006
         scene.scroll = false
         renderer.render(scene, camera)
       }
@@ -127,12 +109,15 @@ function Animation({ visible }) {
 
       return () => window.cancelAnimationFrame(ani)
     }
-  }, [width, visible]) /* eslint-disable-line react-hooks/exhaustive-deps */
+  }, [
+    width,
+    visible,
+    changeTheme
+  ]) /* eslint-disable-line react-hooks/exhaustive-deps */
 
   return (
     <>
       <canvas
-        onMouseMove={onMouseMove}
         id="bg"
         className="absolute h-[100%] w-full overflow-hidden "
       ></canvas>

@@ -11,7 +11,7 @@ function About() {
     <>
       <section
         id="about"
-        className="relative max-w-[1500px] m-auto h-auto min-h-[100vh] flex flex-col xl:flex-row items-center lg:justify-around dark:bg-zinc-900 background_black shadow-lg dark:shadow-zinc-400 pt-[16vh] mt-[-10vh] md:mt-0 bg-zinc-200 md:pt-[13vh]"
+        className="relative max-w-[1500px] m-auto h-auto min-h-[100vh] flex flex-col xl:flex-row items-center lg:justify-around dark:bg-myDark-800 background_black shadow-lg dark:shadow-zinc-400 pt-[16vh] mt-[-10vh] md:mt-0 bg-zinc-200 md:pt-[13vh]"
       >
         <>
           <h3 className="absolute top-[10vh] lg:text-6xl sm:text-4xl text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-bl from-cyan-500 to-[#f09a9a] dark:from-cyan-300 dark:to-[#a09a9a] mb-10">

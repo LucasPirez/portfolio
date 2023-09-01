@@ -1,4 +1,4 @@
-import React, { useContext, lazy, Suspense } from 'react'
+import React, { useContext, lazy, Suspense, useState } from 'react'
 import TranslationContext from '../../TraslationContext'
 import ArrowDown from '../../icons/ArrowDown'
 import Theme from '../About/Theme'
@@ -9,6 +9,7 @@ const Animation = lazy(() => import('./Animation'))
 function Home() {
   const { text, handleLanguaje, currentPage, width } =
     useContext(TranslationContext)
+  const [changeTheme, setChangeTheme] = useState('')
 
   return (
     <>
@@ -18,7 +19,9 @@ function Home() {
         className=" flex sm:h-[100vh] h-[110vh]  w-full items-center justify-center overflow-x-hidden bg-transparent"
       >
         <Suspense fallback="">
-          {width > 700 && <Animation visible={currentPage} />}
+          {width > 700 && (
+            <Animation visible={currentPage} changeTheme={changeTheme} />
+          )}
         </Suspense>
         <div className="fixed top-[0.50rem]  left-4 m-4 z-20 md:flex">
           <select
@@ -28,7 +31,7 @@ function Home() {
             <option value="en">English</option>
             <option value="es">Espanol</option>
           </select>
-          <Theme />
+          <Theme setChangeTheme={setChangeTheme} />
         </div>
         <div className="text-slate-100 dark:text-slate-300  text-lg sm:text-3xl md:text-5xl  font-mono z-10 h-72 ">
           <span className="text-md sm:text-xl md:text-2xl opacity-80">
@@ -36,7 +39,7 @@ function Home() {
           </span>
           <h3 className=" text-slate-300 dark:text-slate-300 mt-3 mb-3">
             <strong
-              className="text-rose-600 
+              className="dark:text-rose-500/80 text-[#d73542]
             "
             >
               Lucas Pirez Gallo.
