@@ -28,8 +28,9 @@ function Animation({ visible, changeTheme }) {
   })
 
   const scene = new Scene()
-  scene.rotateX(1.2)
-  scene.rotateY(1.3)
+  scene.rotateX(0.65)
+  scene.rotateZ(0.3)
+
   const camera = new PerspectiveCamera(
     75,
     window.innerWidth / window.innerHeight,
@@ -51,7 +52,7 @@ function Animation({ visible, changeTheme }) {
       color.current.bg = new Color(0x25283d)
       color.current.line = new Color('rgb(75, 84, 98)')
       color.current.colorAnimation = new Color(0x646c78)
-      color.current.star = 0x36aac8
+      color.current.star = 0x26a7d0
     }
     const renderer = new WebGLRenderer({
       canvas: document.querySelector('#bg')
@@ -96,7 +97,7 @@ function Animation({ visible, changeTheme }) {
         scene.add(group)
       }
 
-      Array(100).fill().forEach(addStar)
+      Array(130).fill().forEach(addStar)
       let ani
       function animate() {
         if (visible !== 'home') return
@@ -109,11 +110,7 @@ function Animation({ visible, changeTheme }) {
 
       return () => window.cancelAnimationFrame(ani)
     }
-  }, [
-    width,
-    visible,
-    changeTheme
-  ]) /* eslint-disable-line react-hooks/exhaustive-deps */
+  }, [width, visible, changeTheme])
 
   return (
     <>
