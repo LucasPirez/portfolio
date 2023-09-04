@@ -6,6 +6,7 @@ module.exports = {
       colors: {
         myBgDark: '#212124',
         myBgBlue: '#25283d',
+        myDarkText: '#f8f8f7',
         myRose: '#d73542',
         purple: '#3f3cbb',
         midnight: '#121063'
@@ -27,6 +28,17 @@ module.exports = {
         opacity: {
           '0%': { opacity: '0' },
           '100%': { opacity: '1' }
+        },
+
+        outProjects: {
+          '0%': { transform: 'scale(1)', opacity: 1 },
+          '30%': { transform: 'scale(0)', opacity: 0 },
+          '100%': { position: 'absolute', transform: 'scale(0)', opacity: 0 }
+        },
+        inProjects: {
+          '0%': { transform: 'scale(0)', position: 'absolute' },
+          '50%': { transform: 'scale(0)' },
+          '100%': { transform: 'scale(1)', opacity: 1, position: 'relative' }
         }
       },
 
