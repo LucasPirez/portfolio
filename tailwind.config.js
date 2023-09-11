@@ -8,6 +8,8 @@ module.exports = {
         myBgBlue: '#25283d',
         myDarkText: '#f8f8f7',
         myRose: '#d73542',
+        myCyanDark: '#36aac8',
+        myCyanLight: '#26a7d0',
         purple: '#3f3cbb',
         midnight: '#121063'
       },

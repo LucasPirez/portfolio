@@ -5,18 +5,18 @@ function ContainerProjects({ children, select, number, imgSrc, title, links }) {
     <div
       className={`${
         number.includes(select) === true
-          ? 'animate-[inProjects_1s_forwards] '
-          : 'animate-[outProjects_1s_forwards] '
-      } group w-72 h-72 lg:w-[370px] lg:h-[400px]  flex flex-col  justify-between items-center m-2 text-transparent  text-center rounded-md bg-slate-200  border-slate-600
-       shadow-md shadow-cyan-800 dark:opacity-90 border-2 dark:border-zinc-200 dark:shadow-zinc-400 first-letter:hover:text-slate-800 bg-transparent  overflow-hidden `}
+          ? 'animate-[inProjects_0.8s_ease-in-out_forwards] '
+          : 'animate-[outProjects_0.8s_ease-in-out_forwards] '
+      } group w-72 h-72 2xl:w-[370px] 2xl:h-[380px]  flex flex-col  justify-between items-center m-2 text-transparent  text-center rounded-[30px] bg-slate-200  border-slate-600
+       shadow-md shadow-cyan-800 dark:opacity-90 border-2 dark:border-zinc-200 dark:shadow-zinc-600 first-letter:hover:text-slate-800 bg-transparent  overflow-hidden `}
     >
-      <div className="bg-slate-200/90 cursor-pointer rounded-md flex gap-1 items-center w-auto z-40 absolute right-1 top-1 shadow-sm shadow-slate-500 group-hover:shadow-slate-700 ">
+      <div className="bg-slate-200/90 cursor-pointer flex gap-1 rounded-md items-center w-auto z-40 absolute right-2 top-2 shadow-sm shadow-slate-500 group-hover:shadow-slate-700 ">
         <Links links={links} />
       </div>
       <img
         src={imgSrc}
         alt="calculator"
-        className="absolute h-[100%] m-center object-cover"
+        className="absolute h-[100%] m-center object-cover "
       />
 
       <h4
@@ -28,7 +28,7 @@ function ContainerProjects({ children, select, number, imgSrc, title, links }) {
         {title}
       </h4>
       {children}
-      <div className=" absolute bg-transparent w-full h-full group-hover:bg-slate-200 group-hover:bg-opacity-80 transition-all rounded-md"></div>
+      <div className=" absolute bg-transparent w-full h-full group-hover:bg-slate-300 group-hover:bg-opacity-80 transition-all rounded-md dark:bg-myBgDark/10"></div>
     </div>
   )
 }

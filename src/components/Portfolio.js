@@ -33,14 +33,14 @@ const Port = () => {
 
       <Header />
       <main className="bg-zinc-300 dark:bg-zinc-800">
-        <section ref={containerAbout} title="about">
-          <Suspense fallback={<p>hola</p>}>
-            <About />
-          </Suspense>
-        </section>
         <section ref={containerProjects} title="projects">
           <Suspense fallback={<p> </p>}>
             <Projects />
+          </Suspense>
+        </section>
+        <section ref={containerAbout} title="about">
+          <Suspense fallback={<p></p>}>
+            <About />
           </Suspense>
         </section>
       </main>

@@ -23,7 +23,7 @@ function Animation({ visible, changeTheme }) {
   const color = useRef({
     bg: '',
     line: '',
-    animation: '',
+    colorAnimation: '',
     star: ''
   })
 
@@ -72,7 +72,7 @@ function Animation({ visible, changeTheme }) {
 
     if (visible === 'home') {
       function addStar() {
-        const geometry = new SphereGeometry(0.1, 15, 2)
+        const geometry = new SphereGeometry(0.08, 15, 2)
         const material = new MeshStandardMaterial({
           color: color.current.star
         })
@@ -80,7 +80,7 @@ function Animation({ visible, changeTheme }) {
         const star = new Mesh(geometry, material)
         const [x, y, z] = Array(3)
           .fill()
-          .map(() => MathUtils.randFloatSpread(60))
+          .map(() => MathUtils.randFloatSpread(45))
 
         points.push(new Vector3(x, y, z))
         points.push(new Vector3(0, 100, 0))
@@ -97,12 +97,13 @@ function Animation({ visible, changeTheme }) {
         scene.add(group)
       }
 
-      Array(130).fill().forEach(addStar)
+      Array(140).fill().forEach(addStar)
       let ani
       function animate() {
         if (visible !== 'home') return
         ani = window.requestAnimationFrame(animate)
-        group.rotation.y += 0.0006
+        group.rotation.y += 0.0009
+
         scene.scroll = false
         renderer.render(scene, camera)
       }

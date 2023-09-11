@@ -37,19 +37,19 @@
 
   body::-webkit-scrollbar-thumb,
   .scroll_style::-webkit-scrollbar-thumb {
-    background-color: #09a;
+    background-color: #0099aa80;
   }
 
   body::-webkit-scrollbar-thumb:hover,
   .scroll_style::-webkit-scrollbar-thumb:hover {
-    background-color: #09a;
+    background-color: #0099aa80;
   }
 
   body::-webkit-scrollbar-corner,
   body::-webkit-scrollbar-track,
   .scroll_style::-webkit-scrollbar-corner,
   .scroll_style::-webkit-scrollbar-track {
-    background-color: rgb(167, 196, 199);
+    background-color: rgb(204, 225, 228);
   }
 
   /* body {
@@ -73,7 +73,7 @@
 
     .dark .background_black {
       --tw-bg-opacity: 1;
-      background-color: rgb(24 24 27 / var(--tw-bg-opacity));
+      background-color: rgb(33 33 36 / var(--tw-bg-opacity));
       background-image: conic-gradient(
         transparent 42deg,
         #3d3d3d60 45deg,
