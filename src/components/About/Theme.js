@@ -54,7 +54,7 @@ export default function Theme({ setChangeTheme }) {
           ) : (
             <Moon />
           )}
-          <span className="mx-2 hidden md:inline-block">{text.theme}</span>
+          <span className="mx-2 hidden lg:inline-block">{text.theme}</span>
         </button>
         <ul
           className={`${

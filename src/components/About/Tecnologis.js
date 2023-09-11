@@ -43,9 +43,11 @@ const Tecnologies = () => {
           {arrCompontents.map((tecnology) => (
             <li
               key={tecnology.text + Math.random()}
-              className={`${tecnology.style} flex items-center pl-[4%]  dark:shadow-xl dark:shadow-myBgDark/60 dark:bg-[#0099ff70] border-2 dark:border-[#0099ff50] border-dashed border-myBgDark/70 text-myRose lg:text-xl jus `}
+              className={`${tecnology.style} flex items-center pl-[4%]  dark:shadow-xl dark:shadow-myBgDark/60 dark:bg-[#0099ff70] border-2 dark:border-[#0099ff50] border-dashed border-myBgDark/70 text-myRose dark:text-gray-200 lg:text-xl jus `}
             >
-              <span>{tecnology.component}</span>
+              <span className="scale-75 lg:scale-100">
+                {tecnology.component}
+              </span>
               <span className="w-full">{tecnology.text}</span>
             </li>
           ))}

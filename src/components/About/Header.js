@@ -19,7 +19,7 @@ export default function Header() {
   }, [])
 
   return (
-    <div className="w-full h-[10vh] fixed  sm:sticky top-0 z-10 bg-transparent">
+    <div className="w-full h-[10vh] fixed  sm:sticky top-0 z-20 bg-transparent">
       <header
         className={`${
           nav !== false
@@ -46,22 +46,22 @@ export default function Header() {
             </li>
             <li>
               <a
-                href="#about"
-                className={` ${
-                  currentPage === 'about' ? 'text-cyan-500' : 'text-gray-200'
-                } flex  transition-all transform -translate-y-1 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.9s_ease-in-out]`}
-              >
-                {text.header.about}
-              </a>
-            </li>
-            <li>
-              <a
                 href="#portfolio"
                 className={`${
                   currentPage === 'projects' ? 'text-cyan-500' : 'text-gray-200'
                 } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.6s_ease-in-out]`}
               >
                 {text.header.portfolio}
+              </a>
+            </li>
+            <li>
+              <a
+                href="#about"
+                className={` ${
+                  currentPage === 'about' ? 'text-cyan-500' : 'text-gray-200'
+                } flex  transition-all transform -translate-y-1 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.9s_ease-in-out]`}
+              >
+                {text.header.about}
               </a>
             </li>
             <li></li>
