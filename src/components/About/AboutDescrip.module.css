@@ -9,17 +9,19 @@
 
 .des {
   height: auto;
-  min-height: 160px;
-  width: 220px;
+  min-height: 190px;
+  width: 240px;
   background: transparent;
   border-radius: 35px;
   font-family: monospace;
   font-size: 1rem;
   margin: 3px;
   color: #024954;
-  padding: 10px;
+  padding: 20px;
+  padding-top: 30px;
   transition-duration: 0.3s;
   border-top: 1px dashed #d7354290;
+  border-radius: 89% 11% 85% 15% / 12% 87% 13% 88%;
 }
 .des:hover {
   transform: scale(1.03);

@@ -21,10 +21,17 @@ function About() {
           <div className="mt-12 lg:mt-0 center h-auto md:w-[92%] xl:w-[65%] flex flex-col justify-center items-center xl:self-start xl:mt-20 ">
             <div className="flex flex-col lg:flex-row items-center  ">
               <div
-                className="w-[350px]  m-10 rounded-t-full rounded-b-md shadow-lg  shadow-myBgBlue bg-gradient-to-t 
-                bg-opacity-90 from-cyan-900/30 to-myBgDark/30 dark:from-cyan-900/70 dark:to-myBgDark/70 dark:opacity-90"
+                className=" w-[280px] h-[280px] m-10 lg:mt-0  overflow-hidden flex justify-center z-10 shadow-lg  shadow-myBgBlue/50 bg-gradient-to-t 
+                bg-opacity-90 from-cyan-900/30 to-myBgDark/30  dark:from-cyan-900/70 dark:to-myBgDark/70"
+                style={{
+                  borderRadius: '65% 35% 65% 35% / 28% 69% 31% 72%'
+                }}
               >
-                <img src={linked} alt="perfil" className="pl-2 opacity-100" />
+                <img
+                  src={linked}
+                  alt="perfil"
+                  className=" opacity-100 mt-2 -mb-2  object-cover"
+                />
               </div>
 
               <p
