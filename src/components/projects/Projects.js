@@ -1,7 +1,6 @@
 import { useState, useContext, useRef } from 'react'
 import cap from '../../images/captura-calculator.jpeg'
 import tw from '../../images/tweeter1.webp'
-import java2 from '../../images/java.webp'
 import cryptoMain from '../../images/cripto/img-crypto-main.webp'
 import mobileCrypto from '../../images/cripto/mobile-table.webp'
 import ModalChildren from './ModalChildren'
@@ -63,9 +62,9 @@ export default function Projects() {
             </ContainerProjects>
             <ContainerProjects
               select={select}
-              number={[1, 2]}
+              number={[1, 2, 4]}
               imgSrc={cryptoMain}
-              title="Reactjs"
+              title="Reactjs/.Net"
               links={text.modal['cryptoTracker']}
             >
               <ButtonRead
@@ -103,21 +102,6 @@ export default function Projects() {
                   e.preventDefault()
                   e.stopPropagation()
                   handleClick('calculator')
-                }}
-              />
-            </ContainerProjects>
-            <ContainerProjects
-              select={select}
-              number={[1, 4]}
-              imgSrc={java2}
-              title="Hotel App"
-              links={text.modal['hotel']}
-            >
-              <ButtonRead
-                handleClick={(e) => {
-                  e.preventDefault()
-                  e.stopPropagation()
-                  handleClick('hotel')
                 }}
               />
             </ContainerProjects>

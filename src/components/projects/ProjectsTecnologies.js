@@ -1,4 +1,4 @@
-const TECNOLOGIES = ['all', 'Reactjs', 'React Native', 'Java']
+const TECNOLOGIES = ['all', 'Reactjs', 'React Native', '.Net']
 
 function ProjectsTecnologies({ onSelect, select, text }) {
   return (
