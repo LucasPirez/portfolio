@@ -1,4 +1,4 @@
-import { useState, lazy, Suspense, useRef, useContext } from 'react'
+import { lazy, Suspense, useRef, useContext } from 'react'
 import Home from './Home/Home'
 import Header from './About/Header'
 import TranslationContext from '../TraslationContext'

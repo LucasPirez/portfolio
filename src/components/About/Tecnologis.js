@@ -1,12 +1,13 @@
 import { useContext } from 'react'
 import style from './tecnologies.module.css'
-import Express, {
+import {
+  Net,
   Css3,
   Html,
   Reactjs,
   TypeScript,
   Javascript,
-  Java
+  CSharp
 } from '../../icons/IconsTecnologies'
 import TranslationContext from '../../TraslationContext'
 
@@ -18,10 +19,10 @@ const Tecnologies = () => {
     { style: style.b, component: <Css3 />, text: 'CSS:' },
     { style: style.c, component: <Javascript />, text: 'JavaScript' },
     { style: style.d, component: <TypeScript />, text: 'TypeScript' },
-    { style: style.e, component: <Java />, text: 'Java' },
+    { style: style.e, component: <CSharp />, text: 'C#' },
     { style: style.f, component: <Reactjs />, text: 'React' },
     { style: style.f, component: <Reactjs />, text: 'React Native' },
-    { style: style.g, component: <Express />, text: 'Express' }
+    { style: style.g, component: <Net />, text: '.NET' }
   ]
 
   return (

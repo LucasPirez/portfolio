@@ -27,7 +27,7 @@ export default function Header() {
             : 'h-[10vh] bg-transparent md:bg-myBgBlue w-full dark:md:bg-myBgDark dark:md:border-b-[3px] dark:md:border-cyan-900'
         } flex  transition-all  justify-end md:[10vh] w-full  items-center z-10 `}
       >
-        {(animationStart.about === true || width < 600) && (
+        {(animationStart.projects === true || width < 600) && (
           <ul
             className={` ${
               nav === false ? 'hidden' : 'flex'
@@ -39,7 +39,7 @@ export default function Header() {
                 className={`${
                   currentPage === 'home' ? 'text-cyan-500' : 'text-gray-200'
                 } 
-                flex  transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_2.5s_ease-in-out] animate-[wiggleMedia_1.2s_ease-in-out] `}
+                flex  transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_2.5s_ease-in-out] animate-[wiggleMedia_1s_ease-in-out] `}
               >
                 {text.header.home}
               </a>
@@ -49,7 +49,7 @@ export default function Header() {
                 href="#portfolio"
                 className={`${
                   currentPage === 'projects' ? 'text-cyan-500' : 'text-gray-200'
-                } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.6s_ease-in-out]`}
+                } flex transition-all transform -translate-y-1 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.7s_ease-in-out]`}
               >
                 {text.header.portfolio}
               </a>
@@ -59,7 +59,7 @@ export default function Header() {
                 href="#about"
                 className={` ${
                   currentPage === 'about' ? 'text-cyan-500' : 'text-gray-200'
-                } flex  transition-all transform -translate-y-1 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.9s_ease-in-out]`}
+                } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.4s_ease-in-out] `}
               >
                 {text.header.about}
               </a>
@@ -70,7 +70,7 @@ export default function Header() {
                 href="#footer"
                 className={`${
                   currentPage === 'footer' ? 'text-cyan-500' : 'text-gray-200'
-                } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.3s_ease-in-out]`}
+                } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.1s_ease-in-out]`}
               >
                 {text.header.contact}
               </a>

@@ -12,15 +12,11 @@ import mobileChart from './images/cripto/mobile-chart.webp'
 import mobileChartLineal from './images/cripto/mobile-chartLineal.webp'
 import mobilecrypto from './images/cripto/mobile-crypto.webp'
 import mobileTable from './images/cripto/mobile-table.webp'
-import java1 from './images/java-img.webp'
-import java2 from './images/java.webp'
-import java3 from './images/java-img-reserva.webp'
 
 const images = {
   tweeter: [tweeter1, tweeter2, tweeter3, tweeter4],
   calculator: [calcImage2, calcImage3],
   cryptoTracker: [cryptoMain, cryptoCoin, cryptoMobile],
-  gymApp: [java2, java1, java3],
   mobile: [mobileChart, mobileChartLineal, mobileTable, mobilecrypto]
 }
 
@@ -31,15 +27,6 @@ export const modalEN = {
       'This application is made with React Native and TypeScript, with the ability to run on multiple platforms, it stands out for the implementation of night mode, which allows users to enjoy a visually adaptive experience, it also has a transaction history functionality that allows users to review the operations performed. All this is achieved through the use of context.',
     images: images.calculator,
     repositorie: 'https://github.com/LucasPirez/expo-calculator-darkMode',
-    deploy: ''
-  },
-  hotel: {
-    title: 'Hotel App',
-    description:
-      'The application I have developed in Java is an efficient and easy to use tool for keeping guest records in a hotel. Although the graphical interface was provided to me, I developed an efficient and easy to use app for keeping guest records in a hotel. With its complete functionalities and its ability to store and query data in a secure and reliable way, this application is an excellent choice to improve guest management in any hotel',
-    videos: '',
-    images: images.gymApp,
-    repositorie: 'https://github.com/LucasPirez/hotel-challenge-alura',
     deploy: ''
   },
   tweeter: {
@@ -53,7 +40,7 @@ export const modalEN = {
   cryptoTracker: {
     title: 'Crypto Tracker',
     description:
-      "This cryptocurrency application was developed using CoinGecko and Nextjs API, which makes it highly reliable and efficient in terms of performance. The application features a search system for the cryptocurrencies available in the API. In addition, it offers detailed candlestick and line charts, which provide a complete overview of the performance of the various coins over time. But that's not all, the app also takes full advantage of all the information provided by the CoinGecko API, offering a wide variety of relevant data for each coin, such as its price, market capitalization, transaction volume and more.",
+      "This cryptocurrency application was developed using the CoinGecko API in Nextjs and the backend in .NET, which makes it highly reliable and efficient in terms of performance. The application features a search system for cryptocurrencies available in the API, and a cryptocurrency price alert system where users receive notifications via email. In addition, it offers detailed candlestick and line charts, which provide a complete overview of the performance of different coins over time. But that's not all, the application also takes full advantage of all the information provided by the CoinGecko API, offering a wide variety of relevant data for each coin, such as its price, market capitalization, transaction volume and more.",
     images: images.cryptoTracker,
     repositorie: 'https://github.com/LucasPirez/cryptomonedas-app',
     deploy: ''
@@ -78,15 +65,6 @@ export const modalES = {
     repositorie: 'https://github.com/LucasPirez/expo-calculator-darkMode',
     deploy: ''
   },
-  hotel: {
-    title: 'Hotel App',
-    description:
-      'La aplicación que he desarrollado en Java es una herramienta eficiente y fácil de usar para llevar registros de huéspedes en un hotel. A pesar de que la interfaz gráfica me fue proporcionada, desarrole una app  eficiente y fácil de usar para llevar registros de huéspedes en un hotel. Con sus funcionalidades completas y su capacidad de almacenar y consultar datos de manera segura y confiable, esta aplicación es una excelente opción para mejorar la gestión de huéspedes en cualquier hotel.',
-    videos: '',
-    images: images.gymApp,
-    repositorie: 'https://github.com/LucasPirez/hotel-challenge-alura',
-    deploy: ''
-  },
   tweeter: {
     title: 'Red Social',
     description:
@@ -98,7 +76,7 @@ export const modalES = {
   cryptoTracker: {
     title: 'Crypto Tracker',
     description:
-      'Esta aplicación de criptomonedas fue desarrollada utilizando la API de CoinGecko y Nextjs, lo que la hace altamente confiable y eficiente en términos de rendimiento. La aplicación cuenta con un sistema de búsqueda de las criptomonedas disponibles en la API. Además, ofrece gráficos detallados de velas y lineales, que proporcionan una visión  completa del rendimiento de las distintas monedas en el tiempo. Pero eso no es todo, la aplicación también aprovecha al máximo toda la información proporcionada por la API de CoinGecko, ofreciendo una amplia variedad de datos relevantes para cada moneda, como su precio, capitalización de mercado, volumen de transacciones y más.',
+      'Esta aplicación de criptomonedas fue desarrollada utilizando la API de CoinGecko en Nextjs y el backend en .NET, lo que la hace altamente confiable y eficiente en términos de rendimiento. La aplicación cuenta con un sistema de búsqueda de las criptomonedas disponibles en la API, y un sistema de alerta de precios de criptomonedas donde usuarios  reciben notificaciones via email. Además, ofrece gráficos detallados de velas y lineales, que proporcionan una visión  completa del rendimiento de las distintas monedas en el tiempo. Pero eso no es todo, la aplicación también aprovecha al máximo toda la información proporcionada por la API de CoinGecko, ofreciendo una amplia variedad de datos relevantes para cada moneda, como su precio, capitalización de mercado, volumen de transacciones y más.',
     images: images.cryptoTracker,
     repositorie: 'https://github.com/LucasPirez/cryptomonedas-app',
     deploy: ''
