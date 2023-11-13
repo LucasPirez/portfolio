@@ -35,7 +35,7 @@ function Footer() {
             <img
               src={arrow}
               alt="arrow"
-              className="  sm:w-8 sm:h-8 w-6 h-6 m-auto invert "
+              className="  sm:w-8 sm:h-8 w-6 h-6 m-auto invert"
             />
           </a>
           <div className=" flex flex-1 p-5 m-10 sm:m-0 justify-around">

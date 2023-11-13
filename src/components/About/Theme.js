@@ -47,11 +47,11 @@ export default function Theme({ setChangeTheme }) {
   return (
     <>
       <button
-        className="bg-zinc-900 rounded-2xl px-2 hover:scale-105 transition-all duration-300 h-8 border-2 border-cyan-800 z-30 "
+        className="bg-myBgDarkSecondary rounded-2xl px-2 hover:scale-105 transition-all duration-300 h-8 border-2 border-myDarkLightBlue/90 z-30 "
         onClick={handleClick}
       >
         {select === 'os' ? (
-          <span className="text-cyan-400">OS</span>
+          <span className="text-gray-200">OS</span>
         ) : select === 'light' ? (
           <Sun />
         ) : (

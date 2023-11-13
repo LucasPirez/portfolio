@@ -14,7 +14,7 @@ function ProjectsTecnologies({ onSelect, select, text }) {
             : select === 4
             ? 'ml-[86%]'
             : ''
-        } w-0 h-0 transition-all duration-300 ease-linear border-l-[8px] border-t-[16px] border-r-[8px] border-t-rose-600 m border-r-transparent border-l-transparent mb-1
+        } w-0 h-0 transition-all duration-300 ease-linear border-l-[8px] border-t-[16px] border-r-[8px] border-t-myLightPurple border-r-transparent border-l-transparent mb-1
          `}
       ></div>
       <div className="w-full h-full flex ">

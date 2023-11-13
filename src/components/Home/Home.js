@@ -3,6 +3,7 @@ import TranslationContext from '../../TraslationContext'
 import ArrowDown from '../../icons/ArrowDown'
 import Theme from '../About/Theme'
 import GmailIcon from '../../icons/GmailIcon'
+import { buttonPrimary } from '../util/classButtons'
 
 const Animation = lazy(() => import('./Animation'))
 
@@ -25,7 +26,7 @@ function Home() {
         </Suspense>
         <div className="fixed top-[0.50rem]  left-4 m-4 z-30 md:flex">
           <select
-            className="text-xs md:text-base bg-zinc-900 rounded-2xl px-2 border-2 border-cyan-700 cursor-pointer p-1  hover:scale-105 transition-all duration-300  text-slate-200  mr-2 mb-2 dark:border-cyan-800 dark:text-slate-200 h-8"
+            className="text-xs md:text-base bg-myDarkLightBlue rounded-2xl px-2 border-2cursor-pointer p-1  hover:scale-105 transition-all duration-300 mr-2 mb-2 dark:border-myDarkLightBlue dark:text-gray-900 h-8"
             onChange={(e) => handleLanguaje(e.target.value)}
           >
             <option value="en">English</option>
@@ -51,8 +52,7 @@ function Home() {
           <div className="flex justify-center m-auto mt-4 lg:mt-8 relative w-[300px]">
             <a
               href="#portfolio"
-              className={`group relative inline-flex
-              outline-cyan-700 p-2 items-center  text-sm md:text-lg  lg:text-xl lg:p-3 outline hover:outline-offset-2 hover:outline-cyan-600  rounded-md hover:bg-cyan-800 bg-slate-800 hover:text-emerald-50  transition-all duration-200 dark:bg-zinc-800 dark:hover:bg-cyan-800`}
+              className={`group relative inline-flex ${buttonPrimary}`}
             >
               {text.presentation.button}
               <span className="group-hover:animate-bounce scale-90 sm:scale-110">

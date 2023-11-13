@@ -45,8 +45,16 @@ export const translation = {
     deploy: 'View Deploy',
     repositorie: 'View Repositorie',
     about: {
-      about:
-        'Full Stack Developer focused on Front End with practical experience in several projects, specialized in Reactjs, currently looking for a job where I can demonstrate my determination and skills.',
+      about: () => (
+        <>
+          <strong className="text-myLightRed dark:text-myDarkRed/90">
+            Full Stack Developer
+          </strong>{' '}
+          focused on Front End with practical experience in several projects,
+          specialized in Reactjs, currently looking for a job where I can
+          demonstrate my determination and skills.
+        </>
+      ),
       description1: {
         title: 'Responsive Design',
         description:
@@ -102,8 +110,16 @@ export const translation = {
     deploy: 'Ver Despliegue',
     repositorie: 'Ver Repositorio',
     about: {
-      about:
-        'Desarrollador Full Stack enfocado en el Front End con experiencia practica en diversos proyectos, especializado en Reactjs, actualmente en busqueda de un trabajo donde pueda demostrar mi determinacion y habilidades.',
+      about: () => (
+        <>
+          <strong className="text-myLightRed dark:text-myDarkRed/90">
+            Desarrollador Full Stack
+          </strong>{' '}
+          enfocado en el Front End con experiencia practica en diversos
+          proyectos, especializado en Reactjs, actualmente en busqueda de un
+          trabajo donde pueda demostrar mi determinacion y habilidades.
+        </>
+      ),
       description1: {
         title: 'Diseño Responsivo',
         description: 'Gran prioridad a la adaptacion del diseño segun pantalla'

@@ -6,9 +6,9 @@ function AbuotDescrip() {
   const { text } = useContext(TranslationContext)
 
   const styleContent = {
-    contenedor: ` ${style.des} dark:text-slate-200  dark:shadow-zinc-500 dark:hover:shadow-slate-700 shadow-md hover:shadow-zinc-300 dark:bg-zinc-900`,
-    title: `${style.titleDescription} dark:text-cyan-500`,
-    hr: style.limit,
+    contenedor: ` ${style.des} dark:text-slate-200  shadow-zinc-500  dark:hover:shadow-myDarkLightBlue/50 shadow-md hover:shadow-myLightCyan/50 dark:bg-myBgDarkSecondary bg-[#fefefe] `,
+    title: `${style.titleDescription} dark:text-purple/90 text-myLightPurple`,
+    hr: `${style.limit}  opacity-80`,
     text: ''
   }
 

@@ -89,7 +89,7 @@
   textarea:focus + span,
   input:valid + span,
   textarea:valid + span {
-    @apply text-cyan-500 -translate-y-8 opacity-100;
+    @apply text-purple/90 -translate-y-8 opacity-100;
   }
 
   .custom-rounded {
@@ -98,8 +98,16 @@
     border-radius: 68% 8% 71% 8% / 7% 72% 7% 71%;
     border-radius: 7% 6% 5% 8% / 47% 52% 41% 50%;
   }
-}
 
+  .custom-text {
+    color: transparent;
+    -webkit-text-stroke: 1px #25283d;
+  }
+
+  .dark .custom-text {
+    -webkit-text-stroke: 0;
+  }
+}
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

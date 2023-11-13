@@ -24,7 +24,7 @@ export default function Header() {
         className={`${
           nav !== false
             ? ' h-[160px] bg-myBgBlue w-full'
-            : 'h-[10vh] bg-transparent md:bg-myBgBlue w-full dark:md:bg-myBgDark dark:md:border-b-[3px] dark:md:border-cyan-900'
+            : 'h-[10vh] bg-transparent md:bg-myBgBlue w-full dark:md:bg-myBgDark  '
         } flex  transition-all  justify-end md:[10vh] w-full  items-center z-10 `}
       >
         {(animationStart.projects === true || width < 600) && (
@@ -37,7 +37,7 @@ export default function Header() {
               <a
                 href="#home"
                 className={`${
-                  currentPage === 'home' ? 'text-cyan-500' : 'text-gray-200'
+                  currentPage === 'home' ? 'text-purple' : 'text-gray-200'
                 } 
                 flex  transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_2.5s_ease-in-out] animate-[wiggleMedia_1s_ease-in-out] `}
               >
@@ -48,7 +48,7 @@ export default function Header() {
               <a
                 href="#portfolio"
                 className={`${
-                  currentPage === 'projects' ? 'text-cyan-500' : 'text-gray-200'
+                  currentPage === 'projects' ? 'text-purple' : 'text-gray-200'
                 } flex transition-all transform -translate-y-1 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.7s_ease-in-out]`}
               >
                 {text.header.portfolio}
@@ -58,7 +58,7 @@ export default function Header() {
               <a
                 href="#about"
                 className={` ${
-                  currentPage === 'about' ? 'text-cyan-500' : 'text-gray-200'
+                  currentPage === 'about' ? 'text-purple' : 'text-gray-200'
                 } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.4s_ease-in-out] `}
               >
                 {text.header.about}
@@ -69,7 +69,7 @@ export default function Header() {
               <a
                 href="#footer"
                 className={`${
-                  currentPage === 'footer' ? 'text-cyan-500' : 'text-gray-200'
+                  currentPage === 'footer' ? 'text-purple' : 'text-gray-200'
                 } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.1s_ease-in-out]`}
               >
                 {text.header.contact}

@@ -33,7 +33,7 @@ const Tecnologies = () => {
       <div className={style.cuadrado1}>
         <div className={style.cuadrado}></div>
       </div>
-      <h3 className="text-center lg:text-6xl sm:text-4xl text-3xl  font-bold bg-clip-text text-transparent  m-4 dark:text-myCyanDark/80 text-myBgBlue">
+      <h3 className="text-center lg:text-6xl sm:text-4xl text-3xl  font-bold bg-clip-text  m-4 dark:text-purple/90  text-myLightPurple/60 custom-text">
         {text.tecnologies}
       </h3>
       <div className="p-1">
@@ -44,9 +44,9 @@ const Tecnologies = () => {
           {arrCompontents.map((tecnology) => (
             <li
               key={tecnology.text + Math.random()}
-              className={`${tecnology.style} flex items-center pl-[4%]  dark:shadow-xl dark:shadow-myBgDark/60 dark:bg-[#0099ff70] border-2 dark:border-[#0099ff50] border-dashed border-myBgDark/70 text-myRose dark:text-gray-200 lg:text-xl jus `}
+              className={`${tecnology.style} flex items-center pl-[4%]   dark:bg-myDarkLightBlue/60 bg-myBgLightSecondary border-[1px] border-myLightBlue/30 text-myBgDarkSecondary dark:text-gray-100 lg:text-xl `}
             >
-              <span className="scale-75 lg:scale-100">
+              <span className="scale-75 lg:scale-100 ">
                 {tecnology.component}
               </span>
               <span className="w-full">{tecnology.text}</span>

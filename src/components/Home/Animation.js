@@ -44,15 +44,15 @@ function Animation({ visible, changeTheme }) {
       (!('theme' in localStorage) &&
         window.matchMedia('(prefers-color-scheme: dark)').matches)
     ) {
-      color.current.bg = new Color(0x212124)
+      color.current.bg = new Color(0x1d1e27)
       color.current.line = new Color(0x30343a)
       color.current.colorAnimation = new Color(0x5b5e63)
-      color.current.star = 0x36aac8
+      color.current.star = 0x86e0e7
     } else {
       color.current.bg = new Color(0x25283d)
       color.current.line = new Color('rgb(75, 84, 98)')
       color.current.colorAnimation = new Color(0x646c78)
-      color.current.star = 0x26a7d0
+      color.current.star = 0x3ec9d6
     }
     const renderer = new WebGLRenderer({
       canvas: document.querySelector('#bg')

@@ -31,7 +31,7 @@ export default function ModalChildren({ modalSelect, outside }) {
     >
       <div
         ref={ref}
-        className="max-w-[800px] max-h-[700px] h-[85vh] border-2 rounded-md opacity-78 relative text-red-50 bg-white dark:bg-zinc-900 "
+        className="max-w-[800px] max-h-[700px] h-[85vh] border-2 rounded-md opacity-78 relative text-red-50 bg-myBgLight dark:bg-myBgDark "
       >
         <div className="flex justify-center  w-[100%] sm:h-[68%] h-[52%] bg-slate-400 relative dark:opacity-80 overflow-hidden">
           {img &&
@@ -58,7 +58,7 @@ export default function ModalChildren({ modalSelect, outside }) {
           setCarousel={setCarousel}
           long={long}
         />
-        <div className="absolute w-[100%] sm:top-[65%] top-[48.5%] z-30  m-auto flex justify-center items-center space-x-2">
+        <div className="absolute w-[100%] sm:top-[65%] top-[48.5%] z-30  m-auto flex justify-center items-center space-x-2 ">
           {img &&
             img.map((u, i) => (
               <div
@@ -71,8 +71,8 @@ export default function ModalChildren({ modalSelect, outside }) {
               ></div>
             ))}
         </div>
-        <div className="h-[48%] sm:h-[32%] relative ">
-          <h4 className="text-center sm:text-3xl text-xl block   mt-1  text-black dark:text-slate-200 font-bold ">
+        <div className="h-[48%] sm:h-[32%] relative border-t-[1px] dark:border-myDarkRed border-myBgDark">
+          <h4 className="text-center sm:text-3xl text-xl block   mt-1  text-black  dark:text-slate-200 font-bold ">
             {title}
           </h4>
 
@@ -81,7 +81,7 @@ export default function ModalChildren({ modalSelect, outside }) {
               {description}
             </p>
 
-            <div className="flex flex-row justify-between items-end  w-[100%] bottom-2 pb-2">
+            <div className="flex flex-row justify-between items-end  w-[100%] bottom-2 pb-2 mt-4">
               <div className="flex">
                 <a
                   target="_black"
@@ -89,8 +89,8 @@ export default function ModalChildren({ modalSelect, outside }) {
                   onClick={(e) => {
                     e.stopPropagation()
                   }}
-                  className=" p-1 sm:px-3 px-1 rounded cursor-pointer hover:bg-cyan-500  border-2 border-cyan-700 bg-cyan-700 dark:bg-cyan-700 dark:hover:text-slate-900 active:scale-95 sm:ml-4 dark:text-slate-200 
-                ml-2 transition-all duration-200 sm:text-base text-sm"
+                  className=" p-2 sm:px-3 px-1 rounded cursor-pointer 
+                  ml-2 transition-all duration-200 sm:text-base text-sm bg-myLightCyan dark:bg-myDarkLightBlue text-myBgDarkSecondary hover:opacity-80 "
                 >
                   {text.repositorie}
                 </a>
@@ -101,8 +101,8 @@ export default function ModalChildren({ modalSelect, outside }) {
                     onClick={(e) => {
                       e.stopPropagation()
                     }}
-                    className=" p-1 sm:px-3 px-1 rounded cursor-pointer hover:bg-cyan-500  border-2 border-cyan-700 bg-cyan-700 active:scale-95 sm:ml-4 dark:hover:text-slate-900 dark:text-slate-200
-                  ml-2 transition-all duration-200 sm:text-base text-sm"
+                    className=" p-2 sm:px-3 px-1 rounded cursor-pointer 
+                  ml-2 transition-all duration-200 sm:text-base text-sm bg-myLightCyan dark:bg-myDarkLightBlue text-myBgDarkSecondary hover:opacity-80 "
                   >
                     {text.deploy}
                   </a>
@@ -110,7 +110,9 @@ export default function ModalChildren({ modalSelect, outside }) {
               </div>
               <button
                 onClick={outside}
-                className=" bottom-2  text-3xl mr-3  px-2 border-2 rounded border-cyan-400 text-cyan-800 hover:bg-cyan-700 transition-all opacity-80 duration-200 hover:text-cyan-300 hover:border-white dark:text-slate-200"
+                className=" bottom-2  text-3xl mr-3  px-2  rounded 
+                dark:bg-myDarkRed dark:text-myBgDark bg-myLightRed text-myBgLight hover:scale-105
+                "
               >
                 X
               </button>

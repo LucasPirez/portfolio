@@ -1,69 +1,73 @@
-import React, { useState, useRef, useContext } from "react";
-import { sendForm } from "../../firebase/client";
-import TranslationContext from "../../TraslationContext";
-import verificacion from "../../icons/icons8-marca-de-verificacion.svg";
+import React, { useState, useRef, useContext } from 'react'
+import { sendForm } from '../../firebase/client'
+import TranslationContext from '../../TraslationContext'
+import verificacion from '../../icons/icons8-marca-de-verificacion.svg'
+import { buttonPrimary } from '../util/classButtons'
 
 const Form = () => {
-  const { text } = useContext(TranslationContext);
-  const arrValidity = useRef([]);
+  const { text } = useContext(TranslationContext)
+  const arrValidity = useRef([])
   const [form, setForm] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+    name: '',
+    email: '',
+    message: ''
+  })
   const [errors, setErrors] = useState({
-    name: "",
-    email: "",
-    messages: "",
-  });
+    name: '',
+    email: '',
+    messages: ''
+  })
 
-  const [buttonDisabled, setButtonDisabled] = useState(true);
+  const [buttonDisabled, setButtonDisabled] = useState(true)
 
   async function send(e) {
-    e.preventDefault();
+    e.preventDefault()
     sendForm(form).then((data) => {
-      console.log(data);
-    });
-    setForm({ name: "", email: "", message: "" });
+      console.log(data)
+    })
+    setForm({ name: '', email: '', message: '' })
   }
   const errorDescription = {
-    valueMissing: "This field cannot be empty",
-    typeMismatch: "The field is incorrect",
-  };
+    valueMissing: 'This field cannot be empty',
+    typeMismatch: 'The field is incorrect'
+  }
 
-  const updateError = (value = "") => ({
+  const updateError = (value = '') => ({
     name: () => setErrors({ ...errors, name: value }),
     email: () => setErrors({ ...errors, email: value }),
-    description: () => setErrors({ ...errors, messages: value }),
-  });
+    description: () => setErrors({ ...errors, messages: value })
+  })
 
   const handleBlur = (e, index) => {
-    const { validity, name } = e.target;
+    const { validity, name } = e.target
 
     if (validity.valid) {
-      arrValidity.current[index] = true;
-      updateError()[name]();
-      console.log("oeuoeuoeu");
+      arrValidity.current[index] = true
+      updateError()[name]()
+      console.log('oeuoeuoeu')
     } else {
       for (const value in errorDescription) {
         if (validity[value]) {
-          const a = text.contact.errorDescription[value];
+          const a = text.contact.errorDescription[value]
 
-          updateError(a)[name]();
+          updateError(a)[name]()
         }
       }
-      arrValidity.current[index] = false;
+      arrValidity.current[index] = false
     }
 
     if (
       arrValidity.current.length === 3 &&
       arrValidity.current.indexOf(false) === -1
     ) {
-      setButtonDisabled(false);
+      setButtonDisabled(false)
     } else {
-      setButtonDisabled(true);
+      setButtonDisabled(true)
     }
-  };
+  }
+
+  const classNameInputs =
+    'p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-b-2  focus:border-b-myDarkLightBlue/90 rounded bg-slate-900 placeholder-slate-600 w-full'
 
   return (
     <>
@@ -88,8 +92,7 @@ const Form = () => {
             required
             onBlur={(e) => handleBlur(e, 0)}
             onChange={(text) => setForm({ ...form, name: text.target.value })}
-            className="  p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-b-2  focus:border-b-cyan-700 rounded bg-slate-900 placeholder-slate-500 w-full 
-            "
+            className={classNameInputs}
           />
           <span className="absolute top-6 left-2 opacity-80 transition duration-300">
             {text.contact.name}
@@ -112,7 +115,7 @@ const Form = () => {
             onBlur={(e) => handleBlur(e, 1)}
             value={form.email}
             onChange={(text) => setForm({ ...form, email: text.target.value })}
-            className="p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-b-2  focus:border-b-cyan-700  rounded bg-slate-900 placeholder-slate-500 w-full"
+            className={classNameInputs}
           />
           <span className="absolute top-6 left-2 opacity-80 transition-all duration-300">
             {text.contact.email}
@@ -136,7 +139,7 @@ const Form = () => {
               setForm({ ...form, message: text.target.value })
             }
             required
-            className="p-1 pl-3 border-2 border-transparent focus:outline-none focus:border-b-2  focus:border-b-cyan-700  rounded bg-slate-900 placeholder-slate-500 w-full  "
+            className={classNameInputs}
             maxLength={300}
           />
           <span className="absolute top-6 left-2 opacity-80 transition-all duration-300">
@@ -151,12 +154,12 @@ const Form = () => {
         <input
           type="submit"
           value={text.contact.submit}
-          className=" p-1 px-3 rounded cursor-pointer hover:bg-cyan-500 border-2 border-cyan-700 bg-slate-900 active:scale-95 disabled:pointer-events-none disabled:opacity-60"
+          className={` relative inline-flex ${buttonPrimary}`}
           disabled={buttonDisabled}
         />
       </form>
     </>
-  );
-};
+  )
+}
 
-export default Form;
+export default Form
