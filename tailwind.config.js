@@ -4,14 +4,30 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        myBgDark: '#212124',
+        myBgDark: '#1d1e27',
+        myBgDarkSecondary: '#282936',
+        myBgLight: '#eff3f8',
+        myBgLightSecondary: '#fefefe',
         myBgBlue: '#25283d',
         myDarkText: '#f8f8f7',
         myRose: '#d73542',
         myCyanDark: '#36aac8',
         myCyanLight: '#26a7d0',
-        purple: '#3f3cbb',
-        midnight: '#121063'
+        purple: '#b19df7',
+        midnight: '#121063',
+        myDarkLightCyan: '#86e0e7',
+        myDarkGreen: '#93deac',
+        myDarkLightBlue: '#9bcaff',
+        myDarkLimonGreen: '#d4ea93',
+        myDarkyellow: '#ffcf91',
+        myDarkRed: '#eb9a9c',
+        myLightPurple: '#8B5CF6',
+        myLightLightGreen: '#a1c30d',
+        myLightGreen: '#29c76f',
+        myLightBlue: '#5486f3',
+        myLightOrange: '#ff9f42',
+        myLightCyan: '#3ec9d6',
+        myLightRed: '#ea5455'
       },
       keyframes: {
         back: {
