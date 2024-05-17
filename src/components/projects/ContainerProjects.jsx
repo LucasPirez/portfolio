@@ -30,7 +30,10 @@ function ContainerProjects({ children, select, number, imgSrc, title, links }) {
         {title}
       </h4>
       {children}
-      <div className=" absolute bg-transparent w-full h-full group-hover:bg-myBgDarkSecondary group-hover:bg-opacity-80 transition-all rounded-md dark:bg-myBgDark/10 "></div>
+      <div
+        className=" absolute bg-transparent w-full h-full group-hover:bg-myBgDarkSecondary group-hover:bg-opacity-80 transition-all dark:bg-myBgDark/10 border-[1px]
+       custom-rounded "
+      ></div>
     </div>
   )
 }
