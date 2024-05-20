@@ -1,8 +1,16 @@
-import * as React from "react";
+import * as React from 'react';
 
 const GmailIcon = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={45} height={45} {...props}>
-    <path fill="#f55376" d="M12 22.854V10.445l12 9 12-9v12.409l-12 9-12-9z" />
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={45}
+    height={45}
+    {...props}
+  >
+    <path
+      fill="#f55376"
+      d="M12 22.854V10.445l12 9 12-9v12.409l-12 9-12-9z"
+    />
     <path
       fill="#6c19ff"
       d="m12 22.854-9-6.75v21.032A2.863 2.863 0 0 0 5.864 40H12V22.854z"

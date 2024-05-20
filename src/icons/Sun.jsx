@@ -1,4 +1,4 @@
-import * as React from 'react'
+import * as React from 'react';
 
 const Sun = (props) => (
   <svg
@@ -27,6 +27,6 @@ const Sun = (props) => (
       </g>
     </g>
   </svg>
-)
+);
 
-export default Sun
+export default Sun;

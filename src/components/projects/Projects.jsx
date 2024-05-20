@@ -34,7 +34,8 @@ export default function Projects() {
   return (
     <div
       id="portfolio"
-      className="relative flex flex-col  max-w-[1500px] m-auto min-h-[100vh] items-center border-t-2 border-t-myDarkLightBlue/70 background_black  pt-[10vh] dark:bg-myBgDark   bg-myBgLight shadow-md shadow-zinc-400 z-10 -mt-[10vh] md:mt-0">
+      className="relative flex flex-col  max-w-[1500px] m-auto min-h-[100vh] items-center border-t-2 border-t-myDarkLightBlue/70 background_black  pt-[10vh] dark:bg-myBgDark   bg-myBgLight shadow-md shadow-zinc-400 z-10 -mt-[10vh] md:mt-0"
+    >
       <>
         <Title text={text.projects} />
         <ProjectsTecnologies
@@ -45,13 +46,15 @@ export default function Projects() {
         <div className="flex flex-col items-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto md:w-[90vw] w-[95vw] scroll_style">
           <div
             ref={ref}
-            className="flex w-full relative  justify-center flex-wrap container max-w-[1180px] gap-[0.5vw] ">
+            className="flex w-full relative  justify-center flex-wrap container max-w-[1180px] gap-[0.5vw] "
+          >
             <ContainerProjects
               select={select}
               number={[1, 2]}
               imgSrc={tw}
               title="Reactjs"
-              links={text.modal['tweeter']}>
+              links={text.modal['tweeter']}
+            >
               <ButtonRead
                 handleClick={(e) => {
                   e.preventDefault();
@@ -65,7 +68,8 @@ export default function Projects() {
               number={[1, 2, 4]}
               imgSrc={cryptoMain}
               title="Reactjs/.Net"
-              links={text.modal['cryptoTracker']}>
+              links={text.modal['cryptoTracker']}
+            >
               <ButtonRead
                 handleClick={(e) => {
                   e.preventDefault();
@@ -79,7 +83,8 @@ export default function Projects() {
               number={[1, 3]}
               imgSrc={mobileCrypto}
               title="React Native"
-              links={text.modal['mobileCryptoTracker']}>
+              links={text.modal['mobileCryptoTracker']}
+            >
               <ButtonRead
                 handleClick={(e) => {
                   e.preventDefault();
@@ -93,7 +98,8 @@ export default function Projects() {
               number={[1, 3]}
               imgSrc={cap}
               title="React Native"
-              links={text.modal['calculator']}>
+              links={text.modal['calculator']}
+            >
               <ButtonRead
                 handleClick={(e) => {
                   e.preventDefault();

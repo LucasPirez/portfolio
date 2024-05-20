@@ -1,29 +1,29 @@
-import { lazy, Suspense, useRef, useContext } from 'react'
-import Home from './Home/Home'
-import Header from './About/Header'
-import TranslationContext from '../TraslationContext'
-import Footer from './Footer/Footer'
-import { useInsertionEffect } from '../hooks/useIntersection'
+import { lazy, Suspense, useRef, useContext } from 'react';
+import Home from './Home/Home';
+import Header from './About/Header';
+import TranslationContext from '../TraslationContext';
+import Footer from './Footer/Footer';
+import { useInsertionEffect } from '../hooks/useIntersection';
 
-const About = lazy(() => import('./About/About'))
-const Projects = lazy(() => import('./projects/Projects'))
+const About = lazy(() => import('./About/About'));
+const Projects = lazy(() => import('./projects/Projects'));
 
 const Port = () => {
-  const { selectCurrentPage } = useContext(TranslationContext)
+  const { selectCurrentPage } = useContext(TranslationContext);
 
-  const containerAbout = useRef()
-  const containerHome = useRef()
-  const containerProjects = useRef()
-  const containerFooter = useRef()
+  const containerAbout = useRef();
+  const containerHome = useRef();
+  const containerProjects = useRef();
+  const containerFooter = useRef();
 
   const arrayContainers = [
     containerAbout,
     containerFooter,
     containerHome,
-    containerProjects
-  ]
+    containerProjects,
+  ];
 
-  useInsertionEffect(arrayContainers, selectCurrentPage)
+  useInsertionEffect(arrayContainers, selectCurrentPage);
 
   return (
     <>
@@ -48,7 +48,7 @@ const Port = () => {
         <Footer />
       </footer>
     </>
-  )
-}
+  );
+};
 
-export default Port
+export default Port;

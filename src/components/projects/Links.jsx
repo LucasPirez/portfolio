@@ -1,5 +1,5 @@
-import externalLink from '../../icons/external-link.svg'
-import gitHub from '../../icons/433-github.svg'
+import externalLink from '../../icons/external-link.svg';
+import gitHub from '../../icons/433-github.svg';
 
 export default function Links({ links }) {
   return (
@@ -17,5 +17,5 @@ export default function Links({ links }) {
         </a>
       )}
     </>
-  )
+  );
 }

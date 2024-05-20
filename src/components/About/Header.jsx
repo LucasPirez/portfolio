@@ -1,22 +1,23 @@
-import { useContext, useEffect, useState } from 'react'
-import TranslationContext from '../../TraslationContext'
+import { useContext, useEffect, useState } from 'react';
+import TranslationContext from '../../TraslationContext';
 
 export default function Header() {
-  const [nav, setNav] = useState(false)
-  const { text, currentPage, animationStart, width } =
-    useContext(TranslationContext)
+  const [nav, setNav] = useState(false);
+  const { text, currentPage, animationStart, width } = useContext(
+    TranslationContext
+  );
 
   const changeNav = () => {
-    setNav(false)
-  }
+    setNav(false);
+  };
 
   useEffect(() => {
-    window.addEventListener('scroll', changeNav)
+    window.addEventListener('scroll', changeNav);
 
     return () => {
-      window.removeEventListener('scroll', changeNav)
-    }
-  }, [])
+      window.removeEventListener('scroll', changeNav);
+    };
+  }, []);
 
   return (
     <div className="w-full h-[10vh] fixed  sm:sticky top-0 z-20 bg-transparent">
@@ -36,9 +37,7 @@ export default function Header() {
             <li>
               <a
                 href="#home"
-                className={`${
-                  currentPage === 'home' ? 'text-purple' : 'text-gray-200'
-                } 
+                className={`${currentPage === 'home' ? 'text-purple' : 'text-gray-200'} 
                 flex  transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_2.5s_ease-in-out] animate-[wiggleMedia_1s_ease-in-out] `}
               >
                 {text.header.home}
@@ -48,7 +47,9 @@ export default function Header() {
               <a
                 href="#portfolio"
                 className={`${
-                  currentPage === 'projects' ? 'text-purple' : 'text-gray-200'
+                  currentPage === 'projects'
+                    ? 'text-purple'
+                    : 'text-gray-200'
                 } flex transition-all transform -translate-y-1 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.7s_ease-in-out]`}
               >
                 {text.header.portfolio}
@@ -58,7 +59,9 @@ export default function Header() {
               <a
                 href="#about"
                 className={` ${
-                  currentPage === 'about' ? 'text-purple' : 'text-gray-200'
+                  currentPage === 'about'
+                    ? 'text-purple'
+                    : 'text-gray-200'
                 } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.4s_ease-in-out] `}
               >
                 {text.header.about}
@@ -69,7 +72,9 @@ export default function Header() {
               <a
                 href="#footer"
                 className={`${
-                  currentPage === 'footer' ? 'text-purple' : 'text-gray-200'
+                  currentPage === 'footer'
+                    ? 'text-purple'
+                    : 'text-gray-200'
                 } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.1s_ease-in-out]`}
               >
                 {text.header.contact}
@@ -103,5 +108,5 @@ export default function Header() {
         </div>
       </header>
     </div>
-  )
+  );
 }

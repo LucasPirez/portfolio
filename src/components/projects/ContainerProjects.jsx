@@ -1,6 +1,13 @@
-import Links from './Links'
+import Links from './Links';
 
-function ContainerProjects({ children, select, number, imgSrc, title, links }) {
+function ContainerProjects({
+  children,
+  select,
+  number,
+  imgSrc,
+  title,
+  links,
+}) {
   return (
     <div
       className={`${
@@ -35,7 +42,7 @@ function ContainerProjects({ children, select, number, imgSrc, title, links }) {
        custom-rounded "
       ></div>
     </div>
-  )
+  );
 }
 
-export default ContainerProjects
+export default ContainerProjects;

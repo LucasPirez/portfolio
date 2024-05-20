@@ -1,0 +1,8 @@
+{
+  "extends": ["react-app", "eslint:recommended"],
+  "rules": {
+    "no-unused-vars": "warn",
+    "react/react-in-jsx-scope": "off",
+    "no-inner-declarations": "off"
+  }
+}

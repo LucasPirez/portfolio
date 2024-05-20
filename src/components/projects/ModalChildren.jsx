@@ -1,14 +1,14 @@
-import { useState, useEffect } from 'react'
-import { useContext } from 'react'
-import ReactPlayer from 'react-player'
-import useClick from '../../hooks/useClick'
-import TranslationContext from '../../TraslationContext'
-import ButtonModal from './ButtonModal'
+import { useState, useEffect } from 'react';
+import { useContext } from 'react';
+import ReactPlayer from 'react-player';
+import useClick from '../../hooks/useClick';
+import TranslationContext from '../../TraslationContext';
+import ButtonModal from './ButtonModal';
 
 export default function ModalChildren({ modalSelect, outside }) {
-  const [carousel, setCarousel] = useState(0)
-  const { text } = useContext(TranslationContext)
-  const ref = useClick(outside)
+  const [carousel, setCarousel] = useState(0);
+  const { text } = useContext(TranslationContext);
+  const ref = useClick(outside);
 
   const {
     images: img,
@@ -16,13 +16,13 @@ export default function ModalChildren({ modalSelect, outside }) {
     title,
     description,
     repositorie,
-    deploy
-  } = text.modal[modalSelect]
-  const [long, setLong] = useState(null)
+    deploy,
+  } = text.modal[modalSelect];
+  const [long, setLong] = useState(null);
 
   useEffect(() => {
-    vid !== undefined ? setLong(img.length + 1) : setLong(img.length)
-  }, [vid, img])
+    vid !== undefined ? setLong(img.length + 1) : setLong(img.length);
+  }, [vid, img]);
 
   return (
     <div
@@ -48,7 +48,9 @@ export default function ModalChildren({ modalSelect, outside }) {
             )}
           {vid && carousel === long - 1 && (
             <>
-              <p className="mt-[30%] ml-[40%]  absolute">Cargando...</p>
+              <p className="mt-[30%] ml-[40%]  absolute">
+                Cargando...
+              </p>
               <ReactPlayer url={vid} width="100%" height="100%" />
             </>
           )}
@@ -87,7 +89,7 @@ export default function ModalChildren({ modalSelect, outside }) {
                   target="_black"
                   href={repositorie}
                   onClick={(e) => {
-                    e.stopPropagation()
+                    e.stopPropagation();
                   }}
                   className=" p-2 sm:px-3 px-1 rounded cursor-pointer 
                   ml-2 transition-all duration-200 sm:text-base text-sm bg-myLightCyan dark:bg-myDarkLightBlue text-myBgDarkSecondary hover:opacity-80 "
@@ -99,7 +101,7 @@ export default function ModalChildren({ modalSelect, outside }) {
                     target="_black"
                     href={deploy}
                     onClick={(e) => {
-                      e.stopPropagation()
+                      e.stopPropagation();
                     }}
                     className=" p-2 sm:px-3 px-1 rounded cursor-pointer 
                   ml-2 transition-all duration-200 sm:text-base text-sm bg-myLightCyan dark:bg-myDarkLightBlue text-myBgDarkSecondary hover:opacity-80 "
@@ -121,5 +123,5 @@ export default function ModalChildren({ modalSelect, outside }) {
         </div>
       </div>
     </div>
-  )
+  );
 }

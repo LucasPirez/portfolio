@@ -1,6 +1,6 @@
-import React from 'react'
-import ArrowLeft from '../../icons/ArrowLeft'
-import ArrowRight from '../../icons/ArrowRight'
+import React from 'react';
+import ArrowLeft from '../../icons/ArrowLeft';
+import ArrowRight from '../../icons/ArrowRight';
 
 function ButtonModal({ carousel, setCarousel, long }) {
   return (
@@ -22,7 +22,7 @@ function ButtonModal({ carousel, setCarousel, long }) {
         <ArrowRight />
       </button>
     </div>
-  )
+  );
 }
 
-export default ButtonModal
+export default ButtonModal;

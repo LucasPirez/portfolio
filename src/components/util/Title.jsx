@@ -5,5 +5,5 @@ export default function Title({ text, className = '' }) {
     >
       {text}
     </h3>
-  )
+  );
 }

@@ -1,5 +1,5 @@
-import { useContext } from 'react'
-import style from './tecnologies.module.css'
+import { useContext } from 'react';
+import style from './tecnologies.module.css';
 import {
   Net,
   Css3,
@@ -7,12 +7,12 @@ import {
   Reactjs,
   TypeScript,
   Javascript,
-  CSharp
-} from '../../icons/IconsTecnologies'
-import TranslationContext from '../../TraslationContext'
+  CSharp,
+} from '../../icons/IconsTecnologies';
+import TranslationContext from '../../TraslationContext';
 
 const Tecnologies = () => {
-  const { text } = useContext(TranslationContext)
+  const { text } = useContext(TranslationContext);
 
   const arrCompontents = [
     { style: style.a, component: <Html />, text: 'HTML' },
@@ -22,8 +22,8 @@ const Tecnologies = () => {
     { style: style.e, component: <CSharp />, text: 'C#' },
     { style: style.f, component: <Reactjs />, text: 'React' },
     { style: style.f, component: <Reactjs />, text: 'React Native' },
-    { style: style.g, component: <Net />, text: '.NET' }
-  ]
+    { style: style.g, component: <Net />, text: '.NET' },
+  ];
 
   return (
     <div
@@ -55,7 +55,7 @@ const Tecnologies = () => {
         </ul>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Tecnologies
+export default Tecnologies;

@@ -1,9 +1,9 @@
-import arrow from '../../icons/arrow-90.svg'
-import git from '../../icons/433-github.svg'
-import Form from './Form'
-import linked from '../../icons/353417.svg'
-import curriculum from '../../icons/icons8-curriculum-64.png'
-import curriculumPDF from '../../images/cv.pdf'
+import arrow from '../../icons/arrow-90.svg';
+import git from '../../icons/433-github.svg';
+import Form from './Form';
+import linked from '../../icons/353417.svg';
+import curriculum from '../../icons/icons8-curriculum-64.png';
+import curriculumPDF from '../../images/cv.pdf';
 
 function Footer() {
   return (
@@ -83,7 +83,7 @@ function Footer() {
         <p>2022</p>
       </div>
     </section>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

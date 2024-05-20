@@ -1,12 +1,12 @@
-import React, { useContext } from 'react'
-import AbuotDescrip from './AbuotDescrip'
-import TranslationContext from '../../TraslationContext'
-import linked from '../../images/perfil.png'
-import Tecnologies from './Tecnologis'
-import Title from '../util/Title'
+import React, { useContext } from 'react';
+import AbuotDescrip from './AbuotDescrip';
+import TranslationContext from '../../TraslationContext';
+import linked from '../../images/perfil.png';
+import Tecnologies from './Tecnologis';
+import Title from '../util/Title';
 
 function About() {
-  const { text } = useContext(TranslationContext)
+  const { text } = useContext(TranslationContext);
 
   return (
     <>
@@ -25,7 +25,7 @@ function About() {
                 className=" w-[280px] h-[280px] m-10 lg:mt-0  overflow-hidden flex justify-center z-10 shadow-lg  shadow-myBgBlue/50 bg-gradient-to-t 
                 bg-opacity-90 from-cyan-900/30 to-myBgDark/30  dark:from-cyan-900/70 dark:to-myBgDark/70"
                 style={{
-                  borderRadius: '65% 35% 65% 35% / 28% 69% 31% 72%'
+                  borderRadius: '65% 35% 65% 35% / 28% 69% 31% 72%',
                 }}
               >
                 <img
@@ -49,7 +49,7 @@ function About() {
         </>
       </section>
     </>
-  )
+  );
 }
 
-export default About
+export default About;

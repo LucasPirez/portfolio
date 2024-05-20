@@ -1,7 +1,12 @@
-import * as React from 'react'
+import * as React from 'react';
 
 const GitHub = (props) => (
-  <svg xmlns="http://www.w3.org/2000/svg" width={48} height={48} {...props}>
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    width={48}
+    height={48}
+    {...props}
+  >
     <path
       fill="#fff"
       d="M41 24c0 9.4-7.6 17-17 17S7 33.4 7 24 14.6 7 24 7s17 7.6 17 17z"
@@ -23,6 +28,6 @@ const GitHub = (props) => (
       d="M24 4C13 4 4 13 4 24s9 20 20 20 20-9 20-20S35 4 24 4zm0 36c-8.8 0-16-7.2-16-16S15.2 8 24 8s16 7.2 16 16-7.2 16-16 16z"
     />
   </svg>
-)
+);
 
-export default GitHub
+export default GitHub;

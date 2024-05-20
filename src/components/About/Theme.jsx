@@ -1,48 +1,48 @@
-import { useState, useEffect } from 'react'
-import Sun from '../../icons/Sun'
-import Moon from '../../icons/Moon'
+import { useState, useEffect } from 'react';
+import Sun from '../../icons/Sun';
+import Moon from '../../icons/Moon';
 
 const themes = {
   light: 'dark',
   dark: 'os',
-  os: 'light'
-}
+  os: 'light',
+};
 
 export default function Theme({ setChangeTheme }) {
   const init = localStorage.theme
     ? localStorage.theme
     : window.matchMedia('(prefers-color-scheme: dark)').matches
-    ? 'os'
-    : 'light'
-  const [select, setSelect] = useState(init)
+      ? 'os'
+      : 'light';
+  const [select, setSelect] = useState(init);
 
   function handleClick(e) {
-    e.preventDefault()
+    e.preventDefault();
 
-    setSelect(themes[select])
+    setSelect(themes[select]);
   }
 
   useEffect(() => {
     if (select === 'os') {
-      localStorage.removeItem('theme')
+      localStorage.removeItem('theme');
     } else {
-      localStorage.setItem('theme', select)
+      localStorage.setItem('theme', select);
     }
 
     if (!('theme' in localStorage)) {
       if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark')
+        document.documentElement.classList.add('dark');
       }
     } else {
       if (localStorage.theme === 'dark') {
-        document.documentElement.classList.add('dark')
+        document.documentElement.classList.add('dark');
       } else {
-        document.documentElement.classList.remove('dark')
+        document.documentElement.classList.remove('dark');
       }
     }
 
-    setChangeTheme(Math.random())
-  }, [select])
+    setChangeTheme(Math.random());
+  }, [select]);
 
   return (
     <>
@@ -60,5 +60,5 @@ export default function Theme({ setChangeTheme }) {
         {/* <span className="mx-2 hidden lg:inline-block">{text.theme}</span> */}
       </button>
     </>
-  )
+  );
 }
