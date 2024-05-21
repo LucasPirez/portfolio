@@ -6,7 +6,7 @@ function AbuotDescrip() {
   const { text } = useContext(TranslationContext);
 
   const styleContent = {
-    contenedor: ` ${style.des} dark:text-slate-200  shadow-zinc-500  dark:hover:shadow-myDarkLightBlue/50 shadow-md hover:shadow-myLightCyan/50 dark:bg-myBgDarkSecondary bg-[#fefefe] `,
+    container: ` ${style.des} dark:text-slate-200  shadow-zinc-500  dark:hover:shadow-myDarkLightBlue/50 shadow-md hover:shadow-myLightCyan/50 dark:bg-myBgDarkSecondary bg-[#fefefe] `,
     title: `${style.titleDescription} dark:text-purple/90 text-myLightPurple`,
     hr: `${style.limit}  opacity-80`,
     text: '',
@@ -33,18 +33,18 @@ function AbuotDescrip() {
 
   return (
     <div className={style.containerDes}>
-      {arrTexts.map(([title, descripcion], index) => (
+      {arrTexts.map(([title, description], index) => (
         <div
           key={title}
           className={
-            styleContent.contenedor +
+            styleContent.container +
             ' ' +
             style['description' + (index + 1)]
           }
         >
           <h2 className={styleContent.title}>{title}</h2>
           <hr className={styleContent.hr} />
-          <p className="text-center">{descripcion}</p>
+          <p className="text-center">{description}</p>
         </div>
       ))}
     </div>

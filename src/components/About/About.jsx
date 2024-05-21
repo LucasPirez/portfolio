@@ -36,7 +36,7 @@ function About() {
               </div>
 
               <p
-                className="mt-3 min-w-[350px] lg:w-[50%] lg:ml-4 w-[60%] text-center mb-8 dark:text-[#eaf1eb] md:text-xl  "
+                className="mt-3 min-w-[350px] w-[90%] sm:w-[80%] lg:w-[60%] lg:ml-4 text-center mb-8 dark:text-[#eaf1eb] md:text-xl "
                 style={{ lineHeight: '2.3rem' }}
               >
                 {text.about.about()}

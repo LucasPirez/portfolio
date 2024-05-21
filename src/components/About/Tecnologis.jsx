@@ -15,14 +15,14 @@ const Tecnologies = () => {
   const { text } = useContext(TranslationContext);
 
   const arrCompontents = [
-    { style: style.a, component: <Html />, text: 'HTML' },
-    { style: style.b, component: <Css3 />, text: 'CSS:' },
-    { style: style.c, component: <Javascript />, text: 'JavaScript' },
-    { style: style.d, component: <TypeScript />, text: 'TypeScript' },
+    { style: style.g, component: <Net />, text: '.NET' },
     { style: style.e, component: <CSharp />, text: 'C#' },
     { style: style.f, component: <Reactjs />, text: 'React' },
     { style: style.f, component: <Reactjs />, text: 'React Native' },
-    { style: style.g, component: <Net />, text: '.NET' },
+    { style: style.d, component: <TypeScript />, text: 'TypeScript' },
+    { style: style.c, component: <Javascript />, text: 'JavaScript' },
+    { style: style.a, component: <Html />, text: 'HTML' },
+    { style: style.b, component: <Css3 />, text: 'CSS:' },
   ];
 
   return (
