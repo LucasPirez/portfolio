@@ -80,7 +80,7 @@ function Footer() {
       </div>
       <div className="w-full min-h-10 border-t-[1.5px] border-rose-700 bg-slate-900 text-center text-xs text-rose-100">
         <p>Author LUCAS D. PIREZ GALLO</p>
-        <p>2022</p>
+        <p>2024</p>
       </div>
     </section>
   );

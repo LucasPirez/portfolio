@@ -2,7 +2,7 @@ import React, { useContext, lazy, Suspense, useState } from 'react';
 import TranslationContext from '../../TraslationContext';
 import ArrowDown from '../../icons/ArrowDown';
 import Theme from '../About/Theme';
-// import GmailIcon from '../../icons/GmailIcon'
+import GmailIcon from '../../icons/GmailIcon';
 import { buttonPrimary } from '../util/classButtons';
 
 const Animation = lazy(() => import('./Animation'));
@@ -60,13 +60,15 @@ function Home() {
                 <ArrowDown />
               </span>
             </a>
-            {/* <a
+            <a
               href="mailto:lucaspirez42@gmail.com"
               className="group flex items-center rounded-md px-1  scale-[0.85] md:scale-[.95] lg:scale-110 hover:scale-105 md:hover:scale-110 lg:hover:scale-125 transition duration-500"
               title="Send Email"
             >
-              <span><GmailIcon className="scale-75" /> </span>
-            </a> */}
+              <span>
+                <GmailIcon className="scale-75" />{' '}
+              </span>
+            </a>
           </div>
         </div>
       </section>
