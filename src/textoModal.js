@@ -1,33 +1,34 @@
-import calcImage2 from './images/captura-calculator2.jpeg';
-import calcImage3 from './images/captura-calculator 3.jpeg';
-import tweeter1 from './images/tweeter1.webp';
-import tweeter2 from './images/tweeter2.webp';
-import tweeter3 from './images/tweeter3.webp';
-import tweeter4 from './images/tweeter4.webp';
-import cryptoMain from './images/cripto/img-crypto-main.webp';
-import cryptoMobile from './images/cripto/img-crypto-mobile.webp';
-import cryptoCoin from './images/cripto/img-cypto-coin.webp';
-
-import mobileChart from './images/cripto/mobile-chart.webp';
-import mobileChartLineal from './images/cripto/mobile-chartLineal.webp';
-import mobilecrypto from './images/cripto/mobile-crypto.webp';
-import mobileTable from './images/cripto/mobile-table.webp';
+import {
+  cryptoCoin,
+  cryptoMain,
+  cryptoMobile,
+  mobileChart,
+  mobileChartLineal,
+  mobileTable,
+  mobilecrypto,
+  speedyHome,
+  speedyRoom,
+  speedyWinner,
+  tweeter1,
+  tweeter2,
+  tweeter3,
+  tweeter4,
+} from './images';
 
 const images = {
   tweeter: [tweeter1, tweeter2, tweeter3, tweeter4],
-  calculator: [calcImage2, calcImage3],
+  typingGame: [speedyRoom, speedyHome, speedyWinner],
   cryptoTracker: [cryptoMain, cryptoCoin, cryptoMobile],
   mobile: [mobileChart, mobileChartLineal, mobileTable, mobilecrypto],
 };
 
 export const modalEN = {
-  calculator: {
-    title: 'Calculator',
+  typingGame: {
+    title: 'SpeedyType',
     description:
-      'This application is made with React Native and TypeScript, with the ability to run on multiple platforms, it stands out for the implementation of night mode, which allows users to enjoy a visually adaptive experience, it also has a transaction history functionality that allows users to review the operations performed. All this is achieved through the use of context.',
-    images: images.calculator,
-    repositorie:
-      'https://github.com/LucasPirez/expo-calculator-darkMode',
+      'SpeedyType is a real-time web application designed to improve typing skills through friendly competitions with normal or code text. The application allows users to create and join rooms to participate in typing competitions. It uses SignalR for real-time communication between the server and the clients, ensuring a smooth and reactive experience. The application is built with a React frontend and a .NET backend.',
+    images: images.typingGame,
+    repositorie: 'https://github.com/LucasPirez/KeyboardWarrior',
     deploy: '',
   },
   tweeter: {
@@ -57,14 +58,13 @@ export const modalEN = {
 };
 
 export const modalES = {
-  calculator: {
-    title: 'Calculadora',
+  typingGame: {
+    title: 'SpeedyType',
     description:
-      'Esta aplicación esta realizada con React Native y TypeScript, contando con la capacidad para ejecutarse en múltiples plataformas, se destaca por la implementación del modo nocturno, que permite a los usuarios disfrutar de una experiencia visualmente adaptable, también cuenta con una funcionalidad de historial de operaciones permitiendo a los usuarios revisar las operaciones realizadas. Todo esto se logra gracias al uso de context.',
+      'SpeedyType es una aplicación web en tiempo real diseñada para mejorar las habilidades de mecanografía a través de competencias amistosas con textos normales o de codigo. La aplicación permite a los usuarios crear y unirse a salas (rooms) para participar en competencias de typing. Utiliza SignalR para la comunicación en tiempo real entre el servidor y los clientes, asegurando una experiencia fluida y reactiva. La aplicación está construida con un frontend en React y un backend en .NET.',
 
-    images: images.calculator,
-    repositorie:
-      'https://github.com/LucasPirez/expo-calculator-darkMode',
+    images: images.typingGame,
+    repositorie: 'https://github.com/LucasPirez/KeyboardWarrior',
     deploy: '',
   },
   tweeter: {

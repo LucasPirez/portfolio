@@ -11,9 +11,9 @@ function ContainerProjects({
   return (
     <div
       className={`${
-        number.includes(select) === true
-          ? 'animate-[inProjects_0.8s_ease-in-out_forwards] '
-          : 'animate-[outProjects_0.8s_ease-in-out_forwards] '
+        number.includes(select) === true || select === 1
+          ? 'animate-[inProjects_0.6s_ease-in-out_forwards] '
+          : 'animate-[outProjects_0.6s_ease-in-out_forwards] '
       } group w-72 h-72 2xl:w-[370px] 2xl:h-[380px]  flex flex-col  justify-between items-center m-2 text-transparent  text-center custom-rounded  bg-slate-200 
        shadow-lg dark:opacity-90  
        dark:shadow-gray-700 first-letter:hover:text-slate-800 bg-transparent  overflow-hidden  

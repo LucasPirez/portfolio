@@ -50,9 +50,18 @@ export const translation = {
           <strong className="text-myLightRed dark:text-myDarkRed/90">
             Full Stack Developer
           </strong>{' '}
-          focused on Front End with practical experience in several
-          projects, specialized in Reactjs, currently looking for a
-          job where I can demonstrate my determination and skills.
+          Full Stack developer focused on problem solving, providing
+          solid and scalable solutions. I have hands-on experience in
+          various projects and have specialized in{' '}
+          <strong className="text-myLightPurple dark:text-purple/90">
+            React.js{' '}
+          </strong>{' '}
+          and{' '}
+          <strong className="text-myLightPurple dark:text-purple/90">
+            .NET
+          </strong>
+          . Currently, I am looking for a job where I can demonstrate
+          my determination and skills.
         </>
       ),
       description1: {
@@ -115,10 +124,18 @@ export const translation = {
           <strong className="text-myLightRed dark:text-myDarkRed/90">
             Desarrollador Full Stack
           </strong>{' '}
-          enfocado en el Front End con experiencia practica en
-          diversos proyectos, especializado en Reactjs, actualmente en
-          busqueda de un trabajo donde pueda demostrar mi
-          determinacion y habilidades.
+          enfocado en la resolución de problemas, proporcionando
+          soluciones sólidas y escalables. Tengo experiencia práctica
+          en diversos proyectos y me he especializado en{' '}
+          <strong className="text-myLightPurple dark:text-purple/90">
+            React.js{' '}
+          </strong>{' '}
+          y{' '}
+          <strong className="text-myLightPurple dark:text-purple/90">
+            .NET
+          </strong>
+          . Actualmente, estoy en búsqueda de un trabajo donde pueda
+          demostrar mi determinación y habilidades.
         </>
       ),
       description1: {

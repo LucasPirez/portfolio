@@ -1,6 +1,6 @@
 import { useState, useContext, useRef } from 'react';
-import cap from '../../images/captura-calculator.jpeg';
-import tw from '../../images/tweeter1.webp';
+import speedyGame from '../../images/typing-game/speedy-room.png';
+import twitter from '../../images/tweeter1.webp';
 import cryptoMain from '../../images/cripto/img-crypto-main.webp';
 import mobileCrypto from '../../images/cripto/mobile-table.webp';
 import ModalChildren from './ModalChildren';
@@ -15,7 +15,7 @@ export default function Projects() {
   const { text } = useContext(TranslationContext);
   const [select, setSelect] = useState(1);
   const [close, setClose] = useState(false);
-  const [modalSelect, setmodalSelect] = useState(null);
+  const [modalSelect, setModalSelect] = useState(null);
   const ref = useRef();
 
   const outside = (e) => {
@@ -27,7 +27,7 @@ export default function Projects() {
     setSelect(i);
   };
   const handleClick = (strModal) => {
-    setmodalSelect(strModal);
+    setModalSelect(strModal);
     setClose(true);
   };
 
@@ -50,8 +50,8 @@ export default function Projects() {
           >
             <ContainerProjects
               select={select}
-              number={[1, 2]}
-              imgSrc={tw}
+              number={[2]}
+              imgSrc={twitter}
               title="Reactjs"
               links={text.modal['tweeter']}
             >
@@ -65,7 +65,7 @@ export default function Projects() {
             </ContainerProjects>
             <ContainerProjects
               select={select}
-              number={[1, 2, 4]}
+              number={[2, 4]}
               imgSrc={cryptoMain}
               title="Reactjs/.Net"
               links={text.modal['cryptoTracker']}
@@ -80,7 +80,7 @@ export default function Projects() {
             </ContainerProjects>
             <ContainerProjects
               select={select}
-              number={[1, 3]}
+              number={[3]}
               imgSrc={mobileCrypto}
               title="React Native"
               links={text.modal['mobileCryptoTracker']}
@@ -95,16 +95,16 @@ export default function Projects() {
             </ContainerProjects>
             <ContainerProjects
               select={select}
-              number={[1, 3]}
-              imgSrc={cap}
-              title="React Native"
-              links={text.modal['calculator']}
+              number={[2, 4]}
+              imgSrc={speedyGame}
+              title=".NET/Reactjs"
+              links={text.modal['typingGame']}
             >
               <ButtonRead
                 handleClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  handleClick('calculator');
+                  handleClick('typingGame');
                 }}
               />
             </ContainerProjects>
