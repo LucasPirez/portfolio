@@ -29,7 +29,7 @@ export const modalEN = {
       'SpeedyType is a real-time web application designed to improve typing skills through friendly competitions with normal or code text. The application allows users to create and join rooms to participate in typing competitions. It uses SignalR for real-time communication between the server and the clients, ensuring a smooth and reactive experience. The application is built with a React frontend and a .NET backend.',
     images: images.typingGame,
     repositorie: 'https://github.com/LucasPirez/KeyboardWarrior',
-    deploy: '',
+    deploy: 'https://speedytype-gamma.vercel.app/',
   },
   tweeter: {
     title: 'Social Network ',
@@ -37,7 +37,7 @@ export const modalEN = {
       'Minimalist social network inspired by twitter features, made with Nextjs and firebase, with authentication system using Google or GitHub, chat with new message notification, ability to upload images, comments and views of posts made by author and likes.',
     images: images.tweeter,
     repositorie: 'https://github.com/LucasPirez/noClon-tweeter',
-    deploy: 'https://mynext-app.web.app/',
+    deploy: 'https://mynext-app.web.app',
   },
   cryptoTracker: {
     title: 'Crypto Tracker',
@@ -65,7 +65,7 @@ export const modalES = {
 
     images: images.typingGame,
     repositorie: 'https://github.com/LucasPirez/KeyboardWarrior',
-    deploy: '',
+    deploy: 'https://speedytype-gamma.vercel.app',
   },
   tweeter: {
     title: 'Red Social',

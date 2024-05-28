@@ -22,7 +22,7 @@ function Home() {
         className="flex sm:h-[100vh] h-[110vh]  w-full items-center justify-center overflow-x-hidden bg-transparent"
       >
         <Suspense fallback="">
-          {width > 700 && (
+          {width > 500 && (
             <Animation
               visible={currentPage}
               changeTheme={changeTheme}

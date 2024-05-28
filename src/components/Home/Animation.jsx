@@ -27,18 +27,18 @@ function Animation({ visible, changeTheme }) {
     star: '',
   });
 
-  const scene = new Scene();
-  scene.rotateX(0.65);
-  scene.rotateZ(0.3);
-
-  const camera = new PerspectiveCamera(
-    75,
-    window.innerWidth / window.innerHeight,
-    0.1,
-    1000
-  );
-
   useEffect(() => {
+    const scene = new Scene();
+    scene.rotateX(0.65);
+    scene.rotateZ(0.3);
+
+    const camera = new PerspectiveCamera(
+      75,
+      window.innerWidth / window.innerHeight,
+      0.1,
+      1000
+    );
+
     if (
       localStorage.theme === 'dark' ||
       (!('theme' in localStorage) &&

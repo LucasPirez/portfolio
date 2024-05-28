@@ -23,7 +23,7 @@ function About() {
             <div className="flex flex-col lg:flex-row items-center  ">
               <div
                 className=" w-[280px] h-[280px] m-10 lg:mt-0  overflow-hidden flex justify-center z-10 shadow-lg  shadow-myBgBlue/50 bg-gradient-to-t 
-                bg-opacity-90 from-cyan-900/30 to-myBgDark/30  dark:from-cyan-900/70 dark:to-myBgDark/70"
+                bg-opacity-90 from-cyan-900/30 to-myBgDark/30  dark:from-cyan-900/70 dark:to-myBgDark/70 "
                 style={{
                   borderRadius: '65% 35% 65% 35% / 28% 69% 31% 72%',
                 }}
@@ -36,7 +36,7 @@ function About() {
               </div>
 
               <p
-                className="mt-3 min-w-[350px] w-[90%] sm:w-[80%] lg:w-[60%] lg:ml-4 text-center mb-8 dark:text-[#eaf1eb] md:text-xl "
+                className="mt-3  w-[90%] sm:w-[80%] lg:w-[60%] lg:ml-4 text-center mb-8 dark:text-[#eaf1eb] md:text-xl "
                 style={{ lineHeight: '2.3rem' }}
               >
                 {text.about.about()}

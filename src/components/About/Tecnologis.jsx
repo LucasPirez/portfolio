@@ -36,7 +36,7 @@ const Tecnologies = () => {
       <h3 className="text-center lg:text-6xl sm:text-4xl text-3xl  font-bold bg-clip-text  m-4 dark:text-purple/90  text-myLightPurple/60 custom-text">
         {text.tecnologies}
       </h3>
-      <div className="p-1">
+      <div className="p-1 pb-5 md:pb-3">
         <ul
           className={` ${style.tecnologi} grid xl:block grid-cols-2 sm:grid-cols-4  transition-all
         text-center lg:w-[700px] xl:w-[300px] h-auto   sm:text-lg text-xs sm:p-2  p-1   rounded `}

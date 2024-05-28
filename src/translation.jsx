@@ -13,7 +13,7 @@ export const recursos = {
 export const translation = {
   en: {
     buttonProjects: 'Read More',
-    tecnologies: 'TECNOLOGIES',
+    tecnologies: 'TECHNOLOGIES',
     projects: 'Projects',
     theme: 'Theme',
     light: 'Light',
@@ -43,16 +43,16 @@ export const translation = {
     },
     modal: modalEN,
     deploy: 'View Deploy',
-    repositorie: 'View Repositorie',
+    repositorie: 'View Repository',
     about: {
       about: () => (
         <>
           <strong className="text-myLightRed dark:text-myDarkRed/90">
             Full Stack Developer
           </strong>{' '}
-          Full Stack developer focused on problem solving, providing
-          solid and scalable solutions. I have hands-on experience in
-          various projects and have specialized in{' '}
+          focused on problem solving, providing solid and scalable
+          solutions. I have hands-on experience in various projects
+          and have specialized in{' '}
           <strong className="text-myLightPurple dark:text-purple/90">
             React.js{' '}
           </strong>{' '}
