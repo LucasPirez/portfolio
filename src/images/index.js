@@ -13,6 +13,13 @@ import mobileChart from './cripto/mobile-chart.webp';
 import mobileChartLineal from './cripto/mobile-chartLineal.webp';
 import mobilecrypto from './cripto/mobile-crypto.webp';
 import mobileTable from './cripto/mobile-table.webp';
+import profile from './perfil.png';
+
+// institute
+import AddStudent from './institute/agregar-estudiante.webp';
+import Configuration from './institute/configuracion.webp';
+import Debts from './institute/deudores.webp';
+import PaidFee from './institute/pago-couta.webp';
 
 export {
   speedyRoom,
@@ -29,4 +36,9 @@ export {
   mobileChartLineal,
   mobilecrypto,
   mobileTable,
+  profile,
+  AddStudent,
+  Configuration,
+  Debts,
+  PaidFee,
 };
