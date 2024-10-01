@@ -8,6 +8,7 @@ import {
   TypeScript,
   Javascript,
   CSharp,
+  SQL,
 } from '../../icons/IconsTecnologies';
 import TranslationContext from '../../TraslationContext';
 
@@ -18,9 +19,9 @@ const Tecnologies = () => {
     { style: style.g, component: <Net />, text: '.NET' },
     { style: style.e, component: <CSharp />, text: 'C#' },
     { style: style.f, component: <Reactjs />, text: 'React' },
-    { style: style.f, component: <Reactjs />, text: 'React Native' },
     { style: style.d, component: <TypeScript />, text: 'TypeScript' },
     { style: style.c, component: <Javascript />, text: 'JavaScript' },
+    { style: style.f, component: <SQL />, text: 'SQL' },
     { style: style.a, component: <Html />, text: 'HTML' },
     { style: style.b, component: <Css3 />, text: 'CSS:' },
   ];

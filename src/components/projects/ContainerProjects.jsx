@@ -16,7 +16,7 @@ function ContainerProjects({
           : 'animate-[outProjects_0.6s_ease-in-out_forwards] '
       } group w-72 h-72 2xl:w-[370px] 2xl:h-[380px]  flex flex-col  justify-between items-center m-2 text-transparent  text-center custom-rounded  bg-slate-200 
        shadow-lg dark:opacity-90  
-       dark:shadow-gray-700 first-letter:hover:text-slate-800 bg-transparent  overflow-hidden  
+       dark:shadow-gray-700 first-letter:hover:text-slate-800 bg-transparent  overflow-hidden
    `}
     >
       <div className="bg-slate-200/90 cursor-pointer flex gap-1 rounded-md items-center w-auto z-40 absolute right-4 top-2 shadow-sm shadow-slate-500 group-hover:shadow-slate-700 ">

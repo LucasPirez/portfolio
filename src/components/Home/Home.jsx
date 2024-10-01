@@ -4,6 +4,7 @@ import ArrowDown from '../../icons/ArrowDown';
 import Theme from '../About/Theme';
 import GmailIcon from '../../icons/GmailIcon';
 import { buttonPrimary } from '../util/classButtons';
+import { profile } from '../../images/index';
 
 const Animation = lazy(() => import('./Animation'));
 

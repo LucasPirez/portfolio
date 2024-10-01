@@ -85,17 +85,19 @@ export default function ModalChildren({ modalSelect, outside }) {
 
             <div className="flex flex-row justify-between items-end  w-[100%] bottom-2 pb-2 mt-4">
               <div className="flex">
-                <a
-                  target="_black"
-                  href={repositorie}
-                  onClick={(e) => {
-                    e.stopPropagation();
-                  }}
-                  className=" p-2 sm:px-3 px-1 rounded cursor-pointer 
+                {repositorie && (
+                  <a
+                    target="_black"
+                    href={repositorie}
+                    onClick={(e) => {
+                      e.stopPropagation();
+                    }}
+                    className=" p-2 sm:px-3 px-1 rounded cursor-pointer 
                   ml-2 transition-all duration-200 sm:text-base text-sm bg-myLightCyan dark:bg-myDarkLightBlue text-myBgDarkSecondary hover:opacity-80 "
-                >
-                  {text.repositorie}
-                </a>
+                  >
+                    {text.repositorie}
+                  </a>
+                )}
                 {deploy && (
                   <a
                     target="_black"

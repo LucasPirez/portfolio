@@ -1,8 +1,10 @@
 import { useState, useContext, useRef } from 'react';
 import speedyGame from '../../images/typing-game/speedy-room.png';
-import twitter from '../../images/tweeter1.webp';
-import cryptoMain from '../../images/cripto/img-crypto-main.webp';
-import mobileCrypto from '../../images/cripto/mobile-table.webp';
+import {
+  tweeter1 as twitter,
+  cryptoMain,
+  AddStudent,
+} from '../../images';
 import ModalChildren from './ModalChildren';
 import { ModalPortal } from './ModalPortal';
 import ProjectsTecnologies from './ProjectsTecnologies';
@@ -50,24 +52,24 @@ export default function Projects() {
           >
             <ContainerProjects
               select={select}
-              number={[2]}
-              imgSrc={twitter}
-              title="Reactjs"
-              links={text.modal['tweeter']}
+              number={[3]}
+              imgSrc={speedyGame}
+              title=".NET/React"
+              links={text.modal['typingGame']}
             >
               <ButtonRead
                 handleClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  handleClick('tweeter');
+                  handleClick('typingGame');
                 }}
               />
             </ContainerProjects>
             <ContainerProjects
               select={select}
-              number={[2, 4]}
+              number={[3]}
               imgSrc={cryptoMain}
-              title="Reactjs/.Net"
+              title=".Net/React"
               links={text.modal['cryptoTracker']}
             >
               <ButtonRead
@@ -80,31 +82,32 @@ export default function Projects() {
             </ContainerProjects>
             <ContainerProjects
               select={select}
-              number={[3]}
-              imgSrc={mobileCrypto}
-              title="React Native"
-              links={text.modal['mobileCryptoTracker']}
+              number={[2]}
+              imgSrc={AddStudent}
+              title="Institute App"
+              links={text.modal['institute']}
             >
               <ButtonRead
                 handleClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  handleClick('mobileCryptoTracker');
+                  handleClick('institute');
                 }}
               />
             </ContainerProjects>
+
             <ContainerProjects
               select={select}
-              number={[2, 4]}
-              imgSrc={speedyGame}
-              title=".NET/Reactjs"
-              links={text.modal['typingGame']}
+              number={[]}
+              imgSrc={twitter}
+              title="Reactjs"
+              links={text.modal['tweeter']}
             >
               <ButtonRead
                 handleClick={(e) => {
                   e.preventDefault();
                   e.stopPropagation();
-                  handleClick('typingGame');
+                  handleClick('tweeter');
                 }}
               />
             </ContainerProjects>

@@ -1,4 +1,4 @@
-const TECNOLOGIES = ['all', 'Reactjs', 'React Native', '.Net'];
+const TECNOLOGIES = ['all', '.Net/Blazor', '.Net/Reactjs'];
 
 function ProjectsTecnologies({ onSelect, select, text }) {
   return (
@@ -6,18 +6,18 @@ function ProjectsTecnologies({ onSelect, select, text }) {
       <div
         className={`${
           select === 1
-            ? 'ml-[12%]'
+            ? 'ml-[16%]'
             : select === 2
-              ? 'ml-[36%]'
+              ? 'ml-[50%]'
               : select === 3
-                ? 'ml-[61%]'
+                ? 'ml-[81%]'
                 : select === 4
                   ? 'ml-[86%]'
                   : ''
         } w-0 h-0 transition-all duration-300 ease-linear border-l-[8px] border-t-[16px] border-r-[8px] border-t-myLightPurple border-r-transparent border-l-transparent mb-1
          `}
       ></div>
-      <div className="w-full h-full flex ">
+      <div className="w-full h-full flex justify-around">
         {TECNOLOGIES.map((u, i) => (
           <div
             key={u + i}
@@ -25,7 +25,7 @@ function ProjectsTecnologies({ onSelect, select, text }) {
               e.preventDefault();
               onSelect(i + 1);
             }}
-            className="w-[25%] h-fit text-center hover:scale-110 transform cursor-pointer transition-all sm:mb-0 mb-2"
+            className="w-[25%] h-fit text-center hover:scale-110 transform cursor-pointer transition-all sm:mb-0 mb-2 "
           >
             {u === 'all' ? <p>{text[u]}</p> : <p>{u}</p>}
           </div>
