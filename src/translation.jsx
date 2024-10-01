@@ -65,13 +65,14 @@ export const translation = {
         </>
       ),
       description1: {
-        title: 'Responsive Design',
+        title: 'Problem Solver',
         description:
-          'High priority to the adaptation of the design according to the display',
+          'High capacity to provide efficient solutions to real-world challenges.',
       },
       description2: {
-        title: 'Intuitive',
-        description: 'Simple and intuitive designs for the user',
+        title: 'Versatile',
+        description:
+          'Highly adaptable to new work environments without affecting my performance.',
       },
       description3: {
         title: 'Fast',
@@ -139,13 +140,14 @@ export const translation = {
         </>
       ),
       description1: {
-        title: 'Diseño Responsivo',
+        title: 'Solucionador de problemas',
         description:
-          'Gran prioridad a la adaptacion del diseño segun pantalla',
+          'Alta capacidad para dar soluciones eficientes a los retos del mundo real.',
       },
       description2: {
-        title: 'Intuitivo',
-        description: 'Diseños simples y intuitivos para el usuario',
+        title: 'Versatil',
+        description:
+          'Altamente adaptable a nuevos entornos de trabajo si afectar mi rendimiento.',
       },
       description3: {
         title: 'Rapido',

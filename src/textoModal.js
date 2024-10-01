@@ -2,10 +2,6 @@ import {
   cryptoCoin,
   cryptoMain,
   cryptoMobile,
-  mobileChart,
-  mobileChartLineal,
-  mobileTable,
-  mobilecrypto,
   speedyHome,
   speedyRoom,
   speedyWinner,
@@ -13,13 +9,17 @@ import {
   tweeter2,
   tweeter3,
   tweeter4,
+  AddStudent,
+  Configuration,
+  Debts,
+  PaidFee,
 } from './images';
 
 const images = {
   tweeter: [tweeter1, tweeter2, tweeter3, tweeter4],
   typingGame: [speedyRoom, speedyHome, speedyWinner],
   cryptoTracker: [cryptoMain, cryptoCoin, cryptoMobile],
-  mobile: [mobileChart, mobileChartLineal, mobileTable, mobilecrypto],
+  institute: [AddStudent, Configuration, Debts, PaidFee],
 };
 
 export const modalEN = {
@@ -47,12 +47,12 @@ export const modalEN = {
     repositorie: 'https://github.com/LucasPirez/cryptomonedas-app',
     deploy: '',
   },
-  mobileCryptoTracker: {
-    title: 'Mobile Crypto Tracker',
+  institute: {
+    title: 'Instite App',
     description:
-      'This native cryptocurrency mobile app, developed in React Native, is currently under development and already has some interesting functionalities. One of the features is the ability to add cryptocurrencies to a list of favorites, making it easier to track and manage coins. In addition, the application also offers detailed charts allowing the user to visualize the performance of different cryptocurrencies over time.  However, I look forward to adding other attractive and useful features for the user.',
-    images: images.mobile,
-    repositorie: 'https://github.com/LucasPirez/mobile-CryptoTracker',
+      'This desktop and web application, developed for a client in .Net and Blazor/razor, has functionalities such as student control. Register student tutors. Course configuration, prices, discounts, etc. Register payments of students adding a configurable discount if you have siblings, the application generates the registration of several payments in a single action if necessary, generation of debtors with the possibility of settling debt with the corresponding percentage of overdue month.',
+    images: images.institute,
+    repositorie: '',
     deploy: '',
   },
 };
@@ -83,12 +83,12 @@ export const modalES = {
     repositorie: 'https://github.com/LucasPirez/cryptomonedas-app',
     deploy: '',
   },
-  mobileCryptoTracker: {
-    title: 'Mobile Crypto Tracker',
+  institute: {
+    title: 'App de instituto',
     description:
-      'Esta aplicación móvil nativa de criptomonedas, desarrollada en React Native, está actualmente en proceso de desarrollo y ya cuenta con algunas funcionalidades interesantes. Una de las características es la posibilidad de agregar criptomonedas a una lista de favoritos,facilitando el seguimiento y la gestión de las monedas. Además, la aplicación también ofrece gráficos detallados permitiendole al usuario visualizar el rendimiento de las distintas criptomonedas en el tiempo.  Sin embargo, espero poder agregarle otras caracteriscas atractivas y utiles para el usuario.',
-    images: images.mobile,
-    repositorie: 'https://github.com/LucasPirez/mobile-CryptoTracker',
+      'Esta aplicación de escritorio y web, desarrollada para un cliente en .Net y Blazor/razor, cuenta con las funcionalidades tales como control de estudiantes. Registrar tutores de los estudiantes. Configuracion de los cursos, precios, descuentos, etc. Registrar pagos de los alumnos agregando un descuento configurable si tiene hermanos, la aplicacion genera el registro de varios pagos en una sola accion si en necesario, generacion de deudores con la posibilidad de saldar deuda con el porcentage de mes vencido correspondiente.',
+    images: images.institute,
+    repositorie: '',
     deploy: '',
   },
 };
