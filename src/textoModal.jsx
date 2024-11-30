@@ -60,8 +60,15 @@ export const modalEN = {
 export const modalES = {
   typingGame: {
     title: 'SpeedyType',
-    description:
-      'SpeedyType es una aplicación web en tiempo real diseñada para mejorar las habilidades de mecanografía a través de competencias amistosas con textos normales o de codigo. La aplicación permite a los usuarios crear y unirse a salas (rooms) para participar en competencias de typing. Utiliza SignalR para la comunicación en tiempo real entre el servidor y los clientes, asegurando una experiencia fluida y reactiva. La aplicación está construida con un frontend en React y un backend en .NET.',
+    description: () => (
+      <>
+        Juego te typing en tiempo real, con texto normal y texto en
+        javascript, construida usando WebSockets.{' '}
+        <span style={{ color: '#ea5455', fontWeight: 'semibold' }}>
+          Contactame para que compitamos.
+        </span>
+      </>
+    ),
 
     images: images.typingGame,
     repositorie: 'https://github.com/LucasPirez/KeyboardWarrior',
@@ -85,8 +92,16 @@ export const modalES = {
   },
   institute: {
     title: 'App de instituto',
-    description:
-      'Esta aplicación de escritorio y web, desarrollada para un cliente en .Net y Blazor/razor, cuenta con las funcionalidades tales como control de estudiantes. Registrar tutores de los estudiantes. Configuracion de los cursos, precios, descuentos, etc. Registrar pagos de los alumnos agregando un descuento configurable si tiene hermanos, la aplicacion genera el registro de varios pagos en una sola accion si en necesario, generacion de deudores con la posibilidad de saldar deuda con el porcentage de mes vencido correspondiente.',
+    description: () => (
+      <>
+        Aplicación de escritorio y web.{' '}
+        <span style={{ color: '#ea5455', fontWeight: 'semibold' }}>
+          Actualmente utilizada por el cliente
+        </span>{' '}
+        permite registrar tutores, estudiantes, configuracion de
+        cursos, precios, descuentos, etc.
+      </>
+    ),
     images: images.institute,
     repositorie: '',
     deploy: '',

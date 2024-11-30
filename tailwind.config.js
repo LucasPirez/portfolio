@@ -20,6 +20,7 @@ module.exports = {
         myDarkLightBlue: '#9bcaff',
         myDarkLimonGreen: '#d4ea93',
         myDarkyellow: '#ffcf91',
+        myDarkPurple: '#a78ce7',
         myDarkRed: '#eb9a9c',
         myLightPurple: '#8B5CF6',
         myLightLightGreen: '#a1c30d',
