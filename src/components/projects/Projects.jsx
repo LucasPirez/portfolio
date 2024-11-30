@@ -5,32 +5,24 @@ import {
   cryptoMain,
   AddStudent,
 } from '../../images';
-import ModalChildren from './ModalChildren';
-import { ModalPortal } from './ModalPortal';
 import ProjectsTecnologies from './ProjectsTecnologies';
-import ButtonRead from './ButtonRead';
 import ContainerProjects from './ContainerProjects';
 import TranslationContext from '../../TraslationContext';
 import Title from '../util/Title';
+import {
+  tecnologiesTyping,
+  tecnlogoiesCryptoTracker,
+  tecnologiesAppInstitute,
+  grinpoolTecnologies,
+} from '../../tecnologies-per-project';
 
 export default function Projects() {
   const { text } = useContext(TranslationContext);
   const [select, setSelect] = useState(1);
-  const [close, setClose] = useState(false);
-  const [modalSelect, setModalSelect] = useState(null);
   const ref = useRef();
-
-  const outside = (e) => {
-    setClose(false);
-    e && e.stopPropagation();
-  };
 
   const onSelect = (i) => {
     setSelect(i);
-  };
-  const handleClick = (strModal) => {
-    setModalSelect(strModal);
-    setClose(true);
   };
 
   return (
@@ -44,41 +36,47 @@ export default function Projects() {
         select={select}
         text={text}
       />
-      <div className="flex justify-center relative h-[75vh] overflow-y-scroll   sm:overflow-y-auto sm:h-auto md:w-[90vw] w-[95vw] scroll_style">
-        <div
-          ref={ref}
-          className="grid grid-cols-1 sm:grid-cols-2 items-center w-full grid-flow-row relative flex-wrap container max-w-[1180px] gap-[1rem]"
-        >
-          <ContainerProjects
-            select={select}
-            number={[3]}
-            imgSrc={speedyGame}
-            title=".NET/React"
-            links={text.modal['typingGame']}
-          />
-          <ContainerProjects
-            select={select}
-            number={[3]}
-            imgSrc={cryptoMain}
-            title=".Net/React"
-            links={text.modal['cryptoTracker']}
-          />
-          <ContainerProjects
-            select={select}
-            number={[2]}
-            imgSrc={AddStudent}
-            title="Institute App"
-            links={text.modal['institute']}
-          />
+      <div
+        ref={ref}
+        className="grid grid-cols-1 sm:grid-cols-2 justify-items-center flex-wrap container max-w-[1180px] gap-4 py-3 h-auto md:w-[90vw] w-[95vw] px-4 "
+      >
+        <ContainerProjects
+          select={select}
+          number={[3]}
+          imgSrc={speedyGame}
+          title="Typing Game"
+          links={text.modal['typingGame']}
+          description={text.modal['typingGame'].description}
+          tecnologies={tecnologiesTyping}
+        />
+        <ContainerProjects
+          select={select}
+          number={[3]}
+          imgSrc={cryptoMain}
+          title="Crypto Tracker"
+          links={text.modal['cryptoTracker']}
+          description={text.modal['cryptoTracker'].description}
+          tecnologies={tecnlogoiesCryptoTracker}
+        />
+        <ContainerProjects
+          select={select}
+          number={[2]}
+          imgSrc={AddStudent}
+          title="Institute App"
+          links={text.modal['institute']}
+          description={text.modal['institute'].description}
+          tecnologies={tecnologiesAppInstitute}
+        />
 
-          <ContainerProjects
-            select={select}
-            number={[]}
-            imgSrc={twitter}
-            title="Reactjs"
-            links={text.modal['tweeter']}
-          />
-        </div>
+        <ContainerProjects
+          select={select}
+          number={[]}
+          imgSrc={twitter}
+          title="Twitter clon"
+          links={text.modal['tweeter']}
+          description={text.modal['tweeter'].description}
+          tecnologies={grinpoolTecnologies}
+        />
       </div>
     </div>
   );

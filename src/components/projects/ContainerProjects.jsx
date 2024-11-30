@@ -1,47 +1,46 @@
 import Links from './Links';
+import TechStack from './card/TechStack';
 
 function ContainerProjects({
-  children,
   select,
   number,
   imgSrc,
   title,
   links,
+  description,
+  tecnologies,
 }) {
   return (
-    <div
-      className={`${
-        number.includes(select) === true || select === 1
-          ? 'animate-[inProjects_0.6s_ease-in-out_forwards] '
-          : 'animate-[outProjects_0.6s_ease-in-out_forwards] '
-      } group w-72 h-72 2xl:w-[370px] 2xl:h-[380px]  flex flex-col  justify-between items-center m-2 text-transparent  text-center custom-rounded  bg-slate-200 
-       shadow-lg dark:opacity-90  
-       dark:shadow-gray-700 first-letter:hover:text-slate-800 bg-transparent  overflow-hidden
-   `}
-    >
-      <div className="bg-slate-200/90 cursor-pointer flex gap-1 rounded-md items-center w-auto z-40 absolute right-4 top-2 shadow-sm shadow-slate-500 group-hover:shadow-slate-700 ">
-        <Links links={links} />
-      </div>
+    <article className=" flex justify-end flex-col rounded-lg relative bg-zinc-900 border-[1px] border-purple/40 w-[100%] max-w-[500px] h-[460px] overflow-hidden  dark:opacity-90 hover:opacity-100 transition-all duration-150 hover:scale-[1.03]  ">
+      <Links links={links} />
       <img
         src={imgSrc}
-        alt="calculator"
-        className="absolute h-[100%] m-center object-cover "
+        className=" absolute top-0 left-0 object-cover h-full from-transparent "
+        alt="project"
       />
 
-      <h4
-        className="group-hover:transform
-        group-hover:translate-y-10 text-2xl group-hover:text-myDarkLightBlue transition-all group-hover:duration-700 font-bold z-20
-
-        "
-      >
-        {title}
-      </h4>
-      {children}
-      <div
-        className=" absolute bg-transparent w-full h-full group-hover:bg-myBgDarkSecondary group-hover:bg-opacity-80 transition-all dark:bg-myBgDark/10 border-[1px]
-       custom-rounded "
-      ></div>
-    </div>
+      <div className="h-full w-full bg-gradient-to-b dark:to-zinc-900 from-transparent absolute bottom-0 left-0 bg-slate-700/20 hover:opacity-50 "></div>
+      <div className="z-20 pl-3 pr bg-myBgDarkSecondary ">
+        <h3 className="text-xl font-semibold dark:text-myDarkPurple text-myLightPurple">
+          {title}
+        </h3>
+        <p className=" text-slate-200 mb-2">
+          {typeof description === 'string'
+            ? description
+            : description()}
+        </p>
+        <div className=" mb-1 flex flex-wrap gap-2 w-full text-sm h-auto">
+          {tecnologies?.map((e) => (
+            <TechStack
+              Component={e.icon}
+              tecnologie={e.tecnologie}
+              color={e.color}
+              colorIcon={e.colorIcon}
+            />
+          ))}
+        </div>
+      </div>
+    </article>
   );
 }
 
