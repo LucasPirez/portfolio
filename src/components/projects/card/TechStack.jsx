@@ -4,13 +4,12 @@ export default function TechStack({
   color,
   colorIcon,
 }) {
-  console.log(color);
   return (
     <span
-      className={`flex gap-1  border-[1px]  p-1 px-3 rounded-[50px]`}
+      className={`flex border-[1px]  p-1 px-3 rounded-[50px] `}
       style={{ color, borderColor: color }}
     >
-      <Component width={22} height={22} stroke={colorIcon} />
+      <Component width={21} height={21} stroke={colorIcon} />
       <p>{tecnologie}</p>
     </span>
   );

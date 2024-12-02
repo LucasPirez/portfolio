@@ -1,18 +1,11 @@
 import Links from './Links';
 import TechStack from './card/TechStack';
 
-function ContainerProjects({
-  select,
-  number,
-  imgSrc,
-  title,
-  links,
-  description,
-  tecnologies,
-}) {
+function ContainerProjects({ imgSrc, text, tecnologies }) {
+  const { title, description } = text;
   return (
     <article className=" flex justify-end flex-col rounded-lg relative bg-zinc-900 border-[1px] border-purple/40 w-[100%] max-w-[500px] h-[460px] overflow-hidden  dark:opacity-90 hover:opacity-100 transition-all duration-150 hover:scale-[1.03]  ">
-      <Links links={links} />
+      <Links links={text} />
       <img
         src={imgSrc}
         className=" absolute top-0 left-0 object-cover h-full from-transparent "
@@ -29,7 +22,10 @@ function ContainerProjects({
             ? description
             : description()}
         </p>
-        <div className=" mb-1 flex flex-wrap gap-2 w-full text-sm h-auto">
+        <div
+          className=" mb-1 flex flex-wrap gap-1 w-full text-sm
+         h-auto"
+        >
           {tecnologies?.map((e) => (
             <TechStack
               Component={e.icon}
