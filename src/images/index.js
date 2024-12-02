@@ -1,10 +1,8 @@
 import speedyRoom from './typing-game/speedy-room.png';
 import speedyHome from './typing-game/speedy-home.png';
 import speedyWinner from './typing-game/speedy-room-winner.png';
-import tweeter1 from './tweeter1.webp';
-import tweeter2 from './tweeter2.webp';
-import tweeter3 from './tweeter3.webp';
-import tweeter4 from './tweeter4.webp';
+
+import grinpol from './grinpol.png';
 import cryptoMain from './cripto/img-crypto-main.webp';
 import cryptoMobile from './cripto/img-crypto-mobile.webp';
 import cryptoCoin from './cripto/img-cypto-coin.webp';
@@ -25,10 +23,7 @@ export {
   speedyRoom,
   speedyHome,
   speedyWinner,
-  tweeter1,
-  tweeter2,
-  tweeter3,
-  tweeter4,
+  grinpol as tweeter1,
   cryptoMain,
   cryptoMobile,
   cryptoCoin,
