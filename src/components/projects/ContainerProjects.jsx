@@ -12,7 +12,7 @@ function ContainerProjects({ imgSrc, text, tecnologies }) {
         alt="project"
       />
 
-      <div className="h-full w-full bg-gradient-to-b dark:to-zinc-900 from-transparent absolute bottom-0 left-0 bg-slate-700/20 hover:opacity-50 "></div>
+      <div className="h-full w-full bg-gradient-to-b dark:to-zinc-900 from-transparent absolute bottom-0 left-0 bg-slate-700/20 opacity-50 hover:opacity-30 "></div>
       <div className="z-20 pl-3 pr bg-myBgDarkSecondary ">
         <h3 className="text-xl font-semibold dark:text-myDarkPurple text-myLightPurple">
           {title}
