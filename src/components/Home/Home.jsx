@@ -2,9 +2,8 @@ import React, { useContext, lazy, Suspense, useState } from 'react';
 import TranslationContext from '../../TraslationContext';
 import ArrowDown from '../../icons/ArrowDown';
 import Theme from '../About/Theme';
-import GmailIcon from '../../icons/GmailIcon';
+import curriculumPDF from '../../images/cv.pdf';
 import { buttonPrimary } from '../util/classButtons';
-import { profile } from '../../images/index';
 
 const Animation = lazy(() => import('./Animation'));
 
@@ -20,7 +19,7 @@ function Home() {
 
       <section
         id="home"
-        className="flex sm:h-[100vh] h-[110vh]  w-full items-center justify-center overflow-x-hidden bg-transparent"
+        className=" relative flex flex-col sm:h-[100vh] h-[110vh]  w-full items-center justify-center overflow-x-hidden bg-transparent"
       >
         <Suspense fallback="">
           {width > 500 && (
@@ -45,33 +44,28 @@ function Home() {
             {text.presentation.title}
           </span>
 
-          <h3 className="font-semibold dark:text-rose-500/80 text-[#d73542] mt-3 mb-3 ml-[10%] sm:m-0">
+          <h3 className="font-semibold text-gray-300 mt-3 mb-3 ml-[10%] sm:m-0">
             Lucas Pirez Gallo.
           </h3>
-          <h4 className="text-lg sm:text-2xl md:text-4xl ml-[10%] sm:m-0">
+          <h4 className="text-lg sm:text-2xl md:text-3xl ml-[10%] sm:m-0 dark:text-rose-500/80 text-[#d73542]">
             {text.presentation.subTitle}
           </h4>
-          <div className="flex justify-center m-auto mt-4 lg:mt-8 relative w-[300px]">
-            <a
-              href="#portfolio"
-              className={`group relative inline-flex ${buttonPrimary}`}
-            >
-              {text.presentation.button}
-              <span className="group-hover:animate-bounce scale-90 sm:scale-110">
-                <ArrowDown />
-              </span>
-            </a>
-            <a
-              href="mailto:lucaspirez42@gmail.com"
-              className="group flex items-center rounded-md px-1  scale-[0.85] md:scale-[.95] lg:scale-110 hover:scale-105 md:hover:scale-110 lg:hover:scale-125 transition duration-500"
-              title="Send Email"
-            >
-              <span>
-                <GmailIcon className="scale-75" />{' '}
+          <div className="flex justify-center m-auto mt-4 lg:mt-8 w-[300px] h-16 ">
+            <a href={curriculumPDF} download="Cv-LucasPirez.pdf">
+              <span className="text-sm border-2 border-myDarkPurple/20 md:text-lg rounded-full px-6 bg-myBgDark py-2 cursor-pointer hover:scale-105 hover:text-white hover:bg-myDarkPurple/50 duration-300">
+                {text.download} CV
               </span>
             </a>
           </div>
         </div>
+        <a
+          href="#portfolio"
+          className={`group inline-flex ${buttonPrimary} h-11  absolute bottom-40`}
+        >
+          <span className="animate-bounce scale-90 sm:scale-110  ">
+            <ArrowDown />
+          </span>
+        </a>
       </section>
     </>
   );

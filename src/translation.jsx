@@ -15,6 +15,8 @@ export const translation = {
     buttonProjects: 'Read More',
     tecnologies: 'TECHNOLOGIES',
     projects: 'Projects',
+    download: 'Download',
+
     theme: 'Theme',
     light: 'Light',
     dark: 'Dark',
@@ -27,8 +29,8 @@ export const translation = {
       contact: 'Contact',
     },
     presentation: {
-      title: "Hello, I'm",
-      subTitle: 'Web and Mobile developer.',
+      title: '',
+      subTitle: 'Full Stack Developer.',
       button: 'View my work.',
     },
     contact: {
@@ -90,6 +92,7 @@ export const translation = {
     buttonProjects: 'Ver Mas',
     tecnologies: 'TECNOLOGIAS',
     projects: 'Proyectos',
+    download: 'Descargar',
     theme: 'Tema',
     light: 'Claro',
     dark: 'Oscuro',
@@ -102,8 +105,8 @@ export const translation = {
       contact: 'Contacto',
     },
     presentation: {
-      title: 'Hola, soy ',
-      subTitle: 'Desarrollador Web y Movil',
+      title: '',
+      subTitle: 'Desarrollador Full Stack',
       button: 'ver mis proyectos.',
     },
     contact: {
