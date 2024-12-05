@@ -45,7 +45,7 @@ function Home() {
           </span>
 
           <h3 className="font-semibold text-gray-300 mt-3 mb-3 ml-[10%] sm:m-0">
-            Lucas Pirez Gallo.
+            Lucas Pirez Gallo
           </h3>
           <h4 className="text-lg sm:text-2xl md:text-3xl ml-[10%] sm:m-0 dark:text-rose-500/80 text-[#d73542]">
             {text.presentation.subTitle}

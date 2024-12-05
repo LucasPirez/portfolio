@@ -30,7 +30,7 @@ export const translation = {
     },
     presentation: {
       title: '',
-      subTitle: 'Full Stack Developer.',
+      subTitle: 'Full Stack Developer',
       button: 'View my work.',
     },
     contact: {
@@ -100,7 +100,7 @@ export const translation = {
     all: 'Todos',
     header: {
       home: 'Inicio',
-      about: 'Acerca',
+      about: 'Sobre Mí',
       portfolio: 'Portafolio',
       contact: 'Contacto',
     },

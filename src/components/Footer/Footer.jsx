@@ -4,8 +4,12 @@ import Form from './Form';
 import linked from '../../icons/353417.svg';
 import curriculum from '../../icons/icons8-curriculum-64.png';
 import curriculumPDF from '../../images/cv.pdf';
+import GmailIcon from '../../icons/GmailIcon';
 
 function Footer() {
+  const clasNameIcons =
+    'sm:w-14 sm:h-14 w-10 h-10 m-4  lg:m-0 transition-transform hover:scale-110 ';
+
   return (
     <section
       id="footer"
@@ -39,7 +43,7 @@ function Footer() {
                 className="  sm:w-8 sm:h-8 w-6 h-6 m-auto invert"
               />
             </a>
-            <div className=" flex flex-1 p-5 m-10 sm:m-0 justify-around">
+            <div className=" flex flex-1 my-10 sm:m-0 justify-around">
               <a
                 href="https://github.com/LucasPirez"
                 target="_blank"
@@ -48,7 +52,7 @@ function Footer() {
                 <img
                   src={git}
                   alt="git"
-                  className="sm:w-14 sm:h-14 w-10 h-10 m-4  lg:m-0 bg-slate-100 rounded-full block transition-transform hover:scale-110 "
+                  className={`${clasNameIcons} bg-slate-100 rounded-full  `}
                 />
               </a>
 
@@ -58,23 +62,24 @@ function Footer() {
                 alt="linkedin"
                 rel="noreferrer"
               >
-                <img
-                  src={linked}
-                  alt=""
-                  className="sm:w-14 sm:h-14 w-10 h-10 m-4  lg:m-0 block transition-transform hover:scale-110 "
-                />
+                <img src={linked} alt="" className={clasNameIcons} />
+              </a>
+
+              <a
+                href="mailto:lucaspirez42@gmail.com"
+                className={clasNameIcons}
+                title="Send Email"
+              >
+                <GmailIcon />
               </a>
               <a
                 href={curriculumPDF}
                 target="_blank"
                 alt="linkedin"
                 rel="noreferrer"
+                className={clasNameIcons}
               >
-                <img
-                  src={curriculum}
-                  alt=""
-                  className="sm:w-14 sm:h-14 w-10 h-10 block m-4  lg:m-0 transition-transform hover:scale-110 "
-                />
+                <img src={curriculum} alt="" />
               </a>
             </div>
           </>
