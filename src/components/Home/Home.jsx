@@ -2,6 +2,7 @@ import React, { useContext, lazy, Suspense, useState } from 'react';
 import TranslationContext from '../../TraslationContext';
 import ArrowDown from '../../icons/ArrowDown';
 import Theme from '../About/Theme';
+import linked from '../../images/perfil.png';
 import curriculumPDF from '../../images/cv.pdf';
 import { buttonPrimary } from '../util/classButtons';
 
@@ -19,7 +20,7 @@ function Home() {
 
       <section
         id="home"
-        className=" relative flex flex-col sm:h-[100vh] h-[110vh]  w-full items-center justify-center overflow-x-hidden bg-transparent"
+        className=" relative flex flex-col sm:h-[100vh] h-screen overflow-hidden  w-full items-center  overflow-x-hidden bg-transparent"
       >
         <Suspense fallback="">
           {width > 500 && (
@@ -39,28 +40,49 @@ function Home() {
           </select>
           <Theme setChangeTheme={setChangeTheme} />
         </div>
-        <div className="text-slate-100 dark:text-slate-300  text-xl sm:text-3xl md:text-5xl  font-mono z-10 h-72 relative">
-          <span className="text-sm sm:text-xl md:text-2xl opacity-80 ml-[10%] sm:m-0">
-            {text.presentation.title}
-          </span>
-
-          <h3 className="font-semibold text-gray-300 mt-3 mb-3 ml-[10%] sm:m-0">
-            Lucas Pirez Gallo
-          </h3>
-          <h4 className="text-lg sm:text-2xl md:text-3xl ml-[10%] sm:m-0 dark:text-rose-500/80 text-[#d73542]">
-            {text.presentation.subTitle}
-          </h4>
-          <div className="flex justify-center m-auto mt-4 lg:mt-8 w-[300px] h-16 ">
-            <a href={curriculumPDF} download="Cv-LucasPirez.pdf">
-              <span className="text-sm border-2 border-myDarkPurple/20 md:text-lg rounded-full px-6 bg-myBgDark py-2 cursor-pointer hover:scale-105 hover:text-white hover:bg-myDarkPurple/50 duration-300">
-                {text.download} CV
-              </span>
-            </a>
+        <div className="flex items-center  justify-around xl:justify-center xl:gap-44 max-h-[100hv] sm:h-[70%] h-[60%]   flex-wrap text-slate-100 dark:text-slate-300 w-full text-xl sm:text-3xl md:text-5xl px-6  z-10  relative">
+          <div
+            className="  sm:w-[350px] w-[280px] xl:w-[430px]  lg:mt-0  overflow-hidden flex justify-center z-10    "
+            style={{
+              borderRadius: '65% 35% 65% 35% / 28% 69% 31% 72%',
+            }}
+          >
+            <img
+              src={linked}
+              alt="perfil"
+              className=" opacity-100 mt-2 -mb-2  object-cover "
+              style={
+                {
+                  // filter: 'drop-shadow(#86e0e760 0rem 0rem  5px)',
+                }
+              }
+            />
+            <div className="absolute top-[70%] left-0 w-full h-full bg-gradient-to-t from-black to-transparent "></div>
+          </div>
+          <div className="">
+            <h3 className="sm:text-4xl text-3xl md:text-4xl xl:text-5xl font-semibold text-gray-300">
+              Lucas Pirez Gallo
+            </h3>
+            <h4 className=" sm:text-3xl text-2xl md:text-3xl xl:text-3xl dark:text-rose-500/80 text-[#d73542]">
+              {text.presentation.subTitle}
+            </h4>
+            <p className="text-sm  md:text-base max-w-[400px] mt-2 ">
+              Resolutivo y proactivo, siempre enfocado en aportar
+              soluciones efectivas para alcanzar los resultados
+              esperados.
+            </p>
+            <div className="  mt-4 sm:mt-4 lg:mt-4 w-[300px] h-16  ">
+              <a href={curriculumPDF} download="Cv-LucasPirez.pdf">
+                <span className="text-sm border-2 border-myDarkPurple/20 md:text-xl rounded-full px-6 bg-myBgDark py-2 cursor-pointer hover:scale-105 hover:text-white hover:bg-myDarkPurple/50 duration-300">
+                  {text.download} CV
+                </span>
+              </a>
+            </div>
           </div>
         </div>
         <a
           href="#portfolio"
-          className={`group inline-flex ${buttonPrimary} h-11  absolute bottom-40`}
+          className={`group inline-flex ${buttonPrimary} absolute sm:bottom-10 bottom-40 z-40 `}
         >
           <span className="animate-bounce scale-90 sm:scale-110  ">
             <ArrowDown />

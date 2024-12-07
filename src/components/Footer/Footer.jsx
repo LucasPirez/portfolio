@@ -13,23 +13,23 @@ function Footer() {
   return (
     <section
       id="footer"
-      className="w-full  h-auto min-h-[400px] dark:bg-myBgDark"
+      className=" h-auto min-h-[400px] dark:bg-myBgDark "
     >
-      <div className="-translate-y-5">
+      <div className="-translate-y-5 ">
         <div className="w-[100%]  h-[5vw]  relative  ">
           <div className=" absolute  left-0 top-0 pb-1  border-l-[51vw] border-r-[51vw] border-t-[5vw] border-t-transparent border-r-transparent border-l-myBgBlue dark:border-l-myBgBlue"></div>
           <div className=" absolute right-0 top-0 pb-1   border-l-[49vw] border-r-[49vw] border-t-[5vw] border-t-transparent border-l-transparent border-r-myBgBlue dark:border-r-myBgBlue"></div>
         </div>
-        <div className="flex px-4 lg:flex-row flex-col relative w-full  h-auto bg-myBgBlue dark:bg-myBgBlue items-center  lg:justify-around pb-4 -mb-5">
-          <>
-            <div className="sm:flex-1 flex-0 m-auto flexitems-center flex-col xl:ml-16 w-full">
+        <div className="w-full bg-myBgBlue">
+          <div className="md:flex   h-auto items-center  justify-between pb-4 -mb-5 custom-container">
+            <div className=" m-auto flex flex-1 items-center flex-col max-w-[500px] ">
               <Form />
             </div>
 
             <a
               href="#home"
               tn
-              className="flex flex-col items-centere flex-1 sm:w-12 animate-bounce h-12"
+              className="flex  flex-col items-center justify-center lg:flex-1 flex-0 min-w-[120px]  animate-bounce h-12 mt-7"
               alt="arrow"
             >
               <img
@@ -43,7 +43,7 @@ function Footer() {
                 className="  sm:w-8 sm:h-8 w-6 h-6 m-auto invert"
               />
             </a>
-            <div className=" flex flex-1 my-10 sm:m-0 justify-around">
+            <div className=" flex flex-1  my-10  justify-between max-w-[500px] m-auto">
               <a
                 href="https://github.com/LucasPirez"
                 target="_blank"
@@ -82,7 +82,7 @@ function Footer() {
                 <img src={curriculum} alt="" />
               </a>
             </div>
-          </>
+          </div>
         </div>
       </div>
       <div className="w-full min-h-10 border-t-[1.5px] border-rose-700 bg-slate-900 text-center text-xs text-rose-100 p-b">

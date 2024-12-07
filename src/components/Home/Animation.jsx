@@ -119,7 +119,7 @@ function Animation({ visible, changeTheme }) {
     <>
       <canvas
         id="bg"
-        className="absolute h-[100%] w-full overflow-hidden "
+        className="absolute h-[100%] w-full overflow-hidden opacity-50"
       ></canvas>
     </>
   );

@@ -71,13 +71,13 @@ const Form = () => {
 
   return (
     <>
-      <h3 className="text-slate-200 text-center pt-7  sm:text-4xl text-2xl animate-[startLeft_1.2s_ease-out]">
+      <h3 className="text-slate-200 text-center sm:text-4xl text-2xl animate-[startLeft_1.2s_ease-out]">
         {text.header.contact}
       </h3>
       <form
         onSubmit={(e) => send(e)}
         className=" flex flex-col m-auto items-center justify-center space-y-3 sm:text-lg text-base
-         sm:w-96 w-[90%]  text-slate-200 last:items-end mt-7 animate-[startRight_1.2s_ease-out]"
+          w-full text-slate-200 last:items-end mt-7 animate-[startRight_1.2s_ease-out]"
       >
         {/* name */}
         <div className="relative w-full group ">
