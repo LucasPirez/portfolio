@@ -1,60 +1,50 @@
 import { useContext } from 'react';
 import style from './tecnologies.module.css';
-import {
-  Net,
-  Css3,
-  Html,
-  Reactjs,
-  TypeScript,
-  Javascript,
-  CSharp,
-  SQL,
-} from '../../icons/IconsTecnologies';
 import TranslationContext from '../../TraslationContext';
+import TechStack from '../projects/card/TechStack';
+import { primaryTecnologies } from '../../tecnologies-per-project';
 
 const Tecnologies = () => {
   const { text } = useContext(TranslationContext);
 
-  const arrCompontents = [
-    { style: style.g, component: <Net />, text: '.NET' },
-    { style: style.e, component: <CSharp />, text: 'C#' },
-    { style: style.f, component: <Reactjs />, text: 'React' },
-    { style: style.d, component: <TypeScript />, text: 'TypeScript' },
-    { style: style.c, component: <Javascript />, text: 'JavaScript' },
-    { style: style.f, component: <SQL />, text: 'SQL' },
-    { style: style.a, component: <Html />, text: 'HTML' },
-    { style: style.b, component: <Css3 />, text: 'CSS:' },
-  ];
-
   return (
     <div
-      className="h-full animate-[startRight_1.2s_ease-out]"
+      className="h-full animate-[startRight_1.2s_ease-out] flex-1 bg-transparent border-[1px] border-myDarkPurple/40 rounded-lg px-5 py-3  
+      dark:shadow-[inset_0_0px_60px_0px_rgba(0,0,0)] shadow-[inset_0_0px_20px_0px_rgba(0,0,0,0.3)]"
       title="tecnologies"
     >
       <div className={style.cuadrado1}>
         <div className={style.cuadrado}></div>
       </div>
-      <h3 className="text-center lg:text-6xl sm:text-4xl text-3xl  font-bold bg-clip-text  m-4 dark:text-purple/90  text-myLightPurple/60 custom-text">
+      <h3 className="text-right lg:text-4xl sm:text-2xl text-xl   font-bold bg-clip-text dark:text-gray-300 text-gray-50 custom-text mb-3 ">
         {text.tecnologies}
       </h3>
-      <div className="p-1 pb-5 md:pb-3">
-        <ul
-          className={` ${style.tecnologi} grid xl:block grid-cols-2 sm:grid-cols-4  transition-all
-        text-center lg:w-[700px] xl:w-[300px] h-auto   sm:text-lg text-xs sm:p-2  p-1   rounded `}
-        >
-          {arrCompontents.map((tecnology) => (
-            <li
+      <ul
+        className={` ${style.tecnologi} grid grid-cols-2 transition-all  place-self-end h-auto w-[280px] gap-2 opacity-80 `}
+      >
+        {primaryTecnologies.map((tecnology) => (
+          <>
+            <li>
+              <TechStack
+                Component={tecnology.icon}
+                tecnologie={tecnology.tecnologie}
+                color={tecnology.color}
+                colorIcon={tecnology.colorIcon}
+                className="w-32 justify-center gap-3 px-1 mt-7 hover:scale-105 bg-myBgDark"
+              />
+            </li>
+            {/* <li
               key={tecnology.text + Math.random()}
-              className={`${tecnology.style} flex items-center pl-[4%]   dark:bg-myDarkLightBlue/60 bg-gray-200 border-[1px] border-myLightBlue/30 text-myBgDarkSecondary dark:text-gray-100 lg:text-xl `}
+              className={`${tecnology.style} flex items-center pl-[4%]   dark:bg-myDarkLightBlue/60 bg-gray-200 border-[1px] border-myLightBlue/30 text-myBgDarkSecondary dark:text-gray-100 lg:text-lg`}
             >
               <span className="scale-75 lg:scale-100 ">
                 {tecnology.component}
               </span>
               <span className="w-full">{tecnology.text}</span>
-            </li>
-          ))}
-        </ul>
-      </div>
+            </li> */}
+          </>
+        ))}
+      </ul>
     </div>
   );
 };

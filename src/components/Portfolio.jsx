@@ -32,7 +32,7 @@ const Port = () => {
       </section>
 
       <Header />
-      <main className="bg-zinc-300 dark:bg-zinc-800">
+      <main className="background_black bg-myBgLight  dark:bg-myBgDark">
         <section ref={containerProjects} title="projects">
           <Suspense fallback={<p> </p>}>
             <Projects />

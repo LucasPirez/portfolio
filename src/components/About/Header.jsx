@@ -20,19 +20,19 @@ export default function Header() {
   }, []);
 
   return (
-    <div className="w-full h-[10vh] fixed  sm:sticky top-0 z-20 bg-transparent">
+    <div className=" h-[10vh] fixed  sm:sticky top-0 z-20 md:bg-myBgBlue w-full dark:md:bg-myBgDark">
       <header
         className={`${
           nav !== false
-            ? ' h-[160px] bg-myBgBlue w-full'
-            : 'h-[10vh] bg-transparent md:bg-myBgBlue w-full dark:md:bg-myBgDark  '
-        } flex  transition-all  justify-end md:[10vh] w-full  items-center z-10 `}
+            ? ' h-[160px] bg-myBgBlue w-full pr-5'
+            : 'h-[10vh] bg-transparent md:bg-myBgBlue dark:md:bg-myBgDark custom-container'
+        } flex  transition-all  justify-end md:[10vh] items-center z-10 `}
       >
         {(animationStart.projects === true || width < 600) && (
           <ul
             className={` ${
               nav === false ? 'hidden' : 'flex'
-            } transition-all flex-col right-4 space-y-2 md:relative md:flex md:flex-row md:space-y-0  m-3 md:m-6 md:space-x-5 text-md md:text-2xl`}
+            } transition-all flex-col  space-y-2 md:relative md:flex md:flex-row md:space-y-0  text-md md:text-2xl  `}
           >
             <li>
               <a
@@ -50,7 +50,7 @@ export default function Header() {
                   currentPage === 'projects'
                     ? 'text-purple'
                     : 'text-gray-200'
-                } flex transition-all transform -translate-y-1 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.7s_ease-in-out]`}
+                } flex transition-all transform -translate-y-1 ml-4 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.7s_ease-in-out]`}
               >
                 {text.header.portfolio}
               </a>
@@ -62,7 +62,7 @@ export default function Header() {
                   currentPage === 'about'
                     ? 'text-purple'
                     : 'text-gray-200'
-                } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.4s_ease-in-out] `}
+                } flex transition-all transform -translate-y-1 ml-4 hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.4s_ease-in-out] `}
               >
                 {text.header.about}
               </a>
@@ -75,7 +75,7 @@ export default function Header() {
                   currentPage === 'footer'
                     ? 'text-purple'
                     : 'text-gray-200'
-                } flex transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.1s_ease-in-out]`}
+                } flex transition-all transform -translate-y-1 ml-4 hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.1s_ease-in-out]`}
               >
                 {text.header.contact}
               </a>

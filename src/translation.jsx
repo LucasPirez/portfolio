@@ -48,23 +48,28 @@ export const translation = {
     repositorie: 'View Repository',
     about: {
       about: () => (
-        <>
+        <p>
           <strong className="text-myLightRed dark:text-myDarkRed/90">
-            Full Stack Developer
+            Desarrollador Full Stack
           </strong>{' '}
-          focused on problem solving, providing solid and scalable
-          solutions. I have hands-on experience in various projects
-          and have specialized in{' '}
+          apasionado por la creación de soluciones sólidas, escalables
+          y orientadas a resolver problemas. Con un año de experiencia
+          práctica, me he especializado en
           <strong className="text-myLightPurple dark:text-purple/90">
-            React.js{' '}
-          </strong>{' '}
-          and{' '}
+            React.js
+          </strong>
+          {'y '}
           <strong className="text-myLightPurple dark:text-purple/90">
             .NET
           </strong>
-          . Currently, I am looking for a job where I can demonstrate
-          my determination and skills.
-        </>
+          , participando en el diseño y desarrollo de aplicaciones
+          completas, tanto en el frontend como en el backend.
+          Actualmente, estoy trabajando en proyectos de aplicaciones
+          full stack que integran tecnologías modernas y buenas
+          prácticas de desarrollo. Busco unirme a una empresa donde
+          pueda aportar valor, seguir aprendiendo y crecer
+          profesionalmente mientras contribuyo al éxito del equipo.{' '}
+        </p>
       ),
       description1: {
         title: 'Problem Solver',
@@ -125,21 +130,34 @@ export const translation = {
     about: {
       about: () => (
         <>
-          <strong className="text-myLightRed dark:text-myDarkRed/90">
-            Desarrollador Full Stack
-          </strong>{' '}
-          enfocado en la resolución de problemas, proporcionando
-          soluciones sólidas y escalables. Tengo experiencia práctica
-          en diversos proyectos y me he especializado en{' '}
-          <strong className="text-myLightPurple dark:text-purple/90">
-            React.js{' '}
-          </strong>{' '}
-          y{' '}
-          <strong className="text-myLightPurple dark:text-purple/90">
-            .NET
-          </strong>
-          . Actualmente, estoy en búsqueda de un trabajo donde pueda
-          demostrar mi determinación y habilidades.
+          <p className="mb-3">
+            <span>&#8226;</span> Más de un año de experiencia en el
+            desarrollo de aplicaciones web, destacando una sólida
+            inclinación hacia el backend.
+          </p>
+          <p className="mb-3">
+            {' '}
+            <span>&#8226; </span>
+            Mi enfoque principal es crear soluciones escalables,
+            robustas y orientadas a resolver problemas mediante
+            tecnologías modernas como{' '}
+            <strong className="text-myLightPurple dark:text-purple/90">
+              React.js
+            </strong>
+            {' y '}
+            <strong className="text-myLightPurple dark:text-purple/90">
+              .NET.
+            </strong>
+          </p>
+          <p className="mb-3">
+            <span>&#8226; </span>
+            Actualmente, estoy desarrollando aplicaciones full stack
+            que integran buenas prácticas de desarrollo y arquitectura
+            escalable. Estoy entusiasmado por unirme a una empresa
+            donde pueda aplicar mis habilidades, seguir creciendo
+            profesionalmente y contribuir al logro de los objetivos
+            del equipo con un enfoque innovador y comprometido.
+          </p>
         </>
       ),
       description1: {

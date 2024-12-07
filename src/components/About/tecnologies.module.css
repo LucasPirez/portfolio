@@ -1,18 +1,3 @@
-.tecnologi {
-  margin: auto;
-}
-
-.tecnologi > li {
-  font-weight: bold;
-  height: 55px;
-  margin: 0.8rem;
-  transition: all 0.3s;
-  border-radius: 20px;
-}
-
-.tecnologi > li > :global(svg) {
-  transform: scale(0.85);
-}
 .a {
   animation: rot 3s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
   animation-delay: 200ms;
@@ -21,14 +6,14 @@
   animation: rot 3s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
   animation-delay: 500ms;
 }
-.b::after {
+/* .b::after {
   content: '';
   animation: name 25s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;
   animation-delay: 800ms;
   content: 'Bootstrap';
-}
+} */
 
-@keyframes name {
+/* @keyframes name {
   0% {
   }
   25% {
@@ -40,7 +25,7 @@
   100% {
     content: 'Bootstrap';
   }
-}
+} */
 
 .c {
   animation: rot 3s cubic-bezier(0.47, 0, 0.745, 0.715) infinite;

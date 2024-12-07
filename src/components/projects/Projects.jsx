@@ -23,7 +23,7 @@ export default function Projects() {
   return (
     <div
       id="portfolio"
-      className="relative flex flex-col  max-w-[1500px] m-auto min-h-[100vh] items-center border-t-2 border-t-myDarkLightBlue/70 background_black  pt-[10vh] dark:bg-myBgDark   bg-myBgLight shadow-md shadow-zinc-400 z-10 -mt-[10vh] md:mt-0"
+      className="relative flex flex-col m-auto custom-container items-center border-t-2 border-t-myDarkLightBlue/70   pt-[10vh] z-10 -mt-[10vh] md:mt-0"
     >
       <Title text={text.projects} />
       <div
