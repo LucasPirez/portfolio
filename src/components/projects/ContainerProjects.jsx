@@ -4,7 +4,7 @@ import TechStack from './card/TechStack';
 function ContainerProjects({ imgSrc, text, tecnologies }) {
   const { title, description } = text;
   return (
-    <article className=" flex justify-end flex-col rounded-lg relative bg-zinc-900 border-[1px] border-purple/40 w-[100%] max-w-[500px] h-[460px] overflow-hidden  dark:opacity-90 hover:opacity-100 transition-all duration-150 hover:scale-[1.03]  ">
+    <article className=" flex justify-end flex-col rounded-lg relative bg-zinc-900 border-[1px] border-purple/40 w-[100%] max-w-[650px] h-[460px] overflow-hidden  dark:opacity-90 hover:opacity-100 transition-all duration-150 hover:scale-[1.03] ">
       <Links links={text} />
       <div className="w-full h-full absolute top-0 left-0 flex justify-center">
         <img
@@ -24,10 +24,7 @@ function ContainerProjects({ imgSrc, text, tecnologies }) {
             ? description
             : description()}
         </p>
-        <div
-          className=" mb-1 flex flex-wrap gap-1 w-full text-sm
-         h-auto"
-        >
+        <div className=" mb-1 flex flex-wrap gap-1 w-full text-sm h-auto pb-2">
           {tecnologies?.map((e) => (
             <TechStack
               Component={e.icon}

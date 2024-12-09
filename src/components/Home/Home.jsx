@@ -40,7 +40,7 @@ function Home() {
           </select>
           <Theme setChangeTheme={setChangeTheme} />
         </div>
-        <div className="flex items-center  justify-around xl:justify-center xl:gap-44 max-h-[100hv] sm:h-[70%] h-[60%]   flex-wrap text-slate-100 dark:text-slate-300 w-full text-xl sm:text-3xl md:text-5xl px-6  z-10  relative">
+        <div className="flex items-center  justify-around xl:justify-center xl:gap-44 max-h-[100hv] sm:h-[70%] h-[60%]   flex-wrap text-slate-100 dark:text-slate-300 w-full text-xl sm:text-3xl md:text-5xl px-6  z-10  relative mt-16 md:mt-0">
           <div
             className="  sm:w-[350px] w-[280px] xl:w-[430px]  lg:mt-0  overflow-hidden flex justify-center z-10    "
             style={{
@@ -57,7 +57,6 @@ function Home() {
                 }
               }
             />
-            <div className="absolute top-[70%] left-0 w-full h-full bg-gradient-to-t from-black to-transparent "></div>
           </div>
           <div className="">
             <h3 className="sm:text-4xl text-3xl md:text-4xl xl:text-5xl font-semibold text-gray-300">
@@ -67,11 +66,9 @@ function Home() {
               {text.presentation.subTitle}
             </h4>
             <p className="text-sm  md:text-base max-w-[400px] mt-2 ">
-              Resolutivo y proactivo, siempre enfocado en aportar
-              soluciones efectivas para alcanzar los resultados
-              esperados.
+              {text.presentation.about}
             </p>
-            <div className="  mt-4 sm:mt-4 lg:mt-4 w-[300px] h-16  ">
+            <div className="  mt-4 sm:mt-4 lg:mt-4 w-[300px] h-16 z-40">
               <a href={curriculumPDF} download="Cv-LucasPirez.pdf">
                 <span className="text-sm border-2 border-myDarkPurple/20 md:text-xl rounded-full px-6 bg-myBgDark py-2 cursor-pointer hover:scale-105 hover:text-white hover:bg-myDarkPurple/50 duration-300">
                   {text.download} CV
@@ -88,6 +85,7 @@ function Home() {
             <ArrowDown />
           </span>
         </a>
+        <div className="absolute top-[40%] left-0 w-full h-full bg-gradient-to-t from-black to-transparent "></div>
       </section>
     </>
   );

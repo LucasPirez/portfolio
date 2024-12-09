@@ -32,6 +32,8 @@ export const translation = {
       title: '',
       subTitle: 'Full Stack Developer',
       button: 'View my work.',
+      about:
+        'Resolute and proactive, always focused on providing effective solutions to achieve the expected results.',
     },
     contact: {
       name: 'Name',
@@ -48,28 +50,36 @@ export const translation = {
     repositorie: 'View Repository',
     about: {
       about: () => (
-        <p>
-          <strong className="text-myLightRed dark:text-myDarkRed/90">
-            Desarrollador Full Stack
-          </strong>{' '}
-          apasionado por la creación de soluciones sólidas, escalables
-          y orientadas a resolver problemas. Con un año de experiencia
-          práctica, me he especializado en
-          <strong className="text-myLightPurple dark:text-purple/90">
-            React.js
-          </strong>
-          {'y '}
-          <strong className="text-myLightPurple dark:text-purple/90">
-            .NET
-          </strong>
-          , participando en el diseño y desarrollo de aplicaciones
-          completas, tanto en el frontend como en el backend.
-          Actualmente, estoy trabajando en proyectos de aplicaciones
-          full stack que integran tecnologías modernas y buenas
-          prácticas de desarrollo. Busco unirme a una empresa donde
-          pueda aportar valor, seguir aprendiendo y crecer
-          profesionalmente mientras contribuyo al éxito del equipo.{' '}
-        </p>
+        <>
+          <p className="mb-3">
+            <span>&#8226;</span> More than a year of experience in web
+            application development, highlighting a strong backend
+            bias.
+          </p>
+          <p className="mb-3">
+            {' '}
+            <span>&#8226; </span>
+            My main focus is to create scalable, robust and
+            problem-oriented solutions using modern technologies such
+            as{' '}
+            <strong className="text-myLightPurple dark:text-purple/90">
+              React.js
+            </strong>
+            {' and '}
+            <strong className="text-myLightPurple dark:text-purple/90">
+              .NET.
+            </strong>
+          </p>
+          <p className="mb-3">
+            <span>&#8226; </span>
+            Currently, I am developing full stack applications that
+            integrate good development practices and scalable
+            architecture. I am excited to join a company where I can
+            apply my skills, continue to grow professionally and
+            contribute to the achievement of the team's goals with an
+            innovative and committed approach.
+          </p>
+        </>
       ),
       description1: {
         title: 'Problem Solver',
@@ -113,6 +123,8 @@ export const translation = {
       title: '',
       subTitle: 'Desarrollador Full Stack',
       button: 'ver mis proyectos.',
+      about:
+        'Resolutivo y proactivo, siempre enfocado en aportar soluciones efectivas para alcanzar los resultados esperados.',
     },
     contact: {
       name: 'Nombre',

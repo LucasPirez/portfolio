@@ -13,7 +13,7 @@ function Footer() {
   return (
     <section
       id="footer"
-      className=" h-auto min-h-[400px] dark:bg-myBgDark "
+      className=" h-auto min-h-[400px] dark:bg-myBgDark mt-7"
     >
       <div className="-translate-y-5 ">
         <div className="w-[100%]  h-[5vw]  relative  ">
