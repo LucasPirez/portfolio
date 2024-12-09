@@ -20,13 +20,13 @@ export default function Header() {
   }, []);
 
   return (
-    <div className=" h-[10vh] fixed  sm:sticky top-0 z-20 md:bg-myBgBlue w-full dark:md:bg-myBgDark">
+    <div className="h-[10vh] fixed  sm:sticky top-0 z-20 md:bg-myBgBlue w-full dark:md:bg-myBgDark md:border-b-2 border-b-myDarkPurple/10 ">
       <header
         className={`${
           nav !== false
             ? ' h-[160px] bg-myBgBlue w-full pr-5'
-            : 'h-[10vh] bg-transparent md:bg-myBgBlue dark:md:bg-myBgDark custom-container'
-        } flex  transition-all  justify-end md:[10vh] items-center z-10 `}
+            : 'h-[10vh] min-h-[60px] bg-transparent md:bg-myBgBlue dark:md:bg-myBgDark custom-container'
+        } flex  transition-all  justify-end md:[10vh] items-center z-10 md:border-b-2 border-b-myDarkPurple/10 `}
       >
         {(animationStart.projects === true || width < 600) && (
           <ul

@@ -23,30 +23,32 @@ export default function Theme({ setChangeTheme }) {
   }
 
   useEffect(() => {
-    if (select === 'os') {
-      localStorage.removeItem('theme');
-    } else {
-      localStorage.setItem('theme', select);
-    }
+    document.documentElement.classList.add('dark');
 
-    if (!('theme' in localStorage)) {
-      if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.documentElement.classList.add('dark');
-      }
-    } else {
-      if (localStorage.theme === 'dark') {
-        document.documentElement.classList.add('dark');
-      } else {
-        document.documentElement.classList.remove('dark');
-      }
-    }
+    // if (select === 'os') {
+    //   localStorage.removeItem('theme');
+    // } else {
+    //   localStorage.setItem('theme', select);
+    // }
 
-    setChangeTheme(Math.random());
+    // if (!('theme' in localStorage)) {
+    //   if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    //     document.documentElement.classList.add('dark');
+    //   }
+    // } else {
+    //   if (localStorage.theme === 'dark') {
+    //     document.documentElement.classList.add('dark');
+    //   } else {
+    //     document.documentElement.classList.remove('dark');
+    //   }
+    // }
+
+    // setChangeTheme(Math.random());
   }, [select]);
 
   return (
     <>
-      <button
+      {/* <button
         className="bg-myBgDarkSecondary rounded-2xl px-2 hover:scale-105 transition-all duration-300 h-8 border-2 border-myDarkLightBlue/90 z-30 "
         onClick={handleClick}
       >
@@ -57,8 +59,9 @@ export default function Theme({ setChangeTheme }) {
         ) : (
           <Moon />
         )}
-        {/* <span className="mx-2 hidden lg:inline-block">{text.theme}</span> */}
-      </button>
+        <span className="mx-2 hidden lg:inline-block">{text.theme}</span> 
+      </button> 
+      */}
     </>
   );
 }

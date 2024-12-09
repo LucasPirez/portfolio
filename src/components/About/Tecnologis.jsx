@@ -16,11 +16,11 @@ const Tecnologies = () => {
       <div className={style.cuadrado1}>
         <div className={style.cuadrado}></div>
       </div>
-      <h3 className="text-right lg:text-4xl sm:text-2xl text-xl   font-bold bg-clip-text dark:text-gray-300 text-gray-50 custom-text mb-3 ">
+      <h3 className="text-center lg:text-4xl sm:text-2xl text-xl  font-bold bg-clip-text dark:text-gray-300 text-gray-50 custom-text mb-3">
         {text.tecnologies}
       </h3>
       <ul
-        className={` ${style.tecnologi} grid grid-cols-2 transition-all  place-self-end h-auto w-[280px] gap-2 opacity-80 `}
+        className={` ${style.tecnologi} flex flex-wrap lg:grid lg:grid-cols-2 transition-all h-auto gap-2 min-w-[270px] opacity-80 pb-8 justify-around`}
       >
         {primaryTecnologies.map((tecnology) => (
           <>
