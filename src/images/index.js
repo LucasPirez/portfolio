@@ -11,7 +11,6 @@ import mobileChart from './cripto/mobile-chart.webp';
 import mobileChartLineal from './cripto/mobile-chartLineal.webp';
 import mobilecrypto from './cripto/mobile-crypto.webp';
 import mobileTable from './cripto/mobile-table.webp';
-import profile from './perfil.png';
 
 // institute
 import AddStudent from './institute/agregar-estudiante.webp';
@@ -31,7 +30,6 @@ export {
   mobileChartLineal,
   mobilecrypto,
   mobileTable,
-  profile,
   AddStudent,
   Configuration,
   Debts,

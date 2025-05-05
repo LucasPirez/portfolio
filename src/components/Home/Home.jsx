@@ -2,7 +2,7 @@ import React, { useContext, lazy, Suspense, useState } from 'react';
 import TranslationContext from '../../TraslationContext';
 import ArrowDown from '../../icons/ArrowDown';
 import Theme from '../About/Theme';
-import linked from '../../images/perfil.png';
+import linked from '../../../public/perfil.png';
 import curriculumPDF from '../../images/cv.pdf';
 import { buttonPrimary } from '../util/classButtons';
 
@@ -36,7 +36,7 @@ function Home() {
             onChange={(e) => handleLanguaje(e.target.value)}
           >
             <option value="en">English</option>
-            <option value="es">Espanol</option>
+            <option value="es">Español</option>
           </select>
           <Theme setChangeTheme={setChangeTheme} />
         </div>
@@ -59,6 +59,9 @@ function Home() {
             />
           </div>
           <div className="">
+            <div className="z-9 text-sm">
+              <p>{changeTheme}</p>
+            </div>
             <h3 className="sm:text-4xl text-3xl md:text-4xl xl:text-5xl font-semibold text-gray-300">
               Lucas Pirez Gallo
             </h3>

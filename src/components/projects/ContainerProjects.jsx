@@ -3,8 +3,11 @@ import TechStack from './card/TechStack';
 
 function ContainerProjects({ imgSrc, text, tecnologies }) {
   const { title, description } = text;
-  return (
-    <article className=" flex justify-end flex-col rounded-lg relative bg-zinc-900 border-[1px] border-purple/40 w-[100%] max-w-[650px] h-[460px] overflow-hidden  dark:opacity-90 hover:opacity-100 transition-all duration-150 hover:scale-[1.03] ">
+
+  const content = (
+    <article
+      className={` flex justify-end flex-col rounded-lg relative bg-zinc-900 border-[1px] border-purple/40 w-[100%] max-w-[650px] h-[460px] overflow-hidden  dark:opacity-90 hover:opacity-100 transition-all duration-150 hover:scale-[1.03] ${text?.deploy && 'cursor-pointer'} `}
+    >
       <Links links={text} />
       <div className="w-full h-full absolute top-0 left-0 flex justify-center">
         <img
@@ -36,6 +39,14 @@ function ContainerProjects({ imgSrc, text, tecnologies }) {
         </div>
       </div>
     </article>
+  );
+
+  return text?.deploy ? (
+    <a href={text.deploy} target="_black">
+      {content}
+    </a>
+  ) : (
+    content
   );
 }
 

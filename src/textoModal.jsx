@@ -33,7 +33,7 @@ export const modalEN = {
     ),
     images: images.typingGame,
     repositorie: 'https://github.com/LucasPirez/KeyboardWarrior',
-    deploy: 'https://speedytype-gamma.vercel.app/',
+    deploy: 'https://keyboard-warrior-omega.vercel.app/',
   },
   tweeter: {
     title: 'Dental clinic',
