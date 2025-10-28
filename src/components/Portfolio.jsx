@@ -3,6 +3,7 @@ import Home from './Home/Home';
 import Header from './About/Header';
 import TranslationContext from '../TraslationContext';
 import Footer from './Footer/Footer';
+import FloatingAIChat from './QASection/FloatingAIChat';
 import { useInsertionEffect } from '../hooks/useIntersection';
 
 const About = lazy(() => import('./About/About'));
@@ -47,6 +48,9 @@ const Port = () => {
       <footer ref={containerFooter} title="footer">
         <Footer />
       </footer>
+
+      {/* Componente flotante de IA */}
+      <FloatingAIChat />
     </>
   );
 };

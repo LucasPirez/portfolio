@@ -62,13 +62,13 @@ function Home() {
             <div className="z-9 text-sm">
               <p>{changeTheme}</p>
             </div>
-            <h3 className="sm:text-4xl text-3xl md:text-4xl xl:text-5xl font-semibold text-gray-300">
+            <h3 className="sm:text-4xl text-3xl md:text-5xl xl:text-7xl font-semibold text-gray-300 ">
               Lucas Pirez Gallo
             </h3>
-            <h4 className=" sm:text-3xl text-2xl md:text-3xl xl:text-3xl dark:text-rose-500/80 text-[#d73542]">
+            <h4 className=" sm:text-3xl text-2xl md:text-3xl xl:text-5xl dark:text-rose-500/80 text-[#d73542] ">
               {text.presentation.subTitle}
             </h4>
-            <p className="text-sm  md:text-base max-w-[400px] mt-2 ">
+            <p className="text-sm  md:text-base max-w-[400px] mt-2 lg:text-lg lg:max-w-[450px] ">
               {text.presentation.about}
             </p>
             <div className="  mt-4 sm:mt-4 lg:mt-4 w-[300px] h-16 z-40">

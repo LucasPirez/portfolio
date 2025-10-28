@@ -147,6 +147,121 @@
   }
 }
 
+/* Estilos personalizados para markdown en el chat */
+.markdown-content {
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+  margin-top: 0.75rem;
+}
+
+.markdown-content h1:first-child,
+.markdown-content h2:first-child,
+.markdown-content h3:first-child,
+.markdown-content h4:first-child,
+.markdown-content h5:first-child,
+.markdown-content h6:first-child {
+  margin-top: 0;
+}
+
+.markdown-content h1 {
+  font-size: 1rem;
+}
+.markdown-content h2 {
+  font-size: 0.875rem;
+}
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+  font-size: 0.875rem;
+}
+
+.markdown-content p {
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content p:last-child {
+  margin-bottom: 0;
+}
+
+.markdown-content ul,
+.markdown-content ol {
+  margin-bottom: 0.5rem;
+  margin-left: 1rem;
+}
+
+.markdown-content li {
+  margin-bottom: 0.25rem;
+}
+
+.markdown-content code {
+  padding: 0.125rem 0.25rem;
+  border-radius: 0.25rem;
+  font-size: 0.75rem;
+  font-family: 'Courier New', monospace;
+  background-color: rgba(155, 202, 255, 0.1);
+  color: #9bcaff;
+}
+
+.markdown-content pre {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  margin-bottom: 0.5rem;
+  overflow-x: auto;
+  font-size: 0.75rem;
+  background-color: rgba(155, 202, 255, 0.05);
+}
+
+.markdown-content pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
+.markdown-content blockquote {
+  border-left: 2px solid #9bcaff;
+  padding-left: 0.75rem;
+  margin-left: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+}
+
+.markdown-content strong {
+  font-weight: 600;
+}
+
+.markdown-content em {
+  font-style: italic;
+}
+
+.markdown-content a {
+  color: #9bcaff;
+  text-decoration: underline;
+}
+
+.markdown-content a:hover {
+  color: #5486f3;
+  text-decoration: none;
+}
+
+/* Estilos para modo oscuro */
+.dark .markdown-content code {
+  background-color: rgba(29, 30, 39, 0.8);
+}
+
+.dark .markdown-content pre {
+  background-color: rgba(29, 30, 39, 0.5);
+}
+
 /* code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;

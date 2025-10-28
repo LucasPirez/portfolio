@@ -52,7 +52,7 @@ export const modalEN = {
     deploy: '',
   },
   institute: {
-    title: 'Instite App',
+    title: 'Institute App',
     description: () => (
       <>
         Desktop and web application.{' '}
