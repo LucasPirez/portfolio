@@ -1,18 +1,22 @@
 import React, { useState, useRef, useEffect } from 'react';
-import { buttonPrimary } from '../util/classButtons';
-import { QaService } from '../../services/qaService';
 import AIIcon from '../../icons/AIIcon';
-import MarkdownRenderer from '../util/MarkdownRenderer';
+import ChatHeader from './ChatHeader';
+import WelcomeMessage from './WelcomeMessage';
+import ChatResponse from './ChatResponse';
+import QuestionForm from './QuestionForm';
+import QuickQuestions from './QuickQuestions';
 import { CustomError } from '../../utils/CustomErrors';
+import { QaService } from '../../services/qaService';
 
 const FloatingAIChat = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [hasInteracted, setHasInteracted] = useState(false);
+  const chatRef = useRef(null);
+
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const chatRef = useRef(null);
 
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -41,7 +45,6 @@ const FloatingAIChat = () => {
       return;
     }
 
-    setHasInteracted(true);
     setIsLoading(true);
     setError('');
     setAnswer('');
@@ -54,9 +57,9 @@ const FloatingAIChat = () => {
         setError(
           <span>
             Has alcanzado el límite de solicitudes. Para optimizar
-            recursos, el uso está limitado a 4 consultas cada 15
-            minutos y un máximo de 8 consultas diarias. Si necesitas
-            más información, no dudes en contactarme directamente a mi{' '}
+            recursos, el uso está limitado a 6 consultas cada 5
+            minutos. Si necesitas más información, no dudes en
+            contactarme directamente a mi{' '}
             <a
               href="https://www.linkedin.com/in/lucas-pirez-8553b222b/"
               target="_blank"
@@ -98,13 +101,8 @@ const FloatingAIChat = () => {
     }
   };
 
-  const quickQuestions = [
-    'Cuéntame sobre tu experiencia',
-    '¿Qué Tecnologias conoce, y en cuales se destaca?',
-  ];
-
   return (
-    <div
+    <section
       className="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50"
       ref={chatRef}
     >
@@ -124,9 +122,8 @@ const FloatingAIChat = () => {
       {/* Panel de chat */}
       <div
         className={`
-        absolute bottom-16 right-0 w-72 sm:w-80 md:w-96 
-        max-w-[calc(100vw-2rem)] max-h-[calc(100vh-8rem)]
-        bg-myBgLightSecondary dark:bg-myBgDarkSecondary 
+        absolute bottom-16 right-0 w-80 md:w-[420px] 
+         bg-myBgLightSecondary dark:bg-myBgDarkSecondary 
         border border-gray-200 dark:border-gray-700
         rounded-2xl shadow-2xl overflow-hidden
         transform transition-all duration-300 ease-in-out origin-bottom-right
@@ -138,110 +135,28 @@ const FloatingAIChat = () => {
       `}
       >
         {/* Header del chat */}
-        <div className="bg-gradient-to-r from-myDarkLightBlue to-myLightBlue p-4 text-black">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-2">
-              <AIIcon className="w-6 h-6" animate={isLoading} />
-              <h3 className="font-semibold">AI Assistant</h3>
-            </div>
-            <button
-              onClick={() => setIsOpen(false)}
-              className="text-black hover:text-gray-700 transition-colors"
-            >
-              ✕
-            </button>
-          </div>
-        </div>
+        <ChatHeader
+          isLoading={isLoading}
+          onClose={() => setIsOpen(false)}
+        />
 
         <div className="p-4 pt-2 max-h-96 overflow-y-auto">
-          {!answer && !isLoading && (
-            <div className="mb-4 p-3 bg-myDarkLightBlue/10 dark:bg-myDarkLightBlue/5 rounded-lg">
-              <p className="text-sm text-gray-600 dark:text-myDarkText">
-                ¡Hola! 👋 Soy el asistente de IA de Lucas. Puedes
-                preguntarme sobre su experiencia, proyectos o
-                tecnologías.
-              </p>
-            </div>
-          )}
+          <WelcomeMessage show={!answer && !isLoading} />
 
-          {/* Respuesta */}
-          {answer && (
-            <div className="mb-4 p-3 bg-myDarkLightBlue/20 dark:bg-myDarkLightBlue/10 rounded-lg border-l-4 border-myDarkLightBlue">
-              <div className="flex items-start space-x-2">
-                <AIIcon className="w-4 h-4 mt-1 text-myDarkLightBlue flex-shrink-0" />
-                <div className="text-sm leading-relaxed flex-1">
-                  <MarkdownRenderer content={answer} />
-                </div>
-              </div>
-            </div>
-          )}
+          <ChatResponse answer={answer} />
 
-          {/* Formulario */}
-          <form onSubmit={handleSubmit} className="space-y-3">
-            <div>
-              <textarea
-                value={question}
-                onChange={handleQuestionChange}
-                placeholder="Escribe tu pregunta aquí..."
-                className="w-full p-3 text-sm border border-gray-300 dark:border-gray-600 rounded-lg 
-                         bg-myBgLightSecondary dark:bg-myBgDark text-gray-800 dark:text-myDarkText
-                         placeholder-gray-500 dark:placeholder-gray-400
-                         focus:ring-2 focus:ring-myDarkLightBlue focus:border-transparent
-                         resize-none transition-all duration-200"
-                rows="3"
-                disabled={isLoading}
-              />
-              {error && (
-                <p className="text-myLightRed text-sm mt-1 flex items-center">
-                  <span className="mr-1">⚠️</span>
-                  {error}
-                </p>
-              )}
-            </div>
+          <QuestionForm
+            question={question}
+            onQuestionChange={handleQuestionChange}
+            onSubmit={handleSubmit}
+            isLoading={isLoading}
+            error={error}
+          />
 
-            <button
-              type="submit"
-              disabled={isLoading || !question.trim()}
-              className={`${buttonPrimary} w-full px-4 py-2 text-sm rounded-lg font-medium
-                         transition-all duration-200 flex items-center justify-center
-                         disabled:opacity-50 disabled:cursor-not-allowed
-                         ${isLoading ? 'animate-pulse' : ''}`}
-            >
-              {isLoading ? (
-                <>
-                  <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-black mr-2"></div>
-                  Pensando...
-                </>
-              ) : (
-                <>
-                  <AIIcon className="w-4 h-4 mr-2" />
-                  Preguntar
-                </>
-              )}
-            </button>
-          </form>
-
-          {/* Preguntas rápidas */}
-          <div className="mt-4">
-            <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">
-              Preguntas rápidas:
-            </p>
-            <div className="flex flex-wrap gap-1">
-              {quickQuestions.map((q, index) => (
-                <button
-                  key={index}
-                  onClick={() => setQuestion(q)}
-                  className="text-xs px-2 py-1 bg-myBgLight/50 dark:bg-myBgBlue/50 
-                           text-gray-600 dark:text-myDarkText rounded-full
-                           hover:bg-myDarkLightBlue/20 dark:hover:bg-myDarkLightBlue/20
-                           transition-colors duration-200"
-                  disabled={isLoading}
-                >
-                  {q}
-                </button>
-              ))}
-            </div>
-          </div>
+          <QuickQuestions
+            onQuestionSelect={setQuestion}
+            isLoading={isLoading}
+          />
         </div>
       </div>
 
@@ -282,7 +197,7 @@ const FloatingAIChat = () => {
           <div className="absolute top-full right-4 border-4 border-transparent border-t-gray-800"></div>
         </div>
       )}
-    </div>
+    </section>
   );
 };
 

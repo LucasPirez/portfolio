@@ -2,7 +2,6 @@ import { CustomError } from '../utils/CustomErrors';
 
 export const QaService = async (question) => {
   const url = import.meta.env.VITE_RAG_PROFILE_DESCRIPTION_URL;
-  console.log(url);
 
   try {
     const response = await fetch(url, {
