@@ -35,8 +35,8 @@ function Home() {
             className="text-xs md:text-base bg-myDarkLightBlue rounded-2xl px-2 border-2cursor-pointer p-1  hover:scale-105 transition-all duration-300 mr-2 mb-2 dark:border-myDarkLightBlue dark:text-gray-900 h-8"
             onChange={(e) => handleLanguaje(e.target.value)}
           >
-            <option value="en">English</option>
             <option value="es">Español</option>
+            <option value="en">English</option>
           </select>
           <Theme setChangeTheme={setChangeTheme} />
         </div>

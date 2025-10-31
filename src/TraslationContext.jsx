@@ -3,7 +3,7 @@ import useWidth from './hooks/useWidth';
 import { translation } from './translation';
 
 const TranslationContext = createContext();
-const initialValue = 'en';
+const initialValue = 'es';
 const animationControler = {
   home: false,
   about: false,
