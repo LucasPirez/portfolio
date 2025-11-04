@@ -2,7 +2,15 @@ import React from 'react';
 import { buttonPrimary } from '../util/classButtons';
 import AIIcon from '../../icons/AIIcon';
 
-const SubmitButton = ({ isLoading, disabled }) => {
+interface SubmitButtonProps {
+  isLoading: boolean;
+  disabled: boolean;
+}
+
+const SubmitButton: React.FC<SubmitButtonProps> = ({
+  isLoading,
+  disabled,
+}) => {
   return (
     <button
       type="submit"

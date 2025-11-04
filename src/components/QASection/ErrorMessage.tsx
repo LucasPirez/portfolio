@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { ReactNode } from 'react';
 
-const ErrorMessage = ({ error }) => {
+interface ErrorMessageProps {
+  error: string | ReactNode | null;
+}
+
+const ErrorMessage: React.FC<ErrorMessageProps> = ({ error }) => {
   if (!error) return null;
 
   return (

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import TranslationContext from '../../TraslationContext';
 import Tecnologies from './Tecnologis';
 import Title from '../util/Title';

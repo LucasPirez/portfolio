@@ -1,13 +1,21 @@
 import React from 'react';
 
-const quickQuestions = [
+const quickQuestions: string[] = [
   '¿Qué stack tecnico tiene?',
   '¿Qué frameworks de testing conoce?',
   '¿Experiencia con Domain-Driven Design?',
   '¿Que habilidades complementarias posee?',
 ];
 
-const QuickQuestions = ({ onQuestionSelect, isLoading }) => {
+interface QuickQuestionsProps {
+  onQuestionSelect: (question: string) => void;
+  isLoading: boolean;
+}
+
+const QuickQuestions: React.FC<QuickQuestionsProps> = ({
+  onQuestionSelect,
+  isLoading,
+}) => {
   return (
     <div className="mt-4">
       <p className="text-xs text-gray-500 dark:text-gray-400 mb-2">

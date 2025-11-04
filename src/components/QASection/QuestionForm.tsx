@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { ChangeEvent, FormEvent, ReactNode } from 'react';
 import QuestionInput from './QuestionInput';
 import SubmitButton from './SubmitButton';
 import ErrorMessage from './ErrorMessage';
 
-const QuestionForm = ({
+interface QuestionFormProps {
+  question: string;
+  onQuestionChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => void;
+  isLoading: boolean;
+  error: string | ReactNode | null;
+}
+
+const QuestionForm: React.FC<QuestionFormProps> = ({
   question,
   onQuestionChange,
   onSubmit,

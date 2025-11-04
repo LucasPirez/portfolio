@@ -1,4 +1,11 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, {
+  useState,
+  useRef,
+  useEffect,
+  ReactNode,
+  ChangeEvent,
+  FormEvent,
+} from 'react';
 import AIIcon from '../../icons/AIIcon';
 import ChatHeader from './ChatHeader';
 import WelcomeMessage from './WelcomeMessage';
@@ -8,21 +15,21 @@ import QuickQuestions from './QuickQuestions';
 import { CustomError } from '../../utils/CustomErrors';
 import { QaService } from '../../services/qaService';
 
-const FloatingAIChat = () => {
-  const [isOpen, setIsOpen] = useState(false);
-  const [hasInteracted, setHasInteracted] = useState(false);
-  const chatRef = useRef(null);
+const FloatingAIChat: React.FC = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
+  const [hasInteracted, setHasInteracted] = useState<boolean>(false);
+  const chatRef = useRef<HTMLElement>(null);
 
-  const [question, setQuestion] = useState('');
-  const [answer, setAnswer] = useState('');
-  const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState('');
+  const [question, setQuestion] = useState<string>('');
+  const [answer, setAnswer] = useState<string>('');
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [error, setError] = useState<string | ReactNode>('');
 
   useEffect(() => {
-    const handleClickOutside = (event) => {
+    const handleClickOutside = (event: MouseEvent): void => {
       if (
         chatRef.current &&
-        !chatRef.current.contains(event.target)
+        !chatRef.current.contains(event.target as Node)
       ) {
         setIsOpen(false);
       }
@@ -37,7 +44,9 @@ const FloatingAIChat = () => {
     };
   }, [isOpen]);
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (
+    e: FormEvent<HTMLFormElement>
+  ): Promise<void> => {
     e.preventDefault();
 
     if (!question.trim()) {
@@ -63,7 +72,6 @@ const FloatingAIChat = () => {
             <a
               href="https://www.linkedin.com/in/lucas-pirez-8553b222b/"
               target="_blank"
-              alt="linkedin"
               rel="noreferrer"
               className="text-cyan-500 font-semibold"
             >
@@ -89,12 +97,14 @@ const FloatingAIChat = () => {
     }
   };
 
-  const handleQuestionChange = (e) => {
+  const handleQuestionChange = (
+    e: ChangeEvent<HTMLTextAreaElement>
+  ): void => {
     setQuestion(e.target.value);
     if (error) setError('');
   };
 
-  const toggleChat = () => {
+  const toggleChat = (): void => {
     setIsOpen(!isOpen);
     if (!isOpen) {
       setHasInteracted(true);

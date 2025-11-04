@@ -2,7 +2,11 @@ import React from 'react';
 import AIIcon from '../../icons/AIIcon';
 import MarkdownRenderer from '../util/MarkdownRenderer';
 
-const ChatResponse = ({ answer }) => {
+interface ChatResponseProps {
+  answer: string | null;
+}
+
+const ChatResponse: React.FC<ChatResponseProps> = ({ answer }) => {
   if (!answer) return null;
 
   return (

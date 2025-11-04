@@ -1,7 +1,15 @@
 import React from 'react';
 import AIIcon from '../../icons/AIIcon';
 
-const ChatHeader = ({ isLoading, onClose }) => {
+interface ChatHeaderProps {
+  isLoading: boolean;
+  onClose: () => void;
+}
+
+const ChatHeader: React.FC<ChatHeaderProps> = ({
+  isLoading,
+  onClose,
+}) => {
   return (
     <div className="bg-gradient-to-r from-myDarkLightBlue to-myLightBlue p-4 text-black">
       <div className="flex items-center justify-between">

@@ -1,10 +1,13 @@
-import { useEffect } from 'react';
+import { useEffect, RefObject } from 'react';
 
-export const useInsertionEffect = (containers, intersecting) => {
-  const callBack = (entries) => {
+export const useInsertionEffect = (
+  containers: RefObject<HTMLElement>[],
+  intersecting: (title: string) => void
+): void => {
+  const callBack = (entries: IntersectionObserverEntry[]): void => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        intersecting(entry.target.title);
+        intersecting((entry.target as HTMLElement).title);
       } else {
         intersecting('noIntersecting');
       }

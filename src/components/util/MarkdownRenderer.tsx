@@ -1,22 +1,26 @@
 import React from 'react';
 import { marked } from 'marked';
 
-const MarkdownRenderer = ({ content }) => {
+interface MarkdownRendererProps {
+  content: string;
+}
+
+const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
+  content,
+}) => {
   // Configurar marked para ser más seguro
   marked.setOptions({
     breaks: true, // Convertir saltos de línea a <br>
-    sanitize: false, // Lo haremos manualmente
     gfm: true, // GitHub Flavored Markdown
-    tables: true, // Soporte para tablas
   });
 
   // Función para preprocesar el contenido markdown
-  const preprocessMarkdown = (text) => {
+  const preprocessMarkdown = (text: string): string => {
     return text.replace(/([^\n])(\* )/g, '$1$1\n').trim();
   };
 
   // Función para sanitizar el HTML y prevenir XSS
-  const sanitizeHtml = (html) => {
+  const sanitizeHtml = (html: string): string => {
     // Remover scripts y elementos peligrosos
     return html
       .replace(
@@ -32,10 +36,10 @@ const MarkdownRenderer = ({ content }) => {
   };
 
   // Renderizar markdown a HTML
-  const renderMarkdown = () => {
+  const renderMarkdown = (): { __html: string } => {
     try {
       const processedContent = preprocessMarkdown(content);
-      const rawHtml = marked(processedContent);
+      const rawHtml = marked(processedContent) as string;
       const sanitizedHtml = sanitizeHtml(rawHtml);
       return { __html: sanitizedHtml };
     } catch (error) {

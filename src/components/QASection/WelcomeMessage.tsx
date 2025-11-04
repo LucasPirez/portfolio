@@ -1,6 +1,10 @@
 import React from 'react';
 
-const WelcomeMessage = ({ show }) => {
+interface WelcomeMessageProps {
+  show: boolean;
+}
+
+const WelcomeMessage: React.FC<WelcomeMessageProps> = ({ show }) => {
   if (!show) return null;
 
   return (

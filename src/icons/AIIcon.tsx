@@ -1,6 +1,14 @@
 import React from 'react';
 
-const AIIcon = ({ className = 'w-6 h-6', animate = false }) => {
+interface AIIconProps {
+  className?: string;
+  animate?: boolean;
+}
+
+const AIIcon: React.FC<AIIconProps> = ({
+  className = 'w-6 h-6',
+  animate = false,
+}) => {
   return (
     <svg
       className={`${className} ${animate ? 'animate-pulse' : ''}`}

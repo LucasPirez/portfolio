@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 
-const QuestionInput = ({
+interface QuestionInputProps {
+  question: string;
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  isLoading: boolean;
+  placeholder?: string;
+}
+
+const QuestionInput: React.FC<QuestionInputProps> = ({
   question,
   onChange,
   isLoading,
@@ -17,7 +24,7 @@ const QuestionInput = ({
                    placeholder-gray-500 dark:placeholder-gray-400
                    focus:ring-2 focus:ring-myDarkLightBlue focus:border-transparent
                    resize-none transition-all duration-200"
-        rows="3"
+        rows={3}
         disabled={isLoading}
       />
     </div>
