@@ -50,7 +50,7 @@ const MarkdownRenderer: React.FC<MarkdownRendererProps> = ({
 
   return (
     <div
-      className="markdown-content text-gray-700 dark:text-myDarkText"
+      className="markdown-content text-myDarkText"
       dangerouslySetInnerHTML={renderMarkdown()}
     />
   );

@@ -59,8 +59,9 @@ const FloatingAIChat: React.FC = () => {
     setAnswer('');
 
     try {
-      const data = await QaService(question);
-      setAnswer(data.answer || 'No se pudo obtener una respuesta');
+      await QaService(question, (chunk) => {
+        setAnswer((prevAnswer) => prevAnswer + chunk);
+      });
     } catch (err) {
       if (err instanceof CustomError && err.status === 429) {
         setError(
@@ -133,8 +134,8 @@ const FloatingAIChat: React.FC = () => {
       <div
         className={`
         absolute bottom-16 right-0 w-80 md:w-[420px] 
-         bg-myBgLightSecondary dark:bg-myBgDarkSecondary 
-        border border-gray-200 dark:border-gray-700
+          bg-myBgDarkSecondary 
+        border border-gray-700
         rounded-2xl shadow-2xl overflow-hidden
         transform transition-all duration-300 ease-in-out origin-bottom-right
         ${

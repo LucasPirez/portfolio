@@ -49,7 +49,6 @@ const Port = () => {
         <Footer />
       </footer>
 
-      {/* Componente flotante de IA */}
       <FloatingAIChat />
     </>
   );
