@@ -2,7 +2,8 @@ import { CustomError } from '../utils/CustomErrors';
 import type { QAResponse } from '../types';
 
 export const QaService = async (
-  question: string
+  question: string,
+  onChunk: (chunk: string) => void
 ): Promise<QAResponse> => {
   const url = import.meta.env
     .VITE_RAG_PROFILE_DESCRIPTION_URL as string;
@@ -27,7 +28,7 @@ export const QaService = async (
     const reader = response.body?.getReader();
     const decoder = new TextDecoder();
 
-    while (true) {
+    for (;;) {
       const { done, value } = await reader!.read();
       if (done) break;
 
@@ -43,11 +44,10 @@ export const QaService = async (
           }
           try {
             const parsed = JSON.parse(data);
-            console.log('Chunk recibido:', parsed.chunk);
-            console.log(parsed.chunk);
-            // Aquí actualizas tu UI con cada chunk
+
+            onChunk(parsed.chunk);
           } catch (e) {
-            // Ignorar líneas vacías
+            console.log(e);
           }
         }
       }

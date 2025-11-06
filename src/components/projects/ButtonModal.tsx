@@ -1,8 +1,17 @@
-import React from 'react';
 import ArrowLeft from '../../icons/ArrowLeft';
 import ArrowRight from '../../icons/ArrowRight';
 
-function ButtonModal({ carousel, setCarousel, long }) {
+interface ButtonModalProps {
+  carousel: number;
+  setCarousel: (value: number) => void;
+  long: number;
+}
+
+function ButtonModal({
+  carousel,
+  setCarousel,
+  long,
+}: ButtonModalProps) {
   return (
     <div className="absolute  w-[100%] h-[10%]  sm:top-[56%]  top-[41.5%] ">
       <button

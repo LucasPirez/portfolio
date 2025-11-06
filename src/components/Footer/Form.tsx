@@ -1,18 +1,30 @@
-import React, { useState, useRef, useContext } from 'react';
+import { useState, useRef } from 'react';
 import { sendForm } from '../../firebase/client';
-import TranslationContext from '../../TraslationContext';
+import { useTraslation } from '../../TraslationContext';
 import verificacion from '../../icons/icons8-marca-de-verificacion.svg';
 import { buttonPrimary } from '../util/classButtons';
 
+interface FormData {
+  name: string;
+  email: string;
+  message: string;
+}
+
+interface FormErrors {
+  name: string;
+  email: string;
+  messages: string;
+}
+
 const Form = () => {
-  const { text } = useContext(TranslationContext);
-  const arrValidity = useRef([]);
-  const [form, setForm] = useState({
+  const { text } = useTraslation();
+  const arrValidity = useRef<boolean[]>([]);
+  const [form, setForm] = useState<FormData>({
     name: '',
     email: '',
     message: '',
   });
-  const [errors, setErrors] = useState({
+  const [errors, setErrors] = useState<FormErrors>({
     name: '',
     email: '',
     messages: '',
@@ -20,7 +32,7 @@ const Form = () => {
 
   const [buttonDisabled, setButtonDisabled] = useState(true);
 
-  async function send(e) {
+  async function send(e: React.FormEvent) {
     e.preventDefault();
     sendForm(form).then((data) => {
       console.log(data);
@@ -32,25 +44,40 @@ const Form = () => {
     typeMismatch: 'The field is incorrect',
   };
 
-  const updateError = (value = '') => ({
+  type ErrorUpdateFn = {
+    [K in keyof FormErrors]: () => void;
+  } & {
+    description: () => void;
+  };
+
+  const updateError = (value = ''): ErrorUpdateFn => ({
     name: () => setErrors({ ...errors, name: value }),
     email: () => setErrors({ ...errors, email: value }),
+    messages: () => setErrors({ ...errors, messages: value }),
     description: () => setErrors({ ...errors, messages: value }),
   });
 
-  const handleBlur = (e, index) => {
+  const handleBlur = (
+    e: React.FocusEvent<HTMLInputElement | HTMLTextAreaElement>,
+    index: number
+  ) => {
     const { validity, name } = e.target;
 
     if (validity.valid) {
       arrValidity.current[index] = true;
-      updateError()[name]();
+      const errorFn = updateError()[name as keyof ErrorUpdateFn];
+      if (errorFn) errorFn();
       console.log('oeuoeuoeu');
     } else {
       for (const value in errorDescription) {
-        if (validity[value]) {
-          const a = text.contact.errorDescription[value];
+        if (validity[value as keyof ValidityState]) {
+          const a =
+            text.contact.errorDescription[
+              value as keyof typeof errorDescription
+            ];
 
-          updateError(a)[name]();
+          const errorFn = updateError(a)[name as keyof ErrorUpdateFn];
+          if (errorFn) errorFn();
         }
       }
       arrValidity.current[index] = false;

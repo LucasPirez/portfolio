@@ -1,10 +1,9 @@
-import { useContext } from 'react';
-import TranslationContext from '../../TraslationContext';
+import { useTraslation } from '../../TraslationContext';
 import Tecnologies from './Tecnologis';
 import Title from '../util/Title';
 
 function About() {
-  const { text } = useContext(TranslationContext);
+  const { text } = useTraslation();
 
   return (
     <>

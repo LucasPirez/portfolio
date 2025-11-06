@@ -1,7 +1,7 @@
-import { lazy, Suspense, useRef, useContext } from 'react';
+import { lazy, Suspense, useRef } from 'react';
 import Home from './Home/Home';
 import Header from './About/Header';
-import TranslationContext from '../TraslationContext';
+import { useTraslation } from '../TraslationContext';
 import Footer from './Footer/Footer';
 import FloatingAIChat from './QASection/FloatingAIChat';
 import { useInsertionEffect } from '../hooks/useIntersection';
@@ -10,12 +10,12 @@ const About = lazy(() => import('./About/About'));
 const Projects = lazy(() => import('./projects/Projects'));
 
 const Port = () => {
-  const { selectCurrentPage } = useContext(TranslationContext);
+  const { selectCurrentPage } = useTraslation();
 
-  const containerAbout = useRef();
-  const containerHome = useRef();
-  const containerProjects = useRef();
-  const containerFooter = useRef();
+  const containerAbout = useRef<HTMLElement>(null);
+  const containerHome = useRef<HTMLElement>(null);
+  const containerProjects = useRef<HTMLElement>(null);
+  const containerFooter = useRef<HTMLElement>(null);
 
   const arrayContainers = [
     containerAbout,
@@ -36,7 +36,7 @@ const Port = () => {
       <main className="background_black bg-myBgLight  dark:bg-myBgDark">
         <section ref={containerProjects} title="projects">
           <Suspense fallback={<p> </p>}>
-            <Projects />
+            {/* <Projects /> */}
           </Suspense>
         </section>
         <section ref={containerAbout} title="about">

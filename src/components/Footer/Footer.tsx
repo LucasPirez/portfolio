@@ -28,9 +28,8 @@ function Footer() {
 
             <a
               href="#home"
-              tn
               className="flex  flex-col items-center justify-center lg:flex-1 flex-0 min-w-[120px]  animate-bounce h-12 mt-7"
-              alt="arrow"
+              aria-label="arrow"
             >
               <img
                 src={arrow}
@@ -59,10 +58,14 @@ function Footer() {
               <a
                 href="https://www.linkedin.com/in/lucas-pirez-8553b222b/"
                 target="_blank"
-                alt="linkedin"
+                aria-label="linkedin"
                 rel="noreferrer"
               >
-                <img src={linked} alt="" className={clasNameIcons} />
+                <img
+                  src={linked}
+                  alt="linkedin"
+                  className={clasNameIcons}
+                />
               </a>
 
               <a
@@ -75,7 +78,7 @@ function Footer() {
               <a
                 href={curriculumPDF}
                 target="_blank"
-                alt="linkedin"
+                aria-label="curriculum"
                 rel="noreferrer"
                 className={clasNameIcons}
               >

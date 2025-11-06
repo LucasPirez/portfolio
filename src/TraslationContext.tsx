@@ -1,18 +1,32 @@
-import { createContext, useState } from 'react';
+import {
+  createContext,
+  useState,
+  ReactNode,
+  useContext,
+} from 'react';
 import useWidth from './hooks/useWidth';
 import { translation } from './translation';
+import { TranslationContextType, AnimationController } from './types';
 
-const TranslationContext = createContext();
+const TranslationContext = createContext<
+  TranslationContextType | undefined
+>(undefined);
 const initialValue = 'es';
-const animationControler = {
+const animationControler: AnimationController = {
   home: false,
   about: false,
   projects: false,
   footer: false,
 };
 
-const TraslationProvider = ({ children }) => {
-  const [languaje] = useState(initialValue);
+interface TraslationProviderProps {
+  children: ReactNode;
+}
+
+const TraslationProvider = ({
+  children,
+}: TraslationProviderProps) => {
+  const [languaje] = useState<'es' | 'en'>(initialValue);
   const [text, setText] = useState(translation[languaje]);
   const [currentPage, setCurrentPage] = useState('home');
   const [animationStart, setAnimationStart] = useState(
@@ -20,7 +34,7 @@ const TraslationProvider = ({ children }) => {
   );
   const { width } = useWidth();
 
-  const selectCurrentPage = (value) => {
+  const selectCurrentPage = (value: string) => {
     if (value !== 'noIntersecting') {
       setCurrentPage(value);
       setAnimationStart((animationStart) => {
@@ -32,7 +46,7 @@ const TraslationProvider = ({ children }) => {
     }
   };
 
-  const handleLanguaje = (e) => {
+  const handleLanguaje = (e: 'en' | 'es') => {
     setText(translation[e]);
   };
 
@@ -51,6 +65,16 @@ const TraslationProvider = ({ children }) => {
       {children}
     </TranslationContext.Provider>
   );
+};
+
+export const useTraslation = () => {
+  const context = useContext(TranslationContext);
+  if (context === undefined) {
+    throw new Error(
+      'useTraslation must be used within a TraslationProvider'
+    );
+  }
+  return context;
 };
 
 export { TraslationProvider };

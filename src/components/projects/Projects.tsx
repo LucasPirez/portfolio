@@ -17,7 +17,7 @@ import {
 
 export default function Projects() {
   const { text } = useContext(TranslationContext);
-  const ref = useRef();
+  const ref = useRef<HTMLDivElement | null>(null);
 
   return (
     <div

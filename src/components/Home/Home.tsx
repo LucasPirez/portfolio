@@ -1,5 +1,5 @@
-import React, { useContext, lazy, Suspense, useState } from 'react';
-import TranslationContext from '../../TraslationContext';
+import { lazy, Suspense, useState } from 'react';
+import { useTraslation } from '../../TraslationContext';
 import ArrowDown from '../../icons/ArrowDown';
 import Theme from '../About/Theme';
 import linked from '../../../public/perfil.png';
@@ -9,9 +9,8 @@ import { buttonPrimary } from '../util/classButtons';
 const Animation = lazy(() => import('./Animation'));
 
 function Home() {
-  const { text, handleLanguaje, currentPage, width } = useContext(
-    TranslationContext
-  );
+  const { text, handleLanguaje, currentPage, width } =
+    useTraslation();
   const [changeTheme, setChangeTheme] = useState('');
 
   return (

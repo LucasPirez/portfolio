@@ -6,25 +6,31 @@ export interface Translation {
     about: string;
   };
   download: string;
-  projects: {
-    title: string;
-    [key: string]: any;
-  };
+  projects: string;
   about: {
     title: string;
     [key: string]: any;
   };
-  footer: {
+  contact: {
     [key: string]: any;
   };
   [key: string]: any;
 }
 
+export interface AnimationController {
+  home: boolean;
+  about: boolean;
+  projects: boolean;
+  footer: boolean;
+}
+
 export interface TranslationContextType {
   text: Translation;
-  handleLanguaje: (language: string) => void;
+  handleLanguaje: (language: 'en' | 'es') => void;
+  languaje: 'es' | 'en';
   currentPage: string;
   selectCurrentPage: (page: string) => void;
+  animationStart: AnimationController;
   width: number;
 }
 

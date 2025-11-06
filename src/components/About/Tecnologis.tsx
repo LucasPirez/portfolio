@@ -1,11 +1,10 @@
-import { useContext } from 'react';
+import { useTraslation } from '../../TraslationContext';
 import style from './tecnologies.module.css';
-import TranslationContext from '../../TraslationContext';
 import TechStack from '../projects/card/TechStack';
 import { primaryTecnologies } from '../../tecnologies-per-project';
 
 const Tecnologies = () => {
-  const { text } = useContext(TranslationContext);
+  const { text } = useTraslation();
 
   return (
     <div

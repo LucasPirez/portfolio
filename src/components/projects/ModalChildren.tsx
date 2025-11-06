@@ -1,13 +1,20 @@
 import { useState, useEffect } from 'react';
-import { useContext } from 'react';
 import ReactPlayer from 'react-player';
 import useClick from '../../hooks/useClick';
-import TranslationContext from '../../TraslationContext';
+import { useTraslation } from '../../TraslationContext';
 import ButtonModal from './ButtonModal';
 
-export default function ModalChildren({ modalSelect, outside }) {
+interface ModalChildrenProps {
+  modalSelect: string;
+  outside: () => void;
+}
+
+export default function ModalChildren({
+  modalSelect,
+  outside,
+}: ModalChildrenProps) {
   const [carousel, setCarousel] = useState(0);
-  const { text } = useContext(TranslationContext);
+  const { text } = useTraslation();
   const ref = useClick(outside);
 
   const {
@@ -18,7 +25,7 @@ export default function ModalChildren({ modalSelect, outside }) {
     repositorie,
     deploy,
   } = text.modal[modalSelect];
-  const [long, setLong] = useState(null);
+  const [long, setLong] = useState<number | null>(null);
 
   useEffect(() => {
     vid !== undefined ? setLong(img.length + 1) : setLong(img.length);
@@ -36,7 +43,7 @@ export default function ModalChildren({ modalSelect, outside }) {
         <div className="flex justify-center  w-[100%] sm:h-[68%] h-[52%] bg-slate-400 relative dark:opacity-80 overflow-hidden">
           {img &&
             img.map(
-              (u, i) =>
+              (u: string, i: number) =>
                 carousel === i && (
                   <img
                     key={i}
@@ -46,7 +53,7 @@ export default function ModalChildren({ modalSelect, outside }) {
                   />
                 )
             )}
-          {vid && carousel === long - 1 && (
+          {vid && long && carousel === long - 1 && (
             <>
               <p className="mt-[30%] ml-[40%]  absolute">
                 Cargando...
@@ -58,11 +65,11 @@ export default function ModalChildren({ modalSelect, outside }) {
         <ButtonModal
           carousel={carousel}
           setCarousel={setCarousel}
-          long={long}
+          long={long ?? 0}
         />
         <div className="absolute w-[100%] sm:top-[65%] top-[48.5%] z-30  m-auto flex justify-center items-center space-x-2 ">
           {img &&
-            img.map((u, i) => (
+            img.map((u: string, i) => (
               <div
                 key={i}
                 className={`${

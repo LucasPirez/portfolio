@@ -1,5 +1,5 @@
-import React, { useEffect, useRef } from 'react';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
+import { useEffect, useRef } from 'react';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
 import {
   Color,
   Scene,
@@ -18,9 +18,21 @@ import {
 } from 'three';
 import useWidth from '../../hooks/useWidth';
 
-function Animation({ visible, changeTheme }) {
+interface AnimationProps {
+  visible: string;
+  changeTheme: string;
+}
+
+interface ColorRef {
+  bg: Color | string;
+  line: Color | string;
+  colorAnimation: Color | string;
+  star: number | string;
+}
+
+function Animation({ visible, changeTheme }: AnimationProps) {
   const { width } = useWidth();
-  const color = useRef({
+  const color = useRef<ColorRef>({
     bg: '',
     line: '',
     colorAnimation: '',
@@ -55,7 +67,7 @@ function Animation({ visible, changeTheme }) {
       color.current.star = 0x3ec9d6;
     }
     const renderer = new WebGLRenderer({
-      canvas: document.querySelector('#bg'),
+      canvas: document.querySelector('#bg') as HTMLCanvasElement,
     });
 
     const group = new Group();
@@ -63,10 +75,10 @@ function Animation({ visible, changeTheme }) {
     renderer.setPixelRatio(window.devicePixelRatio);
     renderer.setSize(window.innerWidth, window.innerHeight);
 
-    scene.background = color.current.bg;
+    scene.background = color.current.bg as Color;
     camera.position.setZ(30);
 
-    const ambientLight = new AmbientLight({ color: 0xa6b624 });
+    const ambientLight = new AmbientLight(0xa6b624);
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enabled = false;
 
@@ -74,19 +86,19 @@ function Animation({ visible, changeTheme }) {
       function addStar() {
         const geometry = new SphereGeometry(0.08, 15, 2);
         const material = new MeshStandardMaterial({
-          color: color.current.star,
+          color: color.current.star as number,
         });
-        const points = [];
+        const points: Vector3[] = [];
         const star = new Mesh(geometry, material);
         const [x, y, z] = Array(3)
-          .fill()
+          .fill(0)
           .map(() => MathUtils.randFloatSpread(45));
 
         points.push(new Vector3(x, y, z));
         points.push(new Vector3(0, 100, 0));
 
         const lineMaterial = new LineBasicMaterial({
-          color: new Color(color.current.line),
+          color: new Color(color.current.line as Color),
         });
         const lineGeometry = new BufferGeometry().setFromPoints(
           points
@@ -99,14 +111,13 @@ function Animation({ visible, changeTheme }) {
         scene.add(group);
       }
 
-      Array(140).fill().forEach(addStar);
-      let ani;
+      Array(140).fill(0).forEach(addStar);
+      let ani: number;
       function animate() {
         if (visible !== 'home') return;
         ani = window.requestAnimationFrame(animate);
         group.rotation.y += 0.0009;
 
-        scene.scroll = false;
         renderer.render(scene, camera);
       }
       animate();

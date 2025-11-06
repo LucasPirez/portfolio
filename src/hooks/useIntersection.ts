@@ -1,7 +1,7 @@
 import { useEffect, RefObject } from 'react';
 
 export const useInsertionEffect = (
-  containers: RefObject<HTMLElement>[],
+  containers: RefObject<HTMLElement | null>[],
   intersecting: (title: string) => void
 ): void => {
   const callBack = (entries: IntersectionObserverEntry[]): void => {

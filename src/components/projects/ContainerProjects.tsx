@@ -1,7 +1,35 @@
 import Links from './Links';
 import TechStack from './card/TechStack';
 
-function ContainerProjects({ imgSrc, text, tecnologies }) {
+interface Technology {
+  icon: React.ComponentType<{
+    width: number;
+    height: number;
+    stroke: string;
+  }>;
+  tecnologie: string;
+  color: string;
+  colorIcon: string;
+}
+
+interface ProjectText {
+  title: string;
+  description: string | (() => React.ReactNode);
+  deploy?: string;
+  repository?: string;
+}
+
+interface ContainerProjectsProps {
+  imgSrc: string;
+  text: ProjectText;
+  tecnologies?: Technology[];
+}
+
+function ContainerProjects({
+  imgSrc,
+  text,
+  tecnologies,
+}: ContainerProjectsProps) {
   const { title, description } = text;
 
   const content = (
@@ -28,8 +56,9 @@ function ContainerProjects({ imgSrc, text, tecnologies }) {
             : description()}
         </p>
         <div className=" mb-1 flex flex-wrap gap-1 w-full text-sm h-auto pb-2">
-          {tecnologies?.map((e) => (
+          {tecnologies?.map((e, index) => (
             <TechStack
+              key={index}
               Component={e.icon}
               tecnologie={e.tecnologie}
               color={e.color}

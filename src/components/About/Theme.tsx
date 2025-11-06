@@ -1,26 +1,30 @@
-import { useState, useEffect } from 'react';
-import Sun from '../../icons/Sun';
-import Moon from '../../icons/Moon';
+import { useEffect } from 'react';
+// import Sun from '../../icons/Sun';
+// import Moon from '../../icons/Moon';
 
-const themes = {
-  light: 'dark',
-  dark: 'os',
-  os: 'light',
-};
+// const themes = {
+//   light: 'dark',
+//   dark: 'os',
+//   os: 'light',
+// };
 
-export default function Theme({ setChangeTheme }) {
-  const init = localStorage.theme
-    ? localStorage.theme
-    : window.matchMedia('(prefers-color-scheme: dark)').matches
-      ? 'os'
-      : 'light';
-  const [select, setSelect] = useState(init);
+export default function Theme({
+  setChangeTheme,
+}: {
+  setChangeTheme: (value: string) => void;
+}) {
+  // const init = localStorage.theme
+  //   ? localStorage.theme
+  //   : window.matchMedia('(prefers-color-scheme: dark)').matches
+  //     ? 'os'
+  //     : 'light';
+  // const [select, setSelect] = useState(init);
 
-  function handleClick(e) {
-    e.preventDefault();
+  // function handleClick(e) {
+  //   e.preventDefault();
 
-    setSelect(themes[select]);
-  }
+  //   setSelect(themes[select]);
+  // }
 
   useEffect(() => {
     document.documentElement.classList.add('dark');
@@ -43,8 +47,8 @@ export default function Theme({ setChangeTheme }) {
     //   }
     // }
 
-    // setChangeTheme(Math.random());
-  }, [select]);
+    setChangeTheme(Math.random().toString());
+  }, []);
 
   return (
     <>

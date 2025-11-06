@@ -1,7 +1,11 @@
-import { useEffect } from 'react';
+import { useEffect, ReactNode } from 'react';
 import ReactDOM from 'react-dom';
 
-export function ModalPortal({ children }) {
+interface ModalPortalProps {
+  children: ReactNode;
+}
+
+export function ModalPortal({ children }: ModalPortalProps) {
   const portalNode = document.createElement('div');
 
   useEffect(() => {

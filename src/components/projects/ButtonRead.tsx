@@ -1,7 +1,11 @@
-import React, { useContext } from 'react';
-import TranslationContext from '../../TraslationContext';
-function ButtonRead({ handleClick }) {
-  const { text } = useContext(TranslationContext);
+import { useTraslation } from '../../TraslationContext';
+
+interface ButtonReadProps {
+  handleClick: () => void;
+}
+
+function ButtonRead({ handleClick }: ButtonReadProps) {
+  const { text } = useTraslation();
 
   return (
     <div className=" w-fit h-fit group-hover:-translate-y-16 hover:scale-105  z-20 p-1 rounded transition">

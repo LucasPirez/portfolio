@@ -1,9 +1,8 @@
-import React, { useContext } from 'react';
+import { useTraslation } from '../../TraslationContext';
 import style from './AboutDescrip.module.css';
-import TranslationContext from '../../TraslationContext';
 
 function AbuotDescrip() {
-  const { text } = useContext(TranslationContext);
+  const { text } = useTraslation();
 
   const styleContent = {
     container: ` ${style.des} dark:text-slate-200  shadow-zinc-500  dark:hover:shadow-myDarkLightBlue/50 shadow-md hover:shadow-myLightCyan/50 dark:bg-myBgDarkSecondary bg-gray-200 `,

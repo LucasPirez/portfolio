@@ -1,11 +1,10 @@
-import { useContext, useEffect, useState } from 'react';
-import TranslationContext from '../../TraslationContext';
+import { useEffect, useState } from 'react';
+import { useTraslation } from '../../TraslationContext';
 
 export default function Header() {
   const [nav, setNav] = useState(false);
-  const { text, currentPage, animationStart, width } = useContext(
-    TranslationContext
-  );
+  const { text, currentPage, animationStart, width } =
+    useTraslation();
 
   const changeNav = () => {
     setNav(false);
