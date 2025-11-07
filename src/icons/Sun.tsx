@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Sun = (props) => (
+const Sun = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     height={21}
     width={21}

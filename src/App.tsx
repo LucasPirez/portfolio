@@ -1,12 +1,12 @@
 import Port from './components/Portfolio';
-import { TraslationProvider } from './TraslationContext';
+import { TranslationProvider } from './TraslationContext';
 
 function App() {
   return (
     <div className="w-full overflow-x-hidden  sm:overflow-x-visible">
-      <TraslationProvider>
+      <TranslationProvider>
         <Port />
-      </TraslationProvider>
+      </TranslationProvider>
     </div>
   );
 }

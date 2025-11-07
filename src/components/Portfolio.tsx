@@ -1,7 +1,7 @@
 import { lazy, Suspense, useRef } from 'react';
 import Home from './Home/Home';
 import Header from './About/Header';
-import { useTraslation } from '../TraslationContext';
+import { useTranslation } from '../TraslationContext';
 import Footer from './Footer/Footer';
 import FloatingAIChat from './QASection/FloatingAIChat';
 import { useInsertionEffect } from '../hooks/useIntersection';
@@ -10,7 +10,7 @@ const About = lazy(() => import('./About/About'));
 const Projects = lazy(() => import('./projects/Projects'));
 
 const Port = () => {
-  const { selectCurrentPage } = useTraslation();
+  const { selectCurrentPage } = useTranslation();
 
   const containerAbout = useRef<HTMLElement>(null);
   const containerHome = useRef<HTMLElement>(null);
@@ -36,7 +36,7 @@ const Port = () => {
       <main className="background_black bg-myBgLight  dark:bg-myBgDark">
         <section ref={containerProjects} title="projects">
           <Suspense fallback={<p> </p>}>
-            {/* <Projects /> */}
+            <Projects />
           </Suspense>
         </section>
         <section ref={containerAbout} title="about">

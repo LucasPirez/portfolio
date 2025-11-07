@@ -1,9 +1,9 @@
-import { useTraslation } from '../../TraslationContext';
+import { useTranslation } from '../../TraslationContext';
 import Tecnologies from './Tecnologis';
 import Title from '../util/Title';
 
 function About() {
-  const { text } = useTraslation();
+  const { text } = useTranslation();
 
   return (
     <>
@@ -18,7 +18,7 @@ function About() {
               style={{ lineHeight: '2.3rem' }}
             >
               <Title text={text.header.about} />
-              {text.about.about()}
+              {text.about()}
             </div>
             <Tecnologies />
           </div>

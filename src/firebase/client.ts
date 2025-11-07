@@ -20,6 +20,10 @@ if (!getApps.length) {
   app = initializeApp(firebaseConfig);
 }
 
+if (!app) {
+  throw new Error('Firebase no se ha podido inicializar');
+}
+
 const db = getFirestore(app);
 
 export async function sendForm({ ...data }) {

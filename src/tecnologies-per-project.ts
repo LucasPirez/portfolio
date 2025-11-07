@@ -1,3 +1,4 @@
+import { JSX, SVGProps } from 'react';
 import {
   Net,
   Css3,
@@ -8,7 +9,6 @@ import {
   CSharp,
   PostgreSQL,
   SQL,
-  SqlServer,
   Blazor,
   NestJs,
   Docker,
@@ -170,3 +170,99 @@ export const primaryTecnologies = [
     colorIcon: '',
   },
 ];
+
+type TechnologyInfo = {
+  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  color: string;
+  colorIcon: string;
+  name: string;
+};
+
+export type TechnologiesKey =
+  | 'React'
+  | 'TypeScript'
+  | '.NET'
+  | 'CSharp'
+  | 'Javascript'
+  | 'SqlServer'
+  | 'Blazor'
+  | 'PostgreSQL'
+  | 'NestJs'
+  | 'HTML'
+  | 'Css'
+  | 'Docker';
+
+export const technologies: Record<TechnologiesKey, TechnologyInfo> = {
+  React: {
+    name: 'React',
+    icon: Reactjs,
+    color: '#61dbfb',
+    colorIcon: '#61dbfb',
+  },
+  TypeScript: {
+    name: 'TypeScript',
+    icon: TypeScript,
+    color: '#2d79c7',
+    colorIcon: '',
+  },
+  '.NET': {
+    name: '.NET',
+    icon: Net,
+    color: '#C715ee',
+    colorIcon: '',
+  },
+  CSharp: {
+    name: 'C#',
+    icon: CSharp,
+    color: 'lightgreen',
+    colorIcon: '',
+  },
+  Javascript: {
+    name: 'Javascript',
+    icon: Javascript,
+    color: 'yellow',
+    colorIcon: '',
+  },
+  SqlServer: {
+    icon: SQL,
+    name: 'SqlServer',
+    color: 'cyan',
+    colorIcon: '',
+  },
+  Blazor: {
+    name: 'Blazor',
+    icon: Blazor,
+    color: '#eee',
+    colorIcon: '',
+  },
+  PostgreSQL: {
+    name: 'PostgreSQL',
+    icon: PostgreSQL,
+    color: 'lightBlue',
+    colorIcon: '',
+  },
+  NestJs: {
+    name: 'NestJs',
+    icon: NestJs,
+    color: '#FF0000',
+    colorIcon: '',
+  },
+  HTML: {
+    name: 'HTML',
+    icon: Html,
+    color: 'orange',
+    colorIcon: '',
+  },
+  Css: {
+    icon: Css3,
+    name: 'Css',
+    color: 'lightskyblue',
+    colorIcon: '',
+  },
+  Docker: {
+    name: 'Docker',
+    icon: Docker,
+    color: '#1388c7',
+    colorIcon: '',
+  },
+};

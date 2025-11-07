@@ -1,21 +1,6 @@
-// Tipos personalizados del proyecto
-
-export interface Translation {
-  presentation: {
-    subTitle: string;
-    about: string;
-  };
-  download: string;
-  projects: string;
-  about: {
-    title: string;
-    [key: string]: any;
-  };
-  contact: {
-    [key: string]: any;
-  };
-  [key: string]: any;
-}
+import { TechnologiesKey } from '@/tecnologies-per-project';
+import { type Translation } from '../translation';
+import { JSX } from 'react';
 
 export interface AnimationController {
   home: boolean;
@@ -26,12 +11,24 @@ export interface AnimationController {
 
 export interface TranslationContextType {
   text: Translation;
-  handleLanguaje: (language: 'en' | 'es') => void;
-  languaje: 'es' | 'en';
+  handleLanguage: (language: 'en' | 'es') => void;
+  language: 'es' | 'en';
   currentPage: string;
   selectCurrentPage: (page: string) => void;
   animationStart: AnimationController;
   width: number;
+}
+
+export interface Project {
+  id: string;
+  title: string;
+  description: JSX.Element | string;
+  shortDescription: string;
+  image: string;
+  tags: TechnologiesKey[];
+  demoUrl?: string;
+  githubUrl?: string;
+  features: string[];
 }
 
 export interface CustomErrorType extends Error {

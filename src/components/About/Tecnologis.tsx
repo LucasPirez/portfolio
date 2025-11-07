@@ -1,10 +1,10 @@
-import { useTraslation } from '../../TraslationContext';
+import { useTranslation } from '../../TraslationContext';
 import style from './tecnologies.module.css';
-import TechStack from '../projects/card/TechStack';
+import TechStack from './TechStack';
 import { primaryTecnologies } from '../../tecnologies-per-project';
 
 const Tecnologies = () => {
-  const { text } = useTraslation();
+  const { text } = useTranslation();
 
   return (
     <div

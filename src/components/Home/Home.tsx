@@ -1,5 +1,5 @@
 import { lazy, Suspense, useState } from 'react';
-import { useTraslation } from '../../TraslationContext';
+import { useTranslation } from '../../TraslationContext';
 import ArrowDown from '../../icons/ArrowDown';
 import Theme from '../About/Theme';
 import linked from '../../../public/perfil.png';
@@ -9,8 +9,8 @@ import { buttonPrimary } from '../util/classButtons';
 const Animation = lazy(() => import('./Animation'));
 
 function Home() {
-  const { text, handleLanguaje, currentPage, width } =
-    useTraslation();
+  const { text, handleLanguage, currentPage, width } =
+    useTranslation();
   const [changeTheme, setChangeTheme] = useState('');
 
   return (
@@ -32,7 +32,9 @@ function Home() {
         <div className="fixed top-[0.50rem]  left-4 m-4 z-30 md:flex">
           <select
             className="text-xs md:text-base bg-myDarkLightBlue rounded-2xl px-2 border-2cursor-pointer p-1  hover:scale-105 transition-all duration-300 mr-2 mb-2 dark:border-myDarkLightBlue dark:text-gray-900 h-8"
-            onChange={(e) => handleLanguaje(e.target.value)}
+            onChange={(e) =>
+              handleLanguage(e.target.value as 'es' | 'en')
+            }
           >
             <option value="es">Español</option>
             <option value="en">English</option>

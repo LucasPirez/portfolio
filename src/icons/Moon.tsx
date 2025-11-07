@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-const Moon = (props) => (
+const Moon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     height={21}
     width={21}

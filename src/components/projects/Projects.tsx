@@ -1,57 +1,55 @@
-import { useContext, useRef } from 'react';
-import speedyGame from '../../images/typing-game/speedy-room.png';
-import {
-  tweeter1 as twitter,
-  cryptoMain,
-  AddStudent,
-} from '../../images';
-import ContainerProjects from './ContainerProjects';
-import TranslationContext from '../../TraslationContext';
+import { useState } from 'react';
+import ProjectCard from './ProjectCard';
+import ProjectModal from './ProjectModal';
 import Title from '../util/Title';
-import {
-  tecnologiesTyping,
-  tecnlogoiesCryptoTracker,
-  tecnologiesAppInstitute,
-  grinpoolTecnologies,
-} from '../../tecnologies-per-project';
+import { Project } from '@/types';
+import { useTranslation } from '@/TraslationContext';
+import { ProjectsKeys } from '@/projects-description-text';
 
-export default function Projects() {
-  const { text } = useContext(TranslationContext);
-  const ref = useRef<HTMLDivElement | null>(null);
+function Projects() {
+  const [selectedProject, setSelectedProject] =
+    useState<Project | null>(null);
+  const { text } = useTranslation();
 
   return (
-    <div
+    <section
       id="portfolio"
-      className="relative flex flex-col m-auto  custom-container items-center  pt-[100px] z-10 -mt-[10vh] md:mt-0 "
+      className="min-h-screen py-20 px-6  relative overflow-hidden"
     >
-      <Title text={text.projects} />
+      <div className="absolute top-20 right-20 w-72 h-72 bg-primary/5 rounded-full blur-3xl animate-float" />
       <div
-        ref={ref}
-        className="w-full grid grid-cols-1 sm:grid-cols-2 justify-items-center flex-wrap gap-4 lg:gap-7 lg:gap-x-11 py-3 h-auto "
-      >
-        <ContainerProjects
-          imgSrc={speedyGame}
-          text={text.modal['typingGame']}
-          tecnologies={tecnologiesTyping}
-        />
+        className="absolute bottom-20 left-20 w-96 h-96 bg-accent/5 rounded-full blur-3xl animate-float"
+        style={{ animationDelay: '1s' }}
+      />
 
-        <ContainerProjects
-          imgSrc={AddStudent}
-          text={text.modal['institute']}
-          tecnologies={tecnologiesAppInstitute}
-        />
+      <div className="max-w-7xl mx-auto relative z-10">
+        {/* Header */}
+        <div className="text-center mb-16 animate-fade-in-up">
+          <Title text="Projects" />
+        </div>
 
-        <ContainerProjects
-          imgSrc={twitter}
-          text={text.modal['tweeter']}
-          tecnologies={grinpoolTecnologies}
-        />
-        <ContainerProjects
-          imgSrc={cryptoMain}
-          text={text.modal['cryptoTracker']}
-          tecnologies={tecnlogoiesCryptoTracker}
-        />
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+          {ProjectsKeys.map((project, index) => (
+            <ProjectCard
+              key={text.projectDescription[project].id}
+              project={text.projectDescription[project]}
+              onClick={() =>
+                setSelectedProject(text.projectDescription[project])
+              }
+              delay={index * 0.1}
+            />
+          ))}
+        </div>
       </div>
-    </div>
+
+      {/* Project Modal */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
+    </section>
   );
 }
+
+export default Projects;

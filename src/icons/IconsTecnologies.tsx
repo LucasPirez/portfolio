@@ -1,6 +1,6 @@
 import * as React from 'react';
 
-export const Css3 = (props) => (
+export const Css3 = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={48}
@@ -46,7 +46,7 @@ export const Css3 = (props) => (
   </svg>
 );
 
-export const Html = (props) => (
+export const Html = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={48}
@@ -67,7 +67,7 @@ export const Html = (props) => (
   </svg>
 );
 
-export const Javascript = (props) => (
+export const Javascript = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={48}
@@ -83,7 +83,7 @@ export const Javascript = (props) => (
   </svg>
 );
 
-export const Python = (props) => (
+export const Python = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={48}
@@ -101,7 +101,7 @@ export const Python = (props) => (
   </svg>
 );
 
-export const Reactjs = (props) => (
+export const Reactjs = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 80 80"
@@ -128,7 +128,7 @@ export const Reactjs = (props) => (
   </svg>
 );
 
-export const TypeScript = (props) => (
+export const TypeScript = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 48 48"
@@ -166,7 +166,7 @@ export const TypeScript = (props) => (
   </svg>
 );
 
-export const Express = (props) => (
+export const Express = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={44}
@@ -194,7 +194,7 @@ export const Express = (props) => (
   </svg>
 );
 
-export const CSharp = (props) => (
+export const CSharp = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={48}
@@ -223,7 +223,7 @@ export const CSharp = (props) => (
   </svg>
 );
 
-export const Net = (props) => (
+export const Net = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={48}
@@ -251,7 +251,7 @@ export const Net = (props) => (
   </svg>
 );
 
-export const SQL = (props) => (
+export const SQL = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={45}
@@ -266,7 +266,7 @@ export const SQL = (props) => (
   </svg>
 );
 
-export const PostgreSQL = (props) => (
+export const PostgreSQL = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={800}
@@ -291,7 +291,7 @@ export const PostgreSQL = (props) => (
   </svg>
 );
 
-export const Blazor = (props) => (
+export const Blazor = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={2500}
@@ -307,7 +307,7 @@ export const Blazor = (props) => (
   </svg>
 );
 
-export const SqlServer = (props) => (
+export const SqlServer = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -354,7 +354,7 @@ export const SqlServer = (props) => (
   </svg>
 );
 
-export const NestJs = (props) => (
+export const NestJs = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     width={1000}
@@ -370,7 +370,7 @@ export const NestJs = (props) => (
   </svg>
 );
 
-export const Docker = (props) => (
+export const Docker = (props: React.SVGProps<SVGSVGElement>) => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     aria-label="Docker"

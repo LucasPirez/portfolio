@@ -19,15 +19,15 @@ const animationControler: AnimationController = {
   footer: false,
 };
 
-interface TraslationProviderProps {
+interface TranslationProviderProps {
   children: ReactNode;
 }
 
-const TraslationProvider = ({
+const TranslationProvider = ({
   children,
-}: TraslationProviderProps) => {
-  const [languaje] = useState<'es' | 'en'>(initialValue);
-  const [text, setText] = useState(translation[languaje]);
+}: TranslationProviderProps) => {
+  const [language] = useState<'es' | 'en'>(initialValue);
+  const [text, setText] = useState(translation[language]);
   const [currentPage, setCurrentPage] = useState('home');
   const [animationStart, setAnimationStart] = useState(
     animationControler
@@ -46,14 +46,14 @@ const TraslationProvider = ({
     }
   };
 
-  const handleLanguaje = (e: 'en' | 'es') => {
+  const handleLanguage = (e: 'en' | 'es') => {
     setText(translation[e]);
   };
 
   const data = {
     text,
-    handleLanguaje,
-    languaje,
+    handleLanguage,
+    language,
     currentPage,
     selectCurrentPage,
     animationStart,
@@ -67,7 +67,7 @@ const TraslationProvider = ({
   );
 };
 
-export const useTraslation = () => {
+export const useTranslation = () => {
   const context = useContext(TranslationContext);
   if (context === undefined) {
     throw new Error(
@@ -77,5 +77,5 @@ export const useTraslation = () => {
   return context;
 };
 
-export { TraslationProvider };
+export { TranslationProvider };
 export default TranslationContext;

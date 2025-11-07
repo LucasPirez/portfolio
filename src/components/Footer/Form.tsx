@@ -1,6 +1,6 @@
-import { useState, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { sendForm } from '../../firebase/client';
-import { useTraslation } from '../../TraslationContext';
+import { useTranslation } from '../../TraslationContext';
 import verificacion from '../../icons/icons8-marca-de-verificacion.svg';
 import { buttonPrimary } from '../util/classButtons';
 
@@ -17,7 +17,7 @@ interface FormErrors {
 }
 
 const Form = () => {
-  const { text } = useTraslation();
+  const { text } = useTranslation();
   const arrValidity = useRef<boolean[]>([]);
   const [form, setForm] = useState<FormData>({
     name: '',

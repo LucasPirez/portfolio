@@ -1,4 +1,51 @@
-import { modalEN, modalES } from './textoModal';
+import { modalEN, modalES } from './projects-description-text';
+import React from 'react';
+import type { Project } from '@/types/index';
+
+type Header = {
+  home: string;
+  about: string;
+  portfolio: string;
+  contact: string;
+};
+
+type Presentation = {
+  title: string;
+  subTitle: string;
+  button: string;
+  about: string;
+};
+
+type Contact = {
+  name: string;
+  email: string;
+  message: string;
+  submit: string;
+  errorDescription: {
+    valueMissing: string;
+    typeMismatch: string;
+  };
+};
+
+export type Translation = {
+  buttonProjects: string;
+  tecnologies: string;
+  projects: string;
+  download: string;
+  theme: string;
+  light: string;
+  dark: string;
+  default: string;
+  about: () => React.ReactNode;
+  all: string;
+  header: Header;
+  presentation: Presentation;
+  contact: Contact;
+  modal: Record<string, string>;
+  projectDescription: Record<string, Project>;
+  deploy: string;
+  repositorie: string;
+};
 
 export const recursos = {
   projects: {
@@ -10,13 +57,12 @@ export const recursos = {
   },
 };
 
-export const translation = {
+export const translation: Record<string, Translation> = {
   en: {
     buttonProjects: 'Read More',
     tecnologies: 'TECHNOLOGIES',
     projects: 'Projects',
     download: 'Download',
-
     theme: 'Theme',
     light: 'Light',
     dark: 'Dark',
@@ -45,62 +91,40 @@ export const translation = {
         typeMismatch: 'The field is incorrect',
       },
     },
-    modal: modalEN,
+    modal: { hola: 'hola' },
     deploy: 'View Deploy',
     repositorie: 'View Repository',
-    about: {
-      about: () => (
-        <>
-          <p className="mb-3">
-            <span>&#8226;</span> More than a year of experience in web
-            application development, highlighting a strong backend
-            bias.
-          </p>
-          <p className="mb-3">
-            {' '}
-            <span>&#8226; </span>
-            My main focus is to create scalable, robust and
-            problem-oriented solutions using modern technologies such
-            as{' '}
-            <strong className="text-myLightPurple dark:text-purple/90">
-              React.js
-            </strong>
-            {' and '}
-            <strong className="text-myLightPurple dark:text-purple/90">
-              .NET.
-            </strong>
-          </p>
-          <p className="mb-3">
-            <span>&#8226; </span>
-            Currently, I am developing full stack applications that
-            integrate good development practices and scalable
-            architecture. I am excited to join a company where I can
-            apply my skills, continue to grow professionally and
-            contribute to the achievement of the team's goals with an
-            innovative and committed approach.
-          </p>
-        </>
-      ),
-      description1: {
-        title: 'Problem Solver',
-        description:
-          'High capacity to provide efficient solutions to real-world challenges.',
-      },
-      description2: {
-        title: 'Versatile',
-        description:
-          'Highly adaptable to new work environments without affecting my performance.',
-      },
-      description3: {
-        title: 'Fast',
-        description: 'fast designs without compromising quality',
-      },
-      description4: {
-        title: 'Teamwork',
-        description:
-          "Willingness to actively participate in a common goal, subordinating personal interests to the team's objectives.",
-      },
-    },
+    projectDescription: modalEN,
+    about: () => (
+      <>
+        <p className="mb-3">
+          <span>&#8226;</span> More than a year of experience in web
+          application development, highlighting a strong backend bias.
+        </p>
+        <p className="mb-3">
+          {' '}
+          <span>&#8226; </span>
+          My main focus is to create scalable, robust and
+          problem-oriented solutions using modern technologies such as{' '}
+          <strong className="text-myLightPurple dark:text-purple/90">
+            React.js
+          </strong>
+          {' and '}
+          <strong className="text-myLightPurple dark:text-purple/90">
+            .NET.
+          </strong>
+        </p>
+        <p className="mb-3">
+          <span>&#8226; </span>
+          Currently, I am developing full stack applications that
+          integrate good development practices and scalable
+          architecture. I am excited to join a company where I can
+          apply my skills, continue to grow professionally and
+          contribute to the achievement of the team's goals with an
+          innovative and committed approach.
+        </p>
+      </>
+    ),
   },
 
   es: {
@@ -119,6 +143,7 @@ export const translation = {
       portfolio: 'Portafolio',
       contact: 'Contacto',
     },
+    projectDescription: modalES,
     presentation: {
       title: '',
       subTitle: 'Desarrollador Full Stack',
@@ -136,61 +161,40 @@ export const translation = {
         typeMismatch: 'El campo es incorrecto',
       },
     },
-    modal: modalES,
+    modal: { hola: 'hola' },
     deploy: 'Ver Despliegue',
     repositorie: 'Ver Repositorio',
-    about: {
-      about: () => (
-        <>
-          <p className="mb-3">
-            <span>&#8226;</span> Más de un año de experiencia en el
-            desarrollo de aplicaciones web, destacando una sólida
-            inclinación hacia el backend.
-          </p>
-          <p className="mb-3">
-            {' '}
-            <span>&#8226; </span>
-            Mi enfoque principal es crear soluciones escalables,
-            robustas y orientadas a resolver problemas mediante
-            tecnologías modernas como{' '}
-            <strong className="text-myLightPurple dark:text-purple/90">
-              React.js
-            </strong>
-            {' y '}
-            <strong className="text-myLightPurple dark:text-purple/90">
-              .NET.
-            </strong>
-          </p>
-          <p className="mb-3">
-            <span>&#8226; </span>
-            Actualmente, estoy desarrollando aplicaciones full stack
-            que integran buenas prácticas de desarrollo y arquitectura
-            escalable. Estoy entusiasmado por unirme a una empresa
-            donde pueda aplicar mis habilidades, seguir creciendo
-            profesionalmente y contribuir al logro de los objetivos
-            del equipo con un enfoque innovador y comprometido.
-          </p>
-        </>
-      ),
-      description1: {
-        title: 'Solucionador de problemas',
-        description:
-          'Alta capacidad para dar soluciones eficientes a los retos del mundo real.',
-      },
-      description2: {
-        title: 'Versatil',
-        description:
-          'Altamente adaptable a nuevos entornos de trabajo si afectar mi rendimiento.',
-      },
-      description3: {
-        title: 'Rapido',
-        description: 'diseños rapidos sin dejar de lado la calidad',
-      },
-      description4: {
-        title: 'Trabajo en equipo',
-        description:
-          'Predisposicion a participar activamente en una meta común subordinando los intereses personales a los objetivos del equipo',
-      },
-    },
+    about: () => (
+      <>
+        <p className="mb-3">
+          <span>&#8226;</span> Más de un año de experiencia en el
+          desarrollo de aplicaciones web, destacando una sólida
+          inclinación hacia el backend.
+        </p>
+        <p className="mb-3">
+          {' '}
+          <span>&#8226; </span>
+          Mi enfoque principal es crear soluciones escalables,
+          robustas y orientadas a resolver problemas mediante
+          tecnologías modernas como{' '}
+          <strong className="text-myLightPurple dark:text-purple/90">
+            React.js
+          </strong>
+          {' y '}
+          <strong className="text-myLightPurple dark:text-purple/90">
+            .NET.
+          </strong>
+        </p>
+        <p className="mb-3">
+          <span>&#8226; </span>
+          Actualmente, estoy desarrollando aplicaciones full stack que
+          integran buenas prácticas de desarrollo y arquitectura
+          escalable. Estoy entusiasmado por unirme a una empresa donde
+          pueda aplicar mis habilidades, seguir creciendo
+          profesionalmente y contribuir al logro de los objetivos del
+          equipo con un enfoque innovador y comprometido.
+        </p>
+      </>
+    ),
   },
 };
