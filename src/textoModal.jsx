@@ -84,7 +84,7 @@ export const modalES = {
 
     images: images.typingGame,
     repositorie: 'https://github.com/LucasPirez/KeyboardWarrior',
-    deploy: 'https://speedytype-gamma.vercel.app',
+    deploy: 'https://keyboard-warrior-omega.vercel.app/',
   },
   tweeter: {
     title: 'Clinica odontologica',
@@ -92,7 +92,7 @@ export const modalES = {
       'Permite a empleados y doctores agregar nuevos pacientes y empleados, completar historias médicas, registrar prestaciones, agendar turnos y generar reportes.',
     images: images.tweeter,
     repositorie: 'https://github.com/LucasPirez/noClon-tweeter',
-    deploy: 'https://mynext-app.web.app/',
+    deploy: 'https://foo-talent-private.vercel.app/',
   },
   cryptoTracker: {
     title: 'Crypto Tracker',
