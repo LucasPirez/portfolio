@@ -41,7 +41,7 @@ function Home() {
           </select>
           <Theme setChangeTheme={setChangeTheme} />
         </div>
-        <div className="flex items-center  justify-around xl:justify-center xl:gap-44 max-h-[100hv] sm:h-[70%] h-[60%]   flex-wrap text-slate-100 dark:text-slate-300 w-full text-xl sm:text-3xl md:text-5xl px-6  z-10  relative mt-16 md:mt-0">
+        <div className="flex items-center justify-around xl:justify-center xl:gap-40 max-h-[100hv] sm:h-[70%] h-[60%]   flex-wrap text-slate-100 dark:text-slate-300 w-full text-xl sm:text-3xl md:text-5xl px-6  z-10  relative mt-16 md:mt-0">
           <div
             className="  sm:w-[350px] w-[280px] xl:w-[430px]  lg:mt-0  overflow-hidden flex justify-center z-10    "
             style={{
@@ -60,21 +60,18 @@ function Home() {
             />
           </div>
           <div className="">
-            <div className="z-9 text-sm">
-              <p>{changeTheme}</p>
-            </div>
             <h3 className="sm:text-4xl text-3xl md:text-5xl xl:text-7xl font-semibold text-gray-300 ">
               Lucas Pirez Gallo
             </h3>
-            <h4 className=" sm:text-3xl text-2xl md:text-3xl xl:text-5xl dark:text-rose-500/80 text-[#d73542] ">
+            <h4 className="sm:text-3xl text-2xl xl:text-3xl dark:text-rose-500/80 text-[#d73542] ">
               {text.presentation.subTitle}
             </h4>
             <p className="text-sm  md:text-base max-w-[400px] mt-2 lg:text-lg lg:max-w-[450px] ">
               {text.presentation.about}
             </p>
-            <div className="  mt-4 sm:mt-4 lg:mt-4 w-[300px] h-16 z-40">
+            <div className="  mt-4 sm:mt-4 lg:mt-4 sm:w-[300px] w-full sm:block flex justify-center h-16 z-40 ">
               <a href={curriculumPDF} download="Cv-LucasPirez.pdf">
-                <span className="text-sm border-2 border-myDarkPurple/20 md:text-xl rounded-full px-6 bg-myBgDark py-2 cursor-pointer hover:scale-105 hover:text-white hover:bg-myDarkPurple/50 duration-300">
+                <span className="text-sm border-2 border-myDarkPurple/20 md:text-xl rounded-full px-6 bg-myBgDark py-2 cursor-pointer hover:scale-105 hover:text-white hover:bg-myDarkPurple/50 duration-300  ">
                   {text.download} CV
                 </span>
               </a>
@@ -83,7 +80,7 @@ function Home() {
         </div>
         <a
           href="#portfolio"
-          className={`group inline-flex ${buttonPrimary} absolute sm:bottom-10 bottom-40 z-40 `}
+          className={`group inline-flex ${buttonPrimary} absolute rounded  sm:bottom-10 bottom-40 z-40 `}
         >
           <span className="animate-bounce scale-90 sm:scale-110  ">
             <ArrowDown />

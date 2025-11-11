@@ -71,12 +71,12 @@ export const translation: Record<string, Translation> = {
     header: {
       home: 'Home',
       about: 'About',
-      portfolio: 'Portfolio',
+      portfolio: 'Projects',
       contact: 'Contact',
     },
     presentation: {
       title: '',
-      subTitle: 'Full Stack Developer',
+      subTitle: 'Backend Developer with Full Stack experience',
       button: 'View my work.',
       about:
         'Resolute and proactive, always focused on providing effective solutions to achieve the expected results.',
@@ -140,13 +140,13 @@ export const translation: Record<string, Translation> = {
     header: {
       home: 'Inicio',
       about: 'Sobre Mí',
-      portfolio: 'Portafolio',
+      portfolio: 'Projectos',
       contact: 'Contacto',
     },
     projectDescription: modalES,
     presentation: {
       title: '',
-      subTitle: 'Desarrollador Full Stack',
+      subTitle: 'Desarrollador Backend con experiencia Full Stack',
       button: 'ver mis proyectos.',
       about:
         'Resolutivo y proactivo, siempre enfocado en aportar soluciones efectivas para alcanzar los resultados esperados.',

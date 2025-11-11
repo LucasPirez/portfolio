@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useTranslation } from '../../TraslationContext';
+import { Menu, X } from 'lucide-react';
 
 export default function Header() {
   const [nav, setNav] = useState(false);
@@ -12,99 +13,103 @@ export default function Header() {
 
   useEffect(() => {
     window.addEventListener('scroll', changeNav);
-
     return () => {
       window.removeEventListener('scroll', changeNav);
     };
   }, []);
 
-  return (
-    <div className="h-[10vh] fixed  sm:sticky top-0 z-20 md:bg-myBgBlue w-full dark:md:bg-myBgDark md:border-b-2 border-b-myDarkPurple/10 ">
-      <header
-        className={`${
-          nav !== false
-            ? ' h-[160px] bg-myBgBlue w-full pr-5'
-            : 'h-[10vh] min-h-[60px] bg-transparent md:bg-myBgBlue dark:md:bg-myBgDark custom-container'
-        } flex  transition-all  justify-end md:[10vh] items-center z-10 md:border-b-2 border-b-myDarkPurple/10 `}
-      >
-        {(animationStart.projects === true || width < 600) && (
-          <ul
-            className={` ${
-              nav === false ? 'hidden' : 'flex'
-            } transition-all flex-col  space-y-2 md:relative md:flex md:flex-row md:space-y-0  text-md md:text-2xl  `}
-          >
-            <li>
-              <a
-                href="#home"
-                className={`${currentPage === 'home' ? 'text-purple' : 'text-gray-200'} 
-                flex  transition-all transform -translate-y-1  hover:transform-none md:animate-[wiggle_2.5s_ease-in-out] animate-[wiggleMedia_1s_ease-in-out] `}
-              >
-                {text.header.home}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#portfolio"
-                className={`${
-                  currentPage === 'projects'
-                    ? 'text-purple'
-                    : 'text-gray-200'
-                } flex transition-all transform -translate-y-1 ml-4 hover:transform-none md:animate-[wiggle_2s_ease-in-out] animate-[wiggleMedia_0.7s_ease-in-out]`}
-              >
-                {text.header.portfolio}
-              </a>
-            </li>
-            <li>
-              <a
-                href="#about"
-                className={` ${
-                  currentPage === 'about'
-                    ? 'text-purple'
-                    : 'text-gray-200'
-                } flex transition-all transform -translate-y-1 ml-4 hover:transform-none md:animate-[wiggle_1.56s_ease-in-out] animate-[wiggleMedia_0.4s_ease-in-out] `}
-              >
-                {text.header.about}
-              </a>
-            </li>
-            <li></li>
-            <li>
-              <a
-                href="#footer"
-                className={`${
-                  currentPage === 'footer'
-                    ? 'text-purple'
-                    : 'text-gray-200'
-                } flex transition-all transform -translate-y-1 ml-4 hover:transform-none md:animate-[wiggle_1s_linear] animate-[wiggleMedia_0.1s_ease-in-out]`}
-              >
-                {text.header.contact}
-              </a>
-            </li>
-            <li>
-              {nav && (
-                <button
-                  onClick={() => setNav(false)}
-                  className=" px-3 border-[1px] text-xs rounded border-cyan-400  hover:bg-cyan-700 transition-all opacity-80 duration-200 hover:text-cyan-300 hover:border-white dark:text-slate-200"
-                >
-                  x
-                </button>
-              )}
-            </li>
-          </ul>
-        )}
+  const navLinks = [
+    { href: '#home', label: text.header.home, page: 'home' },
+    {
+      href: '#portfolio',
+      label: text.header.portfolio,
+      page: 'projects',
+    },
+    { href: '#about', label: text.header.about, page: 'about' },
+    { href: '#footer', label: text.header.contact, page: 'footer' },
+  ];
 
-        <div
-          className={`${
-            nav === false ? 'flex' : 'hidden '
-          } text-slate-200 md:hidden mr-4 flex-col justify-center space-y-[6px] cursor-pointer h-auto border-2 border-cyan-800 p-1 rounded-sm  
-          `}
-          onClick={() => setNav(true)}
-        >
-          <span className="h-[2px] w-6 ms:bg-slate-100  bg-slate-800  dark:bg-slate-200"></span>
-          <span className="h-px w-6 ms:bg-slate-100 bg-slate-800 dark:bg-slate-200">
-            {' '}
-          </span>
-          <span className="h-[2px] w-6 ms:bg-slate-100 bg-slate-800 dark:bg-slate-200"></span>
+  return (
+    <div className="h-16 fixed  sm:sticky top-0 z-20 sm:bg-myBgBlue w-full dark:sm:bg-myBgDark md:border-b-2 border-b-myDarkPurple/10 ">
+      <header
+        className={`
+          ${nav ? 'h-auto bg-background/95 backdrop-blur-xl' : 'h-16 bg-background/80 backdrop-blur-md'}
+          smooth-transition border-b border-border/50 shadow-lg relative
+        `}
+      >
+        <div className="custom-container h-full flex items-center justify-end px-4 md:px-6">
+          {(animationStart.projects === true || width < 600) && (
+            <nav className="hidden md:flex items-center gap-1">
+              {navLinks.map((link, index) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  className={`
+                    relative px-4 py-2 text-sm font-medium rounded-lg
+                    smooth-transition group
+                    ${
+                      currentPage === link.page
+                        ? 'text-primary'
+                        : 'text-foreground/70 hover:text-foreground'
+                    }
+                  `}
+                  style={{
+                    animation: `fade-in-up 0.5s ease-out ${index * 0.1}s backwards`,
+                  }}
+                >
+                  <span className="relative z-10">{link.label}</span>
+
+                  <span className="absolute inset-0 rounded-lg bg-primary/10 scale-0 group-hover:scale-100 smooth-transition" />
+
+                  {currentPage === link.page && (
+                    <span className="absolute bottom-0 left-0 w-full h-0.5 bg-primary rounded-full animate-glow" />
+                  )}
+                </a>
+              ))}
+            </nav>
+          )}
+          {/* Mobile Menu Button */}
+          <button
+            onClick={() => setNav(!nav)}
+            className="md:hidden glass-effect p-2 rounded-lg hover:bg-primary/10 smooth-transition "
+            aria-label="Toggle menu"
+          >
+            {nav ? (
+              <X className="w-6 h-6 text-foreground" />
+            ) : (
+              <Menu className="w-6 h-6 text-foreground" />
+            )}
+          </button>
         </div>
+
+        {/* Mobile Navigation */}
+        {nav && (
+          <nav className="md:hidden border-t border-border/50 bg-background/95 backdrop-blur-xl animate-fade-in">
+            <div className="px-4 py-4 space-y-2 flex flex-col items-end">
+              {navLinks.map((link, index) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setNav(false)}
+                  className={`
+                    block px-4 py-3 rounded text-base font-medium
+                    smooth-transition
+                    ${
+                      currentPage === link.page
+                        ? 'bg-primary/10 text-primary border-l-4 border-primary'
+                        : 'text-foreground/70 hover:bg-primary/30  hover:text-foreground'
+                    }
+                  `}
+                  style={{
+                    animation: `slide-in-right 0.3s ease-out ${index * 0.1}s backwards`,
+                  }}
+                >
+                  {link.label}
+                </a>
+              ))}
+            </div>
+          </nav>
+        )}
       </header>
     </div>
   );

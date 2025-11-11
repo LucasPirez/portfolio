@@ -23,13 +23,11 @@ function Projects() {
       />
 
       <div className="max-w-7xl mx-auto relative z-10">
-        {/* Header */}
         <div className="text-center mb-16 animate-fade-in-up">
-          <Title text="Projects" />
+          <Title text={text.projects} />
         </div>
 
-        {/* Projects Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:gap-x-20 gap-6 lg:gap-8 max-w-[1100px] mx-auto">
           {ProjectsKeys.map((project, index) => (
             <ProjectCard
               key={text.projectDescription[project].id}
@@ -43,7 +41,6 @@ function Projects() {
         </div>
       </div>
 
-      {/* Project Modal */}
       <ProjectModal
         project={selectedProject}
         onClose={() => setSelectedProject(null)}

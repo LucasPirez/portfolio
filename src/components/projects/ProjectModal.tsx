@@ -76,7 +76,7 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
             <div className="flex flex-wrap gap-2">
               {project.tags.map((tag) => (
                 <Badge
-                  key={tag}
+                  key={tag + Math.random()}
                   variant="secondary"
                   className="text-sm"
                 >

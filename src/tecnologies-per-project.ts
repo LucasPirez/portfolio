@@ -14,105 +14,6 @@ import {
   Docker,
 } from './icons/IconsTecnologies';
 
-export const tecnologiesTyping = [
-  {
-    icon: Reactjs,
-    tecnologie: 'React',
-    color: '#61dbfb',
-    colorIcon: '#61dbfb',
-  },
-  {
-    icon: TypeScript,
-    tecnologie: 'TypeScript',
-    color: '#2d79c7',
-    colorIcon: '',
-  },
-  { icon: Net, tecnologie: '.NET', color: '#C715ee', colorIcon: '' },
-  {
-    icon: CSharp,
-    tecnologie: 'C#',
-    color: 'lightgreen',
-    colorIcon: '',
-  },
-];
-
-export const tecnlogoiesCryptoTracker = [
-  {
-    icon: Reactjs,
-    tecnologie: 'React',
-    color: '#61dbfb',
-    colorIcon: '#61dbfb',
-  },
-  {
-    icon: Javascript,
-    tecnologie: 'Javascript',
-    color: 'yellow',
-    colorIcon: '',
-  },
-  { icon: Net, tecnologie: '.NET', color: '#C715ee', colorIcon: '' },
-  {
-    icon: CSharp,
-    tecnologie: 'C#',
-    color: 'lightgreen',
-    colorIcon: '',
-  },
-  {
-    icon: SQL,
-    tecnologie: 'SqlServer',
-    color: 'cyan',
-    colorIcon: '',
-  },
-];
-
-export const tecnologiesAppInstitute = [
-  { icon: Net, tecnologie: '.NET', color: '#C715ee', colorIcon: '' },
-  {
-    icon: CSharp,
-    tecnologie: 'C#',
-    color: 'lightgreen',
-    colorIcon: '',
-  },
-  {
-    icon: Blazor,
-    tecnologie: 'Blazor',
-    color: '#eee',
-    colorIcon: '',
-  },
-  {
-    icon: PostgreSQL,
-    tecnologie: 'PostgreSQL',
-    color: 'lightBlue',
-    colorIcon: '',
-  },
-];
-
-export const grinpoolTecnologies = [
-  {
-    icon: Reactjs,
-    tecnologie: 'React',
-    color: '#61dbfb',
-    colorIcon: '#61dbfb',
-  },
-  {
-    icon: TypeScript,
-    tecnologie: 'TypeScript',
-    color: '#2d79c7',
-    colorIcon: '',
-  },
-  {
-    icon: NestJs,
-    tecnologie: 'NestJs',
-    color: '#FF0000',
-    colorIcon: '',
-  },
-  {
-    icon: PostgreSQL,
-    tecnologie: 'PostgreSQL',
-    color: 'lightBlue',
-    colorIcon: '',
-  },
-];
-
 export const primaryTecnologies = [
   { icon: Net, tecnologie: '.NET', color: '#C715ee', colorIcon: '' },
   {
@@ -172,7 +73,7 @@ export const primaryTecnologies = [
 ];
 
 type TechnologyInfo = {
-  icon: (props: SVGProps<SVGSVGElement>) => JSX.Element;
+  icon?: (props: SVGProps<SVGSVGElement>) => JSX.Element;
   color: string;
   colorIcon: string;
   name: string;
@@ -190,7 +91,25 @@ export type TechnologiesKey =
   | 'NestJs'
   | 'HTML'
   | 'Css'
-  | 'Docker';
+  | 'Docker'
+  | 'REST'
+  | 'EntityFramework'
+  | 'WebSockets'
+  | 'SignalR'
+  | 'Firebase'
+  | 'Git'
+  | 'GitHubActions'
+  | 'Vercel'
+  | 'DockerCompose'
+  | 'Heroku'
+  | 'CI/CD'
+  | 'Jest'
+  | 'xUnit'
+  | 'TDD'
+  | 'TailwindCSS'
+  | 'Express'
+  | 'NodeJs'
+  | 'Redis';
 
 export const technologies: Record<TechnologiesKey, TechnologyInfo> = {
   React: {
@@ -263,6 +182,96 @@ export const technologies: Record<TechnologiesKey, TechnologyInfo> = {
     name: 'Docker',
     icon: Docker,
     color: '#1388c7',
+    colorIcon: '',
+  },
+  REST: {
+    name: 'REST',
+    color: '#ff8c00',
+    colorIcon: '',
+  },
+  EntityFramework: {
+    name: 'EntityFramework',
+    color: '#a8217a',
+    colorIcon: '',
+  },
+  WebSockets: {
+    name: 'WebSockets',
+    color: '#008080',
+    colorIcon: '',
+  },
+  SignalR: {
+    name: 'SignalR',
+    color: '#5c2d91',
+    colorIcon: '',
+  },
+  'CI/CD': {
+    name: 'CI/CD',
+    color: '#ff1493',
+    colorIcon: '',
+  },
+  Firebase: {
+    name: 'Firebase',
+    color: '#ffca28',
+    colorIcon: '',
+  },
+  Git: {
+    name: 'Git',
+    color: '#f34f29',
+    colorIcon: '',
+  },
+  GitHubActions: {
+    name: 'GitHubActions',
+    color: '#2088ff',
+    colorIcon: '',
+  },
+  Vercel: {
+    name: 'Vercel',
+    color: '#000000',
+    colorIcon: '',
+  },
+  DockerCompose: {
+    name: 'DockerCompose',
+    color: '#2496ed',
+    colorIcon: '',
+  },
+  Heroku: {
+    name: 'Heroku',
+    color: '#6762a6',
+    colorIcon: '',
+  },
+  Jest: {
+    name: 'Jest',
+    color: '#c21325',
+    colorIcon: '',
+  },
+  xUnit: {
+    name: 'xUnit',
+    color: '#1d2d44',
+    colorIcon: '',
+  },
+  TDD: {
+    name: 'TDD',
+    color: '#ff4500',
+    colorIcon: '',
+  },
+  TailwindCSS: {
+    name: 'TailwindCSS',
+    color: '#38bdf8',
+    colorIcon: '',
+  },
+  Express: {
+    name: 'Express',
+    color: '#00a5C9',
+    colorIcon: '',
+  },
+  NodeJs: {
+    name: 'NodeJs',
+    color: '#68a063',
+    colorIcon: '',
+  },
+  Redis: {
+    name: 'Redis',
+    color: '#dc382d',
     colorIcon: '',
   },
 };

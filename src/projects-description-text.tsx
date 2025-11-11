@@ -1,28 +1,121 @@
-import {
-  // cryptoCoin,
-  cryptoMain,
-  // cryptoMobile,
-  speedyHome,
-  // speedyRoom,
-  // speedyWinner,
-  tweeter1,
-  AddStudent,
-  // Configuration,
-  // Debts,
-  // PaidFee,
-} from './images';
+import { speedyHome, tweeter1, mechanic, motorbike } from './images';
 import { Project } from './types';
 
 export const ProjectsKeys = [
+  'mechanicApp',
+  'motorbikeShopBackend',
   'typingGame',
   'clinicDental',
-  'cryptoTracker',
-  'institute',
 ] as const;
 
 type ProjectsKeysKeys = (typeof ProjectsKeys)[number];
 
+const projectsSharedData: Record<
+  ProjectsKeysKeys,
+  {
+    image: string;
+    githubUrl: string;
+    demoUrl: string;
+  }
+> = {
+  mechanicApp: {
+    image: mechanic,
+    githubUrl: 'https://github.com/LucasPirez/garage-system',
+    demoUrl: '',
+  },
+  motorbikeShopBackend: {
+    image: motorbike,
+    githubUrl:
+      'https://github.com/salvador-lopez/motorbike-shop-backend-nodejs',
+    demoUrl: '',
+  },
+  typingGame: {
+    image: speedyHome,
+    githubUrl: 'https://github.com/LucasPirez/KeyboardWarrior',
+    demoUrl: 'https://keyboard-warrior-omega.vercel.app/',
+  },
+  clinicDental: {
+    image: tweeter1,
+    githubUrl: 'https://github.com/FooTalent/team-1',
+    demoUrl: 'https://foo-talent-private.vercel.app',
+  },
+};
+
 export const modalEN: Record<ProjectsKeysKeys, Project> = {
+  mechanicApp: {
+    id: '9d5b52e8-97e5-4e1c-bd1b-5cb15cc6717f',
+    shortDescription:
+      'Comprehensive management system for a mechanical workshop, developed with React and .NET using a relational database, designed to optimize administrative processes and ensure data integrity.',
+    features: [
+      'Customer and vehicle management modules',
+      'Service orders and repair tracking',
+      'Relational database with Entity Framework',
+      'Data validation and exception handling layer',
+      'Design based on Clean Architecture principles',
+      'Authentication and authorization',
+      'Optimized interface for mobile and desktop environments',
+    ],
+    tags: [
+      '.NET',
+      'CSharp',
+      'EntityFramework',
+      'PostgreSQL',
+      'React',
+      'TypeScript',
+      'Firebase',
+      'TailwindCSS',
+    ],
+    title: 'Auto Workshop Management System',
+    description: (
+      <>
+        Management application developed with .NET and React for a
+        mechanical workshop, designed to streamline customer and
+        vehicle management, handle repair orders, and centralize all
+        operational processes. Built under clean architecture
+        principles, Entity Framework, and PostgreSql, ensuring
+        scalability, maintainability, and high data consistency across
+        modules.
+      </>
+    ),
+    ...projectsSharedData.mechanicApp,
+  },
+  motorbikeShopBackend: {
+    id: '6a1d2f79-c5de-4b9c-a29a-2b0df6e8e401',
+    shortDescription:
+      'RESTful backend in Node.js for a motorcycle shop, developed in collaboration with a senior developer with 14 years of experience.',
+    features: [
+      'REST API for customer creation',
+      'Relational database with TypeORM',
+      'Data validation, error handling, and custom middlewares',
+      'Test-driven development (TDD) with Jest and Supertest',
+      'In-memory and Redis caching to improve performance',
+      'Domain-Driven Design (DDD) and clean architecture',
+      'Transactions to ensure data integrity',
+    ],
+    tags: [
+      'Express',
+      'TypeScript',
+      'Redis',
+      'TDD',
+      'NodeJs',
+      'Docker',
+      'Jest',
+    ],
+    title: 'Motorbike Shop Backend',
+    description: (
+      <>
+        Backend developed in Node.js and Express for a motorcycle
+        shop, structured under Clean Architecture and Domain-Driven
+        Design (DDD) principles. It includes caching with Redis and
+        in-memory, transaction management to ensure data integrity,
+        and a Test-Driven Development (TDD) approach using Jest.
+        Additionally, it features a Makefile that simplifies test
+        execution and environment variable configuration, optimizing
+        the project's development and maintenance workflow.
+      </>
+    ),
+    ...projectsSharedData.motorbikeShopBackend,
+  },
   typingGame: {
     id: '643d070f-b4e6-401c-9426-6bdefa13d35f',
     shortDescription: '',
@@ -38,13 +131,10 @@ export const modalEN: Record<ProjectsKeysKeys, Project> = {
         </span>
       </>
     ),
-    image: speedyHome,
-    githubUrl: 'https://github.com/LucasPirez/KeyboardWarrior',
-    demoUrl: 'https://keyboard-warrior-omega.vercel.app/',
+    ...projectsSharedData.typingGame,
   },
-
   clinicDental: {
-    id: '6a1d2f79-c5de-4b9c-a29a-2b0df6e8e401',
+    id: '2c86fcfd-6233-4a9a-a4d6-54d30949ef74',
     shortDescription: '',
     features: [''],
     tags: [
@@ -64,52 +154,85 @@ export const modalEN: Record<ProjectsKeysKeys, Project> = {
         schedule appointments and generate reports.
       </>
     ),
-    image: tweeter1,
-    githubUrl: 'https://github.com/FooTalent/team-1',
-    demoUrl: 'https://foo-talent-private.vercel.app',
-  },
-
-  cryptoTracker: {
-    id: '17d44f25-0f2e-480f-bb31-feb7a33e54d8',
-    shortDescription: '',
-    features: [''],
-    tags: ['Blazor', '.NET', 'CSharp', 'PostgreSQL'],
-    title: 'Crypto Tracker',
-    description: (
-      <>
-        Application to offer an intuitive and efficient experience in
-        tracking your favorite cryptocurrencies, with dynamic charts
-        and configurable price alerts.
-      </>
-    ),
-    image: cryptoMain,
-    githubUrl: 'https://github.com/LucasPirez/cryptomonedas-app',
-    demoUrl: '',
-  },
-
-  institute: {
-    id: '9d5b52e8-97e5-4e1c-bd1b-5cb15cc6717f',
-    shortDescription: '',
-    features: [''],
-    tags: ['.NET', 'CSharp', 'Blazor', 'PostgreSQL'],
-    title: 'Institute App',
-    description: (
-      <>
-        Desktop and web application.{' '}
-        <span style={{ color: '#ea5455', fontWeight: 'semibold' }}>
-          Currently used by the client
-        </span>{' '}
-        to register tutors, students, configure courses, prices,
-        discounts, etc.
-      </>
-    ),
-    image: AddStudent,
-    githubUrl: '',
-    demoUrl: '',
+    ...projectsSharedData.clinicDental,
   },
 };
 
 export const modalES: Record<ProjectsKeysKeys, Project> = {
+  mechanicApp: {
+    id: '1df1c1ea-2c1d-4d74-8a6b-89a0eec70a2e',
+    shortDescription:
+      'Sistema integral de gestión para un taller mecánico, desarrollado con React y .NET con una base de datos relacional, diseñado para optimizar los procesos administrativos y garantizar la integridad de los datos.',
+    features: [
+      'Módulos de gestión de clientes y vehículos',
+      'Órdenes de servicio y seguimiento de reparaciones',
+      'Base de datos relacional con Entity Framework',
+      'Capa de validación de datos y manejo de excepciones',
+      'Diseño basado en Clean Architecture',
+      'Autenticación y autorización',
+      'Interfaz optimizada para entornos móbiles y escritorio',
+    ],
+    tags: [
+      '.NET',
+      'CSharp',
+      'EntityFramework',
+      'PostgreSQL',
+      'React',
+      'TypeScript',
+      'Firebase',
+      'TailwindCSS',
+    ],
+    title: 'Sistema de Gestión de Taller Mecánico',
+    description: (
+      <>
+        Aplicación de gestión desarrollada con .NET y React para un
+        taller mecánico, diseñada para agilizar la administración de
+        clientes y vehículos, gestionar órdenes de reparación y
+        centralizar todos los procesos operativos. Construida bajo
+        principios de clean architecture asegurando escalabilidad,
+        mantenibilidad y alta consistencia de datos entre los módulos.
+      </>
+    ),
+    ...projectsSharedData.mechanicApp,
+  },
+  motorbikeShopBackend: {
+    id: '6a1d2f79-c5de-4b9c-a29a-2b0df6e8e401',
+    shortDescription:
+      'Backend REST en Node.js para tienda de motocicletas, desarrollado en colaboración con un desarrollador senior con 14 años de experiencia.',
+    features: [
+      'API REST para creacion de clientes',
+      'Base de datos relacional con TypeORM',
+      'Validación de datos, manejo de errores y middlewares personalizados',
+      'TDD (Test Driven Design) con Jest y supertest',
+      'Cache en memoria y con Redis, para mejorar el rendimiento',
+      'DDD (Domain Driven Design) y arquitectura limpia',
+      'Transacciones para asegurar la integridad de los datos',
+    ],
+    tags: [
+      'Express',
+      'TypeScript',
+      'Redis',
+      'TDD',
+      'NodeJs',
+      'Docker',
+      'Jest',
+    ],
+    title: 'Motorbike Shop Backend',
+    description: (
+      <>
+        Backend desarrollado en Node.js y Express para una tienda de
+        motocicletas, estructurado bajo principios de Clean
+        Architecture y Domain-Driven Design (DDD). Incluye caché con
+        Redis e in-memory, manejo de transacciones para garantizar la
+        integridad de los datos y una implementación de TDD
+        (Test-Driven Development) con Jest. Además, cuenta con un
+        Makefile que facilita la ejecución de pruebas y la
+        configuración de variables de entorno, optimizando el flujo de
+        desarrollo y mantenimiento del proyecto.
+      </>
+    ),
+    ...projectsSharedData.motorbikeShopBackend,
+  },
   typingGame: {
     id: '543d070f-b4e6-401c-9426-6bdefa13d35f',
     shortDescription: '',
@@ -125,11 +248,8 @@ export const modalES: Record<ProjectsKeysKeys, Project> = {
         </span>
       </>
     ),
-    image: speedyHome,
-    githubUrl: 'https://github.com/LucasPirez/KeyboardWarrior',
-    demoUrl: 'https://keyboard-warrior-omega.vercel.app/#/login',
+    ...projectsSharedData.typingGame,
   },
-
   clinicDental: {
     id: '4f3b12a9-7ce7-45d3-96c0-8f8a4b3b0e94',
     shortDescription: '',
@@ -151,47 +271,6 @@ export const modalES: Record<ProjectsKeysKeys, Project> = {
         prestaciones, agendar turnos y generar reportes.
       </>
     ),
-    image: tweeter1,
-    githubUrl: 'https://github.com/LucasPirez/noClon-tweeter',
-    demoUrl: 'https://mynext-app.web.app/',
-  },
-
-  cryptoTracker: {
-    id: 'f8b1cb7b-5d6c-4933-bd25-8db4a68d0f37',
-    shortDescription: '',
-    features: [''],
-    tags: ['Blazor', '.NET', 'CSharp', 'PostgreSQL'],
-    title: 'Crypto Tracker',
-    description: (
-      <>
-        Aplicación para ofrecer una experiencia intuitiva y eficiente
-        en el seguimiento de tus criptomonedas favoritas, con gráficos
-        dinámicos y alertas de precios configurables.
-      </>
-    ),
-    image: cryptoMain,
-    githubUrl: 'https://github.com/LucasPirez/cryptomonedas-app',
-    demoUrl: '',
-  },
-
-  institute: {
-    id: '1df1c1ea-2c1d-4d74-8a6b-89a0eec70a2e',
-    shortDescription: '',
-    features: [''],
-    tags: ['.NET', 'CSharp', 'Blazor', 'PostgreSQL'],
-    title: 'App de instituto',
-    description: (
-      <>
-        Aplicación de escritorio y web.{' '}
-        <span style={{ color: '#ea5455', fontWeight: 'semibold' }}>
-          Actualmente utilizada por el cliente
-        </span>{' '}
-        permite registrar tutores, estudiantes, configuración de
-        cursos, precios, descuentos, etc.
-      </>
-    ),
-    image: AddStudent,
-    githubUrl: '',
-    demoUrl: '',
+    ...projectsSharedData.clinicDental,
   },
 };

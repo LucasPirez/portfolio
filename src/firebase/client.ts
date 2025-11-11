@@ -8,12 +8,13 @@ import {
 } from 'firebase/firestore/lite';
 
 const firebaseConfig = {
-  apiKey: 'AIzaSyBT-OYEW12f3ELL8qCsJupdK3rmfNdW3Bg',
-  authDomain: 'pirezlucas-portfolio.firebaseapp.com',
-  projectId: 'pirezlucas-portfolio',
-  storageBucket: 'pirezlucas-portfolio.appspot.com',
-  messagingSenderId: '416913937459',
-  appId: '1:416913937459:web:53da5d65d9d5e1df95ff46',
+  apiKey: import.meta.env.VITE_FIREBASE_API_KEY,
+  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID,
+  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: import.meta.env
+    .VITE_FIREBASE_MESSAGING_SENDER_ID,
+  appId: import.meta.env.VITE_FIREBASE_APP_ID,
 };
 let app;
 if (!getApps.length) {
