@@ -1,10 +1,11 @@
-import { lazy, Suspense, useRef } from 'react';
+import { lazy, Suspense, useEffect, useRef } from 'react';
 import Home from './Home/Home';
 import Header from './About/Header';
 import { useTranslation } from '../TraslationContext';
 import Footer from './Footer/Footer';
 import FloatingAIChat from './QASection/FloatingAIChat';
 import { useInsertionEffect } from '../hooks/useIntersection';
+import { QAhealth } from '@/services/qaService';
 
 const About = lazy(() => import('./About/About'));
 const Projects = lazy(() => import('./projects/Projects'));
@@ -25,6 +26,10 @@ const Port = () => {
   ];
 
   useInsertionEffect(arrayContainers, selectCurrentPage);
+
+  useEffect(() => {
+    QAhealth();
+  }, []);
 
   return (
     <>

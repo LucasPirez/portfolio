@@ -5,8 +5,9 @@ export const QaService = async (
   question: string,
   onChunk: (chunk: string) => void
 ): Promise<QAResponse> => {
-  const url = import.meta.env
-    .VITE_RAG_PROFILE_DESCRIPTION_URL as string;
+  const url =
+    import.meta.env.VITE_RAG_PROFILE_DESCRIPTION_URL +
+    '/rag/profile-description';
 
   try {
     const response = await fetch(url, {
@@ -56,5 +57,17 @@ export const QaService = async (
   } catch (error) {
     console.error('Error in askQuestion:', error);
     throw error;
+  }
+};
+
+export const QAhealth = async (): Promise<boolean> => {
+  const url =
+    import.meta.env.VITE_RAG_PROFILE_DESCRIPTION_URL + '/rag/health';
+  try {
+    const response = await fetch(url);
+    return response.ok;
+  } catch (error) {
+    console.error('Error in health check:', error);
+    return false;
   }
 };
