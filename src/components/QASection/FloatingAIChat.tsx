@@ -67,7 +67,7 @@ const FloatingAIChat: React.FC = () => {
         setError(
           <span>
             Has alcanzado el límite de solicitudes. Para optimizar
-            recursos, el uso está limitado a 6 consultas cada 5
+            recursos, el uso está limitado a 3 consultas cada 5
             minutos. Si necesitas más información, no dudes en
             contactarme directamente a mi{' '}
             <a
