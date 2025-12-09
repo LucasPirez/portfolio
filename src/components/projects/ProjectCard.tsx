@@ -36,7 +36,7 @@ function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="p-3 rounded-full glass-effect hover:bg-primary/20 transition-colors"
+              className="p-3 rounded-full glass-effect hover:bg-primary/20 transition-colors border border-primary/40"
             >
               <ExternalLink className="w-5 h-5" />
             </a>
@@ -47,7 +47,7 @@ function ProjectCard({
               target="_blank"
               rel="noopener noreferrer"
               onClick={(e) => e.stopPropagation()}
-              className="p-3 rounded-full glass-effect hover:bg-primary/20 transition-colors"
+              className="p-3 rounded-full glass-effect hover:bg-primary/20 transition-colors border border-primary/40  "
             >
               <Github className="w-5 h-5" />
             </a>

@@ -82,6 +82,7 @@ type TechnologyInfo = {
 export type TechnologiesKey =
   | 'React'
   | 'TypeScript'
+  | 'DDD'
   | '.NET'
   | 'CSharp'
   | 'Javascript'
@@ -115,163 +116,168 @@ export const technologies: Record<TechnologiesKey, TechnologyInfo> = {
   React: {
     name: 'React',
     icon: Reactjs,
-    color: '#61dbfb',
-    colorIcon: '#61dbfb',
+    color: '#4fd4f5',
+    colorIcon: '#4fd4f5',
   },
   TypeScript: {
     name: 'TypeScript',
     icon: TypeScript,
-    color: '#2d79c7',
+    color: '#3b82f6',
     colorIcon: '',
   },
   '.NET': {
     name: '.NET',
     icon: Net,
-    color: '#C715ee',
+    color: '#a54dff',
     colorIcon: '',
   },
   CSharp: {
     name: 'C#',
     icon: CSharp,
-    color: 'lightgreen',
+    color: '#7fff8a',
     colorIcon: '',
   },
   Javascript: {
     name: 'Javascript',
     icon: Javascript,
-    color: 'yellow',
+    color: '#f5e342',
     colorIcon: '',
   },
   SqlServer: {
     icon: SQL,
     name: 'SqlServer',
-    color: 'cyan',
+    color: '#41e2f4',
     colorIcon: '',
   },
   Blazor: {
     name: 'Blazor',
     icon: Blazor,
-    color: '#eee',
+    color: '#d7d4ff',
     colorIcon: '',
   },
   PostgreSQL: {
     name: 'PostgreSQL',
     icon: PostgreSQL,
-    color: 'lightBlue',
+    color: '#4ba3f7',
     colorIcon: '',
   },
   NestJs: {
     name: 'NestJs',
     icon: NestJs,
-    color: '#FF0000',
+    color: '#ff4d4d',
     colorIcon: '',
   },
   HTML: {
     name: 'HTML',
     icon: Html,
-    color: 'orange',
+    color: '#ff7b00',
     colorIcon: '',
   },
   Css: {
     icon: Css3,
     name: 'Css',
-    color: 'lightskyblue',
+    color: '#57b9ff',
     colorIcon: '',
   },
   Docker: {
     name: 'Docker',
     icon: Docker,
-    color: '#1388c7',
+    color: '#33b1ff',
     colorIcon: '',
   },
   REST: {
     name: 'REST',
-    color: '#ff8c00',
+    color: '#ffa733',
     colorIcon: '',
   },
   EntityFramework: {
     name: 'EntityFramework',
-    color: '#a8217a',
+    color: '#d63fa6',
     colorIcon: '',
   },
   WebSockets: {
     name: 'WebSockets',
-    color: '#008080',
+    color: '#00b3b3',
     colorIcon: '',
   },
   SignalR: {
     name: 'SignalR',
-    color: '#5c2d91',
+    color: '#7c4dff',
     colorIcon: '',
   },
   'CI/CD': {
     name: 'CI/CD',
-    color: '#ff1493',
+    color: '#ff66cc',
     colorIcon: '',
   },
   Firebase: {
     name: 'Firebase',
-    color: '#ffca28',
+    color: '#ffc933',
     colorIcon: '',
   },
   Git: {
     name: 'Git',
-    color: '#f34f29',
+    color: '#f05a2b',
     colorIcon: '',
   },
   GitHubActions: {
     name: 'GitHubActions',
-    color: '#2088ff',
+    color: '#3a9bff',
     colorIcon: '',
   },
   Vercel: {
     name: 'Vercel',
-    color: '#000000',
+    color: '#e6e6e6',
     colorIcon: '',
   },
   DockerCompose: {
     name: 'DockerCompose',
-    color: '#2496ed',
+    color: '#3ea6ff',
     colorIcon: '',
   },
   Heroku: {
     name: 'Heroku',
-    color: '#6762a6',
+    color: '#8c6ee8',
     colorIcon: '',
   },
   Jest: {
     name: 'Jest',
-    color: '#c21325',
+    color: '#e83a3a',
     colorIcon: '',
   },
   xUnit: {
     name: 'xUnit',
-    color: '#1d2d44',
+    color: '#2a3b5d',
     colorIcon: '',
   },
   TDD: {
     name: 'TDD',
-    color: '#ff4500',
+    color: '#ff7043',
+    colorIcon: '',
+  },
+  DDD: {
+    name: 'DDD',
+    color: '#fa70a3',
     colorIcon: '',
   },
   TailwindCSS: {
     name: 'TailwindCSS',
-    color: '#38bdf8',
+    color: '#4fd4f5',
     colorIcon: '',
   },
   Express: {
     name: 'Express',
-    color: '#00a5C9',
+    color: '#33c4de',
     colorIcon: '',
   },
   NodeJs: {
     name: 'NodeJs',
-    color: '#68a063',
+    color: '#7ad97a',
     colorIcon: '',
   },
   Redis: {
     name: 'Redis',
-    color: '#dc382d',
+    color: '#ff4b4b',
     colorIcon: '',
   },
 };

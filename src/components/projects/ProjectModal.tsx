@@ -22,10 +22,10 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
     <Dialog open={!!project} onOpenChange={onClose}>
       <DialogContent className="max-w-3xl max-h-[90vh] text-gray-200 overflow-y-auto glass-effect border-primary/20">
         <DialogHeader>
-          <DialogTitle className="text-3xl font-bold text-gradient">
+          <DialogTitle className=" text:2xl sm:text-3xl font-bold text-gradient">
             {project.title}
           </DialogTitle>
-          <DialogDescription className="text-base">
+          <DialogDescription className="text-sm text-left">
             {project.shortDescription}
           </DialogDescription>
         </DialogHeader>
@@ -43,7 +43,7 @@ function ProjectModal({ project, onClose }: ProjectModalProps) {
 
           {/* Description */}
           <div>
-            <h3 className="text-xl font-semibold mb-2">
+            <h3 className="text-xl tfont-semibold mb-2">
               Descripción
             </h3>
             <p className="text-muted-foreground leading-relaxed">

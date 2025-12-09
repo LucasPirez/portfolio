@@ -9,7 +9,7 @@ function About() {
     <>
       <section
         id="about"
-        className="text-center h-[100vh] min-h-fit shadow-lg  md:mt-0 md:pt-[10vh] pb-40 -mb-36 custom-container"
+        className="text-center h-[100vh] min-h-fit shadow-lg  md:mt-0 md:pt-[10vh] pb-40 -mb-36 custom-container max-sm:p-0 max-sm:m-0 "
       >
         <>
           <div className=" h-auto flex flex-col lg:flex-row xl:self-start xl:gap-20 gap-5 ">

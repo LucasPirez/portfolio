@@ -98,30 +98,29 @@ export const translation: Record<string, Translation> = {
     about: () => (
       <>
         <p className="mb-3">
-          <span>&#8226;</span> More than a year of experience in web
-          application development, highlighting a strong backend bias.
-        </p>
-        <p className="mb-3">
-          {' '}
-          <span>&#8226; </span>
-          My main focus is to create scalable, robust and
-          problem-oriented solutions using modern technologies such as{' '}
-          <strong className="text-myLightPurple dark:text-purple/90">
-            React.js
-          </strong>
-          {' and '}
-          <strong className="text-myLightPurple dark:text-purple/90">
-            .NET.
-          </strong>
+          <span>&#8226;</span>Over a year of experience in web
+          application development, with a strong focus on backend and
+          building scalable, efficient solutions.
         </p>
         <p className="mb-3">
           <span>&#8226; </span>
-          Currently, I am developing full stack applications that
-          integrate good development practices and scalable
-          architecture. I am excited to join a company where I can
-          apply my skills, continue to grow professionally and
-          contribute to the achievement of the team's goals with an
-          innovative and committed approach.
+          Specialized in development with .NET (C#), Node.js, and
+          TypeScript, applying clean architecture principles and best
+          development practices to ensure maintainability and
+          performance.
+        </p>
+        <p className="mb-3">
+          <span>&#8226; </span>I also have experience with React.js
+          for creating modern and dynamic interfaces, seamlessly
+          integrating the frontend with the backend.
+        </p>{' '}
+        <p className="mb-3">
+          <span>&#8226; </span>
+          Currently developing full stack applications focused on
+          scalability and code quality. I'm looking to join a team
+          where I can continue growing professionally, contribute
+          impactful technical solutions, and help achieve project
+          success with commitment and innovation.
         </p>
       </>
     ),
@@ -168,31 +167,30 @@ export const translation: Record<string, Translation> = {
       <>
         <p className="mb-3">
           <span>&#8226;</span> Más de un año de experiencia en el
-          desarrollo de aplicaciones web, destacando una sólida
-          inclinación hacia el backend.
-        </p>
-        <p className="mb-3">
-          {' '}
-          <span>&#8226; </span>
-          Mi enfoque principal es crear soluciones escalables,
-          robustas y orientadas a resolver problemas mediante
-          tecnologías modernas como{' '}
-          <strong className="text-myLightPurple dark:text-purple/90">
-            React.js
-          </strong>
-          {' y '}
-          <strong className="text-myLightPurple dark:text-purple/90">
-            .NET.
-          </strong>
+          desarrollo de aplicaciones web, con un enfoque sólido en el
+          backend y la construcción de soluciones escalables y
+          eficientes.
         </p>
         <p className="mb-3">
           <span>&#8226; </span>
-          Actualmente, estoy desarrollando aplicaciones full stack que
-          integran buenas prácticas de desarrollo y arquitectura
-          escalable. Estoy entusiasmado por unirme a una empresa donde
-          pueda aplicar mis habilidades, seguir creciendo
-          profesionalmente y contribuir al logro de los objetivos del
-          equipo con un enfoque innovador y comprometido.
+          Mi especialización se centra en el desarrollo con .NET con
+          C#, Node.js y TypeScript, aplicando principios de
+          arquitectura limpia y buenas prácticas de desarrollo para
+          garantizar mantenibilidad y rendimiento.
+        </p>
+        <p className="mb-3">
+          <span>&#8226; </span>
+          También cuento con experiencia en React.js para la creación
+          de interfaces modernas y dinámicas, integrando de forma
+          fluida el frontend con el backend.
+        </p>
+        <p className="mb-3">
+          <span>&#8226; </span>
+          Actualmente desarrollo aplicaciones full stack orientadas a
+          la escalabilidad y la calidad del código. Busco integrarme a
+          un equipo donde pueda seguir creciendo profesionalmente,
+          aportar soluciones técnicas de impacto y contribuir al éxito
+          del proyecto con compromiso e innovación.
         </p>
       </>
     ),

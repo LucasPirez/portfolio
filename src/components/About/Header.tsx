@@ -45,7 +45,7 @@ export default function Header() {
                   key={link.href}
                   href={link.href}
                   className={`
-                    relative px-4 py-2 text-sm font-medium rounded-lg
+                    relative px-4 py-2 text-base font-medium rounded-lg
                     smooth-transition group
                     ${
                       currentPage === link.page
@@ -69,17 +69,17 @@ export default function Header() {
             </nav>
           )}
           {/* Mobile Menu Button */}
-          <button
-            onClick={() => setNav(!nav)}
-            className="md:hidden glass-effect p-2 rounded-lg hover:bg-primary/10 smooth-transition "
-            aria-label="Toggle menu"
-          >
-            {nav ? (
-              <X className="w-6 h-6 text-foreground" />
-            ) : (
+          {!nav ? (
+            <button
+              onClick={() => setNav(!nav)}
+              className="md:hidden glass-effect p-2 rounded-lg hover:bg-primary/10 smooth-transition "
+              aria-label="Toggle menu"
+            >
               <Menu className="w-6 h-6 text-foreground" />
-            )}
-          </button>
+            </button>
+          ) : (
+            ''
+          )}
         </div>
 
         {/* Mobile Navigation */}
@@ -107,6 +107,17 @@ export default function Header() {
                   {link.label}
                 </a>
               ))}
+              <button
+                onClick={() => setNav(!nav)}
+                className="md:hidden glass-effect p-2 rounded-lg hover:bg-primary/10 smooth-transition"
+                aria-label="Toggle menu"
+              >
+                {nav ? (
+                  <X className="w-6 h-6 text-foreground" />
+                ) : (
+                  <Menu className="w-6 h-6 text-foreground" />
+                )}
+              </button>
             </div>
           </nav>
         )}

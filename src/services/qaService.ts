@@ -1,10 +1,9 @@
 import { CustomError } from '../utils/CustomErrors';
-import type { QAResponse } from '../types';
 
 export const QaService = async (
   question: string,
   onChunk: (chunk: string) => void
-): Promise<QAResponse> => {
+) => {
   const url =
     import.meta.env.VITE_RAG_PROFILE_DESCRIPTION_URL +
     '/rag/profile-description';
@@ -24,8 +23,6 @@ export const QaService = async (
       throw new CustomError('Error in QaService', response.status);
     }
 
-    const data: QAResponse = await response.json();
-
     const reader = response.body?.getReader();
     const decoder = new TextDecoder();
 
@@ -35,7 +32,7 @@ export const QaService = async (
 
       const chunk = decoder.decode(value);
       const lines = chunk.split('\n');
-
+      console.log(lines);
       for (const line of lines) {
         if (line.startsWith('data: ')) {
           const data = line.slice(6);
@@ -53,7 +50,6 @@ export const QaService = async (
         }
       }
     }
-    return data;
   } catch (error) {
     console.error('Error in askQuestion:', error);
     throw error;

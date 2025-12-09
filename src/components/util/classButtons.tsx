@@ -1,2 +1,2 @@
-export const buttonPrimary = `
-              dark:outline-myDarkLightBlue/90 outline-myDarkLightBlue/80 p-2 items-center  text-sm md:text-lg  lg:text-xl lg:p-3 outline hover:outline-offset-2 hover:outline-myDarkLightBlue rounded-md  transition-all duration-200 dark:bg-myDarkLightBlue/90 bg-myDarkLightBlue/80 hover:bg-myDarkLightBlue text-black`;
+export const buttonPrimary =
+  'flex items-center p-2 md:p-3 text-sm md:text-lg lg:text-xl rounded-xl transition-all duration-200 outline outline-1 outline-myDarkLightBlue/70 hover:outline-2 hover:outline-offset-2 hover:outline-myDarkLightBlue/90 bg-myDarkLightBlue/80 dark:bg-myDarkLightBlue/90 hover:bg-myDarkLightBlue/95 text-black dark:text-white shadow-sm hover:shadow-md';

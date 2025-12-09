@@ -78,7 +78,7 @@ function Animation({ visible, changeTheme }: AnimationProps) {
     scene.background = color.current.bg as Color;
     camera.position.setZ(30);
 
-    const ambientLight = new AmbientLight(0xa6b624);
+    const ambientLight = new AmbientLight(0xaaaaaa);
     const controls = new OrbitControls(camera, renderer.domElement);
     controls.enabled = false;
 
@@ -130,7 +130,7 @@ function Animation({ visible, changeTheme }: AnimationProps) {
     <>
       <canvas
         id="bg"
-        className="absolute h-[100%] w-full overflow-hidden opacity-50"
+        className="absolute h-[100%] w-full overflow-hidden opacity-80"
       ></canvas>
     </>
   );

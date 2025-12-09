@@ -31,7 +31,7 @@ function Home() {
         </Suspense>
         <div className="fixed top-[0.50rem]  left-4 m-4 z-30 md:flex">
           <select
-            className="text-xs md:text-base bg-myDarkLightBlue rounded-2xl px-2 border-2cursor-pointer p-1  hover:scale-105 transition-all duration-300 mr-2 mb-2 dark:border-myDarkLightBlue dark:text-gray-900 h-8"
+            className="text-xs md:text-base text-gray-200 bg-background/80 rounded-2xl px-2 border-2cursor-pointer p-1  hover:scale-105 transition-all duration-300 mr-2 mb-2 dark:border-myDarkLightBlue dark:text-gray-900 h-8"
             onChange={(e) =>
               handleLanguage(e.target.value as 'es' | 'en')
             }
@@ -41,9 +41,9 @@ function Home() {
           </select>
           <Theme setChangeTheme={setChangeTheme} />
         </div>
-        <div className="flex items-center justify-around xl:justify-center xl:gap-40 max-h-[100hv] sm:h-[70%] h-[60%]   flex-wrap text-slate-100 dark:text-slate-300 w-full text-xl sm:text-3xl md:text-5xl px-6  z-10  relative mt-16 md:mt-0">
+        <div className="flex items-center justify-around xl:justify-center xl:gap-36 max-h-[100hv] sm:h-[70%] h-[60%]   flex-wrap xl:flex-nowrap text-slate-100 dark:text-slate-300 w-full text-xl sm:text-3xl md:text-5xl px-6  z-10  relative mt-16 md:mt-0">
           <div
-            className="  sm:w-[350px] w-[280px] xl:w-[430px]  lg:mt-0  overflow-hidden flex justify-center z-10    "
+            className="  sm:w-[350px] w-[280px] xl:w-[430px]  lg:mt-0  overflow-hidden flex justify-center z-10   "
             style={{
               borderRadius: '65% 35% 65% 35% / 28% 69% 31% 72%',
             }}
@@ -63,7 +63,7 @@ function Home() {
             <h3 className="sm:text-4xl text-3xl md:text-5xl xl:text-7xl font-semibold text-gray-300 ">
               Lucas Pirez Gallo
             </h3>
-            <h4 className="sm:text-3xl text-2xl xl:text-3xl dark:text-rose-500/80 text-[#d73542] ">
+            <h4 className="text-2xl sm:text-3xl xl:text-4xl dark:text-rose-500/80 text-[#d73542]">
               {text.presentation.subTitle}
             </h4>
             <p className="text-sm  md:text-base max-w-[400px] mt-2 lg:text-lg lg:max-w-[450px] ">

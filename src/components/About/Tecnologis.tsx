@@ -1,10 +1,26 @@
 import { useTranslation } from '../../TraslationContext';
 import style from './tecnologies.module.css';
 import TechStack from './TechStack';
-import { primaryTecnologies } from '../../tecnologies-per-project';
+import {
+  technologies,
+  TechnologiesKey,
+} from '@/tecnologies-per-project';
 
 const Tecnologies = () => {
   const { text } = useTranslation();
+
+  const primaryTechnologies: TechnologiesKey[] = [
+    'NodeJs',
+    '.NET',
+    'TypeScript',
+    'CSharp',
+    'React',
+    'NestJs',
+    'Express',
+    'PostgreSQL',
+    'Docker',
+    'CI/CD',
+  ];
 
   return (
     <div
@@ -19,16 +35,16 @@ const Tecnologies = () => {
         {text.tecnologies}
       </h3>
       <ul
-        className={` ${style.tecnologi} flex flex-wrap lg:grid lg:grid-cols-2 transition-all h-auto gap-2 min-w-[270px] opacity-80 pb-8 justify-around`}
+        className={` ${style.tecnologi} font-semibold flex flex-wrap lg:grid lg:grid-cols-2 transition-all h-auto gap-2 min-w-[270px] opacity-80 pb-8 justify-around`}
       >
-        {primaryTecnologies.map((tecnology) => (
+        {primaryTechnologies.map((technology) => (
           <>
             <li>
               <TechStack
-                Component={tecnology.icon}
-                tecnologie={tecnology.tecnologie}
-                color={tecnology.color}
-                colorIcon={tecnology.colorIcon}
+                Component={technologies[technology].icon}
+                tecnologie={technologies[technology].name}
+                color={technologies[technology].color}
+                colorIcon={technologies[technology].colorIcon}
                 className="w-32 justify-center gap-3 px-1 mt-7 hover:scale-105 bg-myBgDark"
               />
             </li>
